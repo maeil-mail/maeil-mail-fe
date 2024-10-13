@@ -61,4 +61,10 @@ export const handlers = [
       );
     }
   }),
+
+  http.post('https://wooteco.com/coupon', () => {
+    return HttpResponse.json({
+      message: '쿠폰 발급이 완료 되었어요!',
+    });
+  }),
 ];

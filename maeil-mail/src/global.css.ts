@@ -75,7 +75,6 @@ globalStyle('.wmde-markdown', {
   background: `${darkTheme.colorBackground} !important`,
   color: `${text1} !important`,
   fontSize: '1.3rem !importannt',
-  fontFamily: 'BMHANNAAir !important',
 });
 
 globalStyle('.wmde-markdown h2', {
@@ -109,3 +108,21 @@ globalStyle('.wmde-markdown img', {
 globalStyle('.wmde-markdown p', {
   fontSize: '2rem',
 });
+
+globalStyle(
+  `.wmde-markdown .token.color, 
+   .wmde-markdown .token.atrule, 
+   .wmde-markdown .token.attr-value, 
+   .wmde-markdown .token.function, 
+   .wmde-markdown .token.class-name`,
+  {
+    color: '#246398 !important', // 우선순위를 높이기 위해 !important 추가
+  },
+);
+
+// // mdx
+
+// globalStyle('._contentEditable_uazmk_379', {
+//   color: `${text1} !important`,
+//   fontFamily: 'BMHANNAAir',
+// });

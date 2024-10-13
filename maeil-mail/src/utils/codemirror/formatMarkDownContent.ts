@@ -1,9 +1,9 @@
 const formatMarkdownContent = (content: string) => {
-  let formattedMarkdownBodyContent = content.replace(/\\n/g, '\n');
+  let formattedContent = content.replace(/\\n/g, '\n');
+  formattedContent = formattedContent.replace(/```\w*\n/g, '```\n');
+  formattedContent = formattedContent.replace(/```\n/g, '```\n');
 
-  formattedMarkdownBodyContent = formattedMarkdownBodyContent.replace(/\\`/g, '`');
-
-  return formattedMarkdownBodyContent;
+  return formattedContent;
 };
 
 export default formatMarkdownContent;

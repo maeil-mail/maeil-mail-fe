@@ -16,6 +16,5 @@ export const categoryText = style({
 });
 
 export const contentText = style({
-  fontFamily: 'BMHANNAAir',
   fontSize: '3rem',
 });
