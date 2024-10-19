@@ -24,11 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <MainWrapper>
-          <ContentWrapper>{children}</ContentWrapper>
-          <ToastContainer />
-          <div id="portal"></div>
-        </MainWrapper>
+        {children}
+        <div id="portal"></div>
         <MSWComponent />
       </body>
     </html>

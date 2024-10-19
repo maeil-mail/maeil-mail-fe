@@ -10,6 +10,12 @@ import { text1, borderColor1, text2 } from '@/_styles/vars.css';
 
 globalStyle('*', {
   boxSizing: 'border-box',
+  color: '#2b2b2b',
+  scrollbarWidth: 'none',
+});
+
+globalStyle('*::-webkit-scrollbar', {
+  display: 'none',
 });
 
 globalStyle('html', {
@@ -29,9 +35,7 @@ globalStyle('button', {
 
 globalStyle('body', {
   margin: '0',
-  overscrollBehavior: 'none',
   transition: 'all 0.3s ease',
-  position: 'relative',
 });
 
 globalStyle('h1, h2, h3, p', {
