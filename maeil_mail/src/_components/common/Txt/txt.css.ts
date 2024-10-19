@@ -10,7 +10,6 @@ export const textStyle = styleVariants({
 
 export const baseTxtStyle = style({
   transition: 'opacity 0.3s ease',
-  fontFamily: 'BMHANNAAir',
   color: text1,
 });
 

@@ -1,4 +1,4 @@
-import { pageLayout } from './page.css';
+import { pageLayout, detailHeaderWrapper } from './page.css';
 import { myStyle } from '@/_styles/vars.css';
 
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
@@ -18,10 +18,13 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
 
   return (
     <div className={`${pageLayout} ${myStyle}`}>
-      <DetailTitle title={detailQuestion.title} />
-      <Divider variant="default" />
-      <DetailCategory category={detailQuestion.category} />
-      <Divider variant="default" />
+      <div className={detailHeaderWrapper}>
+        <DetailTitle title={detailQuestion.title} />
+        <Divider variant="default" />
+        <DetailCategory category={detailQuestion.category} />
+        <Divider variant="default" />
+      </div>
+
       <DetailAnswer content={detailQuestion.content} />
     </div>
   );

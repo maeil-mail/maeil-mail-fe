@@ -11,7 +11,6 @@ export const baseButtonStyle = style({
   borderRadius: '0.8rem',
   cursor: 'pointer',
   transition: 'opacity 0.3s ease',
-  fontFamily: 'BMHANNAAir',
   padding: '1rem',
   fontSize: '2rem',
   ':hover': {
