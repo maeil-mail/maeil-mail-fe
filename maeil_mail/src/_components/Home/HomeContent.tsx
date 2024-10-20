@@ -1,4 +1,4 @@
-import { container } from './homeContent.css';
+import { container, minimumPadding } from './homeContent.css';
 import Nav from './Nav/Nav';
 import HeroSection from './HeroSection/HeroSection';
 import DescriptionSection from './DescriptionSection/DescriptionSection';
@@ -15,8 +15,10 @@ export default function HomeContent({ openModal }: HomeContentProps) {
     <div className={container}>
       <Nav onSubscribe={openModal} />
       <HeroSection onCTA={openModal} />
-      <DescriptionSection />
-      <TrustedBy />
+      <div className={minimumPadding}>
+        <DescriptionSection />
+        <TrustedBy />
+      </div>
       <ClosingCTA onCTA={openModal} />
       <Footer />
     </div>

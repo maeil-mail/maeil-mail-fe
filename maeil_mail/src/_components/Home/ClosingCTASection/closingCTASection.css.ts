@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
-  padding: '15rem',
+  padding: '15rem 1.6rem',
   backgroundColor: '#00A86B',
   width: '100%',
   display: 'flex',
@@ -34,6 +34,6 @@ export const closingCTAButton = style({
 
   transition: 'transform 0.4s ease-in-out',
   ':hover': {
-    transform: 'scale(1.05)',
+    transform: 'scale(1.03)',
   },
 });

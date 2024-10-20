@@ -12,6 +12,8 @@ export const heroSection = style({
     transparent 50%,
     rgba(0, 168, 107, 0.1) 100%
   )`,
+
+  padding: '0 1.6rem',
 });
 
 export const heroSectionInnerWrapper = style({
@@ -51,6 +53,6 @@ export const heroButton = style({
 
   transition: 'transform 0.4s ease-in-out',
   ':hover': {
-    transform: 'scale(1.05)',
+    transform: 'scale(1.03)',
   },
 });

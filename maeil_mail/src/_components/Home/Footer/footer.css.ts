@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
-  padding: '5rem',
+  padding: '5rem 1.6rem',
   display: 'flex',
   justifyContent: 'center',
   width: '100%',

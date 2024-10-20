@@ -1,8 +1,7 @@
 'use client';
 
-import BaseModal from '@/_components/common/Modal/BaseModal';
 import SecretModalTrigger from '@/_components/common/Modal/ModalContent/SecretModalTrigger';
-import SubscribeModalContent from '@/_components/common/Modal/ModalContent/SubscribeModalContent';
+import SubscribeModal from '@/_components/Home/SubscribeModal/SubscribeModal';
 import HomeContent from '@/_components/Home/HomeContent';
 import useModal from '@/_hooks/useModal';
 import { myStyle } from '@/_styles/vars.css';
@@ -23,9 +22,7 @@ export default function Home() {
     <QueryClientProvider client={client}>
       <div className={myStyle}>
         <HomeContent openModal={handleModalOpen} />
-        <BaseModal isModalOpen={isModalOpen} handleModalClose={handleModalClose}>
-          <SubscribeModalContent />
-        </BaseModal>
+        <SubscribeModal isOpen={isModalOpen} closeModal={handleModalClose} />
         <SecretModalTrigger />
       </div>
     </QueryClientProvider>

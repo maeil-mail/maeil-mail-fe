@@ -1,67 +1,44 @@
 import { style } from '@vanilla-extract/css';
-import { background1, borderColor1, text1 } from '@/_styles/vars.css';
+import { primary, text1 } from '@/_styles/vars.css';
 
 export const radioContainer = style({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '2rem',
+  justifyContent: 'center',
 });
 
-export const hiddenRadio = style({
-  display: 'none',
-  background: 'none',
-  color: text1,
-  padding: '1rem',
-  fontSize: '1.8rem',
-  minHeight: '3rem',
-  borderRadius: '1rem',
-});
-
-export const customRadio = style({
-  position: 'relative',
-  paddingLeft: '2rem',
+export const radio = style({
+  appearance: 'none',
   cursor: 'pointer',
-  fontSize: '1.6rem',
-  userSelect: 'none',
-  '::before': {
-    content: '',
-    position: 'absolute',
-    left: '0',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '2rem',
-    height: '2rem',
-    border: `0.01rem solid ${borderColor1}`,
-    borderRadius: '0.2rem',
-    background: background1,
-  },
+  backgroundColor: 'rgba(187, 187, 187, 0.2)',
+  width: '1.8rem',
+  height: '1.8rem',
+  margin: 0,
+  border: '1px solid rgba(136, 136, 136, 0.2)',
+  borderRadius: '30px',
   selectors: {
-    [`${hiddenRadio}:checked + &::before`]: {
-      backgroundColor: background1,
-      border: `0.01rem solid ${borderColor1}`,
+    '&:checked': {
+      backgroundColor: 'white', // 체크 시 내부 원 색상
+      border: `5px solid ${primary}`, // 라인과 원 사이의 색상
+      // boxShadow: '0 0 0 1px #111', // 라인
     },
   },
 });
 
-export const checkIcon = style({
-  position: 'absolute',
-  stroke: text1,
-  left: '0.1rem',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  display: 'none',
-  width: '2rem',
-  height: '2rem',
-  selectors: {
-    [`${hiddenRadio}:checked + ${customRadio} &`]: {
-      display: 'block',
-    },
-  },
+export const label = style({
+  position: 'relative',
+  cursor: 'pointer',
 });
 
-export const selectText = style({
+export const labelText = style({
   margin: '0 1rem',
-  fontSize: '1.8rem',
-  color: text1,
+  textAlign: 'center',
+  fontWeight: 500,
+  fontSize: '1.6rem',
+  color: '#888888',
+});
+
+export const selected = style({
+  color: primary,
 });

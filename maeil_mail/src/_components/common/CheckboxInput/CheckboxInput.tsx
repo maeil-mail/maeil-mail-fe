@@ -1,11 +1,4 @@
-import {
-  checkboxContainer,
-  customCheckbox,
-  hiddenCheckbox,
-  checkIcon,
-  selectText,
-} from './checkboxInput.css';
-import CheckIcon from '@/_assets/images/check.svg';
+import { checkboxContainer, selectText, checkbox } from './checkboxInput.css';
 import { myStyle } from '@/_styles/vars.css';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
@@ -20,12 +13,11 @@ export default function CheckboxInput({ text, isSelected, ...props }: CheckboxIn
       <input
         type="checkbox"
         id={String(text)}
-        className={hiddenCheckbox}
+        className={checkbox}
         checked={isSelected}
         {...props}
       />
-      <label htmlFor={String(text)} className={customCheckbox}>
-        <CheckIcon className={`${checkIcon} ${myStyle}`} />
+      <label htmlFor={String(text)}>
         <span className={`${selectText} ${myStyle}`}>{text}</span>
       </label>
     </div>

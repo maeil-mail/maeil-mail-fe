@@ -1,10 +1,10 @@
 import { styleVariants, style } from '@vanilla-extract/css';
-import { text1, text3, borderColor1, background2 } from '@/_styles/vars.css';
+import { text1, text3, borderColor1, primary } from '@/_styles/vars.css';
 
 export const buttonStyle = styleVariants({
   default: { background: 'none', color: text1 },
   border: { background: 'none', border: `0.1rem solid ${borderColor1}`, color: text1 },
-  primary: { background: background2, border: `0.1rem solid ${borderColor1}`, color: text3 },
+  primary: { background: primary, color: 'white' },
 });
 
 export const baseButtonStyle = style({
@@ -12,10 +12,12 @@ export const baseButtonStyle = style({
   cursor: 'pointer',
   transition: 'opacity 0.3s ease',
   fontFamily: 'BMHANNAAir',
-  padding: '1rem',
-  fontSize: '2rem',
+  padding: '1.4rem',
+  fontSize: '1.6rem',
+  fontWeight: 600,
+  width: '100%',
   ':hover': {
-    opacity: '0.7',
+    opacity: '0.9',
   },
 });
 

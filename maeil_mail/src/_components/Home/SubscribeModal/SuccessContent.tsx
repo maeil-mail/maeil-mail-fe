@@ -1,7 +1,7 @@
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 import { useRouter } from 'next/navigation';
-import Button from '../../Button/Button';
 import { successText, container } from './successContent.css';
+import Button from '@/_components/common/Button/Button';
 
 export default function SuccessContent() {
   const router = useRouter();

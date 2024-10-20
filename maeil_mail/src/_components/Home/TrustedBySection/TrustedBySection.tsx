@@ -26,7 +26,7 @@ export default function TrustedBy() {
   return (
     <section className={trustedBySection}>
       <h2 className={trustedByHeading}>
-        앞으로 유수의 기업에 취업할 예정인
+        앞으로 유수의 기업에 합격할 예정인
         <br />
         개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다 🫰🏻
       </h2>

@@ -6,3 +6,7 @@ export const container = style({
   alignItems: 'center',
   flexDirection: 'column',
 });
+
+export const minimumPadding = style({
+  padding: '0 1.6rem',
+});
