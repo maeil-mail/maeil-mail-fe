@@ -43,7 +43,11 @@ export default function VerifyEmailInput({
           </div>
         </div>
       )}
-      <Button variant="primary" disabled={isVerifyingPending} onClick={handleVerifyEmail}>
+      <Button
+        variant="primary"
+        disabled={isVerifyingPending || !isValidEmail}
+        onClick={handleVerifyEmail}
+      >
         확인
       </Button>
     </div>
