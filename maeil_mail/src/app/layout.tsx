@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { MSWComponent } from '@/_mocks/MSWComponent';
-import MainWrapper from '@/_components/common/Wrapper/MainWrapper';
-import ContentWrapper from '@/_components/common/Wrapper/ContentWrapper';
-import ToastContainer from '@/_components/common/Toast/ToastContainer';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
