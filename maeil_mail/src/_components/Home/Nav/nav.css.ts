@@ -20,9 +20,7 @@ export const innerWrapper = style({
 });
 
 export const logo = style({
-  fontSize: '1.5rem',
-  color: primary,
-  fontWeight: 500,
+  height: '2.4rem',
 });
 
 export const subscribeButton = style({

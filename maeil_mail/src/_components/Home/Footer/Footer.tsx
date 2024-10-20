@@ -1,11 +1,12 @@
-import { container, innerWrapper, leftSide } from './footer.css';
+import { container, innerWrapper, leftSide, monoLogo } from './footer.css';
+import MonoLogo from '@/_assets/images/monoLogo.svg';
 
 export default function Footer() {
   return (
     <footer className={container}>
       <div className={innerWrapper}>
         <div className={leftSide}>
-          <p>매일메일</p>
+          <MonoLogo className={monoLogo} />
           <p>Copyright © 2024 매일메일</p>
           <p>All rights reserved.</p>
         </div>

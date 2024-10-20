@@ -6,6 +6,12 @@ export const trustedBySection = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '14rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      padding: '7rem 0 14rem 0',
+    },
+  },
 });
 
 export const trustedByHeading = style({
@@ -13,6 +19,12 @@ export const trustedByHeading = style({
   fontWeight: 600,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '2.4rem',
+    },
+  },
 });
 
 export const primaryColor = style({
@@ -20,10 +32,17 @@ export const primaryColor = style({
 });
 
 export const tickerWrapper = style({
-  width: '80vw',
+  width: '100vw',
+  maxWidth: '110rem',
   maskImage:
     'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
   fontSize: '6rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '5rem',
+    },
+  },
 });
 
 export const naverLogo = style({

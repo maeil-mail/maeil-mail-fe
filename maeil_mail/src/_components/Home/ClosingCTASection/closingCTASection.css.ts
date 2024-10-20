@@ -21,6 +21,7 @@ export const closingHeading = style({
   fontSize: '3rem',
   fontWeight: 600,
   textAlign: 'center',
+  letterSpacing: '-0.1rem',
 });
 
 export const closingCTAButton = style({
