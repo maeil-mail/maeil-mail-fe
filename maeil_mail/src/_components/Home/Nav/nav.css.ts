@@ -8,6 +8,7 @@ export const container = style({
   padding: '1.4rem 2rem',
   background: 'rgba(255, 255, 255, 0.6)',
   backdropFilter: 'saturate(180%) blur(3px)',
+  zIndex: 1,
 });
 
 export const innerWrapper = style({

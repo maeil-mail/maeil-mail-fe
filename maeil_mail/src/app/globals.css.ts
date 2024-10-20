@@ -10,7 +10,6 @@ import { text1, borderColor1, text2 } from '@/_styles/vars.css';
 
 globalStyle('*', {
   boxSizing: 'border-box',
-  color: '#2b2b2b',
   scrollbarWidth: 'none',
 });
 

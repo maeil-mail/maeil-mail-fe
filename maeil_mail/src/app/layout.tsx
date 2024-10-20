@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: '매일메일',
-  description: '매일 무작위의 면접 질문을 보내드리는 매일메일이에요',
+  title: '매일메일 - 기술 면접 질문 구독 서비스',
+  description: '기술 면접 질문을 매일매일 메일로 보내드릴게요!',
 };
 
 export default function RootLayout({

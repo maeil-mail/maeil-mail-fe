@@ -1,0 +1,16 @@
+import { container, innerWrapper, leftSide } from './footer.css';
+
+export default function Footer() {
+  return (
+    <footer className={container}>
+      <div className={innerWrapper}>
+        <div className={leftSide}>
+          <p>매일메일</p>
+          <p>Copyright © 2024 매일메일</p>
+          <p>All rights reserved.</p>
+        </div>
+        <div>Contact: team.maeilmail@gmail.com</div>
+      </div>
+    </footer>
+  );
+}
