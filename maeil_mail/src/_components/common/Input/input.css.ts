@@ -1,7 +1,8 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { text1 } from '@/_styles/vars.css';
+import { primary, text1 } from '@/_styles/vars.css';
 
 export const container = style({
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -23,12 +24,19 @@ export const inputStyle = styleVariants({
     borderRadius: '1rem',
   },
   primary: {
-    background: 'none',
+    backgroundColor: 'rgba(0, 168, 107, 0.08)',
     color: text1,
-    padding: '1rem',
-    fontSize: '1.8rem',
+    padding: '1.2rem',
+    fontSize: '1.6rem',
     minHeight: '3rem',
     borderRadius: '1rem',
+    border: '0.5px solid rgba(135, 135, 135, 0.27)',
+
+    selectors: {
+      '&::placeholder': {
+        color: 'rgba(153, 153, 153, 0.55)',
+      },
+    },
   },
   underLine: {
     border: 'none',
@@ -55,6 +63,9 @@ export const dangerStyle = style({
 });
 
 export const errorText = style({
+  position: 'absolute',
+  bottom: '-2.2rem',
+  left: '1rem',
   color: 'red',
   textAlign: 'center',
   marginTop: '1rem',

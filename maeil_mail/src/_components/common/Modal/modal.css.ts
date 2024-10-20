@@ -17,16 +17,9 @@ export const container = style({
     'screen and (max-width: 853px)': {},
     'screen and (max-width: 820px)': {
       width: '100%',
+      position: 'absolute',
+      bottom: '0',
     },
-    'screen and (max-width: 768px)': {},
-    'screen and (max-width: 540px)': {},
-    'screen and (max-width: 430px)': {},
-    'screen and (max-width: 414px)': {},
-    'screen and (max-width: 412px)': {},
-    'screen and (max-width: 390px)': {},
-    'screen and (max-width: 375px)': {},
-    'screen and (max-width: 360px)': {},
-    'screen and (max-width: 344px)': {},
   },
 });
 

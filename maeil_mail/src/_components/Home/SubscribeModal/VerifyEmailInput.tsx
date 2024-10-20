@@ -1,8 +1,13 @@
-import Button from '../../Button/Button';
-import Input from '../../Input/Input';
-import { categoryText, inputWrapper } from './subscribeModalContent.css';
+import Button from '@/_components/common/Button/Button';
+import Input from '@/_components/common/Input/Input';
+import {
+  categoryText,
+  categoryWrapper,
+  emailInputWrapper,
+  inputWrapper,
+} from './subscribeModalContent.css';
 import { ChangeEventHandler } from 'react';
-import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '@/_components/common/LoadingSpinner/LoadingSpinner';
 
 interface VerifyEmailInputProps {
   isValidEmail: boolean;
@@ -20,28 +25,27 @@ export default function VerifyEmailInput({
   isVerifyingPending = true,
 }: VerifyEmailInputProps) {
   return (
-    <>
+    <div className={emailInputWrapper}>
       {isVerifyingPending ? (
         <LoadingSpinner />
       ) : (
-        <>
+        <div className={categoryWrapper}>
           <p className={categoryText}>이메일</p>
           <div className={inputWrapper}>
             <Input
-              variant="underLine"
+              variant="primary"
               isError={!isValidEmail}
-              placeholder="받으실 메일을 입력해주세요!"
-              errorMessage="유효하지 않은 이메일이에요!"
+              placeholder="johndoe@gmail.com"
+              errorMessage="유효하지 않은 이메일입니다."
               onChange={handleEmail}
               value={email}
             />
-
-            <Button variant="border" disabled={isVerifyingPending} onClick={handleVerifyEmail}>
-              인증
-            </Button>
-          </div>{' '}
-        </>
+          </div>
+        </div>
       )}
-    </>
+      <Button variant="primary" disabled={isVerifyingPending} onClick={handleVerifyEmail}>
+        확인
+      </Button>
+    </div>
   );
 }

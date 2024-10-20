@@ -59,6 +59,7 @@ const useSubscribe = () => {
     isValidEmail,
     isAgreed,
     isVerifyingPending,
+    category,
   };
 };
 

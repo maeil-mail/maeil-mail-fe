@@ -8,7 +8,7 @@ interface MetaTagProps {
 }
 
 const DEPLOY_URL = 'https://maeil-mail.vercel.app';
-const DEFAULT_TITLE = '매일메일';
+const DEFAULT_TITLE = '매일메일 - 기술 면접 질문 구독 서비스';
 const DEFAULT_DESCRIPTION = '매일 면접 질문을 보내주는 서비스입니다.';
 const DEFAULT_IMAGE = `${DEPLOY_URL}/favicon.png`;
 

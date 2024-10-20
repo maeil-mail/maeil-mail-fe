@@ -1,14 +1,14 @@
+import { validateEmail } from '@/_utils/validateEmail';
 import { style } from '@vanilla-extract/css';
-import { background1, text1 } from '@/_styles/vars.css';
+import { background1, primary, text1 } from '@/_styles/vars.css';
 
 export const container = style({
   width: '37rem',
-  height: '50rem',
-  background: background1,
+  backgroundColor: 'white',
   position: 'relative',
   color: text1,
   borderRadius: '1rem',
-  padding: '2rem',
+  padding: '2.8rem 2rem',
   '@media': {
     'screen and (max-width: 1280px)': {},
     'screen and (max-width: 1024px)': {},
@@ -16,17 +16,13 @@ export const container = style({
     'screen and (max-width: 853px)': {},
     'screen and (max-width: 820px)': {
       width: '100%',
+      borderRadius: '1rem 0',
+      padding: '2.8rem 2rem 6rem 2rem',
     },
-    'screen and (max-width: 768px)': {},
-    'screen and (max-width: 540px)': {},
-    'screen and (max-width: 430px)': {},
-    'screen and (max-width: 414px)': {},
-    'screen and (max-width: 412px)': {},
-    'screen and (max-width: 390px)': {},
-    'screen and (max-width: 375px)': {},
-    'screen and (max-width: 360px)': {},
-    'screen and (max-width: 344px)': {},
   },
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '3.5rem',
 });
 
 export const successLayout = style({
@@ -36,47 +32,63 @@ export const successLayout = style({
 });
 
 export const title = style({
-  fontSize: '2.5rem',
-  fontWeight: 'bold',
+  fontSize: '2rem',
+  fontWeight: 500,
   textAlign: 'center',
-  marginBottom: '2rem',
+});
+
+export const emailInputWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '4rem',
+});
+
+export const categoryWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
 });
 
 export const categoryText = style({
-  fontSize: '2.3rem',
-  fontWeight: 'bold',
-  marginBottom: '2rem',
-  textAlign: 'center',
+  fontSize: '1.6rem',
+  fontWeight: 600,
+  color: '#888888',
+});
+
+export const inputSection = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '3.4rem',
 });
 
 export const radioWrapper = style({
   display: 'flex',
   justifyContent: 'space-around',
-  marginBottom: '2rem',
 });
 
 export const emailWrapper = style({
-  minWidth: '100%',
-  minHeight: '10rem',
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  alignItems: 'center',
+});
+
+export const verificationSection = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.6rem',
+});
+
+export const verificationNoti = style({
+  fontSize: '1.6rem',
+  color: primary,
+  textAlign: 'center',
 });
 
 export const inputWrapper = style({
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  minHeight: '7rem',
   width: '100%',
 });
 
 export const buttonWrapper = style({
   display: 'flex',
   justifyContent: 'center',
-  position: 'absolute',
-  bottom: '10%',
-  right: 0,
-  left: 0,
 });

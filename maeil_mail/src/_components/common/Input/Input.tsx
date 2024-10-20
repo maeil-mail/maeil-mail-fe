@@ -29,8 +29,7 @@ export default function Input({
     ${sizeStyle[size]} 
     ${myStyle} 
     ${baseInputStyle} 
-    ${className ? className : ''} 
-    ${isError && dangerStyle}`;
+    ${className ? className : ''} `;
 
   return (
     <div className={container}>

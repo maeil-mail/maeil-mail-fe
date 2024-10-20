@@ -13,8 +13,7 @@ export const mainWrapper = style({
 });
 
 export const contentWrapper = style({
-  width: '85%',
-  margin: '0 auto',
+  width: '70%',
   height: 'auto',
   paddingBottom: '4rem',
   display: 'flex',
