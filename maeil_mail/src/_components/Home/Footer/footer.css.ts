@@ -25,3 +25,7 @@ export const leftSide = style({
   flexDirection: 'column',
   gap: '0.5rem',
 });
+
+export const contactText = style({
+  display: 'flex',
+});
