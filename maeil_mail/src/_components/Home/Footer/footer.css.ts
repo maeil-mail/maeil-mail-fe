@@ -9,6 +9,11 @@ export const container = style({
   color: '#9BA1A5',
 });
 
+export const monoLogo = style({
+  height: '1.8rem',
+  width: 'fit-content',
+});
+
 export const innerWrapper = style({
   width: '80%',
   display: 'flex',

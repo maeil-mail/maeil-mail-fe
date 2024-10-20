@@ -3,7 +3,6 @@ import { style } from '@vanilla-extract/css';
 
 export const heroSection = style({
   width: '100%',
-  height: '77rem',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -13,7 +12,7 @@ export const heroSection = style({
     rgba(0, 168, 107, 0.1) 100%
   )`,
 
-  padding: '0 1.6rem',
+  padding: '20rem 1.6rem',
 });
 
 export const heroSectionInnerWrapper = style({
@@ -24,20 +23,32 @@ export const heroSectionInnerWrapper = style({
   margin: '0 auto',
 });
 
-export const heroTypo = style({
-  fontSize: '2.4rem',
-  textAlign: 'center',
-  color: '#888888',
-  marginTop: '2rem',
-  letterSpacing: '-0.05rem',
-});
-
 export const heroHeading = style({
   fontSize: '5.5rem',
   textAlign: 'center',
   fontWeight: 600,
   letterSpacing: '-2.6px',
   color: '#2b2b2b',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '4rem',
+    },
+  },
+});
+
+export const heroTypo = style({
+  fontSize: '2.4rem',
+  textAlign: 'center',
+  color: '#888888',
+  marginTop: '2rem',
+  letterSpacing: '-0.05rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '2rem',
+    },
+  },
 });
 
 export const heroButton = style({
@@ -54,5 +65,11 @@ export const heroButton = style({
   transition: 'transform 0.4s ease-in-out',
   ':hover': {
     transform: 'scale(1.03)',
+  },
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '1.8rem',
+    },
   },
 });

@@ -12,6 +12,12 @@ export const descriptionSectionInnerWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '14rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      gap: '10rem',
+    },
+  },
 });
 
 export const primaryColor = style({
@@ -22,6 +28,29 @@ export const descriptionSubSection = style({
   display: 'flex',
   gap: '13rem',
   alignItems: 'center',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      textAlign: 'center',
+      gap: '6rem',
+    },
+  },
+});
+
+export const subSection1 = style({
+  '@media': {
+    'screen and (max-width: 820px)': {
+      flexDirection: 'column',
+    },
+  },
+});
+
+export const subSection2 = style({
+  '@media': {
+    'screen and (max-width: 820px)': {
+      flexDirection: 'column-reverse',
+    },
+  },
 });
 
 export const descriptionSubSection1Left = style({
@@ -33,6 +62,12 @@ export const descriptionSubSection1Left = style({
 
 export const mailImage = style({
   width: '17.5rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '14rem',
+    },
+  },
 });
 
 export const mailExampleList = style({
@@ -54,12 +89,24 @@ export const mailExample = style({
 
 export const answerImage = style({
   width: '24rem',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '18rem',
+      marginLeft: '2.5rem',
+    },
+  },
 });
 
 export const descriptionHeading = style({
   fontSize: '4rem',
   letterSpacing: '-0.2rem',
   fontWeight: 600,
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '3rem',
+    },
+  },
 });
 
 export const descriptionTypo = style({
@@ -67,4 +114,10 @@ export const descriptionTypo = style({
   letterSpacing: '-0.05rem',
   color: '#888888',
   marginTop: '2rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '2rem',
+    },
+  },
 });

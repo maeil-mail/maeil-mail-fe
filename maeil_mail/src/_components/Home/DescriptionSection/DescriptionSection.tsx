@@ -12,13 +12,15 @@ import {
   mailExampleList,
   mailImage,
   primaryColor,
+  subSection1,
+  subSection2,
 } from './descriptionSection.css';
 
 export default function DescriptionSection() {
   return (
     <section className={descriptionSection}>
       <div className={descriptionSectionInnerWrapper}>
-        <div className={descriptionSubSection}>
+        <div className={`${descriptionSubSection} ${subSection1}`}>
           <div className={descriptionSubSection1Left}>
             <MailImage className={mailImage} />
             <div className={mailExampleList}>
@@ -42,7 +44,7 @@ export default function DescriptionSection() {
             </p>
           </div>
         </div>
-        <div className={descriptionSubSection}>
+        <div className={`${descriptionSubSection} ${subSection2}`}>
           <div>
             <h2 className={descriptionHeading}>
               당연히 답안 자료도
