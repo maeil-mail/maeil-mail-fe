@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'maeil-mail',
     images: [
       {
-        url: 'https://dp71rnme1p14w.cloudfront.net/maeil-mail-og-image.png',
+        url: 'https://dp71rnme1p14w.cloudfront.net/maeil-mail-ogImage.png',
         width: 800,
         height: 600,
       },
