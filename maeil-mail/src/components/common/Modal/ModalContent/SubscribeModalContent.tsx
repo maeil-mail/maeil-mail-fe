@@ -55,7 +55,7 @@ export default function SubscribeModalContent() {
           <div className={emailWrapper}>
             {isSentEmail ? (
               <Txt center variant="large">
-                인증번호가 전송 되었어요! <br /> 하단에 인증번호를 입력해주세요.
+                인증번호가 전송되었어요! <br /> 하단에 인증번호를 입력해주세요.
               </Txt>
             ) : (
               <VerifyEmailInput
