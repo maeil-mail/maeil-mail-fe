@@ -50,7 +50,6 @@ export const inputStyle = styleVariants({
 });
 
 export const baseInputStyle = style({
-  fontFamily: 'BMHANNAAir',
   ':focus': {
     outline: 'none',
   },
