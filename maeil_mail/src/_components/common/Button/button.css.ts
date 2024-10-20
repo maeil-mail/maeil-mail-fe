@@ -1,5 +1,5 @@
 import { styleVariants, style } from '@vanilla-extract/css';
-import { text1, text3, borderColor1, primary } from '@/_styles/vars.css';
+import { text1, borderColor1, primary } from '@/_styles/vars.css';
 
 export const buttonStyle = styleVariants({
   default: { background: 'none', color: text1 },
@@ -11,7 +11,6 @@ export const baseButtonStyle = style({
   borderRadius: '0.8rem',
   cursor: 'pointer',
   transition: 'opacity 0.3s ease',
-  fontFamily: 'BMHANNAAir',
   padding: '1.4rem',
   fontSize: '1.6rem',
   fontWeight: 600,

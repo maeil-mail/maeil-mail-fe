@@ -1,9 +1,11 @@
+'use client';
+
 import { ReactNode, useState } from 'react';
-import { myStyle } from '@/styles/vars.css';
+import { myStyle } from '@/_styles/vars.css';
 import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
-import Txt from '@/components/common/Txt/Txt';
-import UpArrow from '@/components/common/Icon/UpArrow';
-import DownArrow from '@/components/common/Icon/DownArrow';
+import Txt from '@/_components/common/Txt/Txt';
+import UpArrow from '@/_components/common/Icon/UpArrow';
+import DownArrow from '@/_components/common/Icon/DownArrow';
 
 interface Content {
   title: string;

@@ -1,8 +1,11 @@
 import { style } from '@vanilla-extract/css';
-import { text1, background3 } from '@/styles/vars.css';
+import { text1, background3 } from '@/_styles/vars.css';
 
 export const container = style({
   color: text1,
+  margin: '0 auto',
+  marginTop: '5rem',
+  width: '85%',
 });
 
 export const mainWrapper = style({
@@ -15,7 +18,6 @@ export const wrapper = style({
   border: '0.1rem solid',
   marginBottom: '1rem',
   cursor: 'pointer',
-  background: background3,
 });
 
 export const titleWrapper = style({

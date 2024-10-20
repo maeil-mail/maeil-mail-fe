@@ -7,6 +7,8 @@ export const container = style({
   alignItems: 'center',
   flexDirection: 'column',
   height: '100vh',
+  width: '40%',
+  margin: '0 auto',
 });
 
 export const subText = style({
