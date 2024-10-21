@@ -1,15 +1,15 @@
-import { type ChangeEvent, useState, FormEvent } from 'react';
-import useCategory from '../useCategory';
-import { useMutation } from '@tanstack/react-query';
-import { postNewQuestion } from '@/_apis/api';
-import { CategoryEN } from '@/_types';
-import toast from '@/_utils/toast';
-import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/_constants/messages';
+import { type ChangeEvent, useState, FormEvent } from "react";
+import useCategory from "../useCategory";
+import { useMutation } from "@tanstack/react-query";
+import { postNewQuestion } from "@/_apis/api";
+import { CategoryEN } from "@/_types";
+import toast from "@/_utils/toast";
+import { PROGRESS_MESSAGE, ERROR_MESSAGE } from "@/_constants/messages";
 
 const useAddQuestion = () => {
   const { category, isValidCategory, handleCategory } = useCategory();
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   const { mutate: addNewQuestionMutation, isPending } = useMutation({
     mutationFn: postNewQuestion,
@@ -32,7 +32,7 @@ const useAddQuestion = () => {
   const handleAddNewQuestion = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValidCategory) {
-      toast.error('유효하지 않은 카테고리에요!');
+      toast.error("유효하지 않은 카테고리에요!");
       return;
     }
 

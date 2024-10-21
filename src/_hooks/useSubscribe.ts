@@ -1,12 +1,13 @@
-import { ERROR_MESSAGE } from '@/_constants/messages';
-import { CategoryEN } from '@/_types';
-import toast from '@/_utils/toast';
-import useSubscriptionMutation from './mutations/useSubscriptionMutation';
-import useVerifyMutation from './mutations/useVerifyMutation';
-import useCategory from './useCategory';
-import useConsent from './useConsent';
-import useEmail from './useEmail';
-import useVerificationNumber from './useVerificationNumber';
+import { ERROR_MESSAGE } from "@/_constants/messages";
+import { CategoryEN } from "@/_types";
+import toast from "@/_utils/toast";
+import useSubscriptionMutation from "./mutations/useSubscriptionMutation";
+import useVerifyMutation from "./mutations/useVerifyMutation";
+import useCategory from "./useCategory";
+import useConsent from "./useConsent";
+import useEmail from "./useEmail";
+import useVerificationNumber from "./useVerificationNumber";
+import useCategories from "./useCategories";
 
 const useSubscribe = () => {
   const {
@@ -15,18 +16,18 @@ const useSubscribe = () => {
     isPending: isSubscriptionPending,
   } = useSubscriptionMutation();
   const { email, handleEmail, isValidEmail } = useEmail();
-  const { category, isValidCategory, handleCategory } = useCategory();
+  const { categories, isValidCategories, handleCategories } = useCategories();
   const { verificationNumber, handleVerificationNumber, isValidVerificationNumber } =
     useVerificationNumber();
   const { isAgreed, handleConsent } = useConsent();
   const { isSentEmail, handleVerifyEmail, isVerifyingPending } = useVerifyMutation({
     email,
-    isValidCategory,
+    isValidCategories,
   });
-  const isAllValid = isValidCategory && isValidEmail && isValidVerificationNumber && isAgreed;
+  const isAllValid = isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
 
   const handleSubmitSubscription = () => {
-    if (!isValidCategory) {
+    if (!isValidCategories) {
       toast.error(ERROR_MESSAGE.invalid_category);
       return;
     }
@@ -38,7 +39,7 @@ const useSubscribe = () => {
 
     subscriptionMutation({
       email,
-      category: category as CategoryEN,
+      categories: categories as CategoryEN[],
       code: verificationNumber,
     });
   };
@@ -46,7 +47,7 @@ const useSubscribe = () => {
   return {
     isSubscriptionSuccess,
     isSubscriptionPending,
-    handleCategory,
+    handleCategories,
     handleVerificationNumber,
     verificationNumber,
     handleConsent,
@@ -59,7 +60,7 @@ const useSubscribe = () => {
     isValidEmail,
     isAgreed,
     isVerifyingPending,
-    category,
+    categories,
   };
 };
 

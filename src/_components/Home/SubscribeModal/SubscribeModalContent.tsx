@@ -1,4 +1,4 @@
-import { myStyle } from '@/_styles/vars.css';
+import { myStyle } from "@/_styles/vars.css";
 import {
   container,
   title,
@@ -11,22 +11,23 @@ import {
   categoryWrapper,
   verificationNoti,
   verificationSection,
-} from './subscribeModalContent.css';
-import RadioInput from '../../common/RadioInput/RadioInput';
-import Button from '../../common/Button/Button';
-import LoadingSpinner from '../../common/LoadingSpinner/LoadingSpinner';
-import VerifyEmailInput from './VerifyEmailInput';
-import Txt from '../../common/Txt/Txt';
-import CheckboxInput from '../../common/CheckboxInput/CheckboxInput';
-import Input from '../../common/Input/Input';
-import useSubscribe from '@/_hooks/useSubscribe';
-import SuccessContent from './SuccessContent';
+  categorySubtext,
+} from "./subscribeModalContent.css";
+import RadioInput from "../../common/RadioInput/RadioInput";
+import Button from "../../common/Button/Button";
+import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
+import VerifyEmailInput from "./VerifyEmailInput";
+import Txt from "../../common/Txt/Txt";
+import CheckboxInput from "../../common/CheckboxInput/CheckboxInput";
+import Input from "../../common/Input/Input";
+import useSubscribe from "@/_hooks/useSubscribe";
+import SuccessContent from "./SuccessContent";
 
 export default function SubscribeModalContent() {
   const {
     isSubscriptionSuccess,
     isSubscriptionPending,
-    handleCategory,
+    handleCategories,
     handleVerificationNumber,
     verificationNumber,
     handleConsent,
@@ -39,7 +40,7 @@ export default function SubscribeModalContent() {
     isValidEmail,
     isAgreed,
     isVerifyingPending,
-    category,
+    categories,
   } = useSubscribe();
 
   return (
@@ -51,19 +52,22 @@ export default function SubscribeModalContent() {
           <h2 className={title}>매일메일 구독</h2>
           <section className={inputSection}>
             <div className={categoryWrapper}>
-              <p className={categoryText}>분야</p>
+              <p className={categoryText}>
+                분야 <span className={categorySubtext}>*중복 선택 가능</span>
+              </p>
+
               <div className={radioWrapper}>
-                <RadioInput
-                  category="frontend"
+                <CheckboxInput
                   text="프론트엔드"
-                  isSelected={category === 'frontend'}
-                  onChange={handleCategory}
+                  value="frontend"
+                  isSelected={categories.includes("frontend")}
+                  onChange={handleCategories}
                 />
-                <RadioInput
-                  category="backend"
+                <CheckboxInput
                   text="백엔드"
-                  isSelected={category === 'backend'}
-                  onChange={handleCategory}
+                  value="backend"
+                  isSelected={categories.includes("backend")}
+                  onChange={handleCategories}
                 />
               </div>
             </div>
