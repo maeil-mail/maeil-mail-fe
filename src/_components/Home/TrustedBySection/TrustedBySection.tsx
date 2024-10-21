@@ -1,4 +1,4 @@
-import Ticker from 'framer-motion-ticker';
+import Ticker from "framer-motion-ticker";
 import {
   baeminLogo,
   baeminSmallFont,
@@ -9,6 +9,7 @@ import {
   coupangRed,
   coupangYellow,
   dangnLogo,
+  fingerHeartIcon,
   kakaoLogo,
   lineLogo,
   logoMargin,
@@ -19,7 +20,8 @@ import {
   tossLogo,
   trustedByHeading,
   trustedBySection,
-} from './trustedBySection.css';
+} from "./trustedBySection.css";
+import FingerHeartIcon from "@/_assets/images/fingerHeart.svg";
 
 const DURATION = 35;
 
@@ -29,7 +31,8 @@ export default function TrustedBy() {
       <h2 className={trustedByHeading}>
         앞으로 유수의 기업에 합격할 예정인
         <br />
-        개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다 🫰🏻
+        개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다{" "}
+        <FingerHeartIcon className={fingerHeartIcon} />
       </h2>
       <div className={tickerWrapper}>
         <Ticker duration={DURATION}>
@@ -48,7 +51,7 @@ export default function TrustedBy() {
           <p className={`${baeminLogo} ${logoMargin}`}>
             배달<span className={baeminSmallFont}>의</span>민족
           </p>
-          <p className={`${dangnLogo} ${logoMargin}`}>🥕당근</p>
+          <p className={`${dangnLogo} ${logoMargin}`}>당근</p>
           <p className={`${tossLogo} ${logoMargin}`}>toss</p>
         </Ticker>
       </div>
