@@ -1,4 +1,4 @@
-# 매일메일 - 기술 면접 질문 구독 서비스
+## 📮 매일메일 - 기술 면접 질문 구독 서비스
 
 <img width="1103" alt="스크린샷 2024-10-21 오후 7 58 23" src="https://github.com/user-attachments/assets/71e98867-1a98-4a16-8292-753ec2dab8c4">
 
