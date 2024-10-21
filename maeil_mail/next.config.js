@@ -41,6 +41,14 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'dp71rnme1p14w.cloudfront.net',
+      },
+    ],
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);
