@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { MSWComponent } from '@/_mocks/MSWComponent';
 import { Inter } from 'next/font/google';

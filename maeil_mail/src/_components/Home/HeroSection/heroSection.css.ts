@@ -13,6 +13,14 @@ export const heroSection = style({
   )`,
 
   padding: '20rem 1.6rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontWeight: 700,
+      fontSize: '3rem',
+      padding: '15rem 1.6rem',
+    },
+  },
 });
 
 export const heroSectionInnerWrapper = style({
@@ -27,27 +35,34 @@ export const heroHeading = style({
   fontSize: '5.5rem',
   textAlign: 'center',
   fontWeight: 600,
-  letterSpacing: '-2.6px',
+  letterSpacing: '-2.4px',
   color: '#2b2b2b',
 
   '@media': {
     'screen and (max-width: 820px)': {
       fontWeight: 700,
-      fontSize: '4rem',
+      letterSpacing: '-1.8px',
+      fontSize: '3.5rem',
+    },
+    'screen and (max-width: 375px)': {
+      fontSize: '3rem',
     },
   },
 });
 
 export const heroTypo = style({
   fontSize: '2.4rem',
-  textAlign: 'center',
   color: '#888888',
   marginTop: '2rem',
   letterSpacing: '-0.05rem',
+  textAlign: 'center',
+  wordBreak: 'keep-all',
 
   '@media': {
     'screen and (max-width: 820px)': {
+      width: '70%',
       fontSize: '2rem',
+      fontWeight: 600,
     },
   },
 });

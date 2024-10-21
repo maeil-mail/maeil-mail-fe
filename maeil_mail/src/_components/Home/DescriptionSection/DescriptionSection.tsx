@@ -54,7 +54,7 @@ export default function DescriptionSection() {
             <p className={descriptionTypo}>
               모르는 질문이라면 자료를 학습해
               <br />
-              기술 지식을 채울 수 있습니다.
+              꾸준히 기술 지식을 채울 수 있습니다.
             </p>
           </div>
           <div>

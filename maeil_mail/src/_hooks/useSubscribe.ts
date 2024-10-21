@@ -39,7 +39,7 @@ const useSubscribe = () => {
     subscriptionMutation({
       email,
       category: category as CategoryEN,
-      code: Number(verificationNumber),
+      code: verificationNumber,
     });
   };
 

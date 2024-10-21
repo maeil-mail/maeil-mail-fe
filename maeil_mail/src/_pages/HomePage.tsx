@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
     <QueryClientProvider client={client}>
-      <div style={{ minWidth: '480px' }} className={myStyle}>
+      <div className={myStyle}>
         <HomeContent openModal={handleModalOpen} />
         <SubscribeModal isOpen={isModalOpen} closeModal={handleModalClose} />
         <SecretModalTrigger />

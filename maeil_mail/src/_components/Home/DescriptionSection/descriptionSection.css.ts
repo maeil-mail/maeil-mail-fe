@@ -65,7 +65,7 @@ export const mailImage = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
-      width: '14rem',
+      width: '12rem',
     },
   },
 });
@@ -91,7 +91,7 @@ export const answerImage = style({
   width: '24rem',
   '@media': {
     'screen and (max-width: 820px)': {
-      width: '18rem',
+      width: '14rem',
       marginLeft: '2.5rem',
     },
   },
@@ -104,7 +104,7 @@ export const descriptionHeading = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
-      fontSize: '3rem',
+      fontSize: '2.8rem',
     },
   },
 });
@@ -117,6 +117,7 @@ export const descriptionTypo = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
+      textAlign: 'center',
       fontSize: '2rem',
     },
   },

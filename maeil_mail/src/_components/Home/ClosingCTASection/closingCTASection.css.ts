@@ -22,6 +22,12 @@ export const closingHeading = style({
   fontWeight: 600,
   textAlign: 'center',
   letterSpacing: '-0.1rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '2.5rem',
+    },
+  },
 });
 
 export const closingCTAButton = style({
