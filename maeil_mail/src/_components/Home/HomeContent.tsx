@@ -15,10 +15,8 @@ export default function HomeContent({ openModal }: HomeContentProps) {
     <div className={container}>
       <Nav onSubscribe={openModal} />
       <HeroSection onCTA={openModal} />
-      <div className={minimumPadding}>
-        <DescriptionSection />
-        <TrustedBy />
-      </div>
+      <DescriptionSection />
+      <TrustedBy />
       <ClosingCTA onCTA={openModal} />
       <Footer />
     </div>

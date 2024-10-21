@@ -1,6 +1,5 @@
-import { validateEmail } from '@/_utils/validateEmail';
 import { style } from '@vanilla-extract/css';
-import { background1, primary, text1 } from '@/_styles/vars.css';
+import { primary, text1 } from '@/_styles/vars.css';
 
 export const container = style({
   width: '37rem',
@@ -9,20 +8,17 @@ export const container = style({
   color: text1,
   borderRadius: '1rem',
   padding: '2.8rem 2rem',
-  '@media': {
-    'screen and (max-width: 1280px)': {},
-    'screen and (max-width: 1024px)': {},
-    'screen and (max-width: 912px)': {},
-    'screen and (max-width: 853px)': {},
-    'screen and (max-width: 820px)': {
-      width: '100%',
-      borderRadius: '1rem 0',
-      padding: '2.8rem 2rem 6rem 2rem',
-    },
-  },
   display: 'flex',
   flexDirection: 'column',
   gap: '3.5rem',
+  '@media': {
+    'screen and (max-width: 820px)': {
+      width: '100%',
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+      padding: '2.8rem 2rem 6rem 2rem',
+    },
+  },
 });
 
 export const successLayout = style({
@@ -32,8 +28,8 @@ export const successLayout = style({
 });
 
 export const title = style({
-  fontSize: '2rem',
-  fontWeight: 500,
+  fontSize: '1.6rem',
+  fontWeight: 600,
   textAlign: 'center',
 });
 

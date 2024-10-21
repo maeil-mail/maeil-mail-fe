@@ -5,7 +5,7 @@ export const trustedBySection = style({
   padding: '14rem 0 24rem 0',
   display: 'flex',
   flexDirection: 'column',
-  gap: '14rem',
+  gap: '10rem',
 
   '@media': {
     'screen and (max-width: 820px)': {
@@ -22,7 +22,9 @@ export const trustedByHeading = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
-      fontSize: '2.4rem',
+      fontWeight: 700,
+      letterSpacing: '-0.1rem',
+      fontSize: '2rem',
     },
   },
 });

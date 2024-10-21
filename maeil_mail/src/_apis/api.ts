@@ -9,7 +9,7 @@ export const postSubscribe = async ({
 }: {
   email: string;
   category: CategoryEN;
-  code: number;
+  code: string;
 }) => {
   const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
     method: 'POST',
@@ -24,7 +24,7 @@ export const postSubscribe = async ({
   });
 
   if (!response.ok) {
-    throw new Error('에러~');
+    throw new Error('에러');
   }
 };
 
@@ -48,7 +48,7 @@ export const postNewQuestion = async ({ title, category, content }: PostNewQuest
   });
 
   if (!response.ok) {
-    throw new Error('에러~');
+    throw new Error('에러가 발생했습니다.');
   }
 };
 
