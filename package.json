@@ -23,7 +23,7 @@
     "@vanilla-extract/css": "^1.15.5",
     "classnames": "^2.5.1",
     "framer-motion-ticker": "^1.0.19",
-    "next": "14.0.2",
+    "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
