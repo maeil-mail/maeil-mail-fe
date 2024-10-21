@@ -20,12 +20,12 @@ export const innerWrapper = style({
 });
 
 export const logo = style({
-  height: '2.4rem',
+  height: '2.8rem',
 });
 
 export const subscribeButton = style({
   color: 'white',
-  fontSize: '1.3rem',
+  fontSize: '1.4rem',
   backgroundColor: primary,
   padding: '1rem 1rem',
   borderRadius: '0.6rem',

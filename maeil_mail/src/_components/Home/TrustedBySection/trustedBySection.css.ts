@@ -45,10 +45,19 @@ export const tickerWrapper = style({
   },
 });
 
+export const logoMargin = style({
+  marginRight: '8rem',
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      marginRight: '4rem',
+    },
+  },
+});
+
 export const naverLogo = style({
   fontWeight: 900,
   color: '#03C75A',
-  marginRight: '8rem',
   letterSpacing: '-0.3rem',
 });
 export const naverLetterA = style({ letterSpacing: '-1.2rem' });
@@ -56,18 +65,16 @@ export const naverLetterA = style({ letterSpacing: '-1.2rem' });
 export const kakaoLogo = style({
   fontWeight: 300,
   color: '#FFCD00',
-  marginRight: '8rem',
 });
 
 export const lineLogo = style({
   fontWeight: 800,
   color: '#00C300',
-  marginRight: '8rem',
 });
+
 export const coupangLogo = style({
   fontWeight: 500,
   letterSpacing: '-0.6rem',
-  marginRight: '5rem',
 });
 export const coupangBrown = style({ color: '#521110' });
 export const coupangRed = style({ color: '#D73126' });
@@ -78,20 +85,28 @@ export const coupangBlue = style({ color: '#4FA3D9' });
 export const baeminLogo = style({
   fontWeight: 700,
   color: '#000000',
-  marginRight: '8rem',
   letterSpacing: '-0.2rem',
 });
-export const baeminSmallFont = style({ fontSize: '4rem', fontWeight: 800 });
+
+export const baeminSmallFont = style({
+  fontSize: '4rem',
+  fontWeight: 800,
+
+  '@media': {
+    'screen and (max-width: 820px)': {
+      fontSize: '3rem',
+    },
+  },
+});
 
 export const dangnLogo = style({
   fontWeight: 800,
   color: '#FE6F0F',
-  marginRight: '8rem',
   letterSpacing: '-0.2rem',
 });
+
 export const tossLogo = style({
   fontWeight: 700,
   color: '#0064FF',
-  marginRight: '8rem',
   letterSpacing: '-0.2rem',
 });

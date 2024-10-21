@@ -11,6 +11,7 @@ import {
   dangnLogo,
   kakaoLogo,
   lineLogo,
+  logoMargin,
   naverLetterA,
   naverLogo,
   primaryColor,
@@ -20,7 +21,7 @@ import {
   trustedBySection,
 } from './trustedBySection.css';
 
-const DURATION = 30;
+const DURATION = 35;
 
 export default function TrustedBy() {
   return (
@@ -32,23 +33,23 @@ export default function TrustedBy() {
       </h2>
       <div className={tickerWrapper}>
         <Ticker duration={DURATION}>
-          <p className={naverLogo}>
+          <p className={`${naverLogo} ${logoMargin}`}>
             N<span className={naverLetterA}>A</span>VER
           </p>
-          <p className={kakaoLogo}>kakao</p>
-          <p className={lineLogo}>LINE</p>
-          <p className={coupangLogo}>
+          <p className={`${kakaoLogo} ${logoMargin}`}>kakao</p>
+          <p className={`${lineLogo} ${logoMargin}`}>LINE</p>
+          <p className={`${coupangLogo} ${logoMargin}`}>
             <span className={coupangBrown}>cou</span>
             <span className={coupangRed}>p</span>
             <span className={coupangYellow}>a</span>
             <span className={coupangGreen}>n</span>
             <span className={coupangBlue}>g</span>
           </p>
-          <p className={baeminLogo}>
+          <p className={`${baeminLogo} ${logoMargin}`}>
             배달<span className={baeminSmallFont}>의</span>민족
           </p>
-          <p className={dangnLogo}>🥕당근</p>
-          <p className={tossLogo}>toss</p>
+          <p className={`${dangnLogo} ${logoMargin}`}>🥕당근</p>
+          <p className={`${tossLogo} ${logoMargin}`}>toss</p>
         </Ticker>
       </div>
     </section>
