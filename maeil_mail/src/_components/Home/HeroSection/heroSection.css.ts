@@ -32,6 +32,7 @@ export const heroHeading = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
+      fontWeight: 700,
       fontSize: '4rem',
     },
   },
@@ -56,8 +57,8 @@ export const heroButton = style({
   color: 'white',
   borderRadius: '4rem',
   padding: '2rem 4rem',
-  fontSize: '2.4rem',
-  marginTop: '4rem',
+  fontSize: '2.6rem',
+  marginTop: '5rem',
   width: 'fit-content',
   fontWeight: 600,
   boxShadow: '0px 5.5px 25px 0.4px rgba(0, 168, 107, 0.3)',
@@ -69,7 +70,8 @@ export const heroButton = style({
 
   '@media': {
     'screen and (max-width: 820px)': {
-      fontSize: '1.8rem',
+      fontSize: '2.2rem',
+      fontWeight: 700,
     },
   },
 });

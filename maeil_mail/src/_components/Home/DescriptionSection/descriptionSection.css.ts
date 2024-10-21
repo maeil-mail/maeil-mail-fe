@@ -77,13 +77,13 @@ export const mailExampleList = style({
 });
 
 export const mailExample = style({
-  width: '27rem',
+  width: '30rem',
   boxShadow: '0px 0.1px 2px 0px #bdbdbd',
   borderRadius: '3rem',
   padding: '1rem 0',
   textAlign: 'center',
-  fontSize: '1.2rem',
-  color: '#bdbdbd',
+  fontSize: '1.3rem',
+  color: '#888888',
   fontStyle: 'italic',
 });
 
