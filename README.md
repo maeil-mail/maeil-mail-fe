@@ -1,12 +1,12 @@
 ## 📮 매일메일 - 기술 면접 질문 구독 서비스
 
-<img width="1103" alt="스크린샷 2024-10-21 오후 7 58 23" src="https://github.com/user-attachments/assets/71e98867-1a98-4a16-8292-753ec2dab8c4">
+<img width="949" alt="스크린샷 2024-10-22 오후 2 03 36" src="https://github.com/user-attachments/assets/66206b1c-1556-4f66-9a46-3311b2f55abb">
 
-<img width="1099" alt="스크린샷 2024-10-21 오후 7 59 18" src="https://github.com/user-attachments/assets/e33228d5-857a-40dd-8450-aff5a07a5495">
+<img width="948" alt="스크린샷 2024-10-22 오후 2 04 11" src="https://github.com/user-attachments/assets/632f18f6-6842-46b1-bec8-070398318758">
 
-<img width="1102" alt="스크린샷 2024-10-21 오후 7 59 43" src="https://github.com/user-attachments/assets/1f38950f-0488-4d58-821b-af6e1fd78a8e">
+<img width="955" alt="스크린샷 2024-10-22 오후 2 05 00" src="https://github.com/user-attachments/assets/dd76e163-b568-499e-8ad2-4e14729166c9">
 
-<img width="967" alt="스크린샷 2024-10-21 오후 8 01 53" src="https://github.com/user-attachments/assets/8fd838aa-1bb7-4004-a299-9713a3c0f68b">
+<img width="957" alt="스크린샷 2024-10-22 오후 2 05 27" src="https://github.com/user-attachments/assets/b4a90df6-49ca-4482-a066-2a4d4e222e9b">
 
 ### 🔍 어떤 서비스인가요?
 
