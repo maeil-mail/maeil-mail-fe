@@ -2,10 +2,11 @@ import { primary } from "@/_styles/vars.css";
 import { style } from "@vanilla-extract/css";
 
 export const trustedBySection = style({
-  padding: "14rem 0 24rem 0",
+  padding: "14rem 0 14rem 0",
   display: "flex",
   flexDirection: "column",
   gap: "10rem",
+  alignItems: "center",
 
   "@media": {
     "screen and (max-width: 820px)": {
@@ -52,77 +53,21 @@ export const tickerWrapper = style({
   maxWidth: "110rem",
   maskImage:
     "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)",
-  fontSize: "6rem",
+
+  "@media": {
+    "screen and (max-width: 820px)": {},
+  },
+});
+
+export const companyLogo = style({
+  margin: "auto 8rem auto 0",
+  height: "5rem",
 
   "@media": {
     "screen and (max-width: 820px)": {
-      fontSize: "5rem",
+      margin: "auto 6rem auto 0",
     },
   },
 });
 
-export const logoMargin = style({
-  marginRight: "8rem",
-
-  "@media": {
-    "screen and (max-width: 820px)": {
-      marginRight: "4rem",
-    },
-  },
-});
-
-export const naverLogo = style({
-  fontWeight: 900,
-  color: "#03C75A",
-  letterSpacing: "-0.3rem",
-});
-export const naverLetterA = style({ letterSpacing: "-1.2rem" });
-
-export const kakaoLogo = style({
-  fontWeight: 300,
-  color: "#FFCD00",
-});
-
-export const lineLogo = style({
-  fontWeight: 800,
-  color: "#00C300",
-});
-
-export const coupangLogo = style({
-  fontWeight: 500,
-  letterSpacing: "-0.6rem",
-});
-export const coupangBrown = style({ color: "#521110" });
-export const coupangRed = style({ color: "#D73126" });
-export const coupangYellow = style({ color: "#E99923" });
-export const coupangGreen = style({ color: "#92BA3E" });
-export const coupangBlue = style({ color: "#4FA3D9" });
-
-export const baeminLogo = style({
-  fontWeight: 700,
-  color: "#000000",
-  letterSpacing: "-0.2rem",
-});
-
-export const baeminSmallFont = style({
-  fontSize: "4rem",
-  fontWeight: 800,
-
-  "@media": {
-    "screen and (max-width: 820px)": {
-      fontSize: "3rem",
-    },
-  },
-});
-
-export const dangnLogo = style({
-  fontWeight: 800,
-  color: "#FE6F0F",
-  letterSpacing: "-0.2rem",
-});
-
-export const tossLogo = style({
-  fontWeight: 700,
-  color: "#0064FF",
-  letterSpacing: "-0.2rem",
-});
+export const lineLogo = style({ height: "12rem" });

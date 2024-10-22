@@ -1,27 +1,21 @@
 import Ticker from "framer-motion-ticker";
 import {
-  baeminLogo,
-  baeminSmallFont,
-  coupangBlue,
-  coupangBrown,
-  coupangGreen,
-  coupangLogo,
-  coupangRed,
-  coupangYellow,
-  dangnLogo,
   fingerHeartIcon,
-  kakaoLogo,
+  companyLogo,
   lineLogo,
-  logoMargin,
-  naverLetterA,
-  naverLogo,
   primaryColor,
   tickerWrapper,
-  tossLogo,
   trustedByHeading,
   trustedBySection,
 } from "./trustedBySection.css";
 import FingerHeartIcon from "@/_assets/images/fingerHeart.svg";
+import NaverLogo from "@/_assets/images/naver.svg";
+import KakaoLogo from "@/_assets/images/kakao.svg";
+import LineLogo from "@/_assets/images/line.svg";
+import CoupangLogo from "@/_assets/images/coupang.svg";
+import BaeminLogo from "@/_assets/images/baemin.svg";
+import DangnLogo from "@/_assets/images/dangn.svg";
+import TossLogo from "@/_assets/images/toss.svg";
 
 const DURATION = 35;
 
@@ -36,23 +30,13 @@ export default function TrustedBy() {
       </h2>
       <div className={tickerWrapper}>
         <Ticker duration={DURATION}>
-          <p className={`${naverLogo} ${logoMargin}`}>
-            N<span className={naverLetterA}>A</span>VER
-          </p>
-          <p className={`${kakaoLogo} ${logoMargin}`}>kakao</p>
-          <p className={`${lineLogo} ${logoMargin}`}>LINE</p>
-          <p className={`${coupangLogo} ${logoMargin}`}>
-            <span className={coupangBrown}>cou</span>
-            <span className={coupangRed}>p</span>
-            <span className={coupangYellow}>a</span>
-            <span className={coupangGreen}>n</span>
-            <span className={coupangBlue}>g</span>
-          </p>
-          <p className={`${baeminLogo} ${logoMargin}`}>
-            배달<span className={baeminSmallFont}>의</span>민족
-          </p>
-          <p className={`${dangnLogo} ${logoMargin}`}>당근</p>
-          <p className={`${tossLogo} ${logoMargin}`}>toss</p>
+          <NaverLogo className={companyLogo} />
+          <KakaoLogo className={companyLogo} />
+          <LineLogo className={`${companyLogo} ${lineLogo}`} />
+          <CoupangLogo className={companyLogo} />
+          <BaeminLogo className={companyLogo} />
+          <DangnLogo className={companyLogo} />
+          <TossLogo className={companyLogo} />
         </Ticker>
       </div>
     </section>

@@ -3,7 +3,6 @@ import { CategoryEN } from "@/_types";
 import toast from "@/_utils/toast";
 import useSubscriptionMutation from "./mutations/useSubscriptionMutation";
 import useVerifyMutation from "./mutations/useVerifyMutation";
-import useCategory from "./useCategory";
 import useConsent from "./useConsent";
 import useEmail from "./useEmail";
 import useVerificationNumber from "./useVerificationNumber";
