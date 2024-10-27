@@ -7,6 +7,8 @@ import DetailCategory from "@/_components/QuestionDetail/DetailCategory";
 import DetailAnswer from "@/_components/QuestionDetail/DetailAnswer";
 import { getDetailQuestion } from "@/_apis/api";
 import { Metadata } from "next";
+import QuestionDetailNav from "@/_components/QuestionDetail/QuestionDetailNav";
+import Footer from "@/_components/common/Footer/Footer";
 
 type QuestionDetailPageProps = {
   params: { slug: string };
@@ -29,15 +31,17 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return (
-    <div className={`${pageLayout} ${myStyle}`}>
-      <div className={detailHeaderWrapper}>
-        <DetailTitle title={detailQuestion.title} />
-        <Divider variant="default" />
-        <DetailCategory category={detailQuestion.category} />
-        <Divider variant="default" />
-      </div>
+    <div className={myStyle}>
+      <QuestionDetailNav />
+      <div className={pageLayout}>
+        <div className={detailHeaderWrapper}>
+          <DetailTitle title={detailQuestion.title} />
+          <DetailCategory category={detailQuestion.category} />
+        </div>
 
-      <DetailAnswer content={detailQuestion.content} />
+        <DetailAnswer content={detailQuestion.content} />
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -44,7 +44,7 @@ globalStyle("h1, h2, h3, p", {
 
 globalStyle("a, a:link, a:visited, a:hover", {
   textDecoration: "none",
-  color: text2,
+  color: "inherit",
 });
 
 globalStyle("ul", {
