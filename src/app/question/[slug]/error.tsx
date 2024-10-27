@@ -13,7 +13,7 @@ export default function Error({}) {
   const router = useRouter();
 
   const handleFeedbackButton = () => {
-    window.open(FE_GITHUB_ISSUE_URL);
+    window.open(FEEDBACK_GOOGLE_FORM_URL);
   };
 
   const navigateToHome = () => {

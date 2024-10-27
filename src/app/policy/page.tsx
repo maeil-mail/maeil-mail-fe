@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { ReactNode, useState } from 'react';
-import { myStyle } from '@/_styles/vars.css';
-import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
-import Txt from '@/_components/common/Txt/Txt';
-import UpArrow from '@/_components/common/Icon/UpArrow';
-import DownArrow from '@/_components/common/Icon/DownArrow';
+import { ReactNode, useState } from "react";
+import { myStyle } from "@/_styles/vars.css";
+import { container, wrapper, titleWrapper, mainWrapper } from "./privacy.css";
+import Txt from "@/_components/common/Txt/Txt";
+import UpArrow from "@/_components/common/Icon/UpArrow";
+import DownArrow from "@/_components/common/Icon/DownArrow";
+import { TEAM_EMAIL } from "@/_constants/externalUrl";
 
 interface Content {
   title: string;
@@ -14,7 +15,7 @@ interface Content {
 
 const section: Content[] = [
   {
-    title: '1. 개인정보의 수집 및 이용 목적',
+    title: "1. 개인정보의 수집 및 이용 목적",
     content: (
       <ul>
         <li>매일 메일은 수집한 개인정보를 다음의 목적을 위해 활용합니다.</li>
@@ -24,7 +25,7 @@ const section: Content[] = [
     ),
   },
   {
-    title: '2. 수집하는 개인정보의 항목',
+    title: "2. 수집하는 개인정보의 항목",
     content: (
       <>
         <h4>필수항목</h4>
@@ -35,7 +36,7 @@ const section: Content[] = [
     ),
   },
   {
-    title: '3. 개인정보의 보유 및 이용기간',
+    title: "3. 개인정보의 보유 및 이용기간",
     content: (
       <ul>
         <li>
@@ -49,7 +50,7 @@ const section: Content[] = [
     ),
   },
   {
-    title: '4. 개인정보의 파기절차 및 방법',
+    title: "4. 개인정보의 파기절차 및 방법",
     content: (
       <>
         <h4>- 파기절차</h4>
@@ -62,11 +63,11 @@ const section: Content[] = [
     ),
   },
   {
-    title: '5. 개인정보 제공',
+    title: "5. 개인정보 제공",
     content: <p>매일메일은 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다.</p>,
   },
   {
-    title: '6. 이용자 및 법정대리인의 권리와 그 행사방법',
+    title: "6. 이용자 및 법정대리인의 권리와 그 행사방법",
     content: (
       <ul>
         <li>
@@ -88,7 +89,7 @@ const section: Content[] = [
     ),
   },
   {
-    title: '7. 개인정보 보호책임자',
+    title: "7. 개인정보 보호책임자",
     content: (
       <>
         <p>
@@ -96,7 +97,7 @@ const section: Content[] = [
           불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
         </p>
         <ul>
-          <li>연락처 이메일: team.maeilmail@gmail.com</li>
+          <li>연락처 이메일: {TEAM_EMAIL}</li>
         </ul>
       </>
     ),
