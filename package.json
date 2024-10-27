@@ -15,6 +15,7 @@
     "@codemirror/language-data": "^6.3.1",
     "@mdxeditor/editor": "^3.14.0",
     "@next/third-parties": "^15.0.1",
+    "@sentry/nextjs": "^8.35.0",
     "@tanstack/react-query": "^5.56.2",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@uiw/codemirror-extensions-classname": "^4.21.21",
