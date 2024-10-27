@@ -1,12 +1,12 @@
-import { pageLayout, detailHeaderWrapper } from './page.css';
-import { myStyle } from '@/_styles/vars.css';
+import { pageLayout, detailHeaderWrapper } from "./page.css";
+import { myStyle } from "@/_styles/vars.css";
 
-import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
-import Divider from '@/_components/common/Divider/Divider';
-import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
-import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
-import { getDetailQuestion } from '@/_apis/api';
-import { Metadata } from 'next';
+import DetailTitle from "@/_components/QuestionDetail/DetailTitle";
+import Divider from "@/_components/common/Divider/Divider";
+import DetailCategory from "@/_components/QuestionDetail/DetailCategory";
+import DetailAnswer from "@/_components/QuestionDetail/DetailAnswer";
+import { getDetailQuestion } from "@/_apis/api";
+import { Metadata } from "next";
 
 type QuestionDetailPageProps = {
   params: { slug: string };
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: QuestionDetailPageProps): Pro
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return {
-    title: `매일메일의 ${detailQuestion.title} 질문에 관한 상세 페이지`,
-    description: `${detailQuestion.content}에 관한 내용을 담고 있어요!`,
+    title: `매일메일 - ${detailQuestion.title}`,
+    description: detailQuestion.content,
   };
 }
 
