@@ -2,7 +2,6 @@ import { pageLayout, detailHeaderWrapper } from "./page.css";
 import { myStyle } from "@/_styles/vars.css";
 
 import DetailTitle from "@/_components/QuestionDetail/DetailTitle";
-import Divider from "@/_components/common/Divider/Divider";
 import DetailCategory from "@/_components/QuestionDetail/DetailCategory";
 import DetailAnswer from "@/_components/QuestionDetail/DetailAnswer";
 import { getDetailQuestion } from "@/_apis/api";
@@ -11,11 +10,11 @@ import QuestionDetailNav from "@/_components/QuestionDetail/QuestionDetailNav";
 import Footer from "@/_components/common/Footer/Footer";
 
 type QuestionDetailPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: QuestionDetailPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
@@ -26,7 +25,7 @@ export async function generateMetadata({ params }: QuestionDetailPageProps): Pro
 }
 
 export default async function QuestionDetailPage({ params }: QuestionDetailPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 

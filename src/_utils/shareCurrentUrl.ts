@@ -14,9 +14,10 @@ const shareCurrentUrl = async () => {
     await navigator.share(sharedData);
   } else if (navigator.clipboard?.writeText) {
     await navigator.clipboard.writeText(currentHref);
-    alert("URL이 클립보드에 복사되었습니다.");
+    alert("링크가 복사되었습니다. 붙여넣기를 통해 공유해 주세요!");
   } else {
     copyOnOldBrowser(currentHref);
+    alert("링크가 복사되었습니다. 붙여넣기를 통해 공유해 주세요!");
   }
 };
 
@@ -33,7 +34,6 @@ const copyOnOldBrowser = (text: string) => {
   tempInput.setSelectionRange(0, text.length);
 
   document.execCommand("copy");
-  alert("URL이 클립보드에 복사되었습니다.");
 
   document.body.removeChild(tempInput);
 };
