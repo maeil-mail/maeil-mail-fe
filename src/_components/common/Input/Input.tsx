@@ -1,15 +1,8 @@
-import { InputHTMLAttributes } from 'react';
-import {
-  baseInputStyle,
-  inputStyle,
-  dangerStyle,
-  container,
-  errorText,
-  sizeStyle,
-} from './input.css';
-import { myStyle } from '@/_styles/vars.css';
+import { InputHTMLAttributes } from "react";
+import { baseInputStyle, inputStyle, container, errorText, sizeStyle } from "./input.css";
+import { myStyle } from "@/_styles/vars.css";
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   variant: keyof typeof inputStyle;
   size?: keyof typeof sizeStyle;
   isError?: boolean;
@@ -18,9 +11,9 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
 
 export default function Input({
   variant,
-  size = 'full',
+  size = "full",
   isError = false,
-  errorMessage = '',
+  errorMessage = "",
   className,
   ...props
 }: InputProps) {
@@ -29,7 +22,7 @@ export default function Input({
     ${sizeStyle[size]} 
     ${myStyle} 
     ${baseInputStyle} 
-    ${className ? className : ''} `;
+    ${className ? className : ""} `;
 
   return (
     <div className={container}>
