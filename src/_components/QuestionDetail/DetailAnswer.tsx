@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import formatMarkdownContent from "@/_utils/codemirror/formatMarkDownContent";
-import MarkdownPreview from "@uiw/react-markdown-preview";
-import CodeMirror from "@uiw/react-codemirror";
-import { contentText } from "./questionDetail.css";
-import { MDXEditor, headingsPlugin } from "@mdxeditor/editor";
-import "@mdxeditor/editor/style.css";
-import { ForwardRefEditor } from "../MDXEditor/ForwardRefEditor";
+import formatMarkdownContent from '@/_utils/codemirror/formatMarkDownContent';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import CodeMirror from '@uiw/react-codemirror';
+import { contentText } from './questionDetail.css';
+import { MDXEditor, headingsPlugin } from '@mdxeditor/editor';
+import '@mdxeditor/editor/style.css';
+import { ForwardRefEditor } from '../MDXEditor/ForwardRefEditor';
 
 interface DetailAnswerProps {
   content: string;

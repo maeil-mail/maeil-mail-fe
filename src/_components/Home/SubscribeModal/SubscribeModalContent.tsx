@@ -1,4 +1,4 @@
-import { myStyle } from "@/_styles/vars.css";
+import { myStyle } from '@/_styles/vars.css';
 import {
   container,
   title,
@@ -12,16 +12,14 @@ import {
   verificationNoti,
   verificationSection,
   categorySubtext,
-} from "./subscribeModalContent.css";
-import RadioInput from "../../common/RadioInput/RadioInput";
-import Button from "../../common/Button/Button";
-import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
-import VerifyEmailInput from "./VerifyEmailInput";
-import Txt from "../../common/Txt/Txt";
-import CheckboxInput from "../../common/CheckboxInput/CheckboxInput";
-import Input from "../../common/Input/Input";
-import useSubscribe from "@/_hooks/useSubscribe";
-import SuccessContent from "./SuccessContent";
+} from './subscribeModalContent.css';
+import Button from '../../common/Button/Button';
+import LoadingSpinner from '../../common/LoadingSpinner/LoadingSpinner';
+import VerifyEmailInput from './VerifyEmailInput';
+import CheckboxInput from '../../common/CheckboxInput/CheckboxInput';
+import Input from '../../common/Input/Input';
+import useSubscribe from '@/_hooks/useSubscribe';
+import SuccessContent from './SuccessContent';
 
 export default function SubscribeModalContent() {
   const {
@@ -60,13 +58,13 @@ export default function SubscribeModalContent() {
                 <CheckboxInput
                   text="프론트엔드"
                   value="frontend"
-                  isSelected={categories.includes("frontend")}
+                  isSelected={categories.includes('frontend')}
                   onChange={handleCategories}
                 />
                 <CheckboxInput
                   text="백엔드"
                   value="backend"
-                  isSelected={categories.includes("backend")}
+                  isSelected={categories.includes('backend')}
                   onChange={handleCategories}
                 />
               </div>

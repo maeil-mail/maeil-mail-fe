@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { primary, text1 } from '@/_styles/vars.css';
+import { text1 } from '@/_styles/vars.css';
 
 export const container = style({
   position: 'relative',

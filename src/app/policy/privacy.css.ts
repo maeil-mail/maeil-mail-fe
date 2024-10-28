@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { text1, background3 } from '@/_styles/vars.css';
+import { text1 } from '@/_styles/vars.css';
 
 export const container = style({
   color: text1,

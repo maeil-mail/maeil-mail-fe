@@ -2,17 +2,17 @@
 
 import { ReactNode, useState } from 'react';
 import { myStyle } from '@/_styles/vars.css';
-import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
 import Txt from '@/_components/common/Txt/Txt';
 import UpArrow from '@/_components/common/Icon/UpArrow';
 import DownArrow from '@/_components/common/Icon/DownArrow';
+import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
 
 interface Content {
   title: string;
   content: ReactNode;
 }
 
-const section: Content[] = [
+const sections: Content[] = [
   {
     title: '1. 개인정보의 수집 및 이용 목적',
     content: (
@@ -117,7 +117,7 @@ export default function Privacy() {
           개인정보취급방침
         </Txt>
       </div>
-      {section.map((section, index) => (
+      {sections.map((section, index) => (
         <li key={index} className={wrapper} onClick={() => toggleSection(index)}>
           <div className={titleWrapper}>
             <Txt variant="medium">{section.title}</Txt>

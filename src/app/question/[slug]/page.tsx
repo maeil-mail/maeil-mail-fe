@@ -1,20 +1,18 @@
-import { pageLayout, detailHeaderWrapper } from "./page.css";
-import { myStyle } from "@/_styles/vars.css";
+import { Metadata } from 'next';
+import { myStyle } from '@/_styles/vars.css';
 
-import DetailTitle from "@/_components/QuestionDetail/DetailTitle";
-import Divider from "@/_components/common/Divider/Divider";
-import DetailCategory from "@/_components/QuestionDetail/DetailCategory";
-import DetailAnswer from "@/_components/QuestionDetail/DetailAnswer";
-import { getDetailQuestion } from "@/_apis/api";
-import { Metadata } from "next";
+import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
+import Divider from '@/_components/common/Divider/Divider';
+import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
+import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
+import { getDetailQuestion } from '@/_apis/api';
+import { pageLayout, detailHeaderWrapper } from './page.css';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({
-  params,
-}: QuestionDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: QuestionDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
@@ -25,9 +23,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function QuestionDetailPage({
-  params,
-}: QuestionDetailPageProps) {
+export default async function QuestionDetailPage({ params }: QuestionDetailPageProps) {
   const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });

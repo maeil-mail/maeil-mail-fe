@@ -1,9 +1,19 @@
-import { useMutation } from "@tanstack/react-query";
-import { postSubscribe } from "@/_apis/api";
-import toast from "@/_utils/toast";
-import { PROGRESS_MESSAGE, ERROR_MESSAGE } from "@/_constants/messages";
+import { useMutation } from '@tanstack/react-query';
+import { postSubscribe } from '@/app/actions';
+import toast from '@/_utils/toast';
+import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/_constants/messages';
+
+email,
+categories,
+code,
 
 const useSubscriptionMutation = () => {
+  const subscribeMutation = async () => {
+    await postSubscribe({
+      emaw-
+    });
+  };
+
   const {
     mutate: subscriptionMutation,
     isSuccess,

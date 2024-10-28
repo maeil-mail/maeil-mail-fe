@@ -1,4 +1,4 @@
-import { container, minimumPadding } from './homeContent.css';
+import { container } from './homeContent.css';
 import Nav from './Nav/Nav';
 import HeroSection from './HeroSection/HeroSection';
 import DescriptionSection from './DescriptionSection/DescriptionSection';

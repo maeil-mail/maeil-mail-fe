@@ -1,11 +1,11 @@
-import { style } from "@vanilla-extract/css";
+import { style } from '@vanilla-extract/css';
 
 export const pageLayout = style({
-  height: "auto",
-  minHeight: "100%",
-  width: "85%",
-  margin: "0 auto",
-  padding: "5rem 0 10rem 0",
+  height: 'auto',
+  minHeight: '100%',
+  width: '85%',
+  margin: '0 auto',
+  padding: '5rem 0 10rem 0',
 });
 
 export const detailHeaderWrapper = style({
