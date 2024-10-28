@@ -1,16 +1,23 @@
+import recordGAEvent from "@/_utils/recordGAEvent";
 import {
   heroButton,
   heroHeading,
   heroSection,
   heroSectionInnerWrapper,
   heroTypo,
-} from './heroSection.css';
+} from "./heroSection.css";
+import { GA_EVENT } from "@/_constants/googleAnalytics";
 
 interface HeroSectionProps {
   onCTA: () => void;
 }
 
 export default function HeroSection({ onCTA }: HeroSectionProps) {
+  const handleHeroButton = () => {
+    recordGAEvent(GA_EVENT.homeClickMainSubscribe);
+    onCTA();
+  };
+
   return (
     <section className={heroSection}>
       <div className={heroSectionInnerWrapper}>
@@ -24,7 +31,7 @@ export default function HeroSection({ onCTA }: HeroSectionProps) {
           <br />
           지하철에서 하나씩 읽다보면 면접 걱정이 사라질 거예요.
         </p>
-        <button className={heroButton} onClick={onCTA}>
+        <button className={heroButton} onClick={handleHeroButton}>
           무료 구독하기
         </button>
       </div>
