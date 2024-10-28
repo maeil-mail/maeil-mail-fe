@@ -33,3 +33,9 @@ export const side = style({
   gap: "1rem",
   wordBreak: "keep-all",
 });
+
+export const underline = style({
+  textDecoration: "underline",
+  textUnderlineOffset: "3px",
+  textDecorationThickness: "0.3px",
+});
