@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "lUmlpDPafqt0it7egKAkKdPY_csrp9UO5iefrbN-4Rk",
+  },
 };
 
 export default function RootLayout({
@@ -41,12 +44,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={inter.className}>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="lUmlpDPafqt0it7egKAkKdPY_csrp9UO5iefrbN-4Rk"
-        />
-      </Head>
       <body>
         {children}
         <div id="portal"></div>
