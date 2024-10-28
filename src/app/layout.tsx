@@ -3,6 +3,7 @@ import "./globals.css";
 import { MSWComponent } from "@/_mocks/MSWComponent";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +40,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={inter.className}>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="lUmlpDPafqt0it7egKAkKdPY_csrp9UO5iefrbN-4Rk"
+        />
+      </Head>
       <body>
         {children}
         <div id="portal"></div>
