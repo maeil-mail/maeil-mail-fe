@@ -4,6 +4,7 @@ import { MSWComponent } from "@/_mocks/MSWComponent";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Head from "next/head";
+import FRONTEND_BASE_URL from "@/_constants/frontendBaseUrl";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: "매일메일 - 기술 면접 질문 구독 서비스",
   description: "기술 면접 질문을 매일매일 메일로 보내드릴게요!",
   openGraph: {
-    url: "https://maeil-mail.kr",
+    url: FRONTEND_BASE_URL,
     siteName: "maeil-mail",
     images: [
       {
