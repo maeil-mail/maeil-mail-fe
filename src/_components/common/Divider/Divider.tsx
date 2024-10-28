@@ -1,12 +1,9 @@
-import { dividerStyle } from './divider.css';
-import { myStyle } from '@/_styles/vars.css';
+import { dividerStyle } from "./divider.css";
 
 interface DividerProps {
   variant: keyof typeof dividerStyle;
 }
 
 export default function Divider({ variant }: DividerProps) {
-  const classNames = ` ${dividerStyle[variant]} ${myStyle} `;
-
-  return <div className={classNames}></div>;
+  return <div className={dividerStyle[variant]}></div>;
 }

@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import { myStyle } from '@/_styles/vars.css';
 
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
-import Divider from '@/_components/common/Divider/Divider';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getDetailQuestion } from '@/_apis/api';
+import QuestionDetailNav from '@/_components/QuestionDetail/QuestionDetailNav';
+import Footer from '@/_components/common/Footer/Footer';
 import { pageLayout, detailHeaderWrapper } from './page.css';
 
 type QuestionDetailPageProps = {
@@ -18,8 +19,8 @@ export async function generateMetadata({ params }: QuestionDetailPageProps): Pro
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return {
-    title: `매일메일의 ${detailQuestion.title} 질문에 관한 상세 페이지`,
-    description: `${detailQuestion.content}에 관한 내용을 담고 있어요!`,
+    title: `매일메일 - ${detailQuestion.title}`,
+    description: detailQuestion.content,
   };
 }
 
@@ -29,15 +30,17 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return (
-    <div className={`${pageLayout} ${myStyle}`}>
-      <div className={detailHeaderWrapper}>
-        <DetailTitle title={detailQuestion.title} />
-        <Divider variant="default" />
-        <DetailCategory category={detailQuestion.category} />
-        <Divider variant="default" />
-      </div>
+    <div className={myStyle}>
+      <QuestionDetailNav />
+      <div className={pageLayout}>
+        <div className={detailHeaderWrapper}>
+          <DetailTitle title={detailQuestion.title} />
+          <DetailCategory category={detailQuestion.category} />
+        </div>
 
-      <DetailAnswer content={detailQuestion.content} />
+        <DetailAnswer content={detailQuestion.content} />
+      </div>
+      <Footer />
     </div>
   );
 }

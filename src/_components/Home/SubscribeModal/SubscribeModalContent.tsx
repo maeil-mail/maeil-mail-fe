@@ -21,7 +21,11 @@ import Input from '../../common/Input/Input';
 import useSubscribe from '@/_hooks/useSubscribe';
 import SuccessContent from './SuccessContent';
 
-export default function SubscribeModalContent() {
+interface SubscribeModalContentProps {
+  closeModal: () => void;
+}
+
+export default function SubscribeModalContent({ closeModal }: SubscribeModalContentProps) {
   const {
     isSubscriptionSuccess,
     isSubscriptionPending,
@@ -44,7 +48,7 @@ export default function SubscribeModalContent() {
   return (
     <div className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}>
       {isSubscriptionSuccess ? (
-        <SuccessContent />
+        <SuccessContent closeModal={closeModal} />
       ) : (
         <>
           <h2 className={title}>매일메일 구독</h2>

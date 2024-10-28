@@ -2,10 +2,11 @@
 
 import { ReactNode, useState } from 'react';
 import { myStyle } from '@/_styles/vars.css';
+import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
 import Txt from '@/_components/common/Txt/Txt';
 import UpArrow from '@/_components/common/Icon/UpArrow';
 import DownArrow from '@/_components/common/Icon/DownArrow';
-import { container, wrapper, titleWrapper, mainWrapper } from './privacy.css';
+import { TEAM_EMAIL } from '@/_constants/externalUrl';
 
 interface Content {
   title: string;
@@ -96,7 +97,7 @@ const sections: Content[] = [
           불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
         </p>
         <ul>
-          <li>연락처 이메일: team.maeilmail@gmail.com</li>
+          <li>연락처 이메일: {TEAM_EMAIL}</li>
         </ul>
       </>
     ),

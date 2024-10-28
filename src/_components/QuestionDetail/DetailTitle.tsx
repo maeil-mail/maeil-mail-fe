@@ -1,10 +1,9 @@
-import { titleText } from './questionDetail.css';
-import { myStyle } from '@/_styles/vars.css';
+import { titleText } from "./questionDetail.css";
 
 interface DetailTitle {
   title: string;
 }
 
 export default function DetailTitle({ title }: DetailTitle) {
-  return <h2 className={`${titleText} ${myStyle}`}>{title}</h2>;
+  return <h2 className={titleText}>{title}</h2>;
 }

@@ -1,10 +1,10 @@
 import { container } from './homeContent.css';
-import Nav from './Nav/Nav';
+import HomeNav from './HomeNav/HomeNav';
 import HeroSection from './HeroSection/HeroSection';
 import DescriptionSection from './DescriptionSection/DescriptionSection';
 import TrustedBy from './TrustedBySection/TrustedBySection';
 import ClosingCTA from './ClosingCTASection/ClosingCTASection';
-import Footer from './Footer/Footer';
+import Footer from '../common/Footer/Footer';
 
 interface HomeContentProps {
   openModal: () => void;
@@ -13,7 +13,7 @@ interface HomeContentProps {
 export default function HomeContent({ openModal }: HomeContentProps) {
   return (
     <div className={container}>
-      <Nav onSubscribe={openModal} />
+      <HomeNav onSubscribe={openModal} />
       <HeroSection onCTA={openModal} />
       <DescriptionSection />
       <TrustedBy />
