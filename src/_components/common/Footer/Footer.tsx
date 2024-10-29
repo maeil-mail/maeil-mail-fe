@@ -2,8 +2,8 @@ import {
   FEEDBACK_GOOGLE_FORM_URL,
   GITHUB_ORGANIZATION_URL,
   TEAM_EMAIL,
-} from "@/_constants/externalUrl";
-import { container, innerWrapper, side, underline } from "./footer.css";
+} from '@/_constants/externalUrl';
+import { container, innerWrapper, side, underline } from './footer.css';
 
 export default function Footer() {
   return (

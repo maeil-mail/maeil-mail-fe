@@ -3,6 +3,8 @@
 import { CategoryEN } from '@/_types';
 import BASE_URL from '@/_apis/baseUrl';
 import API_ROUTES from '@/_apis/routes';
+import handleAPIError from '@/_apis/utils/handleAPIError';
+import HTTPError from '@/_apis/error/HTTPError';
 
 export const postSubscribe = async ({
   email,
@@ -13,19 +15,49 @@ export const postSubscribe = async ({
   categories: CategoryEN[];
   code: string;
 }) => {
-  const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
-    method: 'POST',
-    body: JSON.stringify({
-      email,
-      category: categories,
-      code,
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        category: categories,
+        code,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error('에러');
+    if (!response.ok) {
+      handleAPIError(response.status, `API 호출 실패: ${response.url}`);
+    }
+  } catch (err) {
+    console.error(err);
+    if (err instanceof HTTPError) {
+      throw err;
+    }
+  }
+};
+
+export const postVerifyEmail = async (email: string) => {
+  try {
+    const response = await fetch(`${BASE_URL}${API_ROUTES.verify_email}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    if (!response.ok) {
+      handleAPIError(response.status, `API 호출 실패: ${response.url}`);
+    }
+  } catch (err) {
+    console.error(err);
+    if (err instanceof HTTPError) {
+      throw err;
+    }
   }
 };

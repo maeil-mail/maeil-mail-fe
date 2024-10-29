@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { lightTheme, darkTheme } from '@/_styles/theme.css';
-import { text1, borderColor1, text2 } from '@/_styles/vars.css';
+import { text1, borderColor1 } from '@/_styles/vars.css';
 
 globalStyle('*', {
   boxSizing: 'border-box',

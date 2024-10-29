@@ -1,5 +1,4 @@
 import { ERROR_MESSAGE } from '@/_constants/messages';
-import { CategoryEN } from '@/_types';
 import toast from '@/_utils/toast';
 import useSubscriptionMutation from './mutations/useSubscriptionMutation';
 import useVerifyMutation from './mutations/useVerifyMutation';
@@ -7,7 +6,6 @@ import useConsent from './useConsent';
 import useEmail from './useEmail';
 import useVerificationNumber from './useVerificationNumber';
 import useCategories from './useCategories';
-import { postSubscribe } from '@/app/actions';
 
 const useSubscribe = () => {
   const {
@@ -37,9 +35,9 @@ const useSubscribe = () => {
       return;
     }
 
-    postSubscribe({
+    subscriptionMutation({
       email,
-      categories: categories as CategoryEN[],
+      categories,
       code: verificationNumber,
     });
   };

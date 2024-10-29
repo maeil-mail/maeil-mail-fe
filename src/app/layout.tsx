@@ -3,7 +3,6 @@ import './globals.css';
 import { MSWComponent } from '@/_mocks/MSWComponent';
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Head from 'next/head';
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
 
 const inter = Inter({
