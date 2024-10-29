@@ -20,6 +20,7 @@ import CheckboxInput from '../../common/CheckboxInput/CheckboxInput';
 import Input from '../../common/Input/Input';
 import useSubscribe from '@/_hooks/useSubscribe';
 import SuccessContent from './SuccessContent';
+import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
 
 interface SubscribeModalContentProps {
   closeModal: () => void;
@@ -102,7 +103,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                 text={
                   <>
                     <a
-                      href="https://www.maeil-mail.kr/policy"
+                      href={`${FRONTEND_BASE_URL}/policy`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
