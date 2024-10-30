@@ -8,6 +8,8 @@ import UpArrow from '@/_components/common/Icon/UpArrow';
 import DownArrow from '@/_components/common/Icon/DownArrow';
 import { TEAM_EMAIL } from '@/_constants/externalUrl';
 
+/* eslint-disable react/no-unescaped-entities */
+
 interface Content {
   title: string;
   content: ReactNode;
