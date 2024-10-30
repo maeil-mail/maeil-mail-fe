@@ -51,9 +51,6 @@ globalStyle("ul", {
   padding: "0",
 });
 
-globalStyle("li", {
-  listStyle: "none",
-});
 
 globalStyle(`:root`, {
   background: lightTheme.colorBackground,
