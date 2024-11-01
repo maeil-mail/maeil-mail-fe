@@ -38,7 +38,7 @@ export default function VerifyEmailInput({
           <div className={inputWrapper}>
             <Input
               variant="primary"
-              isError={!isValidEmail}
+              isError={email.length > 0 && !isValidEmail}
               placeholder="johndoe@gmail.com"
               errorMessage="유효하지 않은 이메일입니다."
               onChange={handleEmail}
@@ -50,7 +50,7 @@ export default function VerifyEmailInput({
       )}
       <Button
         variant="primary"
-        disabled={isVerifyingPending || !isValidEmail || !isValidCategories}
+        disabled={!email || isVerifyingPending || !isValidEmail || !isValidCategories}
         onClick={handleVerifyEmail}
       >
         확인
