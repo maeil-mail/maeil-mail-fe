@@ -126,3 +126,12 @@ globalStyle(".wmde-markdown table tr", {
   color: `${text1} !important`,
   background: `none !important`,
 });
+
+globalStyle(".wmde-markdown table", {
+  overflow: "auto",
+});
+
+globalStyle(".wmde-markdown table td", {
+  wordBreak: "break-word",
+  whiteSpace: "normal",
+});
