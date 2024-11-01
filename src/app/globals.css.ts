@@ -51,7 +51,6 @@ globalStyle("ul", {
   padding: "0",
 });
 
-
 globalStyle(`:root`, {
   background: lightTheme.colorBackground,
 });
@@ -120,3 +119,10 @@ globalStyle(
     color: "#246398 !important",
   }
 );
+
+// 테이블표
+
+globalStyle(".wmde-markdown table tr", {
+  color: `${text1} !important`,
+  background: `none !important`,
+});
