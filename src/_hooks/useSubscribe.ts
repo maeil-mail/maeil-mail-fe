@@ -12,23 +12,18 @@ const useSubscribe = () => {
     subscriptionMutation,
     isSuccess: isSubscriptionSuccess,
     isPending: isSubscriptionPending,
+    isError: isSubscriptionError,
   } = useSubscriptionMutation();
-  const { email, handleEmail, isValidEmail, handleFocus, isTouched } =
-    useEmail();
+  const { email, handleEmail, isValidEmail, handleFocus, isTouched } = useEmail();
   const { categories, isValidCategories, handleCategories } = useCategories();
-  const {
-    verificationNumber,
-    handleVerificationNumber,
-    isValidVerificationNumber,
-  } = useVerificationNumber();
+  const { verificationNumber, handleVerificationNumber, isValidVerificationNumber } =
+    useVerificationNumber();
   const { isAgreed, handleConsent } = useConsent();
-  const { isSentEmail, handleVerifyEmail, isVerifyingPending } =
-    useVerifyMutation({
-      email,
-      isValidCategories,
-    });
-  const isAllValid =
-    isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
+  const { isSentEmail, handleVerifyEmail, isVerifyingPending } = useVerifyMutation({
+    email,
+    isValidCategories,
+  });
+  const isAllValid = isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
 
   const handleSubmitSubscription = () => {
     if (!isValidCategories) {
@@ -51,6 +46,7 @@ const useSubscribe = () => {
   return {
     isSubscriptionSuccess,
     isSubscriptionPending,
+    isSubscriptionError,
     handleCategories,
     handleVerificationNumber,
     verificationNumber,
