@@ -26,7 +26,9 @@ interface SubscribeModalContentProps {
   closeModal: () => void;
 }
 
-export default function SubscribeModalContent({ closeModal }: SubscribeModalContentProps) {
+export default function SubscribeModalContent({
+  closeModal,
+}: SubscribeModalContentProps) {
   const {
     isSubscriptionSuccess,
     isSubscriptionPending,
@@ -41,13 +43,18 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
     handleSubmitSubscription,
     email,
     isValidEmail,
+    isValidCategories,
     isAgreed,
     isVerifyingPending,
     categories,
+    handleFocus,
+    isTouched,
   } = useSubscribe();
 
   return (
-    <div className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}>
+    <div
+      className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}
+    >
       {isSubscriptionSuccess ? (
         <SuccessContent closeModal={closeModal} />
       ) : (
@@ -80,9 +87,11 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                 <VerifyEmailInput
                   email={email}
                   isVerifyingPending={isVerifyingPending}
-                  isValidEmail={isValidEmail}
+                  isValidEmail={isValidEmail && isTouched}
                   handleEmail={handleEmail}
                   handleVerifyEmail={handleVerifyEmail}
+                  onFocus={handleFocus}
+                  isValidCategories={isValidCategories}
                 />
               )}
             </div>

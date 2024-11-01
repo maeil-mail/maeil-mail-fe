@@ -1,5 +1,4 @@
 import { ERROR_MESSAGE } from "@/_constants/messages";
-import { CategoryEN } from "@/_types";
 import toast from "@/_utils/toast";
 import useSubscriptionMutation from "./mutations/useSubscriptionMutation";
 import useVerifyMutation from "./mutations/useVerifyMutation";
@@ -14,16 +13,22 @@ const useSubscribe = () => {
     isSuccess: isSubscriptionSuccess,
     isPending: isSubscriptionPending,
   } = useSubscriptionMutation();
-  const { email, handleEmail, isValidEmail } = useEmail();
+  const { email, handleEmail, isValidEmail, handleFocus, isTouched } =
+    useEmail();
   const { categories, isValidCategories, handleCategories } = useCategories();
-  const { verificationNumber, handleVerificationNumber, isValidVerificationNumber } =
-    useVerificationNumber();
+  const {
+    verificationNumber,
+    handleVerificationNumber,
+    isValidVerificationNumber,
+  } = useVerificationNumber();
   const { isAgreed, handleConsent } = useConsent();
-  const { isSentEmail, handleVerifyEmail, isVerifyingPending } = useVerifyMutation({
-    email,
-    isValidCategories,
-  });
-  const isAllValid = isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
+  const { isSentEmail, handleVerifyEmail, isVerifyingPending } =
+    useVerifyMutation({
+      email,
+      isValidCategories,
+    });
+  const isAllValid =
+    isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
 
   const handleSubmitSubscription = () => {
     if (!isValidCategories) {
@@ -38,7 +43,7 @@ const useSubscribe = () => {
 
     subscriptionMutation({
       email,
-      categories: categories as CategoryEN[],
+      categories: categories,
       code: verificationNumber,
     });
   };
@@ -51,6 +56,8 @@ const useSubscribe = () => {
     verificationNumber,
     handleConsent,
     handleEmail,
+    isTouched,
+    handleFocus,
     handleVerifyEmail,
     isSentEmail,
     isAllValid,
@@ -60,6 +67,7 @@ const useSubscribe = () => {
     isAgreed,
     isVerifyingPending,
     categories,
+    isValidCategories,
   };
 };
 
