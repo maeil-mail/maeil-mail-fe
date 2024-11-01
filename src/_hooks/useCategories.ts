@@ -9,7 +9,8 @@ const isCategory = (value: any): value is CategoryEN => {
 
 const useCategories = () => {
   const [categories, setCategories] = useState<CategoryEN[]>([]);
-  const isValidCategories = categories.length > 0 && categories.every(isCategory);
+  const isValidCategories =
+    categories.length > 0 && categories.every(isCategory);
 
   const handleCategories = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
