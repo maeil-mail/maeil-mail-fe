@@ -78,7 +78,7 @@ export const emailWrapper = style({
 export const verificationSection = style({
   display: "flex",
   flexDirection: "column",
-  gap: "1.6rem",
+  gap: "3.6rem",
 });
 
 export const verificationNoti = style({
@@ -94,4 +94,10 @@ export const inputWrapper = style({
 export const buttonWrapper = style({
   display: "flex",
   justifyContent: "center",
+});
+
+export const underline = style({
+  textDecoration: "underline",
+  textUnderlineOffset: "3px",
+  textDecorationThickness: "0.3px",
 });

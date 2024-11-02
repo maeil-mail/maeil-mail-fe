@@ -30,27 +30,26 @@ export default function VerifyEmailInput({
 }: VerifyEmailInputProps) {
   return (
     <div className={emailInputWrapper}>
-      {isVerifyingPending ? (
-        <LoadingSpinner />
-      ) : (
-        <div className={categoryWrapper}>
-          <p className={categoryText}>이메일</p>
-          <div className={inputWrapper}>
-            <Input
-              variant="primary"
-              isError={!isValidEmail}
-              placeholder="johndoe@gmail.com"
-              errorMessage="유효하지 않은 이메일입니다."
-              onChange={handleEmail}
-              value={email}
-              onFocus={onFocus}
-            />
-          </div>
+      {isVerifyingPending && <LoadingSpinner />}
+
+      <div className={categoryWrapper}>
+        <p className={categoryText}>이메일</p>
+        <div className={inputWrapper}>
+          <Input
+            variant="primary"
+            isError={email.length > 0 && !isValidEmail}
+            placeholder="johndoe@gmail.com"
+            errorMessage="유효하지 않은 이메일입니다."
+            onChange={handleEmail}
+            value={email}
+            onFocus={onFocus}
+          />
         </div>
-      )}
+      </div>
+
       <Button
         variant="primary"
-        disabled={isVerifyingPending || !isValidEmail || !isValidCategories}
+        disabled={!email || isVerifyingPending || !isValidEmail || !isValidCategories}
         onClick={handleVerifyEmail}
       >
         확인

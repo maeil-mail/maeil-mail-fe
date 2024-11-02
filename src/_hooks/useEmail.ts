@@ -4,7 +4,7 @@ import validateEmail from "@/_utils/validateEmail";
 const useEmail = () => {
   const [email, setEmail] = useState("");
   const [isTouched, setIsTouched] = useState(false);
-  const isValidEmail = !isTouched || validateEmail(email);
+  const isValidEmail = isTouched && validateEmail(email);
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;

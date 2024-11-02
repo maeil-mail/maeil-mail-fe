@@ -12,6 +12,7 @@ import {
   verificationNoti,
   verificationSection,
   categorySubtext,
+  underline,
 } from "./subscribeModalContent.css";
 import Button from "../../common/Button/Button";
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
@@ -26,12 +27,11 @@ interface SubscribeModalContentProps {
   closeModal: () => void;
 }
 
-export default function SubscribeModalContent({
-  closeModal,
-}: SubscribeModalContentProps) {
+export default function SubscribeModalContent({ closeModal }: SubscribeModalContentProps) {
   const {
     isSubscriptionSuccess,
     isSubscriptionPending,
+    isSubscriptionError,
     handleCategories,
     handleVerificationNumber,
     verificationNumber,
@@ -52,9 +52,7 @@ export default function SubscribeModalContent({
   } = useSubscribe();
 
   return (
-    <div
-      className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}
-    >
+    <div className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}>
       {isSubscriptionSuccess ? (
         <SuccessContent closeModal={closeModal} />
       ) : (
@@ -82,8 +80,8 @@ export default function SubscribeModalContent({
               </div>
             </div>
 
-            <div className={emailWrapper}>
-              {!isSentEmail && (
+            {!isSentEmail ? (
+              <div className={emailWrapper}>
                 <VerifyEmailInput
                   email={email}
                   isVerifyingPending={isVerifyingPending}
@@ -93,56 +91,53 @@ export default function SubscribeModalContent({
                   onFocus={handleFocus}
                   isValidCategories={isValidCategories}
                 />
-              )}
-            </div>
+              </div>
+            ) : (
+              <>
+                <section className={verificationSection}>
+                  <h3 className={verificationNoti}>인증번호가 발송됐습니다.</h3>
+                  <Input
+                    onChange={handleVerificationNumber}
+                    value={verificationNumber}
+                    variant="primary"
+                    placeholder="인증번호를 입력해 주세요."
+                    errorMessage="올바르지 않은 인증번호입니다."
+                    isError={isSubscriptionError}
+                    maxLength={4}
+                    type="text"
+                  />
+
+                  <CheckboxInput
+                    text={
+                      <>
+                        <a
+                          href={`${FRONTEND_BASE_URL}/policy`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className={underline}>개인정보취급방침</span>
+                        </a>
+                        에 동의합니다.
+                      </>
+                    }
+                    isSelected={isAgreed}
+                    onChange={handleConsent}
+                  />
+                </section>
+                <div className={buttonWrapper}>
+                  {isSubscriptionPending && <LoadingSpinner />}
+                  <Button
+                    variant="primary"
+                    disabled={!isAllValid}
+                    type="submit"
+                    onClick={handleSubmitSubscription}
+                  >
+                    구독하기
+                  </Button>
+                </div>
+              </>
+            )}
           </section>
-          {isSentEmail && (
-            <section className={verificationSection}>
-              <h3 className={verificationNoti}>인증번호가 발송됐습니다.</h3>
-              <Input
-                onChange={handleVerificationNumber}
-                value={verificationNumber}
-                variant="primary"
-                placeholder="인증번호를 입력해 주세요."
-                maxLength={4}
-                type="text"
-              />
-
-              <CheckboxInput
-                text={
-                  <>
-                    <a
-                      href={`${FRONTEND_BASE_URL}/policy`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      개인정보취급방침
-                    </a>
-                    에 동의합니다.
-                  </>
-                }
-                isSelected={isAgreed}
-                onChange={handleConsent}
-              />
-            </section>
-          )}
-
-          {isSentEmail && (
-            <div className={buttonWrapper}>
-              {isSubscriptionPending ? (
-                <LoadingSpinner />
-              ) : (
-                <Button
-                  variant="primary"
-                  disabled={!isAllValid}
-                  type="submit"
-                  onClick={handleSubmitSubscription}
-                >
-                  구독하기
-                </Button>
-              )}
-            </div>
-          )}
         </>
       )}
     </div>
