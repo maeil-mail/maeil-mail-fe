@@ -49,7 +49,9 @@ export default function VerifyEmailInput({
 
       <Button
         variant="primary"
-        disabled={!email || isVerifyingPending || !isValidEmail || !isValidCategories}
+        disabled={
+          !email || isVerifyingPending || !isValidEmail || !isValidCategories
+        }
         onClick={handleVerifyEmail}
       >
         확인
