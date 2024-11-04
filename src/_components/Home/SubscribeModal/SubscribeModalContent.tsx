@@ -105,6 +105,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                     isError={isSubscriptionError}
                     maxLength={4}
                     type="text"
+                    inputMode="numeric"
                   />
 
                   <CheckboxInput
