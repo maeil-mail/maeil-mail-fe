@@ -2,7 +2,7 @@ import recordGAEvent from "@/_utils/recordGAEvent";
 import { closingCTAButton, closingHeading, container, innerWrapper } from "./closingCTASection.css";
 import { GA_EVENT } from "@/_constants/googleAnalytics";
 import { useEffect, useState } from "react";
-import { getTotalSentQuestionCount } from "@/_apis/statistics";
+import { getSubscriberCount } from "@/_apis/statistics";
 
 export default function ClosingCTA({ onCTA }: { onCTA: () => void }) {
   const [subscriberCount, setSubscriberCount] = useState<number>(100);
@@ -14,7 +14,7 @@ export default function ClosingCTA({ onCTA }: { onCTA: () => void }) {
 
   useEffect(() => {
     const fetchSubscriberCount = async () => {
-      const count = await getTotalSentQuestionCount();
+      const count = await getSubscriberCount();
       setSubscriberCount(count);
     };
     fetchSubscriberCount();

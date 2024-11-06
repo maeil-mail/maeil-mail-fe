@@ -1,13 +1,13 @@
 import BASE_URL from "./baseUrl";
 
-export const getTotalSentQuestionCount = async () => {
-  const response = await fetch(`${BASE_URL}/statistics/mail-event/question`);
+export const getSubscriberCount = async () => {
+  const response = await fetch(`${BASE_URL}/statistics/subscribe`);
 
   if (!response.ok) {
-    throw new Error("api 에러");
+    throw new Error("getSubscriberCount api 에러가 발생했습니다.");
   }
 
-  const { success, fail } = await response.json();
+  const { cumulativeCount } = await response.json();
 
-  return success + fail;
+  return cumulativeCount;
 };
