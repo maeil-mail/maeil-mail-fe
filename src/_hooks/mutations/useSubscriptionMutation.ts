@@ -8,6 +8,7 @@ const useSubscriptionMutation = () => {
     isPending,
     mutate: subscriptionMutation,
     isSuccess,
+    isError,
   } = useServerActionMutation({
     mutationFn: postSubscribe,
     onSuccess: () => {
@@ -22,6 +23,7 @@ const useSubscriptionMutation = () => {
     subscriptionMutation,
     isSuccess,
     isPending,
+    isError,
   };
 };
 
