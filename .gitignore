@@ -1,6 +1,7 @@
 node_modules
 .next
 .env
+.DS_Store
 
 # Sentry Config File
 .env.sentry-build-plugin

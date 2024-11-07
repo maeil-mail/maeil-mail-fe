@@ -18,6 +18,7 @@ export const wrapper = style({
   border: '0.1rem solid',
   marginBottom: '1rem',
   cursor: 'pointer',
+  width: '100%',
 });
 
 export const titleWrapper = style({
@@ -25,4 +26,9 @@ export const titleWrapper = style({
   justifyContent: 'space-between',
   marginBottom: '1rem',
   alignItems: 'center',
+  width: '100%',
+});
+
+export const contentText = style({
+  textAlign: 'start',
 });
