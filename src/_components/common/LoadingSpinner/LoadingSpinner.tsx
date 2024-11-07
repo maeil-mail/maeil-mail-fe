@@ -1,4 +1,4 @@
-import { container, loader } from "./loadingSpinner.css";
+import { container, loader } from './loadingSpinner.css';
 
 export default function LoadingSpinner() {
   return (

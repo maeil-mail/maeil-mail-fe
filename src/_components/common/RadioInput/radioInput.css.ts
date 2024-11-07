@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { primary, text1 } from '@/_styles/vars.css';
+import { primary } from '@/_styles/vars.css';
 
 export const radioContainer = style({
   position: 'relative',

@@ -1,4 +1,4 @@
-import { titleText } from "./questionDetail.css";
+import { titleText } from './questionDetail.css';
 
 interface DetailTitle {
   title: string;

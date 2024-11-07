@@ -1,8 +1,8 @@
-import { postVerifyEmail } from "@/_apis/subscriptionAPI";
-import toast from "@/_utils/toast";
-import { useMutation } from "@tanstack/react-query";
-import { ERROR_MESSAGE } from "@/_constants/messages";
-import { useState } from "react";
+import { postVerifyEmail } from '@/app/actions';
+import toast from '@/_utils/toast';
+import { ERROR_MESSAGE } from '@/_constants/messages';
+import { useState } from 'react';
+import useServerActionMutation from './useServerActionMutation';
 
 interface UseVerifyMutationOptions {
   email: string;
@@ -12,7 +12,7 @@ interface UseVerifyMutationOptions {
 const useVerifyMutation = ({ email, isValidCategories }: UseVerifyMutationOptions) => {
   const [isSentEmail, setIsSentEmail] = useState(false);
 
-  const { mutate: verifyEmailMutation, isPending: isVerifyingPending } = useMutation({
+  const { mutate: verifyEmailMutation, isPending: isVerifyingPending } = useServerActionMutation({
     mutationFn: postVerifyEmail,
     onError: () => toast.error(ERROR_MESSAGE.fail_verify_email),
     onSuccess: () => setIsSentEmail(true),

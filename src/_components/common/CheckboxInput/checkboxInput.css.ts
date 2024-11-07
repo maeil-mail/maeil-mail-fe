@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { background1, borderColor1, primary, text1 } from "@/_styles/vars.css";
+import {  primary, text1 } from "@/_styles/vars.css";
 
 export const checkboxContainer = style({
   position: "relative",

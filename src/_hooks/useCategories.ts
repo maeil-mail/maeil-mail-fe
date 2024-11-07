@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { CategoryEN } from "@/_types";
+import { useState } from 'react';
+import { CategoryEN } from '@/_types';
 
-const CATEGORIES = ["frontend", "backend"];
+const CATEGORIES = ['frontend', 'backend'];
 
 const isCategory = (value: any): value is CategoryEN => {
   return CATEGORIES.includes(value);
@@ -19,7 +19,7 @@ const useCategories = () => {
       setCategories((prevCategories) =>
         prevCategories.includes(value)
           ? prevCategories.filter((category) => category !== value)
-          : [...prevCategories, value]
+          : [...prevCategories, value],
       );
     }
   };

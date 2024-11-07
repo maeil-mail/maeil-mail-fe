@@ -1,13 +1,13 @@
-import { pageLayout, detailHeaderWrapper } from "./page.css";
-import { myStyle } from "@/_styles/vars.css";
+import { Metadata } from 'next';
+import { myStyle } from '@/_styles/vars.css';
 
-import DetailTitle from "@/_components/QuestionDetail/DetailTitle";
-import DetailCategory from "@/_components/QuestionDetail/DetailCategory";
-import DetailAnswer from "@/_components/QuestionDetail/DetailAnswer";
-import { getDetailQuestion } from "@/_apis/api";
-import { Metadata } from "next";
-import QuestionDetailNav from "@/_components/QuestionDetail/QuestionDetailNav";
-import Footer from "@/_components/common/Footer/Footer";
+import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
+import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
+import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
+import { getDetailQuestion } from '@/_apis/api';
+import QuestionDetailNav from '@/_components/QuestionDetail/QuestionDetailNav';
+import Footer from '@/_components/common/Footer/Footer';
+import { pageLayout, detailHeaderWrapper } from './page.css';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;

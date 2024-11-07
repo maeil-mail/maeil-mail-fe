@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from "react";
-import { ModalProvider } from "./ModalProvider";
-import type { ModalContextProps } from "@/_contexts/ModalContext";
-import useAnimation from "@/_hooks/useAnimation";
-import ModalPortal from "./ModalPortal";
-import ModalBackdrop from "./ModalBackdrop";
-import ModalContainer from "./ModalContainer";
+import type { PropsWithChildren } from 'react';
+import { ModalProvider } from './ModalProvider';
+import type { ModalContextProps } from '@/_contexts/ModalContext';
+import useAnimation from '@/_hooks/useAnimation';
+import ModalPortal from './ModalPortal';
+import ModalBackdrop from './ModalBackdrop';
+import ModalContainer from './ModalContainer';
 
 export default function Modal({
   children,
@@ -15,11 +15,11 @@ export default function Modal({
       event.stopPropagation();
     }
   },
-  mountAnimation = "",
-  unMountAnimation = "",
-  position = "center",
+  mountAnimation = '',
+  unMountAnimation = '',
+  position = 'center',
   animationTime = 300,
-  size = "custom",
+  size = 'custom',
 }: PropsWithChildren<Partial<ModalContextProps>>) {
   const { open, closing } = useAnimation({
     unMountEvent: onClose,

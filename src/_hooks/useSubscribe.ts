@@ -1,11 +1,11 @@
-import { ERROR_MESSAGE } from "@/_constants/messages";
-import toast from "@/_utils/toast";
-import useSubscriptionMutation from "./mutations/useSubscriptionMutation";
-import useVerifyMutation from "./mutations/useVerifyMutation";
-import useConsent from "./useConsent";
-import useEmail from "./useEmail";
-import useVerificationNumber from "./useVerificationNumber";
-import useCategories from "./useCategories";
+import { ERROR_MESSAGE } from '@/_constants/messages';
+import toast from '@/_utils/toast';
+import useSubscriptionMutation from './mutations/useSubscriptionMutation';
+import useVerifyMutation from './mutations/useVerifyMutation';
+import useConsent from './useConsent';
+import useEmail from './useEmail';
+import useVerificationNumber from './useVerificationNumber';
+import useCategories from './useCategories';
 
 const useSubscribe = () => {
   const {
@@ -25,7 +25,7 @@ const useSubscribe = () => {
   });
   const isAllValid = isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
 
-  const handleSubmitSubscription = () => {
+  const handleSubmitSubscription = async () => {
     if (!isValidCategories) {
       toast.error(ERROR_MESSAGE.invalid_category);
       return;

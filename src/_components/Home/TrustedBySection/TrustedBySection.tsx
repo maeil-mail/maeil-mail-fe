@@ -1,4 +1,4 @@
-import Ticker from "framer-motion-ticker";
+import Ticker from 'framer-motion-ticker';
 import {
   fingerHeartIcon,
   companyLogo,
@@ -7,15 +7,15 @@ import {
   tickerWrapper,
   trustedByHeading,
   trustedBySection,
-} from "./trustedBySection.css";
-import FingerHeartIcon from "@/_assets/images/fingerHeart.svg";
-import NaverLogo from "@/_assets/images/companyLogo/naver.svg";
-import KakaoLogo from "@/_assets/images/companyLogo/kakao.svg";
-import LineLogo from "@/_assets/images/companyLogo/line.svg";
-import CoupangLogo from "@/_assets/images/companyLogo/coupang.svg";
-import BaeminLogo from "@/_assets/images/companyLogo/baemin.svg";
-import DangnLogo from "@/_assets/images/companyLogo/dangn.svg";
-import TossLogo from "@/_assets/images/companyLogo/toss.svg";
+} from './trustedBySection.css';
+import FingerHeartIcon from '@/_assets/images/fingerHeart.svg';
+import NaverLogo from '@/_assets/images/companyLogo/naver.svg';
+import KakaoLogo from '@/_assets/images/companyLogo/kakao.svg';
+import LineLogo from '@/_assets/images/companyLogo/line.svg';
+import CoupangLogo from '@/_assets/images/companyLogo/coupang.svg';
+import BaeminLogo from '@/_assets/images/companyLogo/baemin.svg';
+import DangnLogo from '@/_assets/images/companyLogo/dangn.svg';
+import TossLogo from '@/_assets/images/companyLogo/toss.svg';
 
 const DURATION = 35;
 
@@ -25,7 +25,7 @@ export default function TrustedBy() {
       <h2 className={trustedByHeading}>
         앞으로 유수의 기업에 합격할 예정인
         <br />
-        개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다{" "}
+        개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다{' '}
         <FingerHeartIcon className={fingerHeartIcon} />
       </h2>
       <div className={tickerWrapper}>

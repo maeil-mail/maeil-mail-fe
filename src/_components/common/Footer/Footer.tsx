@@ -3,8 +3,8 @@ import {
   GITHUB_ORGANIZATION_URL,
   TEAM_EMAIL,
   TEAM_INTRODUCTION_URL,
-} from "@/_constants/externalUrl";
-import { container, innerWrapper, side, underline } from "./footer.css";
+} from '@/_constants/externalUrl';
+import { container, innerWrapper, side, underline } from './footer.css';
 
 export default function Footer() {
   return (

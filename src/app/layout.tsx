@@ -1,36 +1,36 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { MSWComponent } from "@/_mocks/MSWComponent";
-import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import FRONTEND_BASE_URL from "@/_constants/frontendBaseUrl";
+import type { Metadata } from 'next';
+import './globals.css';
+import { MSWComponent } from '@/_mocks/MSWComponent';
+import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
 
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "매일메일 - 기술 면접 질문 구독 서비스",
-  description: "기술 면접 질문을 매일매일 메일로 보내드릴게요!",
+  title: '매일메일 - 기술 면접 질문 구독 서비스',
+  description: '기술 면접 질문을 매일매일 메일로 보내드릴게요!',
   openGraph: {
     url: FRONTEND_BASE_URL,
-    siteName: "maeil-mail",
+    siteName: 'maeil-mail',
     images: [
       {
-        url: "https://dp71rnme1p14w.cloudfront.net/maeil-mail-ogImage.png",
+        url: 'https://dp71rnme1p14w.cloudfront.net/maeil-mail-ogImage.png',
         width: 800,
         height: 600,
       },
     ],
-    locale: "ko",
-    type: "website",
+    locale: 'ko',
+    type: 'website',
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
   verification: {
-    google: "lUmlpDPafqt0it7egKAkKdPY_csrp9UO5iefrbN-4Rk",
+    google: 'lUmlpDPafqt0it7egKAkKdPY_csrp9UO5iefrbN-4Rk',
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body>
         {children}
-        <div id="portal"></div>
+        <div id="portal" />
         <MSWComponent />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>

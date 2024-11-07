@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import formatMarkdownContent from "@/_utils/codemirror/formatMarkDownContent";
-import MarkdownPreview from "@uiw/react-markdown-preview";
-import "@mdxeditor/editor/style.css";
+import formatMarkdownContent from '@/_utils/codemirror/formatMarkDownContent';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import '@mdxeditor/editor/style.css';
 
 interface DetailAnswerProps {
   content: string;

@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { buttonSection, container, content, developerEmoji, keepAll, title } from "./error.css";
-import Txt from "@/_components/common/Txt/Txt";
-import Button from "@/_components/common/Button/Button";
-import { useRouter } from "next/navigation";
-import PAGE_ROUTES from "@/_constants/pageRoutes";
-import { myStyle } from "@/_styles/vars.css";
-import { FE_GITHUB_ISSUE_URL, FEEDBACK_GOOGLE_FORM_URL } from "@/_constants/externalUrl";
-import DeveloperEmoji from "@/_assets/images/developerEmoji.svg";
+import { buttonSection, container, content, developerEmoji, keepAll, title } from './error.css';
+import Txt from '@/_components/common/Txt/Txt';
+import Button from '@/_components/common/Button/Button';
+import { useRouter } from 'next/navigation';
+import PAGE_ROUTES from '@/_constants/pageRoutes';
+import { myStyle } from '@/_styles/vars.css';
+import { FE_GITHUB_ISSUE_URL, FEEDBACK_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import DeveloperEmoji from '@/_assets/images/developerEmoji.svg';
 
-export default function Error({}) {
+export default function Error() {
   const router = useRouter();
 
   const handleFeedbackButton = () => {
@@ -26,11 +26,11 @@ export default function Error({}) {
       <section className={content}>
         <DeveloperEmoji className={developerEmoji} />
         <Txt variant="medium">
-          불편을 드려 죄송합니다.{" "}
+          불편을 드려 죄송합니다.{' '}
           <a href={FE_GITHUB_ISSUE_URL} target="_blank">
             Github Issue
           </a>
-          나{" "}
+          나{' '}
           <a href={FEEDBACK_GOOGLE_FORM_URL} target="_blank">
             구글 폼
           </a>
