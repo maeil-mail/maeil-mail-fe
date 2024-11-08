@@ -12,10 +12,10 @@ import ClosingCTA from '@/_components/Home/ClosingCTASection/ClosingCTASection';
 import Footer from '@/_components/common/Footer/Footer';
 
 interface HomePageProps {
-  count: number;
+  subscriberCount: number;
 }
 
-export default function HomePage({ count }: HomePageProps) {
+export default function HomePage({ subscriberCount }: HomePageProps) {
   const { isModalOpen, handleModalOpen, handleModalClose } = useModal();
 
   return (
@@ -25,7 +25,7 @@ export default function HomePage({ count }: HomePageProps) {
         <HeroSection onCTA={handleModalOpen} />
         <DescriptionSection />
         <TrustedBy />
-        <ClosingCTA onCTA={handleModalOpen} count={count} />
+        <ClosingCTA onCTA={handleModalOpen} subscriberCount={subscriberCount} />
         <Footer />
       </div>
       <SubscribeModal isOpen={isModalOpen} closeModal={handleModalClose} />
