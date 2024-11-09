@@ -11,6 +11,10 @@ export const userReactionSectionContainer = style({
   '@media': {
     'screen and (max-width: 820px)': {
       padding: '7rem 0 14rem 0',
+      gap: '6.5rem',
+    },
+    'screen and (max-width: 400px)': {
+      padding: '0 0 14rem 0',
     },
   },
 });
@@ -20,12 +24,18 @@ export const userReactionHeading = style({
   fontWeight: 600,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
+  padding: '1.6rem',
 
   '@media': {
     'screen and (max-width: 820px)': {
       fontWeight: 700,
       letterSpacing: '-0.1rem',
       fontSize: '2rem',
+    },
+    'screen and (max-width: 400px)': {
+      fontWeight: 700,
+      letterSpacing: '-0.1rem',
+      fontSize: '1.8rem',
     },
   },
 });
