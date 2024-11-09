@@ -7,7 +7,7 @@ import { container } from '@/_components/Home/homeContent.css';
 import HomeNav from '@/_components/Home/HomeNav/HomeNav';
 import HeroSection from '@/_components/Home/HeroSection/HeroSection';
 import DescriptionSection from '@/_components/Home/DescriptionSection/DescriptionSection';
-import TrustedBy from '@/_components/Home/TrustedBySection/TrustedBySection';
+import UserReactionSection from '@/_components/Home/UserReactionSection/UserReactionSection';
 import ClosingCTA from '@/_components/Home/ClosingCTASection/ClosingCTASection';
 import Footer from '@/_components/common/Footer/Footer';
 
@@ -24,7 +24,7 @@ export default function HomePage({ subscriberCount }: HomePageProps) {
         <HomeNav onSubscribe={handleModalOpen} />
         <HeroSection onCTA={handleModalOpen} />
         <DescriptionSection />
-        <TrustedBy />
+        <UserReactionSection />
         <ClosingCTA onCTA={handleModalOpen} subscriberCount={subscriberCount} />
         <Footer />
       </div>

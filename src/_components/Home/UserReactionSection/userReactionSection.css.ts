@@ -1,7 +1,7 @@
 import { primary } from '@/_styles/vars.css';
 import { style } from '@vanilla-extract/css';
 
-export const trustedBySection = style({
+export const userReactionSectionContainer = style({
   padding: '14rem 0 14rem 0',
   display: 'flex',
   flexDirection: 'column',
@@ -15,8 +15,8 @@ export const trustedBySection = style({
   },
 });
 
-export const trustedByHeading = style({
-  fontSize: '3rem',
+export const userReactionHeading = style({
+  fontSize: '3.5rem',
   fontWeight: 600,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
@@ -59,15 +59,34 @@ export const tickerWrapper = style({
   },
 });
 
-export const companyLogo = style({
-  margin: 'auto 8rem auto 0',
-  height: '5rem',
+export const commentContainer = style({ lineHeight: '2.2rem', color: '#666666' });
 
-  '@media': {
-    'screen and (max-width: 820px)': {
-      margin: 'auto 6rem auto 0',
-    },
-  },
+export const logoFont = style({ color: primary, fontWeight: 600 });
+
+export const bold = style({ fontWeight: 700 });
+
+// userReactionItem
+export const userReactionItemContainer = style({
+  boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.1)',
+  margin: '1rem',
+  padding: '3rem',
+  borderRadius: '2rem',
+  width: '31rem',
+  fontSize: '1.5rem',
 });
 
-export const lineLogo = style({ height: '12rem' });
+export const userReactionProfile = style({
+  display: 'flex',
+  gap: '1.5rem',
+  alignItems: 'center',
+  marginBottom: '1rem',
+});
+
+export const userReactionName = style({
+  fontSize: '1.9rem',
+  letterSpacing: '0.2rem',
+  fontWeight: 600,
+  marginBottom: '0.3rem',
+});
+
+export const userReactionBackground = style({ color: '#666666', fontSize: '1.4rem' });
