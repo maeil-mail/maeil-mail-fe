@@ -6,6 +6,7 @@ import { getDetailQuestion } from '@/_apis/question';
 import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import Footer from '@/_components/common/Footer/Footer';
 import { pageLayout } from './page.css';
+import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -30,15 +31,11 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
   return (
     <div>
       <QuestionPageNav isSharable />
-      <div className={pageLayout}>
-        <div>
-          <DetailTitle title={detailQuestion.title} />
-          <DetailCategory category={detailQuestion.category} />
-        </div>
-
+      <PageInnerLayout>
+        <DetailTitle title={detailQuestion.title} />
+        <DetailCategory category={detailQuestion.category} />
         <DetailAnswer content={detailQuestion.content} />
-      </div>
-      <Footer />
+      </PageInnerLayout>
     </div>
   );
 }

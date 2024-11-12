@@ -25,7 +25,6 @@ export default function HomePage({ subscriberCount }: HomePageProps) {
         <DescriptionSection />
         <UserReactionSection />
         <ClosingCTA onCTA={handleModalOpen} subscriberCount={subscriberCount} />
-        <Footer />
       </div>
       <SubscribeModal isOpen={isModalOpen} closeModal={handleModalClose} />
     </div>
