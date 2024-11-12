@@ -5,7 +5,7 @@ import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getDetailQuestion } from '@/_apis/api';
-import QuestionDetailNav from '@/_components/QuestionDetail/QuestionDetailNav';
+import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import Footer from '@/_components/common/Footer/Footer';
 import { pageLayout, detailHeaderWrapper } from './page.css';
 
@@ -31,7 +31,7 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
 
   return (
     <div className={myStyle}>
-      <QuestionDetailNav />
+      <QuestionPageNav isSharable />
       <div className={pageLayout}>
         <div className={detailHeaderWrapper}>
           <DetailTitle title={detailQuestion.title} />
