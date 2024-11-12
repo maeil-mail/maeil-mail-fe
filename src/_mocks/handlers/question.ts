@@ -1,4 +1,4 @@
-import API_ROUTES from '@/_apis/routes';
+import API_ROUTES from '@/_apis/constants/routes';
 import { http, HttpResponse } from 'msw';
 import MOCK_QUESTIONS from './mockData/questions.json';
 

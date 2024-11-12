@@ -4,7 +4,7 @@ import { myStyle } from '@/_styles/vars.css';
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
-import { getDetailQuestion } from '@/_apis/api';
+import { getDetailQuestion } from '@/_apis/question';
 import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import Footer from '@/_components/common/Footer/Footer';
 import { pageLayout, detailHeaderWrapper } from './page.css';
