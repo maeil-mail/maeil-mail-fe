@@ -1,34 +1,24 @@
 import API_ROUTES from '@/_apis/routes';
 import { http, HttpResponse } from 'msw';
-import BASE_URL from '@/_apis/baseUrl';
-import ALL_QUESTIONS from './allQuestions.json';
+import MOCK_QUESTIONS from './mockData/questions.json';
 
-export const handlers = [
-  http.post(`${BASE_URL}${API_ROUTES.post_subscribe}`, () => {
+export const questionHandlers = [
+  http.post(API_ROUTES.post_new_question, () => {
     return HttpResponse.json(null, {
       status: 200,
     });
   }),
-  http.post(`${BASE_URL}${API_ROUTES.post_new_question}`, () => {
-    return HttpResponse.json(null, {
-      status: 200,
-    });
-  }),
-  http.post(`${BASE_URL}${API_ROUTES.verify_email}`, () => {
-    return HttpResponse.json(null, {
-      status: 200,
-    });
-  }),
-  http.get(`${BASE_URL}${API_ROUTES.question}`, ({ request }) => {
+
+  http.get(API_ROUTES.question, ({ request }) => {
     const url = new URL(request.url);
     const category = url.searchParams.get('category');
 
     let filteredQuestions;
 
     if (!category || category === 'all') {
-      filteredQuestions = ALL_QUESTIONS;
+      filteredQuestions = MOCK_QUESTIONS;
     } else {
-      filteredQuestions = ALL_QUESTIONS.filter((q) => q.category === category);
+      filteredQuestions = MOCK_QUESTIONS.filter((question) => question.category === category);
     }
 
     if (filteredQuestions.length > 0) {
@@ -37,16 +27,16 @@ export const handlers = [
       });
     } else {
       return HttpResponse.json(
-        { error: '질문을 찾을 수 없어요!' },
+        { error: 'Mock 데이터에서 해당 질문을 찾을 수 없어요!' },
         {
           status: 404,
         },
       );
     }
   }),
-  http.get(`${BASE_URL}${API_ROUTES.question}/:id`, ({ params }) => {
+  http.get(`${API_ROUTES.question}/:id`, ({ params }) => {
     const { id } = params;
-    const question = ALL_QUESTIONS.find((question) => question.id === Number(id));
+    const question = MOCK_QUESTIONS.find((question) => question.id === Number(id));
 
     if (question) {
       return HttpResponse.json(question, {
