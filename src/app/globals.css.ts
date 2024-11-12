@@ -71,6 +71,7 @@ globalStyle('.wmde-markdown', {
 
 globalStyle('.wmde-markdown h2', {
   border: 'none !important',
+  letterSpacing: '-0.03rem',
 });
 
 globalStyle('.wmde-markdown code', {
@@ -98,8 +99,8 @@ globalStyle('.wmde-markdown img', {
 });
 
 globalStyle('.wmde-markdown p', {
-  fontSize: '1.8rem',
-  letterSpacing: '-0.05rem',
+  fontSize: '1.65rem',
+  letterSpacing: '-0.02rem',
 });
 
 globalStyle(
