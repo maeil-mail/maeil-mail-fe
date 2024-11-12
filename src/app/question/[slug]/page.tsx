@@ -1,13 +1,11 @@
 import { Metadata } from 'next';
-import { myStyle } from '@/_styles/vars.css';
-
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getDetailQuestion } from '@/_apis/question';
 import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import Footer from '@/_components/common/Footer/Footer';
-import { pageLayout, detailHeaderWrapper } from './page.css';
+import { pageLayout } from './page.css';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -30,10 +28,10 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return (
-    <div className={myStyle}>
+    <div>
       <QuestionPageNav isSharable />
       <div className={pageLayout}>
-        <div className={detailHeaderWrapper}>
+        <div>
           <DetailTitle title={detailQuestion.title} />
           <DetailCategory category={detailQuestion.category} />
         </div>

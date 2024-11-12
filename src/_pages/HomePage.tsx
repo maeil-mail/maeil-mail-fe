@@ -2,7 +2,6 @@
 
 import SubscribeModal from '@/_components/Home/SubscribeModal/SubscribeModal';
 import useModal from '@/_hooks/useModal';
-import { myStyle } from '@/_styles/vars.css';
 import { container } from '@/_components/Home/homeContent.css';
 import HomeNav from '@/_components/Home/HomeNav/HomeNav';
 import HeroSection from '@/_components/Home/HeroSection/HeroSection';
@@ -19,7 +18,7 @@ export default function HomePage({ subscriberCount }: HomePageProps) {
   const { isModalOpen, handleModalOpen, handleModalClose } = useModal();
 
   return (
-    <div className={myStyle}>
+    <div>
       <div className={container}>
         <HomeNav onSubscribe={handleModalOpen} />
         <HeroSection onCTA={handleModalOpen} />

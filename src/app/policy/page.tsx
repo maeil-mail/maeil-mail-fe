@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import { myStyle } from '@/_styles/vars.css';
 import { container, wrapper, titleWrapper, mainWrapper, contentText } from './privacy.css';
 import Txt from '@/_components/common/Txt/Txt';
 import UpArrow from '@/_components/common/Icon/UpArrow';
@@ -60,7 +59,7 @@ export default function Privacy() {
   };
 
   return (
-    <div className={`${myStyle} ${container}`}>
+    <div className={container}>
       <div className={mainWrapper}>
         <Txt variant="xLarge" center>
           개인정보취급방침

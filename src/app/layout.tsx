@@ -4,6 +4,7 @@ import { MSWComponent } from '@/_mocks/MSWComponent';
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
+import { myStyle } from '@/_styles/vars.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -43,7 +44,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className={myStyle}>
         {children}
         <div id="portal" />
         <MSWComponent />

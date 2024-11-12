@@ -1,5 +1,4 @@
 import { checkboxContainer, selectText, checkbox, primaryColor } from './checkboxInput.css';
-import { myStyle } from '@/_styles/vars.css';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 interface CheckboxInputProps extends InputHTMLAttributes<HTMLInputElement> {

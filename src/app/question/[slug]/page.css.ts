@@ -6,9 +6,5 @@ export const pageLayout = style({
   width: '85%',
   maxWidth: '110rem',
   margin: '0 auto',
-  paddingBottom: '10rem',
-});
-
-export const detailHeaderWrapper = style({
-  marginTop: '6rem',
+  padding: '6rem 0 10rem 0',
 });

@@ -5,7 +5,6 @@ import Txt from '@/_components/common/Txt/Txt';
 import Button from '@/_components/common/Button/Button';
 import { useRouter } from 'next/navigation';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
-import { myStyle } from '@/_styles/vars.css';
 import { FE_GITHUB_ISSUE_URL, FEEDBACK_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 import DeveloperEmoji from '@/_assets/images/developerEmoji.svg';
 
@@ -21,7 +20,7 @@ export default function Error() {
   };
 
   return (
-    <div className={`${container} ${myStyle} ${keepAll}`}>
+    <div className={`${container} ${keepAll}`}>
       <h1 className={title}>예기치 못한 오류가 발생했어요</h1>
       <section className={content}>
         <DeveloperEmoji className={developerEmoji} />
