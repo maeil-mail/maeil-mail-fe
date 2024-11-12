@@ -25,6 +25,7 @@ export const userReactionHeading = style({
   letterSpacing: '-0.21rem',
   textAlign: 'center',
   padding: '1.6rem',
+  color: '#2b2b2b',
 
   '@media': {
     'screen and (max-width: 820px)': {

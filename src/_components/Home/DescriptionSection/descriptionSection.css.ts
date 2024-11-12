@@ -101,6 +101,7 @@ export const descriptionHeading = style({
   fontSize: '4rem',
   letterSpacing: '-0.2rem',
   fontWeight: 600,
+  color: '#2b2b2b',
 
   '@media': {
     'screen and (max-width: 820px)': {
