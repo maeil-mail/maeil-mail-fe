@@ -1,6 +1,7 @@
 import API_ROUTES from '@/_apis/constants/routes';
 import { http, HttpResponse } from 'msw';
 import MOCK_QUESTIONS from './mockData/questions.json';
+import MOCK_MY_QUESTIONS from './mockData/myQuestions.json';
 
 export const questionHandlers = [
   http.post(API_ROUTES.post_new_question, () => {
@@ -34,6 +35,13 @@ export const questionHandlers = [
       );
     }
   }),
+
+  http.get(API_ROUTES.myQuestions, () => {
+    return HttpResponse.json(MOCK_MY_QUESTIONS, {
+      status: 200,
+    });
+  }),
+
   http.get(`${API_ROUTES.question}/:id`, ({ params }) => {
     const { id } = params;
     const question = MOCK_QUESTIONS.find((question) => question.id === Number(id));
