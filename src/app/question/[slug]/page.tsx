@@ -4,8 +4,6 @@ import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getDetailQuestion } from '@/_apis/question';
 import QuestionPageNav from '@/_components/common/QuestionPageNav';
-import Footer from '@/_components/common/Footer/Footer';
-import { pageLayout } from './page.css';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 
 type QuestionDetailPageProps = {
