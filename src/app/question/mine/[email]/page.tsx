@@ -36,14 +36,14 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
 
   const email = decodeURIComponent(rawEmail);
 
-  const questions = await getMyQuestions();
+  const questions = await getMyQuestions(email);
 
   return (
     <div>
       <QuestionPageNav />
       <PageInnerLayout>
         <MyQuestionListHeader email={email} />
-        <MyQuestionList questions={MOCK_QUESTIONS} />
+        <MyQuestionList questions={questions} />
       </PageInnerLayout>
     </div>
   );
