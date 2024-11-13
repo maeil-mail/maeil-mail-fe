@@ -1,7 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-// question list
-
+// QuestionList
 export const questionListContainer = style({
   padding: '4rem 0',
   display: 'flex',
@@ -16,7 +15,6 @@ export const emptyCase = style({
 });
 
 // QuestionItem
-
 export const questionItemContainer = style({
   fontSize: '1.6rem',
   color: '#2b2b2b',
@@ -32,10 +30,10 @@ export const questionItemContainer = style({
 });
 
 export const animatedHover = style({
-  transition: 'transform 0.2s ease, box-shadow 0.2s ease', // 기본 상태에 적용되는 트랜지션
+  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
   ':hover': {
-    transform: 'translateY(-0.5px)', // 호버 시 위로 살짝 이동
-    boxShadow: '0px 3px 8px rgba(0, 0, 0, 0.13)', // 호버 시 그림자 효과 추가
+    transform: 'translateY(-0.5px)',
+    boxShadow: '0px 3px 8px rgba(0, 0, 0, 0.13)',
   },
 });
 

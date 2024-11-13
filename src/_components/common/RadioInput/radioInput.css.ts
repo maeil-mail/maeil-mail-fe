@@ -19,9 +19,8 @@ export const radio = style({
   borderRadius: '30px',
   selectors: {
     '&:checked': {
-      backgroundColor: 'white', // 체크 시 내부 원 색상
-      border: `5px solid ${primary}`, // 라인과 원 사이의 색상
-      // boxShadow: '0 0 0 1px #111', // 라인
+      backgroundColor: 'white',
+      border: `5px solid ${primary}`,
     },
   },
 });
