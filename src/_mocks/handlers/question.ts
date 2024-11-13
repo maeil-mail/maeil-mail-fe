@@ -36,7 +36,24 @@ export const questionHandlers = [
     }
   }),
 
-  http.get(API_ROUTES.myQuestions, () => {
+  http.get(`${API_ROUTES.myQuestions}`, ({ request }) => {
+    const url = new URL(request.url);
+    const email = url.searchParams.get('email');
+
+    if (email === 'wrong') {
+      return HttpResponse.json(null, {
+        status: 400,
+      });
+    }
+
+    if (email === 'empty@gmail.com') {
+      return HttpResponse.json(
+        { ...MOCK_MY_QUESTIONS, data: [] },
+        {
+          status: 200,
+        },
+      );
+    }
     return HttpResponse.json(MOCK_MY_QUESTIONS, {
       status: 200,
     });

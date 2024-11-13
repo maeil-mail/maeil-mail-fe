@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MyQuestionItem from './QuestionItem';
-import { questionListContainer } from './MyQuestionList.css';
+import { emptyCase, questionListContainer } from './MyQuestionList.css';
 import Link from 'next/link';
 
 export interface MyQuestion {
@@ -14,6 +14,12 @@ export interface MyQuestionListProps {
 }
 
 export default function MyQuestionList({ questions }: MyQuestionListProps) {
+  const isEmpty = questions.length === 0;
+
+  if (isEmpty) {
+    return <div className={emptyCase}>아직 받은 질문이 없습니다.</div>;
+  }
+
   return (
     <div className={questionListContainer}>
       {questions.map((question) => (

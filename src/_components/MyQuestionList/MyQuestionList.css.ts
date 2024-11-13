@@ -9,6 +9,12 @@ export const questionListContainer = style({
   gap: '1.7rem',
 });
 
+export const emptyCase = style({
+  width: 'fit-content',
+  fontSize: '1.6rem',
+  margin: '5rem 0',
+});
+
 // QuestionItem
 
 export const questionItemContainer = style({

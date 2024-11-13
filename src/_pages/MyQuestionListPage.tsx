@@ -4,15 +4,11 @@ import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import MyQuestionListHeader from '@/_components/MyQuestionList/Header';
 import MyQuestionList from '@/_components/MyQuestionList/MyQuestionList';
 
-type MyQuestionListProps = {
-  params: Promise<{ email: string }>;
+type MyQuestionListPageProps = {
+  email: string;
 };
 
-export default async function MyQuestionListPage({ params }: MyQuestionListProps) {
-  const { email: rawEmail } = await params;
-
-  const email = decodeURIComponent(rawEmail);
-
+export default async function MyQuestionListPage({ email }: MyQuestionListPageProps) {
   const questions = await getMyQuestions(email);
 
   return (
