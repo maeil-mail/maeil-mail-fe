@@ -16,7 +16,7 @@ export const postSubscribe = async ({
   code: string;
 }) => {
   try {
-    const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
+    const response = await fetch(`${BASE_URL}${API_ROUTES.subscribe}`, {
       method: 'POST',
       body: JSON.stringify({
         email,

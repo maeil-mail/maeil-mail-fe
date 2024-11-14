@@ -1,5 +1,5 @@
 const API_ROUTES = {
-  post_subscribe: '/subscribe',
+  subscribe: '/subscribe',
   verify_email: '/subscribe/verify/send',
   question: '/question',
   myQuestions: '/subscribe-question',

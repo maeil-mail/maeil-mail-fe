@@ -2,7 +2,7 @@ import API_ROUTES from '@/_apis/constants/routes';
 import { http, HttpResponse } from 'msw';
 
 export const subscriptionHandlers = [
-  http.post(API_ROUTES.post_subscribe, () => {
+  http.post(API_ROUTES.subscribe, () => {
     console.log('handle subscribe');
     return HttpResponse.json(null, {
       status: 200,
