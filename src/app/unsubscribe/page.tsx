@@ -13,6 +13,7 @@ import {
   unsubscribeTitle,
   unsubscribeTypo,
 } from './unsubscribe.css';
+import PAGE_ROUTES from '@/_constants/pageRoutes';
 
 export default function Unsubscribe() {
   const searchParams = useSearchParams();
@@ -27,7 +28,7 @@ export default function Unsubscribe() {
 
   const handleUnsubscribe = async () => {
     await deleteSubscribe({ email, token });
-    router.push(API_ROUTES.unsubscribeCompleted);
+    router.push(PAGE_ROUTES.unsubscribeCompleted);
   };
 
   return (

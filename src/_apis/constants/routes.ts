@@ -1,12 +1,10 @@
 const API_ROUTES = {
-  post_subscribe: '/subscribe',
+  subscribe: '/subscribe',
   verify_email: '/subscribe/verify/send',
   question: '/question',
   myQuestions: '/subscribe-question',
   post_new_question: '/admin/question',
   subscriberCount: '/statistics/subscribe',
-  unsubscribe: '/unsubscribe',
-  unsubscribeCompleted: '/unsubscribe/completed',
 } as const;
 
 export const pathGenerator = {
