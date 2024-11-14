@@ -1,6 +1,5 @@
 import type { CategoryEN } from '@/_types';
 import { questionItemContainer } from './question.css';
-import { myStyle } from '@/_styles/vars.css';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 import Link from 'next/link';
 import Txt from '../common/Txt/Txt';
@@ -19,7 +18,7 @@ const formatCategory = (category: CategoryEN) => {
 
 export default function QuestionItem({ id, title, category }: QuestionItemProps) {
   return (
-    <Link href={`${PAGE_ROUTES.question}/${id}`} className={`${questionItemContainer} ${myStyle}`}>
+    <Link href={`${PAGE_ROUTES.question}/${id}`} className={questionItemContainer}>
       <Txt variant="large">{title}</Txt>
       <Divider variant="none" />
       <SubTxt variant="default">분야: {formatCategory(category)}</SubTxt>

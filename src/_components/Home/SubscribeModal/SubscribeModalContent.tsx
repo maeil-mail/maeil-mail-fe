@@ -1,4 +1,3 @@
-import { myStyle } from '@/_styles/vars.css';
 import {
   container,
   title,
@@ -52,7 +51,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
   } = useSubscribe();
 
   return (
-    <div className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}>
+    <div className={`${container} ${isSubscriptionSuccess && successLayout}`}>
       {isSubscriptionSuccess ? (
         <SuccessContent closeModal={closeModal} />
       ) : (

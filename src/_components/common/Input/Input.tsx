@@ -1,6 +1,5 @@
 import { InputHTMLAttributes } from 'react';
 import { baseInputStyle, inputStyle, container, errorText, sizeStyle } from './input.css';
-import { myStyle } from '@/_styles/vars.css';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   variant: keyof typeof inputStyle;
@@ -20,7 +19,6 @@ export default function Input({
   const classNames = `
     ${inputStyle[variant]} 
     ${sizeStyle[size]} 
-    ${myStyle} 
     ${baseInputStyle} 
     ${className ? className : ''} `;
 

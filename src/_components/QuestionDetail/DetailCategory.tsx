@@ -1,4 +1,3 @@
-import { myStyle } from '@/_styles/vars.css';
 import { textWrapper, categoryHighlight } from './questionDetail.css';
 
 interface DetailCategoryProps {

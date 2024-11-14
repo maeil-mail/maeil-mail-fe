@@ -1,13 +1,10 @@
 import { Metadata } from 'next';
-import { myStyle } from '@/_styles/vars.css';
-
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
-import { getDetailQuestion } from '@/_apis/api';
-import QuestionDetailNav from '@/_components/QuestionDetail/QuestionDetailNav';
-import Footer from '@/_components/common/Footer/Footer';
-import { pageLayout, detailHeaderWrapper } from './page.css';
+import { getDetailQuestion } from '@/_apis/question';
+import QuestionPageNav from '@/_components/common/QuestionPageNav';
+import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -30,17 +27,13 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
   const detailQuestion = await getDetailQuestion({ id: decodedSlug });
 
   return (
-    <div className={myStyle}>
-      <QuestionDetailNav />
-      <div className={pageLayout}>
-        <div className={detailHeaderWrapper}>
-          <DetailTitle title={detailQuestion.title} />
-          <DetailCategory category={detailQuestion.category} />
-        </div>
-
+    <div>
+      <QuestionPageNav isSharable />
+      <PageInnerLayout>
+        <DetailTitle title={detailQuestion.title} />
+        <DetailCategory category={detailQuestion.category} />
         <DetailAnswer content={detailQuestion.content} />
-      </div>
-      <Footer />
+      </PageInnerLayout>
     </div>
   );
 }
