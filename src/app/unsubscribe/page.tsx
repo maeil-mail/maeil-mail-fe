@@ -16,8 +16,8 @@ import {
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 
 export default function Unsubscribe() {
-  const searchParams = useSearchParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const email = searchParams.get('email');
   const token = searchParams.get('token');
