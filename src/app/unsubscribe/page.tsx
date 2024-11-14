@@ -19,12 +19,8 @@ export default function Unsubscribe() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const email = searchParams.get('email');
-  const token = searchParams.get('token');
-
-  if (!email || !token) {
-    throw new Error('잘못된 접근입니다.');
-  }
+  const email = searchParams.get('email') || '';
+  const token = searchParams.get('token') || '';
 
   const handleUnsubscribe = async () => {
     await deleteSubscribe({ email, token });
