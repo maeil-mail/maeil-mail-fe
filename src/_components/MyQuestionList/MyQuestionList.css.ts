@@ -1,6 +1,25 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-// QuestionList
+// MyQuestionHeader
+export const questionHeaderContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.5rem',
+});
+
+export const questionHeaderTitle = style({
+  color: '#00A86B',
+  fontWeight: 600,
+  fontSize: '1.6rem',
+});
+
+export const questionHeaderSubTitle = style({
+  fontWeight: 600,
+  fontSize: '2.3rem',
+  color: '#2b2b2b',
+});
+
+// MyQuestionList
 export const questionListContainer = style({
   padding: '4rem 0',
   display: 'flex',
@@ -14,7 +33,7 @@ export const emptyCase = style({
   margin: '5rem 0',
 });
 
-// QuestionItem
+// MyQuestionItem
 export const questionItemContainer = style({
   fontSize: '1.6rem',
   color: '#2b2b2b',
