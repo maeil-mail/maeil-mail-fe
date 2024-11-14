@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-export const pageLayout = style({
+export const pageInnerLayout = style({
   height: 'auto',
   minHeight: '70vh',
   width: '85%',

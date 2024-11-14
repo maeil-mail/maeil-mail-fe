@@ -1,6 +1,14 @@
 'use client';
 
-import { buttonSection, container, content, developerEmoji, keepAll, title } from './error.css';
+import {
+  buttonSection,
+  container,
+  content,
+  developerEmoji,
+  keepAll,
+  title,
+  underline,
+} from '../../[slug]/error.css';
 import Txt from '@/_components/common/Txt/Txt';
 import Button from '@/_components/common/Button/Button';
 import { useRouter } from 'next/navigation';
@@ -21,19 +29,19 @@ export default function Error() {
 
   return (
     <div className={`${container} ${keepAll}`}>
-      <h1 className={title}>예기치 못한 오류가 발생했어요</h1>
+      <h1 className={title}>오류가 발생했어요</h1>
       <section className={content}>
         <DeveloperEmoji className={developerEmoji} />
         <Txt variant="medium">
-          불편을 드려 죄송합니다.{' '}
+          올바른 접근임에도 오류가 지속된다면,{' '}
           <a href={FE_GITHUB_ISSUE_URL} target="_blank">
-            Github Issue
+            <span className={underline}>Github Issue</span>
           </a>
           나{' '}
           <a href={FEEDBACK_GOOGLE_FORM_URL} target="_blank">
-            구글 폼
+            <span className={underline}>구글 폼</span>
           </a>
-          으로 지금 발생한 문제를 제보해 주시면, 빠르게 해결한 후 다시 안내 드리겠습니다!
+          으로 지금 발생한 문제를 제보해 주세요. 빠르게 해결한 후 다시 안내 드리겠습니다!
         </Txt>
       </section>
       <section className={buttonSection}>

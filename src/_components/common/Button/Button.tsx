@@ -1,8 +1,7 @@
-import { ButtonHTMLAttributes } from "react";
-import { buttonStyle, baseButtonStyle, disabledButton } from "./button.css";
-import type { PropsWithChildren } from "react";
-import { myStyle } from "@/_styles/vars.css";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { ButtonHTMLAttributes } from 'react';
+import { buttonStyle, baseButtonStyle, disabledButton } from './button.css';
+import type { PropsWithChildren } from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: keyof typeof buttonStyle;
@@ -17,8 +16,8 @@ export default function Button({
   disabled,
   ...props
 }: PropsWithChildren<ButtonProps>) {
-  const classNames = `${buttonStyle[variant]} ${myStyle} ${className ?? ""} ${baseButtonStyle} ${
-    disabled || isPending ? disabledButton : ""
+  const classNames = `${buttonStyle[variant]} ${className ?? ''} ${baseButtonStyle} ${
+    disabled || isPending ? disabledButton : ''
   }`;
 
   return (

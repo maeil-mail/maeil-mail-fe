@@ -39,3 +39,9 @@ export const buttonSection = style({
   gap: '1rem',
   width: '100%',
 });
+
+export const underline = style({
+  textDecoration: 'underline',
+  textUnderlineOffset: '3px',
+  textDecorationThickness: '0.3px',
+});

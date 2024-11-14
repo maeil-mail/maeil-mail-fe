@@ -2,7 +2,7 @@
 
 import { CategoryEN } from '@/_types';
 import BASE_URL from '@/_apis/baseUrl';
-import API_ROUTES from '@/_apis/routes';
+import API_ROUTES from '@/_apis/constants/routes';
 import handleAPIError from '@/_apis/utils/handleAPIError';
 import HTTPError from '@/_apis/error/HTTPError';
 
