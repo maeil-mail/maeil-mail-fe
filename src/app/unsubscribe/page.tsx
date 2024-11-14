@@ -1,6 +1,5 @@
 'use client';
 
-import API_ROUTES from '@/_apis/constants/routes';
 import { deleteSubscribe } from '@/_apis/subscription';
 import Button from '@/_components/common/Button/Button';
 import Nav from '@/_components/common/Nav/Nav';
@@ -15,12 +14,24 @@ import {
 } from './unsubscribe.css';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 
-export default function Unsubscribe() {
+export default function UnsubscribePage() {
+  return (
+    <React.Suspense>
+      <Unsubscribe />;
+    </React.Suspense>
+  );
+}
+
+function Unsubscribe() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const email = searchParams.get('email') || '';
   const token = searchParams.get('token') || '';
+
+  if (!email || !token) {
+    throw new Error('올바르지 않은 접근입니다.');
+  }
 
   const handleUnsubscribe = async () => {
     await deleteSubscribe({ email, token });
