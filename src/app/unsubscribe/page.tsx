@@ -1,51 +1,51 @@
+'use client';
+
+import API_ROUTES from '@/_apis/constants/routes';
+import { deleteSubscribe } from '@/_apis/subscription';
 import Button from '@/_components/common/Button/Button';
-import { myStyle, primary } from '@/_styles/vars.css';
+import Nav from '@/_components/common/Nav/Nav';
+import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
+import { useRouter, useSearchParams } from 'next/navigation';
 import * as React from 'react';
+import {
+  unsubscribeButton,
+  unsubscribeContent,
+  unsubscribeTitle,
+  unsubscribeTypo,
+} from './unsubscribe.css';
 
-export interface UnsubscribeProps {}
+export default function Unsubscribe() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-export default function Unsubscribe(props: UnsubscribeProps) {
+  const email = searchParams.get('email');
+  const token = searchParams.get('token');
+
+  if (!email || !token) {
+    throw new Error('잘못된 접근입니다.');
+  }
+
+  const handleUnsubscribe = async () => {
+    await deleteSubscribe({ email, token });
+    router.push(API_ROUTES.unsubscribeCompleted);
+  };
+
   return (
-    <div
-      className={myStyle}
-      style={{
-        width: 'fit-content',
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '3rem',
-      }}
-    >
-      <h1
-        style={{
-          width: 'fit-content',
-          fontSize: '2.5rem',
-          color: primary,
-        }}
-      >
-        매일메일 구독 해지
-      </h1>
-      <p
-        style={{
-          fontSize: '1.6rem',
-          textAlign: 'center',
-          lineHeight: '3rem',
-        }}
-      >
-        구독을 해지하시면 기술 질문을 더 이상 받아볼 수 없어요.
-        <br />
-        매일메일 구독을 해지하시겠습니까?
-      </p>
+    <div>
+      <Nav />
+      <PageInnerLayout>
+        <div className={unsubscribeContent}>
+          <h1 className={unsubscribeTitle}>매일메일 구독 해지</h1>
+          <p className={unsubscribeTypo}>
+            해지하면 기술 질문을 더 이상 받아볼 수 없어요.
+            <br /> 매일메일 구독을 해지하시겠습니까?
+          </p>
 
-      <Button
-        variant="border"
-        style={{
-          width: 'fit-content',
-        }}
-      >
-        구독 해지하기
-      </Button>
+          <Button className={unsubscribeButton} onClick={handleUnsubscribe} variant="border">
+            구독 해지하기
+          </Button>
+        </div>
+      </PageInnerLayout>
     </div>
   );
 }

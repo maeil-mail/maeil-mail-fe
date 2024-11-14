@@ -1,5 +1,5 @@
 import { CategoryEN } from '@/_types';
-import API_ROUTES from './constants/routes';
+import API_ROUTES, { pathGenerator } from './constants/routes';
 import mainClient from './client/mainClient';
 
 export const postSubscribe = async ({
@@ -16,4 +16,8 @@ export const postSubscribe = async ({
     category: categories,
     code,
   });
+};
+
+export const deleteSubscribe = async (body: { email: string; token: string }) => {
+  await mainClient.delete(API_ROUTES.unsubscribe, body);
 };

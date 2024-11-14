@@ -38,6 +38,22 @@ export default class APIClient {
     }
   }
 
+  async delete(path: string, body?: any) {
+    const url = this.generateUrl(path);
+
+    const response = await fetch(url, {
+      method: 'DELETE',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('에러');
+    }
+  }
+
   private generateUrl(path: string) {
     return `${this.baseUrl}${path}`;
   }

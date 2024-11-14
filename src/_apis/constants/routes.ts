@@ -5,6 +5,8 @@ const API_ROUTES = {
   myQuestions: '/subscribe-question',
   post_new_question: '/admin/question',
   subscriberCount: '/statistics/subscribe',
+  unsubscribe: '/unsubscribe',
+  unsubscribeCompleted: '/unsubscribe/completed',
 } as const;
 
 export const pathGenerator = {
