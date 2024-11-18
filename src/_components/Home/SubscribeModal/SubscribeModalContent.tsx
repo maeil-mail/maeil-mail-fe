@@ -12,7 +12,9 @@ import {
   verificationSection,
   categorySubtext,
   underline,
+  closeButton,
 } from './subscribeModalContent.css';
+import CloseIcon from '@/_assets/icons/close.svg';
 import Button from '../../common/Button/Button';
 import LoadingSpinner from '../../common/LoadingSpinner/LoadingSpinner';
 import VerifyEmailInput from './VerifyEmailInput';
@@ -57,6 +59,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
       ) : (
         <>
           <h2 className={title}>매일메일 구독</h2>
+          <CloseIcon onClick={closeModal} className={closeButton} />
           <section className={inputSection}>
             <div className={categoryWrapper}>
               <p className={categoryText}>
