@@ -1,29 +1,93 @@
-import { ERROR_MESSAGE } from '@/_constants/messages';
+import { useState } from 'react';
+import { CategoryEN } from '@/_types';
+import validateEmail from '@/_utils/validateEmail';
 import toast from '@/_utils/toast';
+import { ERROR_MESSAGE } from '@/_constants/messages';
 import useSubscriptionMutation from './mutations/useSubscriptionMutation';
 import useVerifyMutation from './mutations/useVerifyMutation';
-import useConsent from './useConsent';
-import useEmail from './useEmail';
-import useVerificationNumber from './useVerificationNumber';
-import useCategories from './useCategories';
+
+export interface SubscriptionFormState {
+    email: string;
+    categories: CategoryEN[];
+    verificationNumber: string;
+    isAgreed: boolean;
+    isTouched: boolean;
+    isSentEmail: boolean;
+    isVerifyingPending: boolean;
+  }
+
+const MAX_VERIFICATION_NUMBER_LENGTH = 4;
 
 const useSubscribe = () => {
+  const [formState, setFormState] = useState<SubscriptionFormState>({
+    email: '',
+    categories: [],
+    verificationNumber: '',
+    isAgreed: false,
+    isTouched: false,
+    isSentEmail: false,
+    isVerifyingPending: false,
+  });
+
+  const isValidEmail = formState.isTouched && validateEmail(formState.email);
+
+  const isValidCategories = formState.categories.length > 0;
+
+  const isValidVerificationNumber = 
+    /^\d*$/.test(formState.verificationNumber) && 
+    formState.verificationNumber.length === MAX_VERIFICATION_NUMBER_LENGTH;
+
+  const isAllValid = 
+    isValidCategories && 
+    isValidEmail && 
+    isValidVerificationNumber && 
+    formState.isAgreed;
+
+  const updateForm = (updates: Partial<SubscriptionFormState>) => {
+    setFormState(prev => ({ ...prev, ...updates }));
+  };
+
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateForm({ email: e.target.value });
+  };
+
+  const handleFocus = () => {
+    if (!formState.isTouched) {
+      updateForm({ isTouched: true });
+    }
+  };
+
+  const handleCategories = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const categories = formState.categories.includes(value as CategoryEN)
+      ? formState.categories.filter(category => category !== value)
+      : [...formState.categories, value as CategoryEN];
+    
+    updateForm({ categories });
+  };
+
+  const handleVerificationNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      updateForm({ verificationNumber: value });
+    }
+  };
+
+  const handleConsent = () => {
+    updateForm({ isAgreed: !formState.isAgreed });
+  };
+
   const {
     subscriptionMutation,
     isSuccess: isSubscriptionSuccess,
     isPending: isSubscriptionPending,
     isError: isSubscriptionError,
   } = useSubscriptionMutation();
-  const { email, handleEmail, isValidEmail, handleFocus, isTouched } = useEmail();
-  const { categories, isValidCategories, handleCategories } = useCategories();
-  const { verificationNumber, handleVerificationNumber, isValidVerificationNumber } =
-    useVerificationNumber();
-  const { isAgreed, handleConsent } = useConsent();
-  const { isSentEmail, handleVerifyEmail, isVerifyingPending } = useVerifyMutation({
-    email,
+
+  const { handleVerifyEmail, isSentEmail, isVerifyingPending } = useVerifyMutation({
+    email: formState.email,
     isValidCategories,
   });
-  const isAllValid = isValidCategories && isValidEmail && isValidVerificationNumber && isAgreed;
 
   const handleSubmitSubscription = async () => {
     if (!isValidCategories) {
@@ -37,33 +101,29 @@ const useSubscribe = () => {
     }
 
     subscriptionMutation({
-      email,
-      categories: categories,
-      code: verificationNumber,
+      email: formState.email,
+      categories: formState.categories,
+      code: formState.verificationNumber,
     });
   };
 
   return {
+    ...formState,
     isSubscriptionSuccess,
     isSubscriptionPending,
     isSubscriptionError,
     handleCategories,
     handleVerificationNumber,
-    verificationNumber,
     handleConsent,
     handleEmail,
-    isTouched,
     handleFocus,
     handleVerifyEmail,
     isSentEmail,
     isAllValid,
     handleSubmitSubscription,
-    email,
     isValidEmail,
-    isAgreed,
-    isVerifyingPending,
-    categories,
     isValidCategories,
+    isVerifyingPending
   };
 };
 

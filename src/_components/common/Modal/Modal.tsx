@@ -1,10 +1,10 @@
 import type { PropsWithChildren } from 'react';
 import { ModalProvider } from './ModalProvider';
 import type { ModalContextProps } from '@/_contexts/ModalContext';
-import useAnimation from '@/_hooks/useAnimation';
 import ModalPortal from './ModalPortal';
 import ModalBackdrop from './ModalBackdrop';
 import ModalContainer from './ModalContainer';
+import useAnimation from '@/_hooks/useAnimation';
 
 export default function Modal({
   children,
