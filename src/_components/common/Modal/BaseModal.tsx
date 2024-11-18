@@ -4,7 +4,7 @@ import { container } from './modal.css';
 
 interface BaseModalProps extends PropsWithChildren {
   isModalOpen: boolean;
-  handleModalClose: () => void;
+  handleModalClose?: () => void;
 }
 
 export default function BaseModal({ isModalOpen, handleModalClose, children }: BaseModalProps) {

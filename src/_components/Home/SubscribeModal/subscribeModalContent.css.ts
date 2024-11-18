@@ -33,6 +33,15 @@ export const title = style({
   textAlign: 'center',
 });
 
+export const closeButton = style({
+  width: '2rem',
+  position: 'absolute',
+  top: 20,
+  right: 20,
+  cursor: 'pointer',
+  margin: '0.5rem',
+});
+
 export const emailInputWrapper = style({
   display: 'flex',
   flexDirection: 'column',
