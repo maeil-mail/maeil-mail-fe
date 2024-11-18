@@ -1,6 +1,8 @@
-import Button from "@/_components/common/Button/Button";
-import { successText, container, title, buttonSection, caption } from "./successContent.css";
-import { FEEDBACK_GOOGLE_FORM_URL } from "@/_constants/externalUrl";
+import Button from '@/_components/common/Button/Button';
+import { successText, container, title, buttonSection, caption } from './successContent.css';
+import { FEEDBACK_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import CloseIcon from '@/_assets/icons/close.svg';
+import { closeButton } from './subscribeModalContent.css';
 
 interface SuccessContentProps {
   closeModal: () => void;
@@ -14,6 +16,7 @@ export default function SuccessContent({ closeModal }: SuccessContentProps) {
   return (
     <div className={container}>
       <h2 className={title}>구독 신청 완료</h2>
+      <CloseIcon onClick={closeModal} className={closeButton} />
       <span className={successText}>
         앞으로 오전 7시에 면접 질문을 보내드릴게요.
         <br />
