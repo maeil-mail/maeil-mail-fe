@@ -94,7 +94,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
             ) : (
               <>
                 <section className={verificationSection}>
-                  <h3 className={verificationNoti}>인증번호가 발송됐습니다.</h3>
+                  <h3 className={verificationNoti}>메일로 인증번호가 발송됐습니다.</h3>
                   <Input
                     onChange={handleVerificationNumber}
                     value={verificationNumber}
