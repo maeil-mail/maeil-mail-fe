@@ -75,7 +75,8 @@ globalStyle('.wmde-markdown h2', {
 });
 
 globalStyle('.wmde-markdown code', {
-  fontSize: '1.6rem !important',
+  fontSize: '1.3rem !important',
+  padding: '0.2em 0.2em',
 });
 
 globalStyle('.wmde-markdown pre', {

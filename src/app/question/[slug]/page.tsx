@@ -3,8 +3,8 @@ import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getDetailQuestion } from '@/_apis/question';
-import QuestionPageNav from '@/_components/common/QuestionPageNav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
+import Nav from '@/_components/common/Nav/Nav';
 
 type QuestionDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -28,7 +28,7 @@ export default async function QuestionDetailPage({ params }: QuestionDetailPageP
 
   return (
     <div>
-      <QuestionPageNav isSharable />
+      <Nav />
       <PageInnerLayout>
         <DetailTitle title={detailQuestion.title} />
         <DetailCategory category={detailQuestion.category} />
