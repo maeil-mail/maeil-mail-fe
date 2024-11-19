@@ -1,5 +1,5 @@
 import {
-  FEEDBACK_GOOGLE_FORM_URL,
+  GOOGLE_FORM_URL,
   GITHUB_ORGANIZATION_URL,
   TEAM_EMAIL,
   TEAM_INTRODUCTION_URL,
@@ -20,7 +20,7 @@ export default function Footer() {
           <a href={TEAM_INTRODUCTION_URL} target="_blank">
             <span className={underline}>팀 소개</span>
           </a>
-          <a href={FEEDBACK_GOOGLE_FORM_URL} target="_blank">
+          <a href={GOOGLE_FORM_URL.service} target="_blank">
             <span className={underline}> 서비스 피드백하기</span>
           </a>
           <a href={GITHUB_ORGANIZATION_URL} target="_blank">

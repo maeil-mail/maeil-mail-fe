@@ -1,6 +1,8 @@
-export const FEEDBACK_GOOGLE_FORM_URL = 'https://forms.gle/8AqXv4kBqiBVVQMk8';
-
-export const UNSUBSCRIBE_GOOGLE_FORM_URL = 'https://forms.gle/6M1oxBbHjVQZd7QX8';
+export const GOOGLE_FORM_URL = {
+  service: 'https://forms.gle/8AqXv4kBqiBVVQMk8',
+  unsubscribe: 'https://forms.gle/6M1oxBbHjVQZd7QX8',
+  mailContent: 'https://forms.gle/fxnG2mxR469E5yoC6',
+};
 
 export const FE_GITHUB_ISSUE_URL = 'https://github.com/maeil-mail/maeil-mail-fe/issues';
 

@@ -13,14 +13,14 @@ import Txt from '@/_components/common/Txt/Txt';
 import Button from '@/_components/common/Button/Button';
 import { useRouter } from 'next/navigation';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
-import { FE_GITHUB_ISSUE_URL, FEEDBACK_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import { FE_GITHUB_ISSUE_URL, GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 import DeveloperEmoji from '@/_assets/images/developerEmoji.svg';
 
 export default function Error() {
   const router = useRouter();
 
   const handleFeedbackButton = () => {
-    window.open(FEEDBACK_GOOGLE_FORM_URL);
+    window.open(GOOGLE_FORM_URL.service);
   };
 
   const navigateToHome = () => {
@@ -38,7 +38,7 @@ export default function Error() {
             <span className={underline}>Github Issue</span>
           </a>
           나{' '}
-          <a href={FEEDBACK_GOOGLE_FORM_URL} target="_blank">
+          <a href={GOOGLE_FORM_URL.service} target="_blank">
             <span className={underline}>구글 폼</span>
           </a>
           으로 지금 발생한 문제를 제보해 주세요. 빠르게 해결한 후 다시 안내 드리겠습니다!
