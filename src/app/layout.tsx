@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
 import './globals.css';
-import { MSWComponent } from '@/_mocks/MSWComponent';
-import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
-import { myStyle } from '@/_styles/vars.css';
 import Footer from '@/_components/common/Footer/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Inter } from 'next/font/google';
+import { MSWComponent } from '@/_mocks/MSWComponent';
+import type { Metadata } from 'next';
+import { myStyle } from '@/_styles/vars.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -46,11 +47,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className={myStyle}>
-        {children}
+        <div id="wrapper" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <main style={{ flex: 1 }}>{children}</main>
+          <Footer />
+        </div>
+
         <div id="portal" />
         <MSWComponent />
-        <Footer />
-        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
