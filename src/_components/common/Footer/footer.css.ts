@@ -1,15 +1,16 @@
-import { text2 } from '@/_styles/vars.css';
 import { style } from '@vanilla-extract/css';
+import { text2 } from '@/_styles/vars.css';
 
 export const container = style({
   width: '100%',
-  padding: '5rem 1.6rem 5rem 1.6rem',
-  display: 'flex',
-  justifyContent: 'center',
+  padding: '5rem 1.6rem',
   fontSize: '1.2rem',
   color: text2,
   backgroundColor: '#f9f9f9',
   fontWeight: 400,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const innerWrapper = style({
