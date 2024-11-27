@@ -7,7 +7,8 @@ import { Inter } from 'next/font/google';
 import { MSWComponent } from '@/_mocks/MSWComponent';
 import type { Metadata } from 'next';
 import { myStyle } from '@/_styles/vars.css';
-import { style } from '@vanilla-extract/css';
+
+import { main, wrapper } from './layout.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -48,8 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className={myStyle}>
-        <div className={S.wrapper}>
-          <main className={S.main}>{children}</main>
+        <div className={wrapper}>
+          <main className={main}>{children}</main>
           <Footer />
         </div>
 
@@ -60,14 +61,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-const S = {
-  wrapper: style({
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  }),
-  main: style({
-    flex: 1,
-  }),
-};
