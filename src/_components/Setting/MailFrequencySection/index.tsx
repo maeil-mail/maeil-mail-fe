@@ -22,7 +22,7 @@ export interface MailFrequencySectionProps {
 export default function MailFrequencySection({ value, onChange }: MailFrequencySectionProps) {
   return (
     <section>
-      <h1 className={optionTitle}>📮 메일 수신 주기</h1>
+      <h1 className={optionTitle}>📮 메일 수신 빈도</h1>
       <div className={separator}></div>
       <div className={optionList}>
         <MailFrequencyOptionItem
@@ -31,7 +31,7 @@ export default function MailFrequencySection({ value, onChange }: MailFrequencyS
           currentValue={value}
           onChange={onChange}
           description={{
-            label: 'daily: 하루 한 개의 질문을 보내드려요!',
+            label: '주 5회 - 하루에 한 번 메일을 보내드려요!',
             caption: '면접과 기술에 대한 감을 유지하고 싶은 분께 추천해요.',
           }}
         />
@@ -41,7 +41,7 @@ export default function MailFrequencySection({ value, onChange }: MailFrequencyS
           currentValue={value}
           onChange={onChange}
           description={{
-            label: 'weekly: 월요일에 모아서 보내드려요!',
+            label: '주 1회 - 월요일에 한 번 모아서 보내드려요!',
             caption: '부담 없이 기술 정보를 접하고 싶은 분께 추천해요.',
           }}
         />

@@ -1,12 +1,24 @@
-import { checkboxContainer, selectText, checkbox, primaryColor } from './checkboxInput.css';
+import {
+  checkboxContainer,
+  selectText,
+  checkbox,
+  primaryColor,
+  caption,
+} from './checkboxInput.css';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 interface CheckboxInputProps extends InputHTMLAttributes<HTMLInputElement> {
   text: ReactNode;
+  caption?: string;
   isSelected: boolean;
 }
 
-export default function CheckboxInput({ text, isSelected, ...props }: CheckboxInputProps) {
+export default function CheckboxInput({
+  text,
+  caption: captionText,
+  isSelected,
+  ...props
+}: CheckboxInputProps) {
   return (
     <div className={checkboxContainer}>
       <input
@@ -16,9 +28,12 @@ export default function CheckboxInput({ text, isSelected, ...props }: CheckboxIn
         checked={isSelected}
         {...props}
       />
-      <label htmlFor={String(text)}>
-        <span className={`${selectText} ${isSelected ? primaryColor : ''}`}>{text}</span>
-      </label>
+      <div>
+        <label htmlFor={String(text)}>
+          <span className={`${selectText} ${isSelected ? primaryColor : ''}`}>{text}</span>
+        </label>
+        {captionText && <p className={caption}>{captionText}</p>}
+      </div>
     </div>
   );
 }

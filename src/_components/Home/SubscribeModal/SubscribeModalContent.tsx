@@ -3,7 +3,7 @@ import {
   title,
   successLayout,
   categoryText,
-  radioWrapper,
+  checkboxWrapper,
   buttonWrapper,
   emailWrapper,
   inputSection,
@@ -13,6 +13,8 @@ import {
   categorySubtext,
   underline,
   closeButton,
+  nineRem,
+  privacyPolicyText,
 } from './subscribeModalContent.css';
 import CloseIcon from '@/_assets/icons/close.svg';
 import Button from '../../common/Button/Button';
@@ -34,6 +36,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
     isSubscriptionPending,
     isSubscriptionError,
     handleCategories,
+    handleMailFrequency,
     handleVerificationNumber,
     verificationNumber,
     handleConsent,
@@ -43,6 +46,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
     isAllValid,
     handleSubmitSubscription,
     email,
+    frequency,
     isValidEmail,
     isValidCategories,
     isAgreed,
@@ -61,38 +65,59 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
           <h2 className={title}>매일메일 구독</h2>
           <CloseIcon onClick={closeModal} className={closeButton} />
           <section className={inputSection}>
-            <div className={categoryWrapper}>
-              <p className={categoryText}>
-                분야 <span className={categorySubtext}>*중복 선택 가능</span>
-              </p>
-
-              <div className={radioWrapper}>
-                <CheckboxInput
-                  text="프론트엔드"
-                  value="frontend"
-                  isSelected={categories.includes('frontend')}
-                  onChange={handleCategories}
-                />
-                <CheckboxInput
-                  text="백엔드"
-                  value="backend"
-                  isSelected={categories.includes('backend')}
-                  onChange={handleCategories}
-                />
-              </div>
-            </div>
-
             {!isSentEmail ? (
-              <div className={emailWrapper}>
-                <VerifyEmailInput
-                  email={email}
-                  isVerifyingPending={isVerifyingPending}
-                  isValidEmail={isValidEmail && isTouched}
-                  handleEmail={handleEmail}
-                  handleVerifyEmail={handleVerifyEmail}
-                  onFocus={handleFocus}
-                  isValidCategories={isValidCategories}
-                />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div className={categoryWrapper}>
+                  <p className={categoryText}>
+                    분야 <span className={categorySubtext}>*중복 선택 가능</span>
+                  </p>
+
+                  <div className={checkboxWrapper}>
+                    <CheckboxInput
+                      text="프론트엔드"
+                      value="frontend"
+                      isSelected={categories.includes('frontend')}
+                      onChange={handleCategories}
+                    />
+                    <CheckboxInput
+                      text="백엔드"
+                      value="backend"
+                      isSelected={categories.includes('backend')}
+                      onChange={handleCategories}
+                    />
+                  </div>
+                </div>
+
+                <div className={categoryWrapper}>
+                  <p className={categoryText}>수신 빈도</p>
+                  <div className={checkboxWrapper}>
+                    <CheckboxInput
+                      text="주 5회"
+                      value="daily"
+                      caption="월-금"
+                      isSelected={frequency === 'daily'}
+                      onChange={handleMailFrequency}
+                    />
+                    <CheckboxInput
+                      text="주 1회"
+                      caption="월요일"
+                      value="weekly"
+                      isSelected={frequency === 'weekly'}
+                      onChange={handleMailFrequency}
+                    />
+                  </div>
+                </div>
+                <div className={emailWrapper}>
+                  <VerifyEmailInput
+                    email={email}
+                    isVerifyingPending={isVerifyingPending}
+                    isValidEmail={isValidEmail && isTouched}
+                    handleEmail={handleEmail}
+                    handleVerifyEmail={handleVerifyEmail}
+                    onFocus={handleFocus}
+                    isValidCategories={isValidCategories}
+                  />
+                </div>
               </div>
             ) : (
               <>
@@ -110,34 +135,36 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                     inputMode="numeric"
                   />
 
-                  <CheckboxInput
-                    text={
-                      <>
-                        <a
-                          href={`${FRONTEND_BASE_URL}/policy`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <span className={underline}>개인정보취급방침</span>
-                        </a>
-                        에 동의합니다.
-                      </>
-                    }
-                    isSelected={isAgreed}
-                    onChange={handleConsent}
-                  />
+                  <div className={privacyPolicyText}>
+                    <CheckboxInput
+                      text={
+                        <>
+                          <a
+                            href={`${FRONTEND_BASE_URL}/policy`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span className={underline}>개인정보취급방침</span>
+                          </a>
+                          에 동의합니다.
+                        </>
+                      }
+                      isSelected={isAgreed}
+                      onChange={handleConsent}
+                    />
+                  </div>
+                  <div className={buttonWrapper}>
+                    {isSubscriptionPending && <LoadingSpinner />}
+                    <Button
+                      variant="primary"
+                      disabled={!isAllValid}
+                      type="submit"
+                      onClick={handleSubmitSubscription}
+                    >
+                      구독하기
+                    </Button>
+                  </div>
                 </section>
-                <div className={buttonWrapper}>
-                  {isSubscriptionPending && <LoadingSpinner />}
-                  <Button
-                    variant="primary"
-                    disabled={!isAllValid}
-                    type="submit"
-                    onClick={handleSubmitSubscription}
-                  >
-                    구독하기
-                  </Button>
-                </div>
               </>
             )}
           </section>

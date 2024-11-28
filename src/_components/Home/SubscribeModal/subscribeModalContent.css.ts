@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { ComplexStyleRule, style } from '@vanilla-extract/css';
 import { primary, text1 } from '@/_styles/vars.css';
 
 export const container = style({
@@ -51,7 +51,7 @@ export const emailInputWrapper = style({
 export const categoryWrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '1rem',
+  gap: '1.8rem',
 });
 
 export const categoryText = style({
@@ -70,12 +70,21 @@ export const categorySubtext = style({
 export const inputSection = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '3.4rem',
 });
 
-export const radioWrapper = style({
+export const checkboxWrapper = style({
   display: 'flex',
-  justifyContent: 'space-around',
+  gap: '8rem',
+  margin: '0 auto',
+
+  '& > div:first-of-type': {
+    width: '9rem',
+  },
+  // note(@Parkhanyoung): 선택자 사용이 불필요한 TS 오류를 일으켜 타입 단언을 해주었음
+} as ComplexStyleRule);
+
+export const nineRem = style({
+  width: '9rem',
 });
 
 export const emailWrapper = style({
@@ -87,7 +96,7 @@ export const emailWrapper = style({
 export const verificationSection = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '3.6rem',
+  gap: '2.6rem',
 });
 
 export const verificationNoti = style({
@@ -103,6 +112,10 @@ export const inputWrapper = style({
 export const buttonWrapper = style({
   display: 'flex',
   justifyContent: 'center',
+});
+
+export const privacyPolicyText = style({
+  margin: '0 auto',
 });
 
 export const underline = style({

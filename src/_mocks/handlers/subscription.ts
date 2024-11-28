@@ -10,7 +10,7 @@ export const subscriptionHandlers = [
   http.get(API_ROUTES.mailFrequency, () => {
     return HttpResponse.json(
       {
-        frequency: 'daily',
+        frequency: 'weekly',
       },
       {
         status: 200,

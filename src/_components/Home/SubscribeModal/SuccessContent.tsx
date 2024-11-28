@@ -23,10 +23,7 @@ export default function SuccessContent({ closeModal }: SuccessContentProps) {
         이제부터 기술 면접 걱정은 저희에게 맡겨 주세요!
         <br />
         <br />
-        <span className={caption}>
-          *첫 번째 컨텐츠부터 순차적으로 발송되며, 주말에는 메일을 보내드리지 않아요. 학습에 참고해
-          주세요.
-        </span>
+        <span className={caption}>*첫 번째 컨텐츠부터 순차적으로 발송됩니다.</span>
       </span>
       <section className={buttonSection}>
         <Button onClick={handleFeedbackButton} variant="border">
