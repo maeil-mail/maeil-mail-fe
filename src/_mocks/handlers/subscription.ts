@@ -3,13 +3,26 @@ import { http, HttpResponse } from 'msw';
 
 export const subscriptionHandlers = [
   http.post(API_ROUTES.subscribe, () => {
-    console.log('handle subscribe');
+    return HttpResponse.json(null, {
+      status: 200,
+    });
+  }),
+  http.get(API_ROUTES.mailFrequency, () => {
+    return HttpResponse.json(
+      {
+        frequency: 'daily',
+      },
+      {
+        status: 200,
+      },
+    );
+  }),
+  http.patch(API_ROUTES.mailFrequency, () => {
     return HttpResponse.json(null, {
       status: 200,
     });
   }),
   http.post(API_ROUTES.verify_email, () => {
-    console.log('handle verify email');
     return HttpResponse.json(null, {
       status: 200,
     });

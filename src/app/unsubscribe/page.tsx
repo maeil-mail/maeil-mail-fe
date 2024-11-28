@@ -4,7 +4,7 @@ import { deleteSubscribe } from '@/_apis/subscription';
 import Button from '@/_components/common/Button/Button';
 import Nav from '@/_components/common/Nav/Nav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import * as React from 'react';
 import {
   unsubscribeButton,
@@ -13,25 +13,11 @@ import {
   unsubscribeTypo,
 } from './unsubscribe.css';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
+import useAuthParams from '@/_hooks/useAuthParams';
 
-export default function UnsubscribePage() {
-  return (
-    <React.Suspense>
-      <Unsubscribe />;
-    </React.Suspense>
-  );
-}
-
-function Unsubscribe() {
+export default async function UnsubscribePage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const email = searchParams.get('email') || '';
-  const token = searchParams.get('token') || '';
-
-  if (!email || !token) {
-    throw new Error('올바르지 않은 접근입니다.');
-  }
+  const { email, token } = useAuthParams();
 
   const handleUnsubscribe = async () => {
     await deleteSubscribe({ email, token });

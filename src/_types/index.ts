@@ -15,3 +15,5 @@ export interface TabInfo {
   name: string;
   content: ReactNode;
 }
+
+export type SearchParams = { [key: string]: string | undefined };

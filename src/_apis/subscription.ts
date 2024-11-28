@@ -1,6 +1,7 @@
 import { CategoryEN } from '@/_types';
-import API_ROUTES from './constants/routes';
+import API_ROUTES, { pathGenerator } from './constants/routes';
 import mainClient from './client/mainClient';
+import { MailFrequency } from '@/_types/setting';
 
 export const postSubscribe = async ({
   email,
@@ -20,4 +21,18 @@ export const postSubscribe = async ({
 
 export const deleteSubscribe = async (body: { email: string; token: string }) => {
   await mainClient.delete(API_ROUTES.subscribe, body);
+};
+
+export const getMailFrequency = async (email: string) => {
+  const data = await mainClient.get(pathGenerator.myMailFrequency(email));
+
+  return data;
+};
+
+export const patchMailFrequency = async (payload: {
+  email: string;
+  token: string;
+  frequency: MailFrequency;
+}) => {
+  await mainClient.patch(API_ROUTES.mailFrequency, payload);
 };

@@ -14,7 +14,7 @@ export default class APIClient {
     });
 
     if (!response.ok) {
-      throw new Error(`api 요청에서 에러가 발생했습니다. (url: ${url})`);
+      throw new Error(`get api 요청에서 에러가 발생했습니다. (url: ${url})`);
     }
 
     const data = await response.json();
@@ -34,7 +34,23 @@ export default class APIClient {
     });
 
     if (!response.ok) {
-      throw new Error('에러');
+      throw new Error(`post api 요청에서 에러가 발생했습니다. (url: ${url})`);
+    }
+  }
+
+  async patch(path: string, body?: any): Promise<void> {
+    const url = this.generateUrl(path);
+
+    const response = await fetch(url, {
+      method: 'PATCH',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`patch api 요청에서 에러가 발생했습니다. (url: ${url})`);
     }
   }
 
@@ -50,7 +66,7 @@ export default class APIClient {
     });
 
     if (!response.ok) {
-      throw new Error('에러');
+      throw new Error(`delete api 요청에서 에러가 발생했습니다. (url: ${url})`);
     }
   }
 
