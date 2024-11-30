@@ -11,3 +11,13 @@ export const getMyQuestions = async (email: string) => {
 
   return data.data;
 };
+
+export const getMyWeeklyQuestions = async (
+  email: string,
+  category: string,
+  period: { year: number; month: number; week: number },
+) => {
+  const data = await mainClient.get(pathGenerator.myWeeklyQuestions(email, category, period));
+
+  return data;
+};

@@ -22,7 +22,7 @@ export interface MailFrequencySectionProps {
 export default function MailFrequencySection({ value, onChange }: MailFrequencySectionProps) {
   return (
     <section>
-      <h1 className={optionTitle}>📮 메일 수신 빈도</h1>
+      <h1 className={optionTitle}>메일 수신 빈도</h1>
       <div className={separator}></div>
       <div className={optionList}>
         <MailFrequencyOptionItem
