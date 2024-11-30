@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-// MyQuestionHeader
+// MyWeeklyQuestionListHeader
 export const questionHeaderContainer = style({
   display: 'flex',
   flexDirection: 'column',
@@ -19,7 +19,7 @@ export const questionHeaderSubTitle = style({
   color: '#2b2b2b',
 });
 
-// MyQuestionList
+// MyWeeklyQuestionList
 export const questionListContainer = style({
   padding: '4rem 0',
   display: 'flex',
@@ -33,7 +33,7 @@ export const emptyCase = style({
   margin: '5rem 0',
 });
 
-// MyQuestionItem
+// MyWeeklyQuestionItem
 export const questionItemContainer = style({
   fontSize: '1.6rem',
   color: '#2b2b2b',
