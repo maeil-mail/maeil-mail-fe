@@ -5,14 +5,17 @@ import BASE_URL from '@/_apis/baseUrl';
 import API_ROUTES from '@/_apis/constants/routes';
 import handleAPIError from '@/_apis/utils/handleAPIError';
 import HTTPError from '@/_apis/error/HTTPError';
+import { MailFrequency } from '@/_types/setting';
 
 export const postSubscribe = async ({
   email,
   categories,
+  frequency,
   code,
 }: {
   email: string;
   categories: CategoryEN[];
+  frequency: MailFrequency;
   code: string;
 }) => {
   try {
@@ -21,6 +24,7 @@ export const postSubscribe = async ({
       body: JSON.stringify({
         email,
         category: categories,
+        frequency,
         code,
       }),
       headers: {

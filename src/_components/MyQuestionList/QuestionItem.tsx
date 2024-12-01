@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { MyQuestion } from './MyQuestionList';
 import RightArrow from '@/_assets/icons/rightArrow.svg';
-import { abbreviateCategory } from './utils';
 import {
   animatedHover,
   categoryTag,
@@ -10,6 +9,7 @@ import {
   questionTitle,
   rightArrow,
 } from './MyQuestionList.css';
+import { abbreviateCategory } from '@/_utils/letterFormatters';
 
 export interface MyQuestionItemProps {
   question: MyQuestion;

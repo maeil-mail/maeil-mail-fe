@@ -4,16 +4,14 @@ import { primary, text1 } from '@/_styles/vars.css';
 export const checkboxContainer = style({
   position: 'relative',
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
 });
 
 export const checkbox = style({
   accentColor: '#00A86B',
   width: '1.8rem',
   height: '1.8rem',
-  marginRight: '0.6rem',
   cursor: 'pointer',
+  margin: '0 0.6rem 0 0',
 });
 
 export const selectText = style({
@@ -21,6 +19,11 @@ export const selectText = style({
   lineHeight: '2rem',
   color: text1,
   cursor: 'pointer',
+});
+
+export const caption = style({
+  fontSize: '1.1rem',
+  color: '#a7a7a7',
 });
 
 export const primaryColor = style({
