@@ -15,7 +15,15 @@ import {
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 import useAuthParams from '@/_hooks/useAuthParams';
 
-export default async function UnsubscribePage() {
+export default function UnsubscribePage() {
+  return (
+    <React.Suspense>
+      <Unsubscribe />
+    </React.Suspense>
+  );
+}
+
+function Unsubscribe() {
   const router = useRouter();
   const { email, token } = useAuthParams();
 
