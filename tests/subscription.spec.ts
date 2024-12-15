@@ -4,15 +4,15 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-const expectModalOpened = async (page: Page) => {
+const expectModalOpened = async (page: Page): Promise<void> => {
   await expect(page.locator('h2', { hasText: '매일메일 구독' })).toBeVisible();
 };
 
-const expectModalClosed = async (page: Page) => {
+const expectModalClosed = async (page: Page): Promise<void> => {
   await expect(page.locator('h2', { hasText: '매일메일 구독' })).not.toBeVisible();
 };
 
-const openSubscribeModal = async (page: Page) => {
+const openSubscribeModal = async (page: Page): Promise<void> => {
   await page.locator('nav button', { hasText: '무료 구독하기' }).click();
 };
 
@@ -60,6 +60,70 @@ test.describe('구독 퍼널', () => {
       await backdrop.click({ position: { x: 0, y: 0 } });
 
       await expectModalOpened(page);
+    });
+  });
+
+  const fillCategory = async (page: Page): Promise<void> => {
+    await page.locator('label', { hasText: '프론트엔드' }).click();
+  };
+
+  const fillFrequency = async (page: Page): Promise<void> => {
+    await page.locator('label', { hasText: '주 1회' }).click();
+  };
+
+  const fillEmail = async (page: Page, email: string = 'email@mail.com'): Promise<void> => {
+    await page.getByLabel('이메일').fill(email);
+  };
+
+  test.describe.only('구독 정보 폼', () => {
+    test.beforeEach(async ({ page }) => {
+      await openSubscribeModal(page);
+    });
+
+    test('분야, 수신 빈도, 이메일이 모두 정상 입력된 경우, "확인" 버튼이 활성화된다.', async ({
+      page,
+    }) => {
+      await fillCategory(page);
+      await fillFrequency(page);
+      await fillEmail(page);
+
+      await expect(page.locator('button', { hasText: '확인' })).not.toBeDisabled();
+    });
+
+    test('분야를 선택하지 않은 경우, "확인" 버튼이 비활성화된다.', async ({ page }) => {
+      await fillFrequency(page);
+      await fillEmail(page);
+
+      await expect(page.locator('button', { hasText: '확인' })).toBeDisabled();
+    });
+
+    test('이메일을 입력하지 않은 경우, "확인" 버튼이 비활성화된다.', async ({ page }) => {
+      await fillCategory(page);
+      await fillFrequency(page);
+
+      await expect(page.locator('button', { hasText: '확인' })).toBeDisabled();
+    });
+
+    test('유효하지 않은 이메일을 입력한 경우, "확인" 버튼이 비활성화되며 "유효하지 않은 이메일입니다" 문구가 표시된다.', async ({
+      page,
+    }) => {
+      await fillCategory(page);
+      await fillFrequency(page);
+      await fillEmail(page, 'not-an-email');
+
+      await expect(page.locator('button', { hasText: '확인' })).toBeDisabled();
+      await expect(page.locator('text=유효하지 않은 이메일입니다')).toBeVisible();
+    });
+
+    test('활성화된 "확인" 버튼을 클릭할 경우, 인증 번호 폼으로 전환된다.', async ({ page }) => {
+      await fillCategory(page);
+      await fillFrequency(page);
+      await fillEmail(page);
+
+      const confirmButton = page.locator('button', { hasText: '확인' });
+      await confirmButton.click();
+
+      await expect(page.getByPlaceholder('인증번호를 입력해 주세요')).toBeVisible();
     });
   });
 });
