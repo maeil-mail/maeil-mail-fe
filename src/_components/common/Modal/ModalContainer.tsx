@@ -11,5 +11,9 @@ export default function ModalContainer({ className = ' ', children }: ModalConta
 
   const modalClassName = `${closing ? unMountAnimation : mountAnimation} ${className}`;
 
-  return <div className={modalClassName}>{children}</div>;
+  return (
+    <div className={modalClassName} data-testid="modal-container">
+      {children}
+    </div>
+  );
 }

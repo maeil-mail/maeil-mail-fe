@@ -35,6 +35,7 @@ export default function ModalBackdrop({
   return open ? (
     <ScrollPreventer isOpen={isOpen}>
       <div
+        data-testid="modal-backdrop"
         className={backDrop}
         onClick={handleBackdropClick}
         onKeyDown={handleKeyDown}
