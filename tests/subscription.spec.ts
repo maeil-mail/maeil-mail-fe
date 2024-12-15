@@ -75,7 +75,7 @@ test.describe('구독 퍼널', () => {
     await page.getByLabel('이메일').fill(email);
   };
 
-  test.describe.only('구독 정보 폼', () => {
+  test.describe('구독 정보 폼', () => {
     test.beforeEach(async ({ page }) => {
       await openSubscribeModal(page);
     });
@@ -124,6 +124,95 @@ test.describe('구독 퍼널', () => {
       await confirmButton.click();
 
       await expect(page.getByPlaceholder('인증번호를 입력해 주세요')).toBeVisible();
+    });
+  });
+
+  // mock 환경에서는 '1234'만이 올바른 인증번호로 간주됩니다.
+  const CORRECT_CODE = '1234';
+  const fillVerificationCode = async (page: Page, code: string = CORRECT_CODE): Promise<void> => {
+    await page.getByLabel('인증번호 입력창').fill(code);
+  };
+
+  const fillPrivacyConsent = async (page: Page): Promise<void> => {
+    await page.locator('#privacy-consent').click();
+  };
+
+  const expectSubscriptionEnabled = async (page: Page): Promise<void> => {
+    await expect(page.getByTestId('subscribe-button')).not.toBeDisabled();
+  };
+
+  const expectSubscriptionDisabled = async (page: Page): Promise<void> => {
+    await expect(page.getByTestId('subscribe-button')).toBeDisabled();
+  };
+
+  test.describe('인증 번호 폼', () => {
+    test.beforeEach(async ({ page }) => {
+      await openSubscribeModal(page);
+
+      await fillCategory(page);
+      await fillFrequency(page);
+      await fillEmail(page);
+
+      const confirmButton = page.locator('button', { hasText: '확인' });
+      await confirmButton.click();
+    });
+
+    test('인증번호를 정상 입력하고 개인정보취급방침에 동의한 경우, "구독하기" 버튼이 활성화된다.', async ({
+      page,
+    }) => {
+      await fillVerificationCode(page);
+      await fillPrivacyConsent(page);
+
+      await expectSubscriptionEnabled(page);
+    });
+
+    test('인증번호를 입력하지 않은 경우, "구독하기" 버튼이 비활성화된다.', async ({ page }) => {
+      await fillPrivacyConsent(page);
+
+      await expectSubscriptionDisabled(page);
+    });
+
+    test('네 자리가 아닌 인증번호를 입력한 경우, "구독하기" 버튼이 비활성화된다.', async ({
+      page,
+    }) => {
+      await fillVerificationCode(page, '123');
+      await fillPrivacyConsent(page);
+
+      await expectSubscriptionDisabled(page);
+    });
+
+    test('개인정보취급방침에 동의하지 않은 경우, "구독하기" 버튼이 비활성화된다.', async ({
+      page,
+    }) => {
+      await fillVerificationCode(page, '123');
+
+      await expectSubscriptionDisabled(page);
+    });
+
+    test('활성화된 "구독하기" 버튼을 클릭할 경우, "구독 신청 완료" 모달로 전환된다.', async ({
+      page,
+    }) => {
+      await fillVerificationCode(page);
+      await fillPrivacyConsent(page);
+
+      const subscribeButton = page.getByTestId('subscribe-button');
+      await subscribeButton.click();
+
+      await expect(page.locator('h2', { hasText: '구독 신청 완료' })).toBeVisible();
+    });
+
+    test('유효하지 않은 인증번호를 입력한 뒤 "구독하기" 버튼을 클릭한 경우, "올바르지 않은 인증번호입니다" 문구가 표시된다.', async ({
+      page,
+    }) => {
+      const WRONG_CODE = '0000';
+      await fillVerificationCode(page, WRONG_CODE);
+      await fillPrivacyConsent(page);
+
+      const subscribeButton = page.getByTestId('subscribe-button');
+      await subscribeButton.click();
+
+      await expect(page.locator('h2', { hasText: '구독 신청 완료' })).not.toBeVisible();
+      await expect(page.locator('text=올바르지 않은 인증번호입니다')).toBeVisible();
     });
   });
 });
