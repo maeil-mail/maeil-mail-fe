@@ -17,11 +17,11 @@ export default function Nav({ RightSide, position = 'default' }: NavProps) {
   };
 
   return (
-    <div className={`${container} ${positionStyle[position]}`}>
+    <nav className={`${container} ${positionStyle[position]}`}>
       <div className={innerWrapper}>
         <PrimaryLogo onClick={handleLogoClick} className={logo} />
         {RightSide && RightSide}
       </div>
-    </div>
+    </nav>
   );
 }

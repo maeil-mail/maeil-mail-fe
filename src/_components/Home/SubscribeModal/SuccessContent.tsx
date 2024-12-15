@@ -16,7 +16,7 @@ export default function SuccessContent({ closeModal }: SuccessContentProps) {
   return (
     <div className={container}>
       <h2 className={title}>구독 신청 완료</h2>
-      <CloseIcon onClick={closeModal} className={closeButton} />
+      <CloseIcon role="button" alt="모달 닫기" onClick={closeModal} className={closeButton} />
       <span className={successText}>
         앞으로 오전 7시에 면접 질문을 보내드릴게요.
         <br />

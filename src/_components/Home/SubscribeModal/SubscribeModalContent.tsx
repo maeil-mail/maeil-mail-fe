@@ -63,7 +63,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
       ) : (
         <>
           <h2 className={title}>매일메일 구독</h2>
-          <CloseIcon onClick={closeModal} className={closeButton} />
+          <CloseIcon role="button" alt="모달 닫기" onClick={closeModal} className={closeButton} />
           <section className={inputSection}>
             {!isSentEmail ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
