@@ -124,6 +124,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                 <section className={verificationSection}>
                   <h3 className={verificationNoti}>메일로 인증번호가 발송됐습니다.</h3>
                   <Input
+                    aria-label="인증번호 입력창"
                     onChange={handleVerificationNumber}
                     value={verificationNumber}
                     variant="primary"
@@ -137,6 +138,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
 
                   <div className={privacyPolicyText}>
                     <CheckboxInput
+                      id="privacy-consent"
                       text={
                         <>
                           <a
@@ -160,6 +162,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                       disabled={!isAllValid}
                       type="submit"
                       onClick={handleSubmitSubscription}
+                      data-testid="subscribe-button"
                     >
                       구독하기
                     </Button>
