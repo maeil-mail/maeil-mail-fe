@@ -5,11 +5,11 @@ test.beforeEach(async ({ page }) => {
 });
 
 const expectModalOpened = async (page: Page): Promise<void> => {
-  await expect(page.locator('h2', { hasText: '매일메일 구독' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '매일메일 구독' })).toBeVisible();
 };
 
 const expectModalClosed = async (page: Page): Promise<void> => {
-  await expect(page.locator('h2', { hasText: '매일메일 구독' })).not.toBeVisible();
+  await expect(page.getByRole('heading', { name: '매일메일 구독' })).not.toBeVisible();
 };
 
 const openSubscribeModal = async (page: Page): Promise<void> => {
@@ -198,7 +198,7 @@ test.describe('구독 퍼널', () => {
       const subscribeButton = page.getByTestId('subscribe-button');
       await subscribeButton.click();
 
-      await expect(page.locator('h2', { hasText: '구독 신청 완료' })).toBeVisible();
+      await expect(page.getByRole('heading', { name: '구독 신청 완료' })).toBeVisible();
     });
 
     test('유효하지 않은 인증번호를 입력한 뒤 "구독하기" 버튼을 클릭한 경우, "올바르지 않은 인증번호입니다" 문구가 표시된다.', async ({
@@ -211,7 +211,7 @@ test.describe('구독 퍼널', () => {
       const subscribeButton = page.getByTestId('subscribe-button');
       await subscribeButton.click();
 
-      await expect(page.locator('h2', { hasText: '구독 신청 완료' })).not.toBeVisible();
+      await expect(page.getByRole('heading', { name: '구독 신청 완료' })).not.toBeVisible();
       await expect(page.locator('text=올바르지 않은 인증번호입니다')).toBeVisible();
     });
   });
