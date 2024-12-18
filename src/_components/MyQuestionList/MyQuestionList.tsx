@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MyQuestionItem from './QuestionItem';
+import MyQuestionItem from './MyQuestionItem';
 import { emptyCase, questionListContainer } from './MyQuestionList.css';
 import Link from 'next/link';
 

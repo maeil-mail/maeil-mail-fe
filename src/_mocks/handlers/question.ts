@@ -55,9 +55,15 @@ export const questionHandlers = [
         },
       );
     }
-    return HttpResponse.json(MOCK_MY_QUESTIONS, {
-      status: 200,
-    });
+
+    const size = Number(url.searchParams.get('size')) || 100;
+
+    return HttpResponse.json(
+      { ...MOCK_MY_QUESTIONS, data: [...MOCK_MY_QUESTIONS.data.slice(0, size)] },
+      {
+        status: 200,
+      },
+    );
   }),
 
   http.get(API_ROUTES.myWeeklyQuestions, ({ request }) => {
