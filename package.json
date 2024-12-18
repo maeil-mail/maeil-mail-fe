@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock": "npx tsx watch ./src/_mocks/http.ts"
+    "mock": "npx tsx watch ./src/_mocks/http.ts",
+    "test:e2e": "npx playwright test",
+    "test:e2e-ui": "npx playwright test --ui",
+    "show-test-report": "npx playwright show-report"
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "@mswjs/http-middleware": "^0.10.1",
+    "@playwright/test": "^1.49.1",
     "@svgr/webpack": "^8.1.0",
     "@tanstack/eslint-plugin-query": "^5.57.1",
     "@types/cors": "^2.8.17",

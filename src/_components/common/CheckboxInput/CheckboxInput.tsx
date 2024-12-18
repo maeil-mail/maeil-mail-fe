@@ -9,27 +9,25 @@ import { InputHTMLAttributes, ReactNode } from 'react';
 
 interface CheckboxInputProps extends InputHTMLAttributes<HTMLInputElement> {
   text: ReactNode;
-  caption?: string;
   isSelected: boolean;
+  id?: string;
+  caption?: string;
 }
 
 export default function CheckboxInput({
   text,
-  caption: captionText,
   isSelected,
+  id,
+  caption: captionText,
   ...props
 }: CheckboxInputProps) {
+  const inputId = id || String(text);
+
   return (
     <div className={checkboxContainer}>
-      <input
-        type="checkbox"
-        id={String(text)}
-        className={checkbox}
-        checked={isSelected}
-        {...props}
-      />
+      <input type="checkbox" id={inputId} className={checkbox} checked={isSelected} {...props} />
       <div>
-        <label htmlFor={String(text)}>
+        <label htmlFor={inputId}>
           <span className={`${selectText} ${isSelected ? primaryColor : ''}`}>{text}</span>
         </label>
         {captionText && <p className={caption}>{captionText}</p>}
