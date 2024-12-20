@@ -10,7 +10,8 @@ const API_ROUTES = {
 } as const;
 
 export const pathGenerator = {
-  myQuestions: (email: string) => `${API_ROUTES.myQuestions}?email=${email}`,
+  myQuestions: (email: string, page: number) =>
+    `${API_ROUTES.myQuestions}?email=${email}&page=${page}&size=8`,
   myMailFrequency: (email: string) => `${API_ROUTES.mailFrequency}?email=${email}`,
   myWeeklyQuestions: (
     email: string,
