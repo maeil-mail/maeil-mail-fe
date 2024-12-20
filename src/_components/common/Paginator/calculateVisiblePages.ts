@@ -17,11 +17,9 @@ export default calculateVisiblePages;
 function calculateFirstPage(currentPage: number, lastPage: number, visibleCount: number): number {
   const middleCount = Math.floor(visibleCount / 2);
 
-  const firstPage = currentPage - middleCount;
+  const firstPage = Math.max(currentPage - middleCount, 1);
 
-  if (firstPage < 1 || lastPage <= visibleCount) {
-    return 1;
-  }
+  const firstPageMaxLimit = Math.max(lastPage - (visibleCount - 1), 1);
 
-  return Math.min(firstPage, lastPage - (visibleCount - 1));
+  return Math.min(firstPage, firstPageMaxLimit);
 }
