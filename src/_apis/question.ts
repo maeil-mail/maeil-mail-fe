@@ -6,10 +6,11 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
   return data;
 };
 
-export const getMyQuestions = async (email: string) => {
-  const data = await mainClient.get(pathGenerator.myQuestions(email));
+// page 변수는 frontend에서 1 base, backend에서 0 base입니다.
+export const getMyQuestions = async (email: string, page: number = 1) => {
+  const data = await mainClient.get(pathGenerator.myQuestions(email, page - 1));
 
-  return data.data;
+  return data;
 };
 
 export const getMyWeeklyQuestions = async (

@@ -39,6 +39,7 @@ export const questionHandlers = [
 
   http.get(API_ROUTES.myQuestions, ({ request }) => {
     const url = new URL(request.url);
+    const page = Number(url.searchParams.get('page')) || 0;
     const email = url.searchParams.get('email');
 
     if (email === 'wrong') {
@@ -55,9 +56,24 @@ export const questionHandlers = [
         },
       );
     }
-    return HttpResponse.json(MOCK_MY_QUESTIONS, {
-      status: 200,
-    });
+
+    const size = Number(url.searchParams.get('size')) || 100;
+
+    const slicedData = [...MOCK_MY_QUESTIONS.data.slice(0, size)];
+    const renamedData = slicedData.map((data) => ({
+      ...data,
+      title: `page ${page + 1} - ${data.title}`,
+    }));
+
+    return HttpResponse.json(
+      {
+        ...MOCK_MY_QUESTIONS,
+        data: renamedData,
+      },
+      {
+        status: 200,
+      },
+    );
   }),
 
   http.get(API_ROUTES.myWeeklyQuestions, ({ request }) => {
