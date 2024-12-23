@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { MyQuestion } from './MyQuestionList';
 import RightArrow from '@/_assets/icons/rightArrow.svg';

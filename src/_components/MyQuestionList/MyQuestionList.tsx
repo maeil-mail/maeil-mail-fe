@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import MyQuestionItem from './MyQuestionItem';
 import { emptyCase, questionListContainer } from './MyQuestionList.css';
