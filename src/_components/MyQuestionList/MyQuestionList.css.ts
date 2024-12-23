@@ -1,10 +1,11 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { keyframes, style, styleVariants } from '@vanilla-extract/css';
 
 // MyQuestionHeader
 export const questionHeaderContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '1.5rem',
+  marginBottom: '4rem',
 });
 
 export const questionHeaderTitle = style({
@@ -21,10 +22,10 @@ export const questionHeaderSubTitle = style({
 
 // MyQuestionList
 export const questionListContainer = style({
-  padding: '4rem 0',
   display: 'flex',
   flexDirection: 'column',
   gap: '1.7rem',
+  marginBottom: '4rem',
 });
 
 export const emptyCase = style({
@@ -79,3 +80,24 @@ export const rightArrow = style({
 });
 
 export const questionTitle = style({ lineHeight: '2.5rem' });
+
+// MyQuestionListSkeleton
+const shimmer = keyframes({
+  '0%': {
+    backgroundPosition: '200% 0',
+  },
+  '100%': {
+    backgroundPosition: '-200% 0',
+  },
+});
+
+export const myQuestionItemSkeleton = style({
+  display: 'inline-block',
+  backgroundImage: 'linear-gradient(90deg, #f5f6f8 25%, #fafafa 50%, #f5f6f8 75%)',
+  backgroundColor: '#f5f6f8',
+  backgroundSize: '200% 100%',
+  animation: `${shimmer} 2s infinite`,
+  borderRadius: '6px',
+  width: '100%',
+  height: '5.3rem',
+});
