@@ -72,6 +72,8 @@ export const inputSection = style({
   flexDirection: 'column',
 });
 
+export const inputSectionWrapper = style({ display: 'flex', flexDirection: 'column', gap: '2rem' });
+
 export const checkboxWrapper = style({
   display: 'flex',
   gap: '8rem',
