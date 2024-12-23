@@ -62,8 +62,18 @@ export const questionItemContent = style({
   gap: '1.5rem',
 });
 
+export const dayLabel = style({
+  padding: '0.4rem 1.4rem',
+  fontSize: '1.4rem',
+  borderRadius: 15,
+  fontWeight: 700,
+  backgroundColor: '#EAF5EF',
+  color: '#00A86B',
+});
+
 export const rightArrow = style({
   width: '1.5rem',
+  minWidth: '1.5rem',
 });
 
 export const questionTitle = style({ lineHeight: '2.5rem' });

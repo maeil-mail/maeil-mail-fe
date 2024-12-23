@@ -2,6 +2,7 @@ import * as React from 'react';
 import RightArrow from '@/_assets/icons/rightArrow.svg';
 import {
   animatedHover,
+  dayLabel,
   questionItemContainer,
   questionItemContent,
   questionTitle,
@@ -22,18 +23,7 @@ export default function MyWeeklyQuestionItem({ question, index }: MyQuestionItem
   return (
     <div className={`${questionItemContainer} ${animatedHover}`}>
       <div className={questionItemContent}>
-        <div
-          style={{
-            padding: '0.4rem 1.4rem',
-            fontSize: '1.4rem',
-            borderRadius: 15,
-            fontWeight: 700,
-            backgroundColor: '#EAF5EF',
-            color: '#00A86B',
-          }}
-        >
-          {convertIndexIntoDay(index)}
-        </div>
+        <div className={dayLabel}>{convertIndexIntoDay(index)}</div>
         <span className={questionTitle}>{title}</span>
       </div>
       <RightArrow className={rightArrow} />
