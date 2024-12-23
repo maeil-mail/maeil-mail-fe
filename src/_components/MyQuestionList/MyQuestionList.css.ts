@@ -83,6 +83,13 @@ export const rightArrow = style({
 export const questionTitle = style({ lineHeight: '2.5rem' });
 
 // MyQuestionListSkeleton
+export const myQuestionListSkeletonContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.7rem',
+  paddingBottom: '7rem',
+});
+
 const shimmer = keyframes({
   '0%': {
     backgroundPosition: '200% 0',
