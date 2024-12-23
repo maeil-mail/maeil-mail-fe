@@ -76,8 +76,8 @@ export const categoryTag = styleVariants({
 });
 
 export const rightArrow = style({
-  width: '1.5rem',
-  minWidth: '1.5rem',
+  width: '1rem',
+  minWidth: '1rem',
 });
 
 export const questionTitle = style({ lineHeight: '2.5rem' });
