@@ -9,6 +9,8 @@ import type { Metadata } from 'next';
 import { myStyle } from '@/_styles/vars.css';
 
 import { main, wrapper } from './layout.css';
+import { Suspense } from 'react';
+import Providers from './providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -50,7 +52,11 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className={myStyle}>
         <div className={wrapper}>
-          <main className={main}>{children}</main>
+          <Providers>
+            <Suspense>
+              <main className={main}>{children}</main>
+            </Suspense>
+          </Providers>
           <Footer />
         </div>
 

@@ -11,7 +11,7 @@ const NARROW_WIDTH_THRESHOLD = 530;
 const usePagination = (currentPage: number, lastPage: number): number[] => {
   const width = useDeviceWidth();
 
-  const isNarrowDevice = width < NARROW_WIDTH_THRESHOLD;
+  const isNarrowDevice = width && width < NARROW_WIDTH_THRESHOLD;
 
   const visiblePageCount = isNarrowDevice ? VISIBLE_PAGE_COUNT_FOR_NARROW : VISIBLE_PAGE_COUNT;
 

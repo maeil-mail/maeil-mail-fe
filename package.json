@@ -19,7 +19,7 @@
     "@mdxeditor/editor": "^3.14.0",
     "@next/third-parties": "^15.0.1",
     "@sentry/nextjs": "^8.35.0",
-    "@tanstack/react-query": "^5.56.2",
+    "@tanstack/react-query": "^5.62.8",
     "@uiw/codemirror-extensions-classname": "^4.21.21",
     "@uiw/codemirror-themes": "^4.21.21",
     "@uiw/react-codemirror": "^4.23.5",
