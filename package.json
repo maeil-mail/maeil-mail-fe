@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:hosting": "next dev -H 0.0.0.0",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
     "mock": "npx tsx watch ./src/_mocks/http.ts",

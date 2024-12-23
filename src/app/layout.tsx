@@ -9,7 +9,6 @@ import type { Metadata } from 'next';
 import { myStyle } from '@/_styles/vars.css';
 
 import { main, wrapper } from './layout.css';
-import { Suspense } from 'react';
 import Providers from './providers';
 
 const inter = Inter({
@@ -53,9 +52,7 @@ export default function RootLayout({
       <body className={myStyle}>
         <div className={wrapper}>
           <Providers>
-            <Suspense>
-              <main className={main}>{children}</main>
-            </Suspense>
+            <main className={main}>{children}</main>
           </Providers>
           <Footer />
         </div>
