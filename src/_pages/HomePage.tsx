@@ -8,7 +8,6 @@ import HeroSection from '@/_components/Home/HeroSection/HeroSection';
 import DescriptionSection from '@/_components/Home/DescriptionSection/DescriptionSection';
 import UserReactionSection from '@/_components/Home/UserReactionSection/UserReactionSection';
 import ClosingCTA from '@/_components/Home/ClosingCTASection/ClosingCTASection';
-import Footer from '@/_components/common/Footer/Footer';
 
 interface HomePageProps {
   subscriberCount: number;
