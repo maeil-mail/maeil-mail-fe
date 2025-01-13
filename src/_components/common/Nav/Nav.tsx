@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { container, innerWrapper, logo, positionStyle } from './nav.css';
 import PrimaryLogo from '@/_assets/images/primaryLogo.svg';
 
@@ -10,16 +10,12 @@ interface NavProps {
 }
 
 export default function Nav({ RightSide, position = 'default' }: NavProps) {
-  const router = useRouter();
-
-  const handleLogoClick = () => {
-    router.push('/');
-  };
-
   return (
     <nav className={`${container} ${positionStyle[position]}`}>
       <div className={innerWrapper}>
-        <PrimaryLogo onClick={handleLogoClick} className={logo} />
+        <Link href="/">
+          <PrimaryLogo className={logo} />
+        </Link>
         {RightSide && RightSide}
       </div>
     </nav>
