@@ -7,7 +7,7 @@ export const getAllQuestions = async () => {
   return data;
 };
 
-export const getDetailQuestion = async ({ id }: { id: number }) => {
+export const getDetailQuestion = async ({ id }: { id: string }) => {
   const data = await mainClient.get(`${API_ROUTES.question}/${id}`);
   return data;
 };

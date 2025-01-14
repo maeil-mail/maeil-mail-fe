@@ -13,12 +13,12 @@ export async function generateStaticParams() {
   const { data: questions } = await getAllQuestions();
 
   return questions.map(({ id }) => {
-    return { id: id };
+    return { id: String(id) };
   });
 }
 
 interface QuestionDetailPageProps {
-  params: Promise<{ id: number }>;
+  params: Promise<{ id: string }>;
 }
 
 export async function generateMetadata({ params }: QuestionDetailPageProps): Promise<Metadata> {
