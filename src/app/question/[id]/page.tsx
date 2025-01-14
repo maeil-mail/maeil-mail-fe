@@ -13,17 +13,16 @@ export async function generateStaticParams() {
   const { data: questions } = await getAllQuestions();
 
   return questions.map(({ id }) => {
-    return { id: String(id) };
+    return { id: id };
   });
 }
 
 interface QuestionDetailPageProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: number }>;
 }
 
 export async function generateMetadata({ params }: QuestionDetailPageProps): Promise<Metadata> {
-  const { id: rawId } = await params;
-  const id = decodeURIComponent(rawId);
+  const { id } = await params;
   const detailQuestion = await getDetailQuestion({ id });
 
   return {
@@ -33,8 +32,7 @@ export async function generateMetadata({ params }: QuestionDetailPageProps): Pro
 }
 
 export default async function QuestionDetailPage({ params }: QuestionDetailPageProps) {
-  const { id: rawId } = await params;
-  const id = decodeURIComponent(rawId);
+  const { id } = await params;
   const detailQuestion = await getDetailQuestion({ id });
 
   return (
