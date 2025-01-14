@@ -1,7 +1,13 @@
 import mainClient from './client/mainClient';
 import API_ROUTES, { pathGenerator } from './constants/routes';
+import type { Question } from '@/_types';
 
-export const getDetailQuestion = async ({ id }: { id: string }) => {
+export const getAllQuestions = async () => {
+  const data = await mainClient.get<{ data: Question[] }>(`${API_ROUTES.question}?size=10000`);
+  return data;
+};
+
+export const getDetailQuestion = async ({ id }: { id: number }) => {
   const data = await mainClient.get(`${API_ROUTES.question}/${id}`);
   return data;
 };
