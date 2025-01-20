@@ -3,7 +3,7 @@
 import { container, contentWrapper, mainText, description, buttonWrapper } from './not-found.css';
 import Button from '@/_components/common/Button/Button';
 import { useRouter } from 'next/navigation';
-import PAGE_ROUTES from '../../_constants/pageRoutes';
+import PAGE_ROUTES from '../_constants/pageRoutes';
 import Nav from '@/_components/common/Nav/Nav';
 
 export default function NotFoundPage() {
