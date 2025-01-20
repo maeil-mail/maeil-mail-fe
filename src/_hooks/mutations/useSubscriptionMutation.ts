@@ -1,4 +1,4 @@
-import { postSubscribe } from '@/app/actions';
+import { postSubscribe } from '@/app/maeil-mail/actions';
 import toast from '@/_utils/toast';
 import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/_constants/messages';
 import useServerActionMutation from './useServerActionMutation';
