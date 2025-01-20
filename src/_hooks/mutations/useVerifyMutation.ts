@@ -1,4 +1,4 @@
-import { postVerifyEmail } from '@/app/actions';
+import { postVerifyEmail } from '@/app/maeil-mail/actions';
 import toast from '@/_utils/toast';
 import { ERROR_MESSAGE } from '@/_constants/messages';
 import { useState } from 'react';

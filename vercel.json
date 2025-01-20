@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/maeil-mail/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "maeil-mail.kr"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/maeil-wiki/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "wiki.maeil-mail.kr"
+        }
+      ]
+    }
+  ]
+}
