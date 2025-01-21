@@ -4,7 +4,7 @@ import {
   questionHeaderSubTitle,
   questionHeaderTitle,
 } from './MyWeeklyQuestionList.css';
-import { abbreviateCategory } from '@/_utils/letterFormatters';
+import { abbreviateCategory } from '@/_utils/abbreviateCategory';
 
 export interface MyWeeklyQuestionListHeaderProps {
   weekLabel: string;

@@ -11,7 +11,7 @@ import {
   questionTitle,
   rightArrow,
 } from './MyQuestionList.css';
-import { abbreviateCategory } from '@/_utils/letterFormatters';
+import { abbreviateCategory } from '@/_utils/abbreviateCategory';
 
 export interface MyQuestionItemProps {
   question: MyQuestion;

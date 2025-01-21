@@ -1,4 +1,4 @@
-import getAuthParams from '@/_utils/getAuthParams';
+import getAuthParams from './_utils/getAuthParams';
 import { SearchParams } from '@/_types';
 import * as React from 'react';
 import Setting from '../../../_components/Setting';

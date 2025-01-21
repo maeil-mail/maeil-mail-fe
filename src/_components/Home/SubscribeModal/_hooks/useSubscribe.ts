@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { QuestionCategoryEN } from '@/_types';
-import validateEmail from '@/_utils/validateEmail';
+import validateEmail from '../_utils/validateEmail';
 import useSubscriptionMutation from './useSubscriptionMutation';
 import useVerifyMutation from './useVerifyMutation';
 import { MailFrequency } from '@/_types';

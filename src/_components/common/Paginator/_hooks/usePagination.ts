@@ -1,7 +1,7 @@
 'use client';
 
 import useDeviceWidth from './useDeviceWidth';
-import calculateVisiblePages from '../utils/calculateVisiblePages';
+import calculateVisiblePages from '../_utils/calculateVisiblePages';
 
 const VISIBLE_PAGE_COUNT_FOR_NARROW = 6;
 const VISIBLE_PAGE_COUNT = 9;

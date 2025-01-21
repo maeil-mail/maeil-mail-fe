@@ -13,7 +13,7 @@ import {
   unsubscribeTypo,
 } from './unsubscribe.css';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
-import useAuthParams from './hooks/useAuthParams';
+import useAuthParams from './_hooks/useAuthParams';
 
 export default function Page() {
   return (
