@@ -16,6 +16,8 @@ interface HomePageProps {
 export default function HomePage({ subscriberCount }: HomePageProps) {
   const { isModalOpen, openModal, closeModal } = useModal();
 
+  console.log(isModalOpen);
+
   return (
     <div>
       <div className={container}>

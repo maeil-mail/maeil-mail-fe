@@ -57,7 +57,7 @@ export default function RootLayout({
           <Footer />
         </div>
 
-        <div id="portal" />
+        <div id="modal-root" />
         <MSWComponent />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>

@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/maeil-mail');
 });
 
 const expectModalOpened = async (page: Page): Promise<void> => {
@@ -56,8 +56,7 @@ test.describe('구독 퍼널', () => {
     test('모달 배경을 클릭할 경우, 모달이 닫히지 않는다.', async ({ page }) => {
       await openSubscribeModal(page);
 
-      const backdrop = page.getByTestId('modal-backdrop');
-      await backdrop.click({ position: { x: 0, y: 0 } });
+      await page.mouse.click(1, 1);
 
       await expectModalOpened(page);
     });

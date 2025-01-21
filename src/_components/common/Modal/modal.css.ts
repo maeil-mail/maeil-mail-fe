@@ -1,32 +1,34 @@
-import { fadeIn, fadeOut } from '@/_styles/animation.css';
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
-export const backDrop = style({
-  position: 'fixed',
-  inset: '0',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
-
-export const container = style({
-  '@media': {
-    'screen and (max-width: 1280px)': {},
-    'screen and (max-width: 1024px)': {},
-    'screen and (max-width: 912px)': {},
-    'screen and (max-width: 853px)': {},
-    'screen and (max-width: 820px)': {
-      width: '100%',
-      position: 'absolute',
-      bottom: '0',
+export const modal = style({
+  zIndex: 1000,
+  selectors: {
+    '&::backdrop': {
+      background: 'rgba(0, 0, 0, 0.4)',
     },
   },
 });
 
-export const fadeInClass = style({
-  animation: `${fadeIn} 0.3s forwards`,
-});
+export const modalContent = recipe({
+  base: {
+    background: '#ffffff',
+    position: 'fixed',
+  },
 
-export const fadeOutClass = style({
-  animation: `${fadeOut} 0.3s forwards`,
+  variants: {
+    position: {
+      center: {
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        borderRadius: '1.6rem',
+      },
+      bottom: {
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+      },
+    },
+  },
 });
