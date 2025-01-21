@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import { container, wrapper, titleWrapper, mainWrapper, contentText } from './privacy.css';
+import { container, wrapper, titleWrapper, mainWrapper, contentText } from './policy.css';
 import Txt from '@/_components/common/Txt/Txt';
 import UpArrow from '@/_components/common/Icon/UpArrow';
 import DownArrow from '@/_components/common/Icon/DownArrow';
@@ -51,7 +51,7 @@ const sections: Content[] = [
   },
 ];
 
-export default function Privacy() {
+export default function Page() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
 
   const toggleSection = (index: number): void => {

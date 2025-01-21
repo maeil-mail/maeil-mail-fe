@@ -1,13 +1,16 @@
 import { usePreventScroll } from './usePreventScroll';
 import { useEffect, useRef, useState, type RefObject } from 'react';
 
-interface UseModalReturn {
+interface UseModalDialogReturn {
   dialogRef: RefObject<HTMLDialogElement>;
   targetContainer: HTMLElement | undefined;
   onClickDialog: (e: React.MouseEvent<HTMLDialogElement>) => void;
 }
 
-export const useModal = (isOpen: boolean, onClickBackdrop?: () => void): UseModalReturn => {
+export const useDialogModal = (
+  isOpen: boolean,
+  onClickBackdrop?: () => void,
+): UseModalDialogReturn => {
   usePreventScroll(isOpen);
 
   const dialogRef = useRef<HTMLDialogElement>(null);

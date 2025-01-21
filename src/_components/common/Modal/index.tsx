@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from 'react';
 import { createPortal } from 'react-dom';
-import { useModal } from './hooks/useModal';
+import { useDialogModal } from './hooks/useDialogModal';
 import { modal, modalContent } from './modal.css';
 
 export type ModalPosition = 'center' | 'bottom';
@@ -19,7 +19,7 @@ export default function Modal({
   position = 'center',
   children,
 }: PropsWithChildren<ModalProps>) {
-  const { targetContainer, dialogRef } = useModal(isOpen);
+  const { targetContainer, dialogRef } = useDialogModal(isOpen);
 
   if (!targetContainer) {
     return null;
