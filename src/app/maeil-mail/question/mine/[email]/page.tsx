@@ -10,7 +10,7 @@ import Paginator from '@/_components/common/Paginator';
 import useMyQuestions from './hooks/useMyQuestions';
 import MyQuestionListSkeleton from '@/_components/MyQuestionList/Skeleton';
 
-export default function MyQuestionListPage() {
+export default function Page() {
   const { email: rawEmail } = useParams<{ email: string }>();
   const rawPage = useSearchParams().get('page');
 

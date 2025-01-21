@@ -15,7 +15,7 @@ import {
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 import useAuthParams from '@/_hooks/useAuthParams';
 
-export default function UnsubscribePage() {
+export default function Page() {
   return (
     <React.Suspense>
       <Unsubscribe />

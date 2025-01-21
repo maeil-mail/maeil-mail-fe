@@ -17,11 +17,11 @@ export async function generateStaticParams() {
   });
 }
 
-interface QuestionDetailPageProps {
+interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params }: QuestionDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const detailQuestion = await getDetailQuestion({ id });
 
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: QuestionDetailPageProps): Pro
   };
 }
 
-export default async function QuestionDetailPage({ params }: QuestionDetailPageProps) {
+export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const detailQuestion = await getDetailQuestion({ id });
 
