@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import DoubleArrowLeft from '@/_assets/icons/doubleArrowLeft.svg';
 import DoubleArrowRight from '@/_assets/icons/doubleArrowRight.svg';
 import { doubleArrowLeft, doubleArrowRight, pageNumber, paginatorContainer } from './paginator.css';
-import usePagination from './usePagination';
+import usePagination from './hooks/usePagination';
 
 export interface PaginatorProps {
   currentPage: number;

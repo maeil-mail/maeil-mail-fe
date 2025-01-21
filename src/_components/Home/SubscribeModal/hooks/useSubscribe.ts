@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { CategoryEN } from '@/_types';
+import { QuestionCategoryEN } from '@/_types';
 import validateEmail from '@/_utils/validateEmail';
-import useSubscriptionMutation from './mutations/useSubscriptionMutation';
-import useVerifyMutation from './mutations/useVerifyMutation';
+import useSubscriptionMutation from './useSubscriptionMutation';
+import useVerifyMutation from './useVerifyMutation';
 import { MailFrequency } from '@/_types';
 import { MAIL_FREQUENCY } from '@/_constants/setting';
 
 export interface SubscriptionFormState {
   email: string;
-  categories: CategoryEN[];
+  categories: QuestionCategoryEN[];
   frequency: MailFrequency;
   verificationNumber: string;
   isAgreed: boolean;
@@ -58,9 +58,9 @@ const useSubscribe = () => {
 
   const handleCategories = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const categories = formState.categories.includes(value as CategoryEN)
+    const categories = formState.categories.includes(value as QuestionCategoryEN)
       ? formState.categories.filter((category) => category !== value)
-      : [...formState.categories, value as CategoryEN];
+      : [...formState.categories, value as QuestionCategoryEN];
 
     updateForm({ categories });
   };

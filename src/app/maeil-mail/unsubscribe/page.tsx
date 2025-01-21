@@ -5,7 +5,7 @@ import Button from '@/_components/common/Button/Button';
 import Nav from '@/_components/common/Nav/Nav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import { useRouter } from 'next/navigation';
-import * as React from 'react';
+import { Suspense } from 'react';
 import {
   unsubscribeButton,
   unsubscribeContent,
@@ -13,13 +13,13 @@ import {
   unsubscribeTypo,
 } from './unsubscribe.css';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
-import useAuthParams from '@/_hooks/useAuthParams';
+import useAuthParams from './hooks/useAuthParams';
 
 export default function Page() {
   return (
-    <React.Suspense>
+    <Suspense>
       <Unsubscribe />
-    </React.Suspense>
+    </Suspense>
   );
 }
 

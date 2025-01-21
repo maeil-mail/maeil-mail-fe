@@ -1,4 +1,4 @@
-import { CategoryEN } from '@/_types';
+import { QuestionCategoryEN } from '@/_types';
 import API_ROUTES, { pathGenerator } from './constants/routes';
 import mainClient from './client/mainClient';
 import { MailFrequency } from '@/_types';
@@ -9,7 +9,7 @@ export const postSubscribe = async ({
   code,
 }: {
   email: string;
-  categories: CategoryEN[];
+  categories: QuestionCategoryEN[];
   code: string;
 }) => {
   await mainClient.post(API_ROUTES.subscribe, {

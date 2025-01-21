@@ -1,15 +1,15 @@
-import { CATEGORY } from '@/_constants/category';
+import { QUESTION_CATEGORY } from '@/_constants/questionCategory';
 import type { ReactNode } from 'react';
 import { MAIL_FREQUENCY } from './../_constants/setting';
 
-type CategoryKO = keyof typeof CATEGORY;
-export type CategoryEN = (typeof CATEGORY)[CategoryKO];
+type QuestionCategoryKO = keyof typeof QUESTION_CATEGORY;
+export type QuestionCategoryEN = (typeof QUESTION_CATEGORY)[QuestionCategoryKO];
 
 export interface Question {
   id: number;
   title: string;
   content: string;
-  category: CategoryEN;
+  category: QuestionCategoryEN;
 }
 
 export interface TabInfo {

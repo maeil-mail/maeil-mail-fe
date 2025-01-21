@@ -13,7 +13,6 @@ import {
   categorySubtext,
   underline,
   closeButton,
-  nineRem,
   privacyPolicyText,
   inputSectionWrapper,
 } from './subscribeModalContent.css';
@@ -23,7 +22,7 @@ import LoadingSpinner from '../../common/LoadingSpinner/LoadingSpinner';
 import VerifyEmailInput from './VerifyEmailInput';
 import CheckboxInput from '../../common/CheckboxInput/CheckboxInput';
 import Input from '../../common/Input/Input';
-import useSubscribe from '@/_hooks/useSubscribe';
+import useSubscribe from './hooks/useSubscribe';
 import SuccessContent from './SuccessContent';
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
 
