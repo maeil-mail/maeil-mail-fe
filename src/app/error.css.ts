@@ -6,11 +6,12 @@ export const container = style({
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  height: '100vh',
+  height: '80vh',
   maxWidth: '60rem',
   padding: '0 1.6rem',
   margin: '0 auto',
   gap: '5rem',
+  wordBreak: 'keep-all',
 });
 
 export const title = style({ fontSize: '2.4rem', fontWeight: 600, marginBottom: '2rem' });
@@ -26,10 +27,6 @@ export const subText = style({
   color: text2,
 });
 
-export const keepAll = style({
-  wordBreak: 'keep-all',
-});
-
 export const developerEmoji = style({
   width: '17rem',
 });
@@ -38,6 +35,10 @@ export const buttonSection = style({
   display: 'flex',
   gap: '1rem',
   width: '100%',
+});
+
+export const buttonLink = style({
+  flex: 1,
 });
 
 export const underline = style({

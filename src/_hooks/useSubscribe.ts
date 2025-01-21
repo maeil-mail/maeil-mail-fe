@@ -5,7 +5,7 @@ import toast from '@/_utils/toast';
 import { ERROR_MESSAGE } from '@/_constants/messages';
 import useSubscriptionMutation from './mutations/useSubscriptionMutation';
 import useVerifyMutation from './mutations/useVerifyMutation';
-import { MailFrequency } from '@/_types/setting';
+import { MailFrequency } from '@/_types';
 import { MAIL_FREQUENCY } from '@/_constants/setting';
 
 export interface SubscriptionFormState {

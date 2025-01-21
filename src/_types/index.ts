@@ -1,5 +1,6 @@
 import { CATEGORY } from '@/_constants/category';
 import type { ReactNode } from 'react';
+import { MAIL_FREQUENCY } from './../_constants/setting';
 
 export type CategoryKO = keyof typeof CATEGORY;
 export type CategoryEN = (typeof CATEGORY)[CategoryKO];
@@ -17,3 +18,5 @@ export interface TabInfo {
 }
 
 export type SearchParams = { [key: string]: string | undefined };
+
+export type MailFrequency = keyof typeof MAIL_FREQUENCY;

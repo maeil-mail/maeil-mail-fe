@@ -1,5 +1,5 @@
 import { getSubscriberCount } from '@/_apis/statistics';
-import HomePage from '@/_pages/HomePage';
+import HomePage from '@/_components/Home';
 
 export default async function Home() {
   const subscriberCount = await getSubscriberCount();

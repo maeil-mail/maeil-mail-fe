@@ -5,7 +5,7 @@ import BASE_URL from '@/_apis/baseUrl';
 import API_ROUTES from '@/_apis/constants/routes';
 import handleAPIError from '@/_apis/utils/handleAPIError';
 import HTTPError from '@/_apis/error/HTTPError';
-import { MailFrequency } from '@/_types/setting';
+import { MailFrequency } from '@/_types';
 
 export const postSubscribe = async ({
   email,

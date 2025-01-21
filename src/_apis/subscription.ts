@@ -1,7 +1,7 @@
 import { CategoryEN } from '@/_types';
 import API_ROUTES, { pathGenerator } from './constants/routes';
 import mainClient from './client/mainClient';
-import { MailFrequency } from '@/_types/setting';
+import { MailFrequency } from '@/_types';
 
 export const postSubscribe = async ({
   email,
