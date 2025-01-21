@@ -9,7 +9,7 @@ export interface SubscribeModalProps {
 
 export default function SubscribeModal({ isOpen, closeModal }: SubscribeModalProps) {
   return (
-    <BaseModal isModalOpen={isOpen}>
+    <BaseModal isOpen={isOpen}>
       <SubscribeModalContent closeModal={closeModal} />
     </BaseModal>
   );

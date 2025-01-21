@@ -1,6 +1,4 @@
 import { postVerifyEmail } from '@/app/maeil-mail/actions';
-import toast from '@/_utils/toast';
-import { ERROR_MESSAGE } from '@/_constants/messages';
 import { useState } from 'react';
 import useServerActionMutation from './useServerActionMutation';
 
@@ -14,13 +12,11 @@ const useVerifyMutation = ({ email, isValidCategories }: UseVerifyMutationOption
 
   const { mutate: verifyEmailMutation, isPending: isVerifyingPending } = useServerActionMutation({
     mutationFn: postVerifyEmail,
-    onError: () => toast.error(ERROR_MESSAGE.fail_verify_email),
     onSuccess: () => setIsSentEmail(true),
   });
 
   const handleVerifyEmail = () => {
     if (!isValidCategories) {
-      toast.error(ERROR_MESSAGE.invalid_category);
       return;
     }
 

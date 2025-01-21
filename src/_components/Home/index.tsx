@@ -14,18 +14,18 @@ interface HomePageProps {
 }
 
 export default function HomePage({ subscriberCount }: HomePageProps) {
-  const { isModalOpen, handleModalOpen, handleModalClose } = useModal();
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
     <div>
       <div className={container}>
-        <HomeNav onSubscribe={handleModalOpen} />
-        <HeroSection onCTA={handleModalOpen} />
+        <HomeNav onSubscribe={openModal} />
+        <HeroSection onCTA={openModal} />
         <DescriptionSection />
         <UserReactionSection />
-        <ClosingCTA onCTA={handleModalOpen} subscriberCount={subscriberCount} />
+        <ClosingCTA onCTA={openModal} subscriberCount={subscriberCount} />
       </div>
-      <SubscribeModal isOpen={isModalOpen} closeModal={handleModalClose} />
+      <SubscribeModal isOpen={isModalOpen} closeModal={closeModal} />
     </div>
   );
 }

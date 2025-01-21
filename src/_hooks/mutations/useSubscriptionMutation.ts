@@ -1,6 +1,4 @@
 import { postSubscribe } from '@/app/maeil-mail/actions';
-import toast from '@/_utils/toast';
-import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/_constants/messages';
 import useServerActionMutation from './useServerActionMutation';
 
 const useSubscriptionMutation = () => {
@@ -11,12 +9,6 @@ const useSubscriptionMutation = () => {
     isError,
   } = useServerActionMutation({
     mutationFn: postSubscribe,
-    onSuccess: () => {
-      toast.success(PROGRESS_MESSAGE.success_subscription);
-    },
-    onError: () => {
-      toast.error(ERROR_MESSAGE.fail_subscription);
-    },
   });
 
   return {

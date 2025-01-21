@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { CategoryEN } from '@/_types';
 import validateEmail from '@/_utils/validateEmail';
-import toast from '@/_utils/toast';
-import { ERROR_MESSAGE } from '@/_constants/messages';
 import useSubscriptionMutation from './mutations/useSubscriptionMutation';
 import useVerifyMutation from './mutations/useVerifyMutation';
 import { MailFrequency } from '@/_types';
@@ -100,12 +98,10 @@ const useSubscribe = () => {
 
   const handleSubmitSubscription = async () => {
     if (!isValidCategories) {
-      toast.error(ERROR_MESSAGE.invalid_category);
       return;
     }
 
     if (!isValidEmail) {
-      toast.error(ERROR_MESSAGE.invalid_email);
       return;
     }
 
