@@ -7,10 +7,10 @@ import Nav from '@/_components/common/Nav/Nav';
 import MyQuestionListHeader from '@/_components/MyQuestionList/Header';
 import MyQuestionList from '@/_components/MyQuestionList/MyQuestionList';
 import Paginator from '@/_components/common/Paginator';
-import useMyQuestions from './hooks/useMyQuestions';
+import useMyQuestions from './_hooks/useMyQuestions';
 import MyQuestionListSkeleton from '@/_components/MyQuestionList/Skeleton';
 
-export default function MyQuestionListPage() {
+export default function Page() {
   const { email: rawEmail } = useParams<{ email: string }>();
   const rawPage = useSearchParams().get('page');
 

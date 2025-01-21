@@ -1,11 +1,11 @@
 'use client';
 
-import formatMarkdownContent from '@/_utils/codemirror/formatMarkDownContent';
+import formatMarkdownContent from './_utils/formatMarkDownContent';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import '@mdxeditor/editor/style.css';
 import recordGAEvent from '@/_utils/recordGAEvent';
 import { GA_EVENT } from '@/_constants/googleAnalytics';
-import shareCurrentUrl from '@/_utils/shareCurrentUrl';
+import shareCurrentUrl from './_utils/shareCurrentUrl';
 import ShareIcon from '@/_assets/icons/share.svg';
 import IdeaIcon from '@/_assets/icons/idea.svg';
 import {

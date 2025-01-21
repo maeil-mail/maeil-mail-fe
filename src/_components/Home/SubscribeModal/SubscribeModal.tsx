@@ -1,4 +1,4 @@
-import BaseModal from '@/_components/common/Modal/BaseModal';
+import Modal from '@/_components/common/Modal';
 import * as React from 'react';
 import SubscribeModalContent from './SubscribeModalContent';
 
@@ -9,8 +9,8 @@ export interface SubscribeModalProps {
 
 export default function SubscribeModal({ isOpen, closeModal }: SubscribeModalProps) {
   return (
-    <BaseModal isModalOpen={isOpen}>
-      <SubscribeModalContent closeModal={closeModal} />
-    </BaseModal>
+    <Modal isOpen={isOpen} onClose={closeModal}>
+      <SubscribeModalContent data-testid="subscribe-modal-content" closeModal={closeModal} />
+    </Modal>
   );
 }

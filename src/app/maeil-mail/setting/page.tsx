@@ -1,14 +1,14 @@
-import getAuthParams from '@/_utils/getAuthParams';
+import getAuthParams from './_utils/getAuthParams';
 import { SearchParams } from '@/_types';
 import * as React from 'react';
 import Setting from '../../../_components/Setting';
 import { getMailFrequency } from '@/_apis/subscription';
 
-export interface SettingPageProps {
+interface PageProps {
   searchParams: Promise<SearchParams>;
 }
 
-export default async function SettingPage({ searchParams }: SettingPageProps) {
+export default async function Page({ searchParams }: PageProps) {
   const { email, token } = getAuthParams(await searchParams);
 
   const { frequency } = await getMailFrequency(email);

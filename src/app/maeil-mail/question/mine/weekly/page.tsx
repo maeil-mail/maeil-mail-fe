@@ -15,7 +15,7 @@ export interface MyWeeklyQuestionsProps {
   }>;
 }
 
-export default async function MyWeeklyQuestions({ searchParams }: MyWeeklyQuestionsProps) {
+export default async function Page({ searchParams }: MyWeeklyQuestionsProps) {
   const { email: rawEmail, category, year, month, week } = await searchParams;
 
   const email = decodeURIComponent(rawEmail);

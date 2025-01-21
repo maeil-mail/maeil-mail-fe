@@ -1,11 +1,11 @@
 'use server';
 
-import { CategoryEN } from '@/_types';
+import { QuestionCategoryEN } from '@/_types';
 import BASE_URL from '@/_apis/baseUrl';
 import API_ROUTES from '@/_apis/constants/routes';
 import handleAPIError from '@/_apis/utils/handleAPIError';
 import HTTPError from '@/_apis/error/HTTPError';
-import { MailFrequency } from '@/_types/setting';
+import { MailFrequency } from '@/_types';
 
 export const postSubscribe = async ({
   email,
@@ -14,7 +14,7 @@ export const postSubscribe = async ({
   code,
 }: {
   email: string;
-  categories: CategoryEN[];
+  categories: QuestionCategoryEN[];
   frequency: MailFrequency;
   code: string;
 }) => {

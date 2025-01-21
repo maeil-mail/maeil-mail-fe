@@ -1,6 +1,6 @@
 import Radio from '@/_components/common/Radio';
 import { MAIL_FREQUENCY } from '@/_constants/setting';
-import type { MailFrequency } from '@/_types/setting';
+import type { MailFrequency } from '@/_types';
 import * as React from 'react';
 import {
   caption,

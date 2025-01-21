@@ -9,7 +9,6 @@ import {
   rightArrow,
 } from './MyWeeklyQuestionList.css';
 import type { MyWeeklyQuestion } from './MyWeeklyQuestionList';
-import { convertIndexIntoDay } from '@/_utils/letterFormatters';
 
 export interface MyQuestionItemProps {
   question: MyWeeklyQuestion;
@@ -29,4 +28,21 @@ export default function MyWeeklyQuestionItem({ question, index }: MyQuestionItem
       <RightArrow className={rightArrow} />
     </div>
   );
+}
+
+function convertIndexIntoDay(index: number) {
+  switch (index) {
+    case 1:
+      return '월';
+    case 2:
+      return '화';
+    case 3:
+      return '수';
+    case 4:
+      return '목';
+    case 5:
+      return '금';
+    default:
+      return undefined;
+  }
 }
