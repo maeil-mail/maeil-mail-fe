@@ -4,7 +4,7 @@ import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
 import { getAllQuestions, getDetailQuestion } from '@/_apis/question';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
-import Nav from '@/_components/common/Nav/Nav';
+import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 // 5시간 (연산자 사용 시 에러가 발생하여 정수 형태로 작성)
 export const revalidate = 18_000;
@@ -37,7 +37,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div>
-      <Nav />
+      <MaeilMailNav />
       <PageInnerLayout>
         <DetailTitle title={detailQuestion.title} />
         <DetailCategory category={detailQuestion.category} />

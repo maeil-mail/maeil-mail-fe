@@ -4,13 +4,13 @@ import * as Sentry from '@sentry/nextjs';
 import { useEffect } from 'react';
 
 import Txt from '@/_components/common/Txt/Txt';
-import Nav from '@/_components/common/Nav/Nav';
 import Button from '@/_components/common/Button/Button';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
 import { FE_GITHUB_ISSUE_URL, GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 import { buttonLink, buttonSection, container, content, developerEmoji, title } from './error.css';
 import DeveloperEmoji from '@/_assets/images/developerEmoji.svg';
 import Link from 'next/link';
+import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 export default function Error({ error }: { error: Error }) {
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Error({ error }: { error: Error }) {
 
   return (
     <div>
-      <Nav />
+      <MaeilMailNav />
       <div className={`${container}`}>
         <h1 className={title}>예기치 못한 오류가 발생했어요</h1>
         <section className={content}>

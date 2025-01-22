@@ -2,13 +2,13 @@
 
 import { patchMailFrequency } from '@/_apis/subscription';
 import Button from '@/_components/common/Button/Button';
-import Nav from '@/_components/common/Nav/Nav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import { MAIL_FREQUENCY } from '@/_constants/setting';
 import { MailFrequency } from '@/_types';
 import * as React from 'react';
 import MailFrequencySection from './MailFrequencySection';
-import { settingButton, settingContainer, settingContent, settingTitle } from './setting.css';
+import { settingButton, settingContainer, settingContent } from './setting.css';
+import MaeilMailNav from '../common/MaeilMailNav';
 
 export default function Setting({
   email,
@@ -44,7 +44,7 @@ export default function Setting({
 
   return (
     <div className={settingContainer}>
-      <Nav />
+      <MaeilMailNav />
       <PageInnerLayout>
         <div className={settingContent}>
           <form onSubmit={onSubmit}>

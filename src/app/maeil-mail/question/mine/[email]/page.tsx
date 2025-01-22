@@ -3,12 +3,12 @@
 import { Suspense } from 'react';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import { useParams, useSearchParams } from 'next/navigation';
-import Nav from '@/_components/common/Nav/Nav';
 import MyQuestionListHeader from '@/_components/MyQuestionList/Header';
 import MyQuestionList from '@/_components/MyQuestionList/MyQuestionList';
 import Paginator from '@/_components/common/Paginator';
 import useMyQuestions from '../../../../../_components/MyQuestionList/_hooks/useMyQuestions';
 import MyQuestionListSkeleton from '@/_components/MyQuestionList/Skeleton';
+import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 export default function Page() {
   const { email: rawEmail } = useParams<{ email: string }>();
@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <div>
-      <Nav />
+      <MaeilMailNav />
       <PageInnerLayout>
         <MyQuestionListHeader email={email} />
         <Suspense fallback={<MyQuestionListSkeleton />}>

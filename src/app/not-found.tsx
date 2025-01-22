@@ -4,7 +4,7 @@ import { container, contentWrapper, mainText, description, buttonWrapper } from 
 import Button from '@/_components/common/Button/Button';
 import { useRouter } from 'next/navigation';
 import PAGE_ROUTES from '../_constants/pageRoutes';
-import Nav from '@/_components/common/Nav/Nav';
+import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 export default function NotFoundPage() {
   const router = useRouter();
@@ -15,7 +15,7 @@ export default function NotFoundPage() {
 
   return (
     <div>
-      <Nav />
+      <MaeilMailNav />
       <div className={container}>
         <div className={contentWrapper}>
           <h1 className={mainText}>404</h1>
