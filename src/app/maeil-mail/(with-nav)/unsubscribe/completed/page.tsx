@@ -11,13 +11,11 @@ import {
   unsubscribeCompletedContent,
   unsubscribeCompletedTitle,
   unsubscribeCompletedTypo,
-} from '../../../../_components/Unsubscribe/unsubscribe.css';
-import MaeilMailNav from '@/_components/common/MaeilMailNav';
+} from '@/_components/Unsubscribe/unsubscribe.css';
 
 export default function Page() {
   return (
     <div>
-      <MaeilMailNav />
       <PageInnerLayout>
         <div className={unsubscribeCompletedContent}>
           <h1 className={unsubscribeCompletedTitle}>매일메일 구독 해지 완료</h1>

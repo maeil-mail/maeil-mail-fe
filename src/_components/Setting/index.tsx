@@ -8,7 +8,6 @@ import { MailFrequency } from '@/_types';
 import * as React from 'react';
 import MailFrequencySection from './MailFrequencySection';
 import { settingButton, settingContainer, settingContent } from './setting.css';
-import MaeilMailNav from '../common/MaeilMailNav';
 
 export default function Setting({
   email,
@@ -44,7 +43,6 @@ export default function Setting({
 
   return (
     <div className={settingContainer}>
-      <MaeilMailNav />
       <PageInnerLayout>
         <div className={settingContent}>
           <form onSubmit={onSubmit}>

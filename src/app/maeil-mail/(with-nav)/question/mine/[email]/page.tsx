@@ -6,9 +6,8 @@ import { useParams, useSearchParams } from 'next/navigation';
 import MyQuestionListHeader from '@/_components/MyQuestionList/Header';
 import MyQuestionList from '@/_components/MyQuestionList/MyQuestionList';
 import Paginator from '@/_components/common/Paginator';
-import useMyQuestions from '../../../../../_components/MyQuestionList/_hooks/useMyQuestions';
+import useMyQuestions from '@/_components/MyQuestionList/_hooks/useMyQuestions';
 import MyQuestionListSkeleton from '@/_components/MyQuestionList/Skeleton';
-import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 export default function Page() {
   const { email: rawEmail } = useParams<{ email: string }>();
@@ -19,7 +18,6 @@ export default function Page() {
 
   return (
     <div>
-      <MaeilMailNav />
       <PageInnerLayout>
         <MyQuestionListHeader email={email} />
         <Suspense fallback={<MyQuestionListSkeleton />}>

@@ -1,4 +1,3 @@
-import Nav from '@/_components/common/Nav/Nav';
 import { navContentWrapper, subscribeButton, teamIntroductionLink } from './homeNav.css';
 import recordGAEvent from '@/_utils/recordGAEvent';
 import { GA_EVENT } from '@/_constants/googleAnalytics';

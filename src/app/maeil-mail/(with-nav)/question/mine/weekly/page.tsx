@@ -1,5 +1,4 @@
 import { getMyWeeklyQuestions } from '@/_apis/question';
-import MaeilMailNav from '@/_components/common/MaeilMailNav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import MyQuestionListHeader from '@/_components/MyWeeklyQuestionList/Header';
 import MyQuestionList from '@/_components/MyWeeklyQuestionList/MyWeeklyQuestionList';
@@ -28,7 +27,6 @@ export default async function Page({ searchParams }: MyWeeklyQuestionsProps) {
 
   return (
     <div>
-      <MaeilMailNav />
       <PageInnerLayout>
         <MyQuestionListHeader weekLabel={weekLabel} category={category} />
         <MyQuestionList questions={questions} />
