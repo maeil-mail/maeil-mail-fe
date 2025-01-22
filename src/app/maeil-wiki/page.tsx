@@ -1,3 +1,10 @@
+import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
+import HeroSection from '@/_components/MaeilWiki/Home/HeroSection';
+
 export default function Page() {
-  return <div>maeil-wiki</div>;
+  return (
+    <PageInnerLayout>
+      <HeroSection />
+    </PageInnerLayout>
+  );
 }
