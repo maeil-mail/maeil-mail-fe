@@ -3,6 +3,8 @@ import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const modal = style({
   zIndex: 1000,
+  border: 'none',
+  background: 'transparent',
   selectors: {
     '&::backdrop': {
       background: 'rgba(0, 0, 0, 0.4)',
