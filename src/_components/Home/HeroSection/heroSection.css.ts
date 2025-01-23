@@ -1,5 +1,6 @@
 import { primary } from '@/_styles/vars.css';
 import { style } from '@vanilla-extract/css';
+import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const heroSection = style({
   width: '100%',
@@ -15,7 +16,7 @@ export const heroSection = style({
   padding: '20rem 1.6rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       fontWeight: 700,
       fontSize: '3rem',
       padding: '15rem 1.6rem',
@@ -39,7 +40,7 @@ export const heroHeading = style({
   color: '#2b2b2b',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       fontWeight: 700,
       letterSpacing: '-1.8px',
       fontSize: '3.5rem',
@@ -59,7 +60,7 @@ export const heroTypo = style({
   wordBreak: 'keep-all',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       width: '70%',
       fontSize: '2rem',
       fontWeight: 600,
@@ -84,7 +85,7 @@ export const heroButton = style({
   },
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       fontSize: '2.2rem',
       fontWeight: 700,
     },

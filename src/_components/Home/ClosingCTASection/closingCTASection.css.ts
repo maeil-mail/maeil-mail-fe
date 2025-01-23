@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const container = style({
   padding: '15rem 1.6rem',
@@ -24,7 +25,7 @@ export const closingHeading = style({
   letterSpacing: '-0.1rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       fontSize: '2.5rem',
     },
   },

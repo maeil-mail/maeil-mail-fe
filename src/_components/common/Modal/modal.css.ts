@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const modal = style({
   zIndex: 1000,
@@ -15,7 +16,7 @@ export const modalContent = style({
   position: 'fixed',
 
   '@media': {
-    '(max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       bottom: 0,
       left: '50%',
       transform: 'translateX(-50%)',
@@ -23,7 +24,7 @@ export const modalContent = style({
       borderTopRightRadius: '1rem',
       width: '100%',
     },
-    '(min-width: 821px)': {
+    [`(min-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       left: '50%',
       top: '50%',
       transform: 'translate(-50%, -50%)',
