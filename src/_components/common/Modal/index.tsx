@@ -13,12 +13,7 @@ interface ModalProps {
   position?: ModalPosition;
 }
 
-export default function Modal({
-  isOpen,
-  onClose,
-  position = 'center',
-  children,
-}: PropsWithChildren<ModalProps>) {
+export default function Modal({ isOpen, onClose, children }: PropsWithChildren<ModalProps>) {
   const { targetContainer, dialogRef } = useDialogModal(isOpen);
 
   if (!targetContainer) {
@@ -27,7 +22,7 @@ export default function Modal({
 
   return createPortal(
     <dialog ref={dialogRef} onClose={onClose} className={modal}>
-      <div className={modalContent({ position })}>{children}</div>
+      <div className={modalContent}>{children}</div>
     </dialog>,
     targetContainer,
   );

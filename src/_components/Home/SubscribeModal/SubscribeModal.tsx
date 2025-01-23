@@ -1,3 +1,5 @@
+'use client';
+
 import Modal from '@/_components/common/Modal';
 import * as React from 'react';
 import SubscribeModalContent from './SubscribeModalContent';

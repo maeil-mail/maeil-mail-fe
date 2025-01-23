@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { text2 } from '@/_styles/vars.css';
+import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const container = style({
   width: '100%',
@@ -21,7 +22,7 @@ export const innerWrapper = style({
   gap: '2rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       width: '90%',
       flexDirection: 'column',
     },

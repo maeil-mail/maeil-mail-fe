@@ -1,5 +1,6 @@
 import { primary } from '@/_styles/vars.css';
 import { style } from '@vanilla-extract/css';
+import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const descriptionSection = style({
   width: '100%',
@@ -14,7 +15,7 @@ export const descriptionSectionInnerWrapper = style({
   gap: '14rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       gap: '10rem',
     },
   },
@@ -30,7 +31,7 @@ export const descriptionSubSection = style({
   alignItems: 'center',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       textAlign: 'center',
       gap: '6rem',
     },
@@ -39,7 +40,7 @@ export const descriptionSubSection = style({
 
 export const subSection1 = style({
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       flexDirection: 'column',
     },
   },
@@ -47,7 +48,7 @@ export const subSection1 = style({
 
 export const subSection2 = style({
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       flexDirection: 'column-reverse',
     },
   },
@@ -64,7 +65,7 @@ export const mailImage = style({
   width: '17.5rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       width: '12rem',
     },
   },
@@ -90,7 +91,7 @@ export const mailExample = style({
 export const answerImage = style({
   width: '24rem',
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       width: '14rem',
       marginLeft: '2.5rem',
     },
@@ -104,7 +105,7 @@ export const descriptionHeading = style({
   color: '#2b2b2b',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       fontSize: '2.8rem',
     },
   },
@@ -117,7 +118,7 @@ export const descriptionTypo = style({
   marginTop: '2rem',
 
   '@media': {
-    'screen and (max-width: 820px)': {
+    [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       textAlign: 'center',
       fontSize: '2rem',
     },

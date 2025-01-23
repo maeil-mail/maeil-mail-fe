@@ -3,20 +3,15 @@ import { primary, text1 } from '@/_styles/vars.css';
 
 export const container = style({
   width: '37rem',
-  backgroundColor: 'white',
   position: 'relative',
   color: text1,
-  borderRadius: '1rem',
   padding: '2.8rem 2rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '3.5rem',
   '@media': {
-    'screen and (max-width: 820px)': {
+    'screen and (max-width: 768px)': {
       width: '100%',
-      borderBottomLeftRadius: 0,
-      borderBottomRightRadius: 0,
-      padding: '2.8rem 2rem 6rem 2rem',
     },
   },
 });
