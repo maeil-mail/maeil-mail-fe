@@ -10,7 +10,7 @@ export const container = style({
   flexDirection: 'column',
   gap: '3.5rem',
   '@media': {
-    'screen and (max-width: 800px)': {
+    'screen and (max-width: 820px)': {
       width: '100%',
     },
   },
