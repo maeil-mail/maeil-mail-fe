@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 const DEBOUNCE_WAIT = 300;
 
-const useDeviceWidth = () => {
-  const [width, setWidth] = useState<number>();
+const useDeviceWidth = (): number => {
+  const [width, setWidth] = useState<number>(0);
 
   const handleResize = debounce(() => {
     setWidth(window.innerWidth);
