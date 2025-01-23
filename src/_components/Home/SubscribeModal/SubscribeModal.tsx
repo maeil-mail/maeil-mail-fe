@@ -1,6 +1,9 @@
+'use client';
+
 import Modal from '@/_components/common/Modal';
 import * as React from 'react';
 import SubscribeModalContent from './SubscribeModalContent';
+import useDeviceWidth from '@/_components/common/Paginator/_hooks/useDeviceWidth';
 
 export interface SubscribeModalProps {
   isOpen: boolean;

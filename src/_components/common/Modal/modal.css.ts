@@ -10,7 +10,29 @@ export const modal = style({
   },
 });
 
-export const modalContent = recipe({
+export const modalContent = style({
+  background: '#ffffff',
+  position: 'fixed',
+
+  '@media': {
+    '(max-width: 820px)': {
+      bottom: 0,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      borderTopLeftRadius: '1rem',
+      borderTopRightRadius: '1rem',
+      width: '100%',
+    },
+    '(min-width: 821px)': {
+      left: '50%',
+      top: '50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '1rem',
+    },
+  },
+});
+
+export const modalContent2 = recipe({
   base: {
     background: '#ffffff',
     position: 'fixed',
@@ -18,17 +40,8 @@ export const modalContent = recipe({
 
   variants: {
     position: {
-      center: {
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        borderRadius: '1.6rem',
-      },
-      bottom: {
-        bottom: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
-      },
+      center: {},
+      bottom: {},
     },
   },
 });
