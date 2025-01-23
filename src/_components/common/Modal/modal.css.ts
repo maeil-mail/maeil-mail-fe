@@ -1,5 +1,4 @@
 import { style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
 import { MEDIA_BREAKPOINT } from '@/_constants/mediaBreakpoint';
 
 export const modal = style({
@@ -29,20 +28,6 @@ export const modalContent = style({
       top: '50%',
       transform: 'translate(-50%, -50%)',
       borderRadius: '1rem',
-    },
-  },
-});
-
-export const modalContent2 = recipe({
-  base: {
-    background: '#ffffff',
-    position: 'fixed',
-  },
-
-  variants: {
-    position: {
-      center: {},
-      bottom: {},
     },
   },
 });
