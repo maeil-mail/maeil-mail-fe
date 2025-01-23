@@ -1,5 +1,4 @@
-import { heroSection } from './home.css';
-import { title } from './home.css';
+import { title, heroSection, subtitle } from './home.css';
 
 export default function HeroSection() {
   return (
@@ -8,15 +7,7 @@ export default function HeroSection() {
         함께 만들어가는
         <br /> 기술 면접 위키 ✍🏻
       </h1>
-      <p
-        style={{
-          color: '#545454',
-          fontSize: '1.5rem',
-          marginTop: '1.3rem',
-        }}
-      >
-        출·퇴근길에 떠올린 질문 하나로 지식 나눔이 시작돼요!
-      </p>
+      <p className={subtitle}>출·퇴근길에 떠올린 질문 하나로 지식 나눔이 시작돼요!</p>
     </section>
   );
 }

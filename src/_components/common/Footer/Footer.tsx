@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className={container}>
       <div className={innerWrapper}>
         <section className={side}>
-          <p>Copyright © 2025, 매일메일. All rights reserved.</p>
+          <p>Copyright © 2024, 매일메일. All rights reserved.</p>
           <div>
             <a href={`mailto:${TEAM_EMAIL}`}>이메일 {TEAM_EMAIL}</a>
           </div>
