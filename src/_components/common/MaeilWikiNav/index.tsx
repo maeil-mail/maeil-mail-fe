@@ -16,7 +16,7 @@ export default function MaeilWikiNav({
 }: PropsWithChildren<MaeilWikiNavProps>) {
   return (
     <Nav position={position}>
-      <Link href="/">
+      <Link href="/" style={{ position: 'relative' }}>
         <PrimaryLogo className={logo} />
       </Link>
       {children}

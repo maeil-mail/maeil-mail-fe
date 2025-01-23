@@ -1,13 +1,15 @@
 import { style } from '@vanilla-extract/css';
 
-export const title = style({
-  background: 'rgba(0, 168, 107, 0.1)',
-  color: '#00A86b',
+export const heroSection = style({
+  background: `rgba(0, 168, 107, 0.08)`,
   borderRadius: '1rem',
-  padding: '3rem 2.5rem',
-  fontSize: '2.8rem',
-  wordBreak: 'keep-all',
+  padding: '4rem 4rem',
   marginTop: '-4rem',
-  display: 'flex',
-  gap: '1rem',
+  wordBreak: 'keep-all',
+});
+
+export const title = style({
+  color: '#00a86b',
+  fontSize: '2.8rem',
+  fontWeight: 700,
 });
