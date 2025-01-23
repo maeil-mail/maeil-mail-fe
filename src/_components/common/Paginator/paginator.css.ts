@@ -7,6 +7,7 @@ export const paginatorContainer = style({
   width: 'fit-content',
   alignItems: 'center',
   margin: '0 auto',
+  marginTop: '4rem',
 });
 
 export const doubleArrowLeft = style({

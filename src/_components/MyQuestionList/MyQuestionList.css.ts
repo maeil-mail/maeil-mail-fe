@@ -25,7 +25,6 @@ export const questionListContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '1.7rem',
-  marginBottom: '4rem',
 });
 
 export const emptyCase = style({
