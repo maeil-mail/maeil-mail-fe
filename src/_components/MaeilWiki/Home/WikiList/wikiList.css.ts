@@ -1,25 +1,25 @@
 import { style } from '@vanilla-extract/css';
 
+// WikiList
 export const wikiList = style({
-  marginTop: '3rem',
   display: 'flex',
   flexDirection: 'column',
   gap: '0.8rem',
 });
 
+// WikiItem
 export const wikiQuestion = style({
   display: 'flex',
-  gap: '1.5rem',
+  gap: '0.5rem',
 });
 
 export const wikiQuestionOrder = style({
+  height: '3rem',
   width: '3rem',
   minWidth: '3rem',
-  height: '3rem',
-  fontWeight: 600,
-  fontSize: '1.5rem',
-  color: 'white',
-  background: '#00a86b',
+  fontWeight: 700,
+  fontSize: '1.7rem',
+  color: '#0091a8',
   borderRadius: 999,
   display: 'flex',
   alignItems: 'center',
@@ -41,7 +41,7 @@ export const wikiItem = style({
   borderRadius: '0.8rem',
   cursor: 'pointer',
   background: 'rgb(250,250,250)',
-  transition: 'background 0.3s ease',
+  transition: 'background 0.1s ease',
   ':hover': {
     background: '#f1f1f1',
   },

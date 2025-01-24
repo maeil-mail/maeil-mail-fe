@@ -12,8 +12,7 @@ import {
   wikiQuestionText,
   wikiSubInfo,
 } from './wikiList.css';
-import type { Member, WikiListItem } from './index';
-
+import { Member, WikiListItem } from '../../_types/wiki';
 export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: number }) {
   const { question, owner, commentCount } = wiki;
 
@@ -23,7 +22,7 @@ export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: n
     <li className={wikiItem}>
       <div className={wikiQuestion}>
         <div className={wikiQuestionOrder}>
-          <span>{order}</span>
+          <span>{order}.</span>
         </div>
         <p className={wikiQuestionText}>{question}</p>
       </div>

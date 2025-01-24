@@ -49,6 +49,54 @@
       },
       "createdAt": "2025-01-22T15:30:00Z",
       "commentCount": 3
+    },
+    {
+      "id": 5,
+      "question": "프로세스보다 스레드의 컨텍스트 스위칭이 더 빠른 이유는 무엇인가요?",
+      "category": "backend",
+      "owner": {
+        "profileImage": "https://avatars.githubusercontent.com/u/39932141?v=4",
+        "name": "Haneul Lee",
+        "github": "https://github.com/Parkhanyoung"
+      },
+      "createdAt": "2025-01-22T15:30:00Z",
+      "commentCount": 3
+    },
+    {
+      "id": 6,
+      "question": "프로세스보다 스레드의 컨텍스트 스위칭이 더 빠른 이유는 무엇인가요?",
+      "category": "backend",
+      "owner": {
+        "profileImage": "https://avatars.githubusercontent.com/u/39932141?v=4",
+        "name": "Haneul Lee",
+        "github": "https://github.com/Parkhanyoung"
+      },
+      "createdAt": "2025-01-22T15:30:00Z",
+      "commentCount": 3
+    },
+    {
+      "id": 7,
+      "question": "프로세스보다 스레드의 컨텍스트 스위칭이 더 빠른 이유는 무엇인가요?",
+      "category": "backend",
+      "owner": {
+        "profileImage": "https://avatars.githubusercontent.com/u/39932141?v=4",
+        "name": "Haneul Lee",
+        "github": "https://github.com/Parkhanyoung"
+      },
+      "createdAt": "2025-01-22T15:30:00Z",
+      "commentCount": 3
+    },
+    {
+      "id": 8,
+      "question": "프로세스보다 스레드의 컨텍스트 스위칭이 더 빠른 이유는 무엇인가요?",
+      "category": "backend",
+      "owner": {
+        "profileImage": "https://avatars.githubusercontent.com/u/39932141?v=4",
+        "name": "Haneul Lee",
+        "github": "https://github.com/Parkhanyoung"
+      },
+      "createdAt": "2025-01-22T15:30:00Z",
+      "commentCount": 3
     }
   ]
 }
