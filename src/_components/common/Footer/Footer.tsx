@@ -18,13 +18,13 @@ export default function Footer() {
         </section>
         <section className={side}>
           <a href={TEAM_INTRODUCTION_URL} target="_blank" rel="noopener noreferrer">
-            <span className={underline}>팀 소개</span>
+            <span>팀 소개</span>
           </a>
           <a href={GOOGLE_FORM_URL.service} target="_blank" rel="noopener noreferrer">
-            <span className={underline}>서비스 피드백하기</span>
+            <span>서비스 피드백하기</span>
           </a>
           <a href={GITHUB_ORGANIZATION_URL} target="_blank" rel="noopener noreferrer">
-            <span className={underline}>Github 스타는 서비스 운영에 큰 도움이 됩니다</span>
+            <span>Github 스타는 서비스 운영에 큰 도움이 됩니다</span>
           </a>
         </section>
       </div>

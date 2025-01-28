@@ -1,7 +1,7 @@
 import getAuthParams from './_utils/getAuthParams';
 import { SearchParams } from '@/_types';
 import * as React from 'react';
-import Setting from '../../../_components/Setting';
+import Setting from '@/_components/Setting';
 import { getMailFrequency } from '@/_apis/subscription';
 
 interface PageProps {

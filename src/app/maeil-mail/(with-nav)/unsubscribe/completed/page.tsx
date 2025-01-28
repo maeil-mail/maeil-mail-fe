@@ -1,7 +1,6 @@
 'use client';
 
 import Button from '@/_components/common/Button/Button';
-import Nav from '@/_components/common/Nav/Nav';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import { GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 
@@ -12,12 +11,11 @@ import {
   unsubscribeCompletedContent,
   unsubscribeCompletedTitle,
   unsubscribeCompletedTypo,
-} from '../unsubscribe.css';
+} from '@/_components/Unsubscribe/unsubscribe.css';
 
 export default function Page() {
   return (
     <div>
-      <Nav />
       <PageInnerLayout>
         <div className={unsubscribeCompletedContent}>
           <h1 className={unsubscribeCompletedTitle}>매일메일 구독 해지 완료</h1>

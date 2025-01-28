@@ -41,7 +41,9 @@ globalStyle('a, a:link, a:visited, a:hover', {
   color: 'inherit',
 });
 
-globalStyle('ul', {
+globalStyle('ol, ul', {
+  listStyle: 'none',
+  margin: '0',
   padding: '0',
 });
 
