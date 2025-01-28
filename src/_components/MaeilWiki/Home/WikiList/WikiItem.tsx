@@ -13,10 +13,11 @@ import {
   wikiSubInfo,
 } from './wikiList.css';
 import { Member, WikiListItem } from '../../_types/wiki';
+
 export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: number }) {
   const { question, owner, commentCount } = wiki;
 
-  const displayingCommentCount = commentCount || '미답변';
+  const displayedCommentCount = commentCount || '미답변';
 
   return (
     <li className={wikiItem}>
@@ -29,7 +30,7 @@ export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: n
       <div className={wikiSubInfo}>
         <OwnerInfo owner={owner} />
         <div className={commentCountInfo}>
-          <ChatIcon className={chatIcon} /> {displayingCommentCount}
+          <ChatIcon className={chatIcon} /> {displayedCommentCount}
         </div>
       </div>
     </li>
