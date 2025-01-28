@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import PrimaryLogo from '@/_assets/images/wiki/primaryLogo.svg';
+import PrimaryLogo from '@/_assets/images/maeilWiki/primaryLogo.svg';
 import Nav from '../Nav/Nav';
 import { logo } from './maeilWikiNav.css';
 import type { PropsWithChildren } from 'react';
