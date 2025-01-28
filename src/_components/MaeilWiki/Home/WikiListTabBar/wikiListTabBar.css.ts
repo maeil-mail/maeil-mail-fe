@@ -14,10 +14,17 @@ export const wikiWriteButton = style({
   background: '#00a86b',
   fontSize: '1.4rem',
   fontWeight: 600,
-  padding: '1rem 1.4rem',
+  padding: '1rem 1.2rem',
   color: 'white',
-  borderRadius: 999,
+  borderRadius: '0.7rem',
   cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.3rem',
+});
+
+export const writeIcon = style({
+  width: '1.8rem',
 });
 
 // WikiCategoryTabBar
