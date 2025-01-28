@@ -3,9 +3,9 @@
 import React from 'react';
 import WikiItem from './WikiItem';
 import { wikiList } from './wikiList.css';
-import { WikiListItem } from '../../_types/wiki';
 import { useWikiList } from '../_hooks/useWikiList';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
+import Paginator from '@/_components/common/Paginator';
 
 interface WikiListProps {
   category: WikiCategoryTabOption;
@@ -18,13 +18,16 @@ export default function WikiList({ category, page }: WikiListProps) {
   const wikis = data.data;
 
   return (
-    <ol className={wikiList}>
-      {wikis.map((wiki, index) => {
-        const pageOffset = (page - 1) * 8;
-        const order = index + 1 + pageOffset;
+    <>
+      <ol className={wikiList}>
+        {wikis.map((wiki, index) => {
+          const pageOffset = (page - 1) * 8;
+          const order = index + 1 + pageOffset;
 
-        return <WikiItem key={wiki.id} wiki={wiki} order={order} />;
-      })}
-    </ol>
+          return <WikiItem key={wiki.id} wiki={wiki} order={order} />;
+        })}
+      </ol>
+      <Paginator currentPage={page} lastPage={data.totalPage} />
+    </>
   );
 }
