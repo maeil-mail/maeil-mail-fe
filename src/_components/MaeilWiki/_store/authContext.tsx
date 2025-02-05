@@ -7,12 +7,7 @@ export interface AuthInfo {
   user: MemberProfile | null;
 }
 
-const DEFAULT_AUTH_INFO = {
-  isAuthenticated: false,
-  user: null,
-};
-
-const AuthContext = createContext<AuthInfo>(DEFAULT_AUTH_INFO);
+const AuthContext = createContext<AuthInfo | null>(null);
 
 export const useAuthContext = () => {
   const context = useContext(AuthContext);
