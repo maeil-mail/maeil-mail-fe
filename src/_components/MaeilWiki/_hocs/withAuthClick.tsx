@@ -2,7 +2,7 @@
 
 import { type ComponentType, type MouseEvent } from 'react';
 import { useAuthContext } from '../_store/authContext';
-import { GITHUB_OAUTH_LOGIN_URL } from '../_constants/auth';
+import { redirectToGithubLogin } from '../_utils/redirectToGithubLogin';
 
 type WithAuthCheckProps = {
   onClick: (event: MouseEvent) => void;
@@ -16,7 +16,7 @@ export function withAuthClick<T extends WithAuthCheckProps>(Component: Component
     const handleClick = (event: MouseEvent) => {
       if (!isAuthenticated) {
         alert('로그인 후 사용하실 수 있습니다.');
-        window.location.href = GITHUB_OAUTH_LOGIN_URL;
+        redirectToGithubLogin();
         return;
       }
 

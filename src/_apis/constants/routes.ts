@@ -8,6 +8,9 @@ const API_ROUTES = {
   post_new_question: '/admin/question',
   subscriberCount: '/statistics/subscribe',
   wiki: '/wiki',
+  member: '/member',
+  memberProfile: '/member/profile',
+  refresh: '/member/refresh',
 } as const;
 
 export const pathGenerator = {

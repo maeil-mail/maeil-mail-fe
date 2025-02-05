@@ -30,6 +30,9 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const code = searchParams.get('code');
 
+  const returnPath = searchParams.get('returnPath');
+  const returnUrl = `${MAEIL_WIKI_HOME_URL}${returnPath}`;
+
   if (!code) {
     return Response.redirect(MAEIL_WIKI_ERROR_PAGE_URL);
   }
@@ -47,7 +50,7 @@ export async function GET(req: NextRequest) {
   cookieStore.set('access', accessToken, cookieConfig);
   cookieStore.set('refresh', refreshToken, cookieConfig);
 
-  return Response.redirect(MAEIL_WIKI_HOME_URL);
+  return Response.redirect(returnUrl);
 }
 
 async function getGithubAccessToken(code: string) {

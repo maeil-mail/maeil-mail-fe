@@ -16,3 +16,13 @@ export const getMemberProfile = async (): Promise<MemberProfile> => {
     throw error;
   }
 };
+
+export const postRefresh = async (): Promise<void> => {
+  try {
+    const data = await mainClient.post(API_ROUTES.refresh);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
