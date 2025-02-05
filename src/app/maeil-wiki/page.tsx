@@ -5,8 +5,9 @@ import HeroSection from '@/_components/MaeilWiki/Home/HeroSection';
 import WikiList from '@/_components/MaeilWiki/Home/WikiList';
 import WikiListTabBar from '@/_components/MaeilWiki/Home/WikiListTabBar/WikiListTabBar';
 import { useWikiListParams } from '@/_components/MaeilWiki/Home/_hooks/useWikiListParams';
-import WikiWriteButton from '@/_components/MaeilWiki/Home/WikiWriteButton';
+import WikiInputToggleButton from '@/_components/MaeilWiki/Home/WikiInputToggleButton';
 import { Suspense, useState } from 'react';
+import { AuthProvider } from '@/_components/MaeilWiki/_store/authContext';
 
 export default function Page() {
   return (
@@ -32,15 +33,17 @@ function MaeilWikiMain() {
   return (
     <PageInnerLayout>
       <HeroSection />
-      <WikiListTabBar selectedOption={category} onWrite={expandQuestionInput} />
+      <WikiListTabBar selectedOption={category} onClickWriteButton={expandQuestionInput} />
       <Suspense fallback={<div>로딩중입니다</div>}>
         <WikiList category={category} page={page} />
       </Suspense>
-      <WikiWriteButton
-        isExpanded={isQuestionInputExpanded}
-        onWrite={expandQuestionInput}
-        onClose={closeQuestionInput}
-      />
+      <AuthProvider>
+        <WikiInputToggleButton
+          isExpanded={isQuestionInputExpanded}
+          onClick={expandQuestionInput}
+          onClose={closeQuestionInput}
+        />
+      </AuthProvider>
     </PageInnerLayout>
   );
 }
