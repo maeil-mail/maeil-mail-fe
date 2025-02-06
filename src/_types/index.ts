@@ -2,7 +2,7 @@ import { QUESTION_CATEGORY } from '@/_constants/questionCategory';
 import type { ReactNode } from 'react';
 import { MAIL_FREQUENCY } from './../_constants/setting';
 
-type QuestionCategoryKO = keyof typeof QUESTION_CATEGORY;
+export type QuestionCategoryKO = keyof typeof QUESTION_CATEGORY;
 export type QuestionCategoryEN = (typeof QUESTION_CATEGORY)[QuestionCategoryKO];
 
 export interface Question {
