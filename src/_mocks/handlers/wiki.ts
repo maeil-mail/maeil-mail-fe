@@ -10,7 +10,7 @@ export const wikiHandlers = [
   }),
 
   http.post(API_ROUTES.wiki, ({ cookies }) => {
-    const isLoggedIn = cookies.access === 'access';
+    const isLoggedIn = cookies.accessToken === 'accessToken';
 
     if (isLoggedIn) {
       return HttpResponse.json(null, {

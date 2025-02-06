@@ -4,15 +4,15 @@ import { http, HttpResponse } from 'msw';
 
 export const authHandlers = [
   http.post(API_ROUTES.refresh, ({ cookies }) => {
-    const isRefreshAlive = cookies.refresh === 'refresh';
+    const isRefreshAlive = cookies.refreshToken === 'refreshToken';
 
     if (isRefreshAlive) {
       return HttpResponse.json(null, {
         status: 200,
         headers: {
           'Set-Cookie': [
-            'access=access; Path=/; HttpOnly; Secure; SameSite=Lax',
-            'refresh=refresh; Path=/; HttpOnly; Secure; SameSite=Lax',
+            'accessToken=accessToken; Path=/; HttpOnly; Secure; SameSite=Lax',
+            'refreshToken=refreshToken; Path=/; HttpOnly; Secure; SameSite=Lax',
           ].join(', '),
         },
       });
@@ -22,7 +22,7 @@ export const authHandlers = [
   }),
 
   http.get(API_ROUTES.memberProfile, ({ cookies }) => {
-    const isLoggedIn = cookies.access === 'access';
+    const isLoggedIn = cookies.accessToken === 'accessToken';
 
     if (isLoggedIn) {
       return HttpResponse.json(MOCK_MY_AUTH_INFO, {
@@ -36,14 +36,14 @@ export const authHandlers = [
   }),
 
   http.post(API_ROUTES.member, () => {
-    return HttpResponse.json(
-      {
-        accessToken: 'access',
-        refreshToken: 'refresh',
+    return HttpResponse.json(null, {
+      status: 200,
+      headers: {
+        'Set-Cookie': [
+          'accessToken=accessToken; Path=/; HttpOnly; Secure; SameSite=Lax',
+          'refreshToken=refreshToken; Path=/; HttpOnly; Secure; SameSite=Lax',
+        ].join(', '),
       },
-      {
-        status: 200,
-      },
-    );
+    });
   }),
 ];

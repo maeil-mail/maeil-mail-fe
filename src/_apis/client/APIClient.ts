@@ -19,22 +19,34 @@ export default class APIClient {
   constructor(private baseUrl: string) {}
 
   async get<T = any>(path: string): Promise<T> {
-    return this.request<T>('GET', path);
+    const res = await this.request<T>('GET', path);
+    const data = await res.json();
+
+    return data as T;
   }
 
   async post<T = any>(path: string, body?: any): Promise<T> {
-    return this.request<T>('POST', path, body);
+    const res = await this.request<T>('POST', path, body);
+    const data = await res.json();
+
+    return data as T;
   }
 
   async patch<T = any>(path: string, body?: any): Promise<T> {
-    return this.request<T>('PATCH', path, body);
+    const res = await this.request<T>('PATCH', path, body);
+    const data = await res.json();
+
+    return data as T;
   }
 
   async delete<T = any>(path: string, body?: any): Promise<T> {
-    return this.request<T>('DELETE', path, body);
+    const res = await this.request<T>('DELETE', path, body);
+    const data = await res.json();
+
+    return data as T;
   }
 
-  private async request<T>(method: HTTPMethod, path: string, body?: any): Promise<T> {
+  async request<T>(method: HTTPMethod, path: string, body?: any): Promise<Response> {
     try {
       const url = this.generateUrl(path);
 
@@ -52,7 +64,7 @@ export default class APIClient {
         );
       }
 
-      return await response.json();
+      return response;
     } catch (error) {
       if (error instanceof HTTPError) {
         throw error;

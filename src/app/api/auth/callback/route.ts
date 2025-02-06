@@ -8,49 +8,36 @@ import {
   MAEIL_WIKI_ERROR_PAGE_URL,
   MAEIL_WIKI_HOME_URL,
 } from '@/_constants/publicEnv';
-import { cookies } from 'next/headers';
-import { NextRequest } from 'next/server';
-import { extractHostname } from '../../_utils/extractHostname';
+import { NextRequest, NextResponse } from 'next/server';
 
 const HEADER = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
 };
 
-const cookieConfig = {
-  domain: extractHostname(BASE_URL),
-  path: '/',
-  httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: 'lax',
-  maxAge: 60 * 60 * 24 * 7,
-} as const;
-
 export async function GET(req: NextRequest) {
-  const searchParams = req.nextUrl.searchParams;
-  const code = searchParams.get('code');
+  try {
+    const searchParams = req.nextUrl.searchParams;
+    const code = searchParams.get('code');
 
-  const returnPath = searchParams.get('returnPath');
-  const returnUrl = `${MAEIL_WIKI_HOME_URL}${returnPath}`;
+    const returnPath = searchParams.get('returnPath');
+    const returnUrl = `${MAEIL_WIKI_HOME_URL}${returnPath}`;
 
-  if (!code) {
+    if (!code) {
+      return Response.redirect(MAEIL_WIKI_ERROR_PAGE_URL);
+    }
+
+    const { access_token: githubAccessToken } = await getGithubAccessToken(code);
+
+    const response = await mainClient.request('POST', API_ROUTES.member, {
+      oauthAccessToken: githubAccessToken,
+    });
+
+    return NextResponse.redirect(returnUrl, { headers: response.headers });
+  } catch (error) {
+    console.error(error);
     return Response.redirect(MAEIL_WIKI_ERROR_PAGE_URL);
   }
-
-  const { access_token: githubAccessToken } = await getGithubAccessToken(code);
-
-  const { accessToken, refreshToken } = await mainClient.post<{
-    accessToken: string;
-    refreshToken: string;
-  }>(API_ROUTES.member, {
-    oauthAccessToken: githubAccessToken,
-  });
-
-  const cookieStore = await cookies();
-  cookieStore.set('access', accessToken, cookieConfig);
-  cookieStore.set('refresh', refreshToken, cookieConfig);
-
-  return Response.redirect(returnUrl);
 }
 
 async function getGithubAccessToken(code: string) {
