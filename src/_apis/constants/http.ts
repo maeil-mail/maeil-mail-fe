@@ -1,4 +1,5 @@
 export const HTTP_STATUS_CODE = {
+  NETWORK_ERROR: 0,
   OK: 200,
   CREATED: 201,
   NO_CONTENT: 204,

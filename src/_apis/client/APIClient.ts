@@ -1,72 +1,79 @@
+import { HTTP_STATUS_CODE } from '../constants/http';
+
 const baseHeader = {
   'Content-Type': 'application/json',
 };
+
+export class HTTPError extends Error {
+  status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.status = status;
+  }
+}
+
+type HTTPMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
 export default class APIClient {
   constructor(private baseUrl: string) {}
 
   async get<T = any>(path: string): Promise<T> {
-    const url = this.generateUrl(path);
+    const res = await this.request<T>('GET', path);
+    const data = await res.json();
 
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: baseHeader,
-    });
-
-    if (!response.ok) {
-      throw new Error(`get api 요청에서 에러가 발생했습니다. (url: ${url})`);
-    }
-
-    const data = await response.json();
-
-    return data;
+    return data as T;
   }
 
-  async post(path: string, body?: any): Promise<void> {
-    const url = this.generateUrl(path);
+  async post<T = any>(path: string, body?: any): Promise<T> {
+    const res = await this.request<T>('POST', path, body);
+    const data = await res.json();
 
-    const response = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`post api 요청에서 에러가 발생했습니다. (url: ${url})`);
-    }
+    return data as T;
   }
 
-  async patch(path: string, body?: any): Promise<void> {
-    const url = this.generateUrl(path);
+  async patch<T = any>(path: string, body?: any): Promise<T> {
+    const res = await this.request<T>('PATCH', path, body);
+    const data = await res.json();
 
-    const response = await fetch(url, {
-      method: 'PATCH',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`patch api 요청에서 에러가 발생했습니다. (url: ${url})`);
-    }
+    return data as T;
   }
 
-  async delete(path: string, body?: any) {
-    const url = this.generateUrl(path);
+  async delete<T = any>(path: string, body?: any): Promise<T> {
+    const res = await this.request<T>('DELETE', path, body);
+    const data = await res.json();
 
-    const response = await fetch(url, {
-      method: 'DELETE',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    return data as T;
+  }
 
-    if (!response.ok) {
-      throw new Error(`delete api 요청에서 에러가 발생했습니다. (url: ${url})`);
+  async request<T>(method: HTTPMethod, path: string, body?: any): Promise<Response> {
+    try {
+      const url = this.generateUrl(path);
+
+      const response = await fetch(url, {
+        method,
+        headers: baseHeader,
+        body: body ? JSON.stringify(body) : undefined,
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new HTTPError(
+          `${method} 요청에서 에러 발생 (url: ${url}, status: ${response.status}) - ${await response.text()}`,
+          response.status,
+        );
+      }
+
+      return response;
+    } catch (error) {
+      if (error instanceof HTTPError) {
+        throw error;
+      }
+
+      throw new HTTPError(
+        `네트워크 오류 또는 요청 실패 (url: ${path})`,
+        HTTP_STATUS_CODE.NETWORK_ERROR,
+      );
     }
   }
 

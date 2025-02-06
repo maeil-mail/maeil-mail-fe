@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import type { WikiCategoryTabOption } from '../../_types/wikiCategory';
-import { getWikiList } from '@/_apis/wiki';
+import { getWikiList } from '@/_components/MaeilWiki/_apis/wiki';
 
 interface UseWikiListParams {
   category: WikiCategoryTabOption;

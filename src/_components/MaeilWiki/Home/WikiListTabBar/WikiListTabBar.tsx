@@ -1,23 +1,23 @@
 'use client';
 
+import { AuthProvider } from '../../_store/authContext';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
 import WikiCategoryTabs from './WikiCategoryTabs';
-import { wikiListTabBar, wikiWriteButton, writeIcon } from './wikiListTabBar.css';
-import WriteIcon from '@/_assets/icons/writeIcon.svg';
+import { wikiListTabBar } from './wikiListTabBar.css';
+import WikiWriteButton from './WikiWriteButton';
 
 interface WikiListTabBar {
   selectedOption: WikiCategoryTabOption;
-  onWrite: () => void;
+  onClickWriteButton: () => void;
 }
 
-export default function WikiListTabBar({ selectedOption, onWrite }: WikiListTabBar) {
+export default function WikiListTabBar({ selectedOption, onClickWriteButton }: WikiListTabBar) {
   return (
     <div className={wikiListTabBar}>
       <WikiCategoryTabs selectedOption={selectedOption} />
-      <button className={wikiWriteButton} onClick={onWrite}>
-        <WriteIcon className={writeIcon} />
-        <span>작성하기</span>
-      </button>
+      <AuthProvider>
+        <WikiWriteButton onClick={onClickWriteButton} />
+      </AuthProvider>
     </div>
   );
 }

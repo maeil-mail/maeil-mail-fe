@@ -50,6 +50,7 @@ export const wikiWriteButton = recipe({
   base: {
     display: 'flex',
     alignItems: 'center',
+    background: 'transparent',
   },
 
   variants: {
@@ -103,6 +104,31 @@ export const wikiInput = recipe({
         margin: 0,
         border: 'none',
         outline: 'none',
+        visibility: 'hidden',
+        opacity: 0,
+        position: 'fixed',
+      },
+    },
+  },
+});
+
+export const wikiSubmitButton = recipe({
+  base: {
+    color: 'white',
+    background: 'transparent',
+  },
+  variants: {
+    isExpanded: {
+      true: {
+        fontSize: '1.5rem',
+        height: '4rem',
+        fontWeight: 400,
+      },
+      false: {
+        width: 0,
+        height: 0,
+        padding: 0,
+        margin: 0,
         visibility: 'hidden',
         opacity: 0,
         position: 'fixed',

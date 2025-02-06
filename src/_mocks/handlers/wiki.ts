@@ -8,4 +8,18 @@ export const wikiHandlers = [
       status: 200,
     });
   }),
+
+  http.post(API_ROUTES.wiki, ({ cookies }) => {
+    const isLoggedIn = cookies.accessToken === 'accessToken';
+
+    if (isLoggedIn) {
+      return HttpResponse.json(null, {
+        status: 201,
+      });
+    } else {
+      return HttpResponse.json(null, {
+        status: 401,
+      });
+    }
+  }),
 ];
