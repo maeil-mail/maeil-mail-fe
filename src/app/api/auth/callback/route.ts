@@ -1,4 +1,3 @@
-import BASE_URL from '@/_apis/baseUrl';
 import mainClient from '@/_apis/client/mainClient';
 import API_ROUTES from '@/_apis/constants/routes';
 import { GITHUB_OAUTH_TOKEN_URL } from '@/_components/MaeilWiki/_constants/auth';

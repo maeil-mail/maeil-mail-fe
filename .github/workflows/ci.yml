@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+        env:
+          NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID }}
+          NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI }}
+          NEXT_PUBLIC_MAEIL_WIKI_HOME_URL: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_HOME_URL }}
+          NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL }}
+          OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
