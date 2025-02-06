@@ -12,9 +12,11 @@ import DeveloperEmoji from '@/_assets/images/developerEmoji.svg';
 import Link from 'next/link';
 import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
-export default function Error({ error }: { error: Error }) {
+export default function Error({ error }: { error?: Error }) {
   useEffect(() => {
-    Sentry.captureException(error);
+    if (error) {
+      Sentry.captureException(error);
+    }
   }, [error]);
 
   return (

@@ -10,11 +10,15 @@ interface GetWikiListResponse {
 }
 
 export const getWikiList = async (category: WikiCategoryTabOption, page: number) => {
-  const data = await mainClient.get<GetWikiListResponse>(
-    `${API_ROUTES.wiki}?category=${category}&page=${page}&size=8`,
-  );
+  try {
+    const data = await mainClient.get<GetWikiListResponse>(
+      `${API_ROUTES.wiki}?category=${category}&page=${page}&size=8`,
+    );
 
-  return data;
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export interface PostWikiBody {
@@ -27,6 +31,7 @@ export interface PostWikiBody {
 export const postWiki = async (body: PostWikiBody) => {
   try {
     const data = await mainClient.post<GetWikiListResponse>(API_ROUTES.wiki, body);
+
     return data;
   } catch (error) {
     throw error;
