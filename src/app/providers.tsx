@@ -70,7 +70,7 @@ async function handleMutationError(
   } catch (error) {
     if (isUnauthorizedError(error)) {
       alert('로그인이 만료되었습니다. 재로그인을 부탁드립니다.');
-      redirectToGithubLogin(window.location.pathname);
+      redirectToGithubLogin();
       return;
     }
 
