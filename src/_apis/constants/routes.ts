@@ -1,3 +1,5 @@
+import { QuestionCategoryEN } from '@/_types';
+
 const API_ROUTES = {
   subscribe: '/subscribe',
   verify_email: '/subscribe/verify/send',
@@ -14,8 +16,8 @@ const API_ROUTES = {
 } as const;
 
 export const pathGenerator = {
-  myQuestions: (email: string, page: number) =>
-    `${API_ROUTES.myQuestions}?email=${email}&page=${page}&size=8`,
+  myQuestions: (email: string, page: number, category: QuestionCategoryEN) =>
+    `${API_ROUTES.myQuestions}?size=8&email=${email}&page=${page}&category=${category}`,
   myMailFrequency: (email: string) => `${API_ROUTES.mailFrequency}?email=${email}`,
   myWeeklyQuestions: (
     email: string,

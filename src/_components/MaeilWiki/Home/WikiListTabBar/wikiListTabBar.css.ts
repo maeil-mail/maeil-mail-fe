@@ -28,7 +28,7 @@ export const writeIcon = style({
 });
 
 // WikiCategoryTabBar
-export const wikiCategoryTabBar = style({
+export const wikiCategoryTabs = style({
   fontSize: '1.6rem',
   display: 'flex',
   gap: '1.5rem',

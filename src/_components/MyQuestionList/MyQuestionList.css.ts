@@ -1,11 +1,12 @@
 import { keyframes, style, styleVariants } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 // MyQuestionHeader
 export const questionHeaderContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '1.5rem',
-  marginBottom: '4rem',
+  marginBottom: '2.5rem',
 });
 
 export const questionHeaderTitle = style({
@@ -18,6 +19,7 @@ export const questionHeaderSubTitle = style({
   fontWeight: 600,
   fontSize: '2.3rem',
   color: '#2b2b2b',
+  textDecoration: 'none',
 });
 
 // MyQuestionList
@@ -107,4 +109,30 @@ export const myQuestionItemSkeleton = style({
   borderRadius: '6px',
   width: '100%',
   height: '5.3rem',
+});
+
+// QuestionCategoryTabs
+export const questionCategoryTabs = style({
+  fontSize: '1.6rem',
+  display: 'flex',
+  gap: '1.5rem',
+  marginBottom: '2.5rem',
+});
+
+export const questionCategoryTab = recipe({
+  base: {
+    cursor: 'pointer',
+  },
+  variants: {
+    isSelected: {
+      true: {
+        color: '#00a86b',
+        fontWeight: 600,
+      },
+      false: {
+        color: '#adb5bd',
+        fontWeight: 400,
+      },
+    },
+  },
 });

@@ -7,7 +7,7 @@ import {
   WIKI_CATEGORY_TAB_OPTION_KO,
 } from '../../_constants/wikiCategory';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
-import { wikiCategoryTab, wikiCategoryTabBar } from './wikiListTabBar.css';
+import { wikiCategoryTab, wikiCategoryTabs } from './wikiListTabBar.css';
 
 interface WikiCategoryTabsProps {
   selectedOption: WikiCategoryTabOption;
@@ -17,7 +17,7 @@ const categories = Object.values(WIKI_CATEGORY);
 
 export default function WikiCategoryTabs({ selectedOption }: WikiCategoryTabsProps) {
   return (
-    <div className={wikiCategoryTabBar}>
+    <div className={wikiCategoryTabs}>
       <QueryLink appendedQuery={{ category: WIKI_CATEGORY_TAB_OPTION.all, page: 1 }}>
         <div
           className={wikiCategoryTab({

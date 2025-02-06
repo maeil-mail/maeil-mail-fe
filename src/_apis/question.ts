@@ -1,6 +1,6 @@
 import mainClient from './client/mainClient';
 import API_ROUTES, { pathGenerator } from './constants/routes';
-import type { Question } from '@/_types';
+import type { Question, QuestionCategoryEN } from '@/_types';
 
 export const getAllQuestions = async () => {
   const data = await mainClient.get<{ data: Question[] }>(`${API_ROUTES.question}?size=10000`);
@@ -13,8 +13,12 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
 };
 
 // page 변수는 frontend에서 1 base, backend에서 0 base입니다.
-export const getMyQuestions = async (email: string, page: number = 1) => {
-  const data = await mainClient.get(pathGenerator.myQuestions(email, page - 1));
+export const getMyQuestions = async (
+  email: string,
+  page: number = 1,
+  category: QuestionCategoryEN,
+) => {
+  const data = await mainClient.get(pathGenerator.myQuestions(email, page - 1, category));
 
   return data;
 };
