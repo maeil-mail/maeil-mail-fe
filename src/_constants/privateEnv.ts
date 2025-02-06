@@ -1,4 +1,4 @@
-export const GITHUB_OAUTH_CLIENT_SECRET = process.env.GITHUB_OAUTH_CLIENT_SECRET as string;
+export const GITHUB_OAUTH_CLIENT_SECRET = process.env.OAUTH_GITHUB_CLIENT_SECRET as string;
 
 const envs = [GITHUB_OAUTH_CLIENT_SECRET];
 
