@@ -39,11 +39,8 @@ export default class APIClient {
     return data as T;
   }
 
-  async delete<T = any>(path: string, body?: any): Promise<T> {
-    const res = await this.request<T>('DELETE', path, body);
-    const data = await res.json();
-
-    return data as T;
+  async delete<T = any>(path: string, body?: any): Promise<void> {
+    await this.request<T>('DELETE', path, body);
   }
 
   async request<T>(method: HTTPMethod, path: string, body?: any): Promise<Response> {

@@ -20,8 +20,10 @@ export default function UnsubscribeContent({ email, token }: UnsubscribeContentP
   const { push } = useRouter();
 
   const handleUnsubscribe = async () => {
-    await deleteSubscribe({ email, token });
-    push(PAGE_ROUTES.unsubscribeCompleted);
+    if (confirm('구독을 해지하시겠습니까?')) {
+      await deleteSubscribe({ email, token });
+      push(PAGE_ROUTES.unsubscribeCompleted);
+    }
   };
 
   return (
