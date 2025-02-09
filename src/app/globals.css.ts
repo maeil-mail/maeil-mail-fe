@@ -4,11 +4,6 @@ import { text1, borderColor1 } from '@/_styles/vars.css';
 
 globalStyle('*', {
   boxSizing: 'border-box',
-  scrollbarWidth: 'none',
-});
-
-globalStyle('*::-webkit-scrollbar', {
-  display: 'none',
 });
 
 globalStyle('html', {
@@ -103,6 +98,7 @@ globalStyle('.wmde-markdown img', {
 
 globalStyle('.wmde-markdown p', {
   fontSize: '1.65rem',
+  lineHeight: 1.6,
   letterSpacing: '-0.02rem',
 });
 
