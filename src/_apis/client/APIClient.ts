@@ -19,28 +19,31 @@ export default class APIClient {
   constructor(private baseUrl: string) {}
 
   async get<T = any>(path: string): Promise<T> {
-    const res = await this.request<T>('GET', path);
-    const data = await res.json();
+    const response = await this.request<T>('GET', path);
+    const data = await this.handleResponse<T>(response);
 
     return data as T;
   }
 
   async post<T = any>(path: string, body?: any): Promise<T> {
-    const res = await this.request<T>('POST', path, body);
-    const data = await res.json();
+    const response = await this.request<T>('POST', path, body);
+    const data = await this.handleResponse<T>(response);
 
     return data as T;
   }
 
   async patch<T = any>(path: string, body?: any): Promise<T> {
-    const res = await this.request<T>('PATCH', path, body);
-    const data = await res.json();
+    const response = await this.request<T>('PATCH', path, body);
+    const data = await this.handleResponse<T>(response);
 
     return data as T;
   }
 
-  async delete<T = any>(path: string, body?: any): Promise<void> {
-    await this.request<T>('DELETE', path, body);
+  async delete<T = any>(path: string, body?: any): Promise<T> {
+    const response = await this.request<T>('DELETE', path, body);
+    const data = await this.handleResponse<T>(response);
+
+    return data as T;
   }
 
   async request<T>(method: HTTPMethod, path: string, body?: any): Promise<Response> {
@@ -71,6 +74,14 @@ export default class APIClient {
         HTTP_STATUS_CODE.NETWORK_ERROR,
       );
     }
+  }
+
+  private async handleResponse<T>(response: Response): Promise<T | null> {
+    if (response.status === HTTP_STATUS_CODE.NO_CONTENT) {
+      return null;
+    }
+
+    return (await response.json()) as T;
   }
 
   private generateUrl(path: string) {
