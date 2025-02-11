@@ -5,12 +5,6 @@ import MOCK_MY_QUESTIONS from './mockData/myQuestions.json';
 import MOCK_MY_WEEKLY_QUESTIONS from './mockData/myWeeklyQuestions.json';
 
 export const questionHandlers = [
-  http.post(API_ROUTES.post_new_question, () => {
-    return HttpResponse.json(null, {
-      status: 200,
-    });
-  }),
-
   http.get(API_ROUTES.question, ({ request }) => {
     const url = new URL(request.url);
     const category = url.searchParams.get('category');

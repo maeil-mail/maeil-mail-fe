@@ -7,7 +7,7 @@ const API_ROUTES = {
   myQuestions: '/subscribe-question',
   myWeeklyQuestions: '/subscribe-question/weekly',
   question: '/question',
-  post_new_question: '/admin/question',
+  adminQuestion: '/admin/question',
   subscriberCount: '/statistics/subscribe',
   wiki: '/wiki',
   member: '/member',

@@ -1,7 +1,7 @@
 import mainClient from '@/_apis/client/mainClient';
 import API_ROUTES from '@/_apis/constants/routes';
 import { GITHUB_OAUTH_TOKEN_URL } from '@/_components/MaeilWiki/_constants/auth';
-import { GITHUB_OAUTH_CLIENT_SECRET } from '@/_constants/privateEnv';
+import { OAUTH_GITHUB_CLIENT_SECRET } from '@/_constants/privateEnv';
 import {
   GITHUB_OAUTH_CLIENT_ID,
   MAEIL_WIKI_ERROR_PAGE_URL,
@@ -44,7 +44,7 @@ async function getGithubAccessToken(code: string) {
     method: 'POST',
     body: JSON.stringify({
       client_id: GITHUB_OAUTH_CLIENT_ID,
-      client_secret: GITHUB_OAUTH_CLIENT_SECRET,
+      client_secret: OAUTH_GITHUB_CLIENT_SECRET,
       code: code,
     }),
     headers: HEADER,
