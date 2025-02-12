@@ -13,7 +13,7 @@ interface WikiListProps {
 }
 
 export default function WikiList({ category, page }: WikiListProps) {
-  const { data } = useWikiList({ category, page });
+  const { data } = useWikiList({ category, page: page - 1 });
 
   const wikis = data.data;
 
