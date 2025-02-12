@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import DetailTitle from '@/_components/QuestionDetail/DetailTitle';
 import DetailCategory from '@/_components/QuestionDetail/DetailCategory';
 import DetailAnswer from '@/_components/QuestionDetail/DetailAnswer';
-import { getAllQuestions, getDetailQuestion } from '@/_apis/question';
+import { getDetailQuestion } from '@/_apis/question';
 import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
+import { getAllQuestions } from '@/_apis/admin';
 
 // 5시간 (연산자 사용 시 에러가 발생하여 정수 형태로 작성)
 export const revalidate = 18_000;
