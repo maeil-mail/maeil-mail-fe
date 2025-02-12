@@ -54,6 +54,7 @@ export default class APIClient {
         method,
         headers: baseHeader,
         body: body ? JSON.stringify(body) : undefined,
+        credentials: 'include',
       });
 
       if (!response.ok) {
