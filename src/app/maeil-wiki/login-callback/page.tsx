@@ -3,12 +3,19 @@
 import LoadingSpinner from '@/_components/common/LoadingSpinner/LoadingSpinner';
 import { useLoginMutation } from '@/_components/MaeilWiki/_hooks/useLoginMutation';
 import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 
 export default function Page() {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <LoginCallback />
+    </Suspense>
+  );
+}
+
+function LoginCallback() {
   const code = useSearchParams().get('code') || '';
   const returnPath = useSearchParams().get('returnPath') || '/';
-
   const { mutate } = useLoginMutation(code, returnPath);
 
   useEffect(() => {
