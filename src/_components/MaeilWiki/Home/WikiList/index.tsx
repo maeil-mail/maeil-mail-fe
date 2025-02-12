@@ -6,6 +6,7 @@ import { wikiList } from './wikiList.css';
 import { useWikiList } from '../_hooks/useWikiList';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
 import Paginator from '@/_components/common/Paginator';
+import Link from 'next/link';
 
 interface WikiListProps {
   category: WikiCategoryTabOption;
@@ -24,7 +25,11 @@ export default function WikiList({ category, page }: WikiListProps) {
           const pageOffset = (page - 1) * 8;
           const order = index + 1 + pageOffset;
 
-          return <WikiItem key={wiki.id} wiki={wiki} order={order} />;
+          return (
+            <Link key={wiki.id} href={`/wiki/${wiki.id}`}>
+              <WikiItem wiki={wiki} order={order} />
+            </Link>
+          );
         })}
       </ol>
       <Paginator currentPage={page} lastPage={data.totalPage} />
