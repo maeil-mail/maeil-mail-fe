@@ -10,6 +10,13 @@ globalStyle('html', {
   fontSize: '62.5%',
 });
 
+globalStyle('body', {
+  margin: '0',
+  transition: 'all 0.3s ease',
+  fontSize: '1.6rem',
+  lineHeight: '1',
+});
+
 globalStyle('button', {
   cursor: 'pointer',
   outline: 'none',
@@ -19,11 +26,6 @@ globalStyle('button', {
   color: 'inherit',
   fontWeight: 'inherit',
   fontSize: 'inherit',
-});
-
-globalStyle('body', {
-  margin: '0',
-  transition: 'all 0.3s ease',
 });
 
 globalStyle('h1, h2, h3, p', {
