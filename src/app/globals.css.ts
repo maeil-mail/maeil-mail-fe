@@ -14,7 +14,6 @@ globalStyle('body', {
   margin: '0',
   transition: 'all 0.3s ease',
   fontSize: '1.6rem',
-  lineHeight: '1',
 });
 
 globalStyle('button', {
