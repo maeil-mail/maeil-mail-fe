@@ -131,3 +131,7 @@ globalStyle('.wmde-markdown table td', {
   wordBreak: 'break-word',
   whiteSpace: 'normal',
 });
+
+globalStyle('.wmde-markdown .code-highlight', {
+  background: '#F5F8FA',
+});

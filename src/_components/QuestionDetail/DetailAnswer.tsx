@@ -1,7 +1,5 @@
 'use client';
 
-import formatMarkdownContent from './_utils/formatMarkDownContent';
-import MarkdownPreview from '@uiw/react-markdown-preview';
 import '@mdxeditor/editor/style.css';
 import recordGAEvent from '@/_utils/recordGAEvent';
 import { GA_EVENT } from '@/_constants/googleAnalytics';
@@ -17,6 +15,7 @@ import {
   subButton,
 } from './questionDetail.css';
 import { GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import MDPreview from '../MaeilWiki/Markdown/MDPreview';
 
 interface DetailAnswerProps {
   content: string;
@@ -33,7 +32,7 @@ export default function DetailAnswer({ content }: DetailAnswerProps) {
 
   return (
     <>
-      <MarkdownPreview source={formatMarkdownContent(content)} />
+      <MDPreview source={content} />
       <div className={separator}></div>
       <div className={buttonWrapper}>
         <div className={primaryButton} onClick={handleShareButton}>

@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { Member, Wiki } from '../_types/wiki';
 import { WIKI_CATEGORY_KO } from '../_constants/wikiCategory';
@@ -13,6 +15,7 @@ import {
   wikiQuestionHeader,
   wikiQuestionInfo,
 } from './wiki.css';
+import MDPreview from '../Markdown/MDPreview';
 
 export interface WikiQuestionProps {
   wiki: Wiki;
@@ -29,7 +32,7 @@ export default function WikiQuestion({ wiki }: WikiQuestionProps) {
         <h1 className={wikiQuestion}>Q. {wiki.question}</h1>
         <p className={wikiCategory}>[분야: {WIKI_CATEGORY_KO[wiki.category]}]</p>
       </div>
-      {wiki.questionDetail && <div>{wiki.questionDetail}</div>}
+      {wiki.questionDetail && <MDPreview source={wiki.questionDetail} />}
     </header>
   );
 }

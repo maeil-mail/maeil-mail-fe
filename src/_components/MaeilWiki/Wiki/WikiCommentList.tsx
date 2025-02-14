@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { Member, WikiComment } from '../_types/wiki';
 import {
@@ -14,6 +16,7 @@ import {
   wikiCommentOwnerProfileImage,
   wikiCommentOwnerProfileLink,
 } from './wiki.css';
+import MDPreview from '../Markdown/MDPreview';
 
 export interface WikiCommentListProps {
   comments: WikiComment[];
@@ -42,7 +45,7 @@ function WikiComments({ comments }: { comments: WikiComment[] }) {
               <CommentOwnerProfile owner={owner} />
               <span className={wikiCommentCreatedAt}>{createdAt}</span>
             </div>
-            <p>{answer}</p>
+            <MDPreview source={answer} />
             <button className={wikiCommentLikeButton}>❤️ {likeCount > 0 && likeCount}</button>
           </div>
         ))}
