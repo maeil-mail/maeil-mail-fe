@@ -1,8 +1,9 @@
 'use client';
 
 import {
-  headingsPlugin,
   MDXEditor,
+  MDXEditorProps,
+  headingsPlugin,
   diffSourcePlugin,
   listsPlugin,
   linkPlugin,
@@ -12,7 +13,6 @@ import {
   imagePlugin,
   frontmatterPlugin,
   codeMirrorPlugin,
-  MDXEditorProps,
 } from '@mdxeditor/editor';
 import './markdown.css';
 import { CODE_BLACK_LANGUAGES } from './constants';
