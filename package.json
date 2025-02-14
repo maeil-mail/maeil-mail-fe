@@ -29,6 +29,7 @@
     "@vanilla-extract/recipes": "^0.5.5",
     "classnames": "^2.5.1",
     "framer-motion-ticker": "^1.0.19",
+    "isomorphic-dompurify": "^2.21.0",
     "next": "^15.0.1",
     "react": "^18",
     "react-dom": "^18",
