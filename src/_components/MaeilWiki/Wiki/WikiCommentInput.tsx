@@ -3,12 +3,7 @@
 import Button from '@/_components/common/Button/Button';
 import * as React from 'react';
 import { wikiCommentInputButton, wikiCommentInputSection } from './wiki.css';
-import dynamic from 'next/dynamic';
 import MDLiveEditor from '../Markdown/MDLiveEditor';
-
-// const MDEditor = dynamic(() => import('../Markdown/MDEditor'), {
-//   ssr: false,
-// });
 
 export interface IWikiCommentFormProps {}
 
