@@ -1,7 +1,17 @@
 import { WikiCategory, WikiCategoryTabOption } from '@/_components/MaeilWiki/_types/wikiCategory';
 import mainClient from '@/_apis/client/mainClient';
 import API_ROUTES from '@/_apis/constants/routes';
-import { WikiListItem } from '@/_components/MaeilWiki/_types/wiki';
+import { Wiki, WikiListItem } from '@/_components/MaeilWiki/_types/wiki';
+
+export const getWikiById = async (id: number): Promise<Wiki> => {
+  try {
+    const data = await mainClient.get<Wiki>(`${API_ROUTES.wiki}/${id}`);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 
 interface GetWikiListResponse {
   isLastPage: boolean;
