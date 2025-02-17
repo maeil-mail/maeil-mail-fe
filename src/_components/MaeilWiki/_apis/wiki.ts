@@ -37,3 +37,18 @@ export const postWiki = async (body: PostWikiBody) => {
     throw error;
   }
 };
+
+export interface postWikiCommentBody {
+  answer: string;
+  isAnonymous: boolean;
+}
+
+export const postWikiComment = async (wikiId: number, body: postWikiCommentBody) => {
+  try {
+    const data = await mainClient.post(`/wiki/${wikiId}/comment`, body);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

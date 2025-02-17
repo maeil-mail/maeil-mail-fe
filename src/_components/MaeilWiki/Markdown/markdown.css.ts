@@ -5,6 +5,7 @@ export const mdEditorContainer = style({
   border: '1px solid #d1d9e0',
   padding: '2rem 1rem',
   borderRadius: '0.4rem',
+  minHeight: '19rem !important',
 });
 
 export const mdOptionTabBar = style({ display: 'flex', gap: '2rem', marginBottom: '1rem' });
@@ -30,6 +31,10 @@ export const mdxEditorPlaceholder = style({
 // MDEditor global
 globalStyle('.mdxeditor', {
   position: 'relative',
+});
+
+globalStyle('.cm-editor', {
+  minHeight: '12rem !important',
 });
 
 globalStyle('.cm-content', {
