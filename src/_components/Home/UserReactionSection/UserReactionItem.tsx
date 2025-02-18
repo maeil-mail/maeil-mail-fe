@@ -9,7 +9,7 @@ import {
 
 interface UserReactionItemProps {
   thumbnailImg: StaticImageData;
-  name: ReactNode;
+  name: string;
   background: string;
   commentNode: ReactNode;
 }
