@@ -6,7 +6,7 @@ export const navContentWrapper = style({ display: 'flex', alignItems: 'center', 
 export const teamIntroductionLink = style({
   cursor: 'pointer',
   fontSize: '1.5rem',
-  fontWeight: 700,
+  fontWeight: 600,
 });
 
 export const subscribeButton = style({
@@ -15,5 +15,5 @@ export const subscribeButton = style({
   backgroundColor: primary,
   padding: '1rem 1rem',
   borderRadius: '0.6rem',
-  fontWeight: 600,
+  fontWeight: 550,
 });

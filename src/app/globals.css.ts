@@ -38,9 +38,9 @@ globalStyle('a, a:link, a:visited, a:hover', {
 });
 
 globalStyle('ol, ul', {
-  listStyle: 'none',
   margin: '0',
   padding: '0',
+  listStyle: 'none',
 });
 
 globalStyle(`:root`, {
@@ -65,6 +65,10 @@ globalStyle('.wmde-markdown', {
   background: `${darkTheme.colorBackground} !important`,
   color: `${text1} !important`,
   fontSize: '1.3rem !importannt',
+});
+
+globalStyle('.wmde-markdown ul, .wmde-markdown ol', {
+  listStyle: 'disc outside none',
 });
 
 globalStyle('.wmde-markdown h2', {

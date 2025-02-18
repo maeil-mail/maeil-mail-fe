@@ -39,7 +39,7 @@ export default function UserReactionSection() {
 const USER_REACTIONS = [
   {
     thumbnailImg: AtomImage,
-    name: '이◯늘',
+    name: '이○늘',
     background: '컴퓨터공학과 전공생',
     commentNode: (
       <div className={commentContainer}>
@@ -51,7 +51,7 @@ const USER_REACTIONS = [
   },
   {
     thumbnailImg: BrgndyImage,
-    name: '전◯헌',
+    name: '전○헌',
     background: '토스 최종 합격자',
     commentNode: (
       <div className={commentContainer}>
@@ -63,7 +63,7 @@ const USER_REACTIONS = [
   },
   {
     thumbnailImg: ChoiImage,
-    name: '최◯웅',
+    name: '최○웅',
     background: '토스뱅크 최종 합격자',
     commentNode: (
       <div className={commentContainer}>
@@ -74,8 +74,8 @@ const USER_REACTIONS = [
   },
   {
     thumbnailImg: LeesangImage,
-    name: '이◯상',
-    background: 'JAVA 개발자',
+    name: '이○상',
+    background: '비전공 개발자',
     commentNode: (
       <div className={commentContainer}>
         &quot;<span className={logoFont}>매일메일</span>을 구독하면서{' '}

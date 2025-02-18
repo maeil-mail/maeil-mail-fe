@@ -20,7 +20,7 @@ export const innerWrapper = style({
 export const closingHeading = style({
   color: 'white',
   fontSize: '3rem',
-  fontWeight: 600,
+  fontWeight: 550,
   textAlign: 'center',
   letterSpacing: '-0.1rem',
 
@@ -37,7 +37,7 @@ export const closingCTAButton = style({
   padding: '2rem 4rem',
   borderRadius: '4rem',
   fontSize: '2.2rem',
-  fontWeight: '700',
+  fontWeight: 600,
   boxShadow: '0px 5.5px 25px 0.4px rgba(0, 0, 0, 0.3)',
 
   transition: 'transform 0.4s ease-in-out',

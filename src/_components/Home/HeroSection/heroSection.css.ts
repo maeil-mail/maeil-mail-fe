@@ -35,13 +35,13 @@ export const heroSectionInnerWrapper = style({
 export const heroHeading = style({
   fontSize: '5.5rem',
   textAlign: 'center',
-  fontWeight: 600,
-  letterSpacing: '-2.4px',
+  fontWeight: 550,
+  letterSpacing: '-1.5px',
   color: '#2b2b2b',
 
   '@media': {
     [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
-      fontWeight: 700,
+      fontWeight: 600,
       letterSpacing: '-1.8px',
       fontSize: '3.5rem',
     },
@@ -55,7 +55,7 @@ export const heroTypo = style({
   fontSize: '2.4rem',
   color: '#888888',
   marginTop: '2rem',
-  letterSpacing: '-0.05rem',
+
   textAlign: 'center',
   wordBreak: 'keep-all',
 
@@ -63,7 +63,7 @@ export const heroTypo = style({
     [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
       width: '70%',
       fontSize: '2rem',
-      fontWeight: 600,
+      fontWeight: 550,
     },
   },
 });

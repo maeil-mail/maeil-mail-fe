@@ -22,7 +22,7 @@ export const userReactionSectionContainer = style({
 
 export const userReactionHeading = style({
   fontSize: '3.5rem',
-  fontWeight: 600,
+  fontWeight: 550,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
   padding: '1.6rem',
@@ -30,12 +30,12 @@ export const userReactionHeading = style({
 
   '@media': {
     [`screen and (max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {
-      fontWeight: 700,
+      fontWeight: 600,
       letterSpacing: '-0.1rem',
       fontSize: '2rem',
     },
     'screen and (max-width: 400px)': {
-      fontWeight: 700,
+      fontWeight: 600,
       letterSpacing: '-0.1rem',
       fontSize: '1.8rem',
     },
@@ -93,7 +93,7 @@ export const userReactionProfile = style({
 export const userReactionName = style({
   fontSize: '1.9rem',
   letterSpacing: '0.2rem',
-  fontWeight: 600,
+  fontWeight: 550,
   marginBottom: '0.3rem',
 });
 

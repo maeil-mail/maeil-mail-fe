@@ -3,7 +3,7 @@ import { text1, text2, primary } from '@/_styles/vars.css';
 
 export const titleText = style({
   fontSize: '3.4rem',
-  fontWeight: 'bold',
+  fontWeight: 650,
   color: text1,
   marginBottom: '4rem',
 });
