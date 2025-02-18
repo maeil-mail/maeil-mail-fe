@@ -4,7 +4,7 @@ import Button from '@/_components/common/Button/Button';
 import * as React from 'react';
 import { wikiCommentInputButton, wikiCommentInputSection } from './wiki.css';
 import MDLiveEditor from '../Markdown/MDLiveEditor';
-import { useCreateWikiComment } from '../Home/_hooks/useCreateWikiComment';
+import { usePostWikiComment } from './_hooks/usePostWikiComment';
 
 export interface WikiCommentInputProps {
   wikiId: number;
@@ -14,7 +14,7 @@ export default function WikiCommentInput({ wikiId }: WikiCommentInputProps) {
   const [comment, setComment] = React.useState('');
   const [isAnonymous, setIsAnonymous] = React.useState(false);
 
-  const { mutate } = useCreateWikiComment(wikiId);
+  const { mutate } = usePostWikiComment(wikiId);
 
   const onChangeText = (text: string) => {
     setComment(text);

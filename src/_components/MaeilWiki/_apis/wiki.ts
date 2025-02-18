@@ -62,3 +62,11 @@ export const postWikiComment = async (wikiId: number, body: postWikiCommentBody)
     throw error;
   }
 };
+
+export const postWikiCommentLike = async (wikiId: number, commentId: number) => {
+  try {
+    return await mainClient.post(`/wiki/${wikiId}/comment/${commentId}/like`);
+  } catch (error) {
+    throw error;
+  }
+};

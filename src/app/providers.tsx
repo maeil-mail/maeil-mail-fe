@@ -69,7 +69,7 @@ async function handleMutationError(
     }
   } catch (error) {
     if (isUnauthorizedError(error)) {
-      alert('로그인이 만료되었습니다. 재로그인을 부탁드립니다.');
+      alert('로그인 후 사용하실 수 있습니다.');
       redirectToGithubLogin();
       return;
     }

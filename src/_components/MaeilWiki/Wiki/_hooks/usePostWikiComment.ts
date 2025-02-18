@@ -1,16 +1,14 @@
 'use client';
 
-import mainClient from '@/_apis/client/mainClient';
 import { useMutation } from '@tanstack/react-query';
-import { postWikiCommentBody } from '../../_apis/wiki';
+import { postWikiComment, postWikiCommentBody } from '../../_apis/wiki';
 
-export const useCreateWikiComment = (wikiId: number) => {
+export const usePostWikiComment = (wikiId: number) => {
   return useMutation({
     mutationFn: async (body: postWikiCommentBody) => {
-      await mainClient.post(`/wiki/${wikiId}/comment`, body);
+      await postWikiComment(wikiId, body);
     },
     onSuccess: () => {
-      alert('답변이 작성되었습니다.');
       window.location.reload();
     },
     onError: () => {

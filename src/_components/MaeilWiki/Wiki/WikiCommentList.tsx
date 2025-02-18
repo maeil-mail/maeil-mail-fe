@@ -1,36 +1,25 @@
 'use client';
 
 import * as React from 'react';
-import { Member, WikiComment } from '../_types/wiki';
-import {
-  anonymousCommentOwnerProfileImage,
-  wikiCommentCreatedAt,
-  wikiCommentInfo,
-  wikiCommentItem,
-  wikiCommentLikeButton,
-  wikiCommentList,
-  wikiCommentListSection,
-  wikiCommentListTitle,
-  wikiCommentOwnerName,
-  wikiCommentOwnerProfile,
-  wikiCommentOwnerProfileImage,
-  wikiCommentOwnerProfileLink,
-} from './wiki.css';
-import MDPreview from '../Markdown/MDPreview';
+import { WikiComment } from '../_types/wiki';
+import { wikiCommentList, wikiCommentListSection, wikiCommentListTitle } from './wiki.css';
+
+import WikiCommentItem from './WikiCommentItem';
 
 export interface WikiCommentListProps {
+  wikiId: number;
   comments: WikiComment[];
 }
 
-export default function WikiCommentList({ comments }: WikiCommentListProps) {
+export default function WikiCommentList({ wikiId, comments }: WikiCommentListProps) {
   return (
     <section className={wikiCommentListSection}>
-      <WikiComments comments={comments} />
+      <WikiComments wikiId={wikiId} comments={comments} />
     </section>
   );
 }
 
-function WikiComments({ comments }: { comments: WikiComment[] }) {
+function WikiComments({ wikiId, comments }: { wikiId: number; comments: WikiComment[] }) {
   if (comments.length === 0) {
     return <div>💡 답변이 아직 없습니다. 답변을 달아 지식을 공유해주세요.</div>;
   }
@@ -39,42 +28,10 @@ function WikiComments({ comments }: { comments: WikiComment[] }) {
     <>
       <h2 className={wikiCommentListTitle}>답변 목록</h2>
       <div className={wikiCommentList}>
-        {comments.map(({ id, answer, likeCount, owner, createdAt }) => (
-          <div key={id} className={wikiCommentItem}>
-            <div className={wikiCommentInfo}>
-              <CommentOwnerProfile owner={owner} />
-              <span className={wikiCommentCreatedAt}>{createdAt}</span>
-            </div>
-            <MDPreview source={answer} />
-            <button className={wikiCommentLikeButton}>❤️ {likeCount > 0 && likeCount}</button>
-          </div>
+        {comments.map((comment) => (
+          <WikiCommentItem key={comment.id} wikiId={wikiId} comment={comment} />
         ))}
       </div>
     </>
-  );
-}
-
-function CommentOwnerProfile({ owner }: { owner?: Member }) {
-  if (!owner) {
-    return (
-      <div className={wikiCommentOwnerProfile}>
-        <div className={anonymousCommentOwnerProfileImage} />
-        <p className={wikiCommentOwnerName}>익명</p>
-      </div>
-    );
-  }
-
-  return (
-    <a
-      href={owner.github}
-      className={wikiCommentOwnerProfileLink}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div className={wikiCommentOwnerProfile}>
-        <img className={wikiCommentOwnerProfileImage} src={owner.profileImage} />
-        <p className={wikiCommentOwnerName}>{owner.name}</p>
-      </div>
-    </a>
   );
 }
