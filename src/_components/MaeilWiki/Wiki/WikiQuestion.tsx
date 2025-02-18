@@ -16,12 +16,21 @@ import {
   wikiQuestionInfo,
 } from './wiki.css';
 import MDPreview from '../Markdown/MDPreview';
+import { useDeleteWiki } from './_hooks/useDeleteWiki';
 
 export interface WikiQuestionProps {
   wiki: Wiki;
 }
 
 export default function WikiQuestion({ wiki }: WikiQuestionProps) {
+  const { mutate: deleteWiki } = useDeleteWiki(wiki.id);
+
+  const onClickDeleteWiki = () => {
+    if (confirm('질문을 삭제하시겠습니까?')) {
+      deleteWiki();
+    }
+  };
+
   return (
     <header className={wikiQuestionHeader}>
       <div className={wikiQuestionInfo}>
@@ -33,6 +42,7 @@ export default function WikiQuestion({ wiki }: WikiQuestionProps) {
         <p className={wikiCategory}>[분야: {WIKI_CATEGORY_KO[wiki.category]}]</p>
       </div>
       {wiki.questionDetail && <MDPreview source={wiki.questionDetail} />}
+      <button onClick={onClickDeleteWiki}>삭제</button>
     </header>
   );
 }
