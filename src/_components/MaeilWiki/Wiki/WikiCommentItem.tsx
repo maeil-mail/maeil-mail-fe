@@ -15,6 +15,7 @@ import {
 import { Member, WikiComment } from '../_types/wiki';
 import MDPreview from '../Markdown/MDPreview';
 import { usePostWikiCommentLike } from './_hooks/usePostWikiCommentLike';
+import { useDeleteWikiComment } from './_hooks/useDeleteWikiComment';
 
 export interface WikiCommentItemProps {
   wikiId: number;
@@ -24,7 +25,15 @@ export interface WikiCommentItemProps {
 export default function WikiCommentItem({ wikiId, comment }: WikiCommentItemProps) {
   const { id, owner, createdAt, answer, likeCount } = comment;
 
-  const { mutate } = usePostWikiCommentLike(wikiId, id);
+  const { mutate: postCommentLike } = usePostWikiCommentLike(wikiId, id);
+
+  const { mutate: deleteComment } = useDeleteWikiComment(wikiId, id);
+
+  const onClickDeleteComment = () => {
+    if (confirm('삭제하시겠습니까?')) {
+      deleteComment();
+    }
+  };
 
   return (
     <div key={id} className={wikiCommentItem}>
@@ -33,9 +42,10 @@ export default function WikiCommentItem({ wikiId, comment }: WikiCommentItemProp
         <span className={wikiCommentCreatedAt}>{createdAt}</span>
       </div>
       <MDPreview source={answer} />
-      <button className={wikiCommentLikeButton} onClick={() => mutate()}>
+      <button className={wikiCommentLikeButton} onClick={() => postCommentLike()}>
         ❤️ {likeCount > 0 && likeCount}
       </button>
+      <button onClick={onClickDeleteComment}>삭제</button>
     </div>
   );
 }

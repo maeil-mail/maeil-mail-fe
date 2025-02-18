@@ -48,6 +48,14 @@ export const postWiki = async (body: PostWikiBody) => {
   }
 };
 
+export const deleteWiki = async (wikiId: number) => {
+  try {
+    await mainClient.delete(`/wiki/${wikiId}`);
+  } catch (error) {
+    throw error;
+  }
+};
+
 export interface postWikiCommentBody {
   answer: string;
   isAnonymous: boolean;
@@ -58,6 +66,14 @@ export const postWikiComment = async (wikiId: number, body: postWikiCommentBody)
     const data = await mainClient.post(`/wiki/${wikiId}/comment`, body);
 
     return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteWikiComment = async (wikiId: number, commentId: number) => {
+  try {
+    await mainClient.delete(`/wiki/${wikiId}/comment/${commentId}`);
   } catch (error) {
     throw error;
   }

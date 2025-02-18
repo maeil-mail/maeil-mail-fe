@@ -1,15 +1,12 @@
-'use client';
-
 import { useMutation } from '@tanstack/react-query';
-import { postWikiComment, postWikiCommentBody } from '../../_apis/wiki';
+import { deleteWikiComment } from '../../_apis/wiki';
 import { HTTPError } from '@/_apis/client/APIClient';
 
-export const usePostWikiComment = (wikiId: number) => {
+export const useDeleteWikiComment = (wikiId: number, commentId: number) => {
   return useMutation({
-    mutationFn: async (body: postWikiCommentBody) => {
-      await postWikiComment(wikiId, body);
-    },
+    mutationFn: () => deleteWikiComment(wikiId, commentId),
     onSuccess: () => {
+      alert('답변이 삭제되었습니다.');
       window.location.reload();
     },
     onError: (error) => {

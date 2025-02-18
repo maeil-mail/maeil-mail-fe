@@ -9,7 +9,7 @@ interface UseWikiListParams {
 
 export const useWikiList = ({ category, page }: UseWikiListParams) => {
   return useSuspenseQuery({
-    queryKey: ['wikiList', category, page],
+    queryKey: ['wiki', category, page],
     queryFn: () => getWikiList(category, page),
   });
 };
