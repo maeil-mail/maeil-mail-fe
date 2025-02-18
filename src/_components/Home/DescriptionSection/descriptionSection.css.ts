@@ -101,7 +101,7 @@ export const answerImage = style({
 export const descriptionHeading = style({
   fontSize: '4rem',
   letterSpacing: '-0.2rem',
-  fontWeight: 600,
+  fontWeight: 550,
   color: '#2b2b2b',
 
   '@media': {
@@ -113,9 +113,10 @@ export const descriptionHeading = style({
 
 export const descriptionTypo = style({
   fontSize: '2.4rem',
-  letterSpacing: '-0.05rem',
+
   color: '#888888',
   marginTop: '2rem',
+  fontWeight: 400,
 
   '@media': {
     [`(max-width: ${MEDIA_BREAKPOINT.mobile}px)`]: {

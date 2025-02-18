@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: '매일위키 - 기술 면접 질문 커뮤니티',
-  description: '질문 하나로 지식의 공유가 시작돼요',
+  description: '질문 하나로 지식의 공유가 시작돼요!',
   openGraph: {
     url: 'https://wiki.maeil-mail.kr',
     siteName: 'maeil-wiki',

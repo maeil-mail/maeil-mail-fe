@@ -1,19 +1,19 @@
-import './globals.css';
-
-import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
-import Footer from '@/_components/common/Footer/Footer';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { Inter } from 'next/font/google';
-import { MSWComponent } from '@/_mocks/MSWComponent';
 import type { Metadata } from 'next';
-import { myStyle } from '@/_styles/vars.css';
-
-import { main, wrapper } from './layout.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Footer from '@/_components/common/Footer/Footer';
 import Providers from './providers';
+import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
+import { MSWComponent } from '@/_mocks/MSWComponent';
 
-const inter = Inter({
-  subsets: ['latin'],
+import './globals.css';
+import localFont from 'next/font/local';
+import { myStyle } from '@/_styles/vars.css';
+import { main, wrapper } from './layout.css';
+
+const pretendard = localFont({
+  src: '../fonts/PretendardVariable.woff2',
   display: 'swap',
+  weight: '45 920',
 });
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={pretendard.className}>
       <body className={myStyle}>
         <div className={wrapper}>
           <Providers>
