@@ -1,7 +1,7 @@
 'use client';
 
-import ErrorPage from '../error';
+import UnexpectedErrorPage from '@/_components/Error/UnexpectedError';
 
 export default function Page() {
-  return <ErrorPage />;
+  return <UnexpectedErrorPage />;
 }
