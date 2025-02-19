@@ -1,4 +1,5 @@
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
@@ -27,5 +28,12 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: PropsWithChildren) {
-  return children;
+  const gaId = process.env.NEXT_PUBLIC_MAEIL_MAIL_GA_ID;
+
+  return (
+    <>
+      {children}
+      {gaId && <GoogleAnalytics gaId={gaId} />}
+    </>
+  );
 }

@@ -1,4 +1,5 @@
 import MaeilWikiNav from '@/_components/common/MaeilWikiNav';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
@@ -27,10 +28,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_MAEIL_WIKI_GA_ID;
+
   return (
     <div>
       <MaeilWikiNav />
       {children}
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </div>
   );
 }
