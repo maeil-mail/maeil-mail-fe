@@ -1,7 +1,7 @@
 import { navContentWrapper, subscribeButton, teamIntroductionLink } from './homeNav.css';
 import recordGAEvent from '@/_utils/recordGAEvent';
 import { GA_EVENT } from '@/_constants/googleAnalytics';
-import { TEAM_INTRODUCTION_URL } from '@/_constants/externalUrl';
+import { MAEIL_MAIL_INTRODUCTION_URL } from '@/_constants/externalUrl';
 import MaeilMailNav from '@/_components/common/MaeilMailNav';
 
 interface NavProps {
@@ -17,7 +17,7 @@ export default function HomeNav({ onSubscribe }: NavProps) {
   return (
     <MaeilMailNav position="sticky">
       <div className={navContentWrapper}>
-        <a className={teamIntroductionLink} href={TEAM_INTRODUCTION_URL} target="_blank">
+        <a className={teamIntroductionLink} href={MAEIL_MAIL_INTRODUCTION_URL} target="_blank">
           팀 소개
         </a>
         <button onClick={handleSubscribeButton} className={subscribeButton}>

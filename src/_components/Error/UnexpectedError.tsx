@@ -6,7 +6,7 @@ import { ReactNode, useEffect } from 'react';
 import Txt from '@/_components/common/Txt/Txt';
 import Button from '@/_components/common/Button/Button';
 import PAGE_ROUTES from '@/_constants/pageRoutes';
-import { FE_GITHUB_ISSUE_URL, GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import { FE_GITHUB_ISSUE_URL } from '@/_constants/externalUrl';
 import {
   buttonLink,
   buttonSection,
@@ -21,9 +21,10 @@ import Link from 'next/link';
 interface UnexpectedErrorPageProps {
   Nav?: ReactNode;
   error?: Error;
+  feedbackUrl: string;
 }
 
-export default function UnexpectedErrorPage({ Nav, error }: UnexpectedErrorPageProps) {
+export default function UnexpectedErrorPage({ Nav, error, feedbackUrl }: UnexpectedErrorPageProps) {
   useEffect(() => {
     if (error) {
       Sentry.captureException(error);
@@ -43,19 +44,14 @@ export default function UnexpectedErrorPage({ Nav, error }: UnexpectedErrorPageP
               Github Issue
             </a>
             나{' '}
-            <a href={GOOGLE_FORM_URL.service} target="_blank" rel="noopener noreferrer">
+            <a href={feedbackUrl} target="_blank" rel="noopener noreferrer">
               구글 폼
             </a>
             으로 지금 발생한 문제를 제보해 주시면, 빠르게 해결한 후 다시 안내 드리겠습니다!
           </Txt>
         </section>
         <section className={buttonSection}>
-          <a
-            className={buttonLink}
-            href={GOOGLE_FORM_URL.service}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className={buttonLink} href={feedbackUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="border">피드백하기</Button>
           </a>
           <Link className={buttonLink} href={PAGE_ROUTES.main}>

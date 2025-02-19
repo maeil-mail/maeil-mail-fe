@@ -1,26 +1,32 @@
 import {
   GITHUB_ORGANIZATION_URL,
-  GOOGLE_FORM_URL,
+  MAEIL_MAIL_GOOGLE_FORM_URL,
   TEAM_EMAIL,
-  TEAM_INTRODUCTION_URL,
+  MAEIL_MAIL_INTRODUCTION_URL,
 } from '@/_constants/externalUrl';
-import { container, innerWrapper, side, underline } from './footer.css';
+import { container, innerWrapper, side } from './footer.css';
 
-export default function Footer() {
+interface FooterProps {
+  serviceName: string;
+  introduceUrl: string;
+  feedbackUrl: string;
+}
+
+export default function Footer({ serviceName, introduceUrl, feedbackUrl }: FooterProps) {
   return (
     <footer className={container}>
       <div className={innerWrapper}>
         <section className={side}>
-          <p>Copyright © 2025, 매일메일. All rights reserved.</p>
+          <p>Copyright © 2025, {serviceName}. All rights reserved.</p>
           <div>
             <a href={`mailto:${TEAM_EMAIL}`}>이메일 {TEAM_EMAIL}</a>
           </div>
         </section>
         <section className={side}>
-          <a href={TEAM_INTRODUCTION_URL} target="_blank" rel="noopener noreferrer">
+          <a href={introduceUrl} target="_blank" rel="noopener noreferrer">
             <span>팀 소개</span>
           </a>
-          <a href={GOOGLE_FORM_URL.service} target="_blank" rel="noopener noreferrer">
+          <a href={feedbackUrl} target="_blank" rel="noopener noreferrer">
             <span>서비스 피드백하기</span>
           </a>
           <a href={GITHUB_ORGANIZATION_URL} target="_blank" rel="noopener noreferrer">

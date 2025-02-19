@@ -1,4 +1,6 @@
+import Footer from '@/_components/common/Footer/Footer';
 import MaeilWikiNav from '@/_components/common/MaeilWikiNav';
+import { MAEIL_WIKI_GOOGLE_FORM_URL, MAEIL_WIKI_INTRODUCTION_URL } from '@/_constants/externalUrl';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -34,6 +36,11 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div>
       <MaeilWikiNav />
       {children}
+      <Footer
+        serviceName="매일위키"
+        introduceUrl={MAEIL_WIKI_INTRODUCTION_URL}
+        feedbackUrl={MAEIL_WIKI_GOOGLE_FORM_URL.service}
+      />
       {gaId && <GoogleAnalytics gaId={gaId} />}
     </div>
   );

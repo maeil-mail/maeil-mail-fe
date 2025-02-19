@@ -14,7 +14,7 @@ import {
   shareIcon,
   subButton,
 } from './questionDetail.css';
-import { GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import { MAEIL_MAIL_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 import MDPreview from '../MaeilWiki/Markdown/MDPreview';
 
 interface DetailAnswerProps {
@@ -39,7 +39,7 @@ export default function DetailAnswer({ content }: DetailAnswerProps) {
           <ShareIcon className={shareIcon} />
           공유하기
         </div>
-        <a href={GOOGLE_FORM_URL.mailContent} target="_blank">
+        <a href={MAEIL_MAIL_GOOGLE_FORM_URL.mailContent} target="_blank">
           <div className={subButton}>
             <IdeaIcon className={ideaIcon} />
             컨텐츠 피드백

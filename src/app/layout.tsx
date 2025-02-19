@@ -25,9 +25,7 @@ export default function RootLayout({
           <Providers>
             <main className={main}>{children}</main>
           </Providers>
-          <Footer />
         </div>
-
         <div id="modal-root" />
         <MSWComponent />
       </body>

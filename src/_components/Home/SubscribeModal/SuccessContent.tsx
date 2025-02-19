@@ -1,6 +1,6 @@
 import Button from '@/_components/common/Button/Button';
 import { successText, container, title, buttonSection, caption } from './successContent.css';
-import { GOOGLE_FORM_URL } from '@/_constants/externalUrl';
+import { MAEIL_MAIL_GOOGLE_FORM_URL } from '@/_constants/externalUrl';
 import CloseIcon from '@/_assets/icons/close.svg';
 import { closeButton } from './subscribeModalContent.css';
 
@@ -10,7 +10,7 @@ interface SuccessContentProps {
 
 export default function SuccessContent({ closeModal }: SuccessContentProps) {
   const handleFeedbackButton = () => {
-    window.open(GOOGLE_FORM_URL.service);
+    window.open(MAEIL_MAIL_GOOGLE_FORM_URL.service);
   };
 
   return (
