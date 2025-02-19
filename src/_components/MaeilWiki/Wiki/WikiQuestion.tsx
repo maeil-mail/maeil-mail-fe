@@ -47,8 +47,8 @@ export default function WikiQuestion({ wiki }: WikiQuestionProps) {
   );
 }
 
-function WikiOwnerProfile({ owner }: { owner?: Member }) {
-  if (!owner) {
+function WikiOwnerProfile({ owner }: { owner: Member }) {
+  if (!owner.name) {
     return (
       <div className={wikiOwnerProfile}>
         <div className={anonymousProfileImage} />

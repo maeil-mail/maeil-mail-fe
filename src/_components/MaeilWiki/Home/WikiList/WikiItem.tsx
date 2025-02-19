@@ -37,8 +37,8 @@ export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: n
   );
 }
 
-function OwnerInfo({ owner }: { owner?: Member }) {
-  if (!owner) {
+function OwnerInfo({ owner }: { owner: Member }) {
+  if (!owner.name) {
     return <div>질문 제공자: 익명</div>;
   }
 

@@ -50,8 +50,8 @@ export default function WikiCommentItem({ wikiId, comment }: WikiCommentItemProp
   );
 }
 
-function CommentOwnerProfile({ owner }: { owner?: Member }) {
-  if (!owner) {
+function CommentOwnerProfile({ owner }: { owner: Member }) {
+  if (!owner.name) {
     return (
       <div className={wikiCommentOwnerProfile}>
         <div className={anonymousCommentOwnerProfileImage} />
