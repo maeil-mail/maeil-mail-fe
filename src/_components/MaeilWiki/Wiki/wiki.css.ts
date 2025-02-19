@@ -41,6 +41,7 @@ export const wikiOwnerProfile = style({
 
 const baseProfileImage = {
   width: '3.2rem',
+  height: '3.2rem',
   borderRadius: 999,
 };
 

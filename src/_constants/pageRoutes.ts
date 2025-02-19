@@ -5,6 +5,6 @@ const PAGE_ROUTES = {
   policy: '/policy',
   unsubscribe: '/unsubscribe',
   unsubscribeCompleted: '/unsubscribe/completed',
-};
+} as const;
 
 export default PAGE_ROUTES;

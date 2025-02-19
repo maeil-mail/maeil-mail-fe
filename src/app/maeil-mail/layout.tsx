@@ -1,4 +1,7 @@
+import Footer from '@/_components/common/Footer/Footer';
+import { MAEIL_MAIL_GOOGLE_FORM_URL, MAEIL_MAIL_INTRODUCTION_URL } from '@/_constants/externalUrl';
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
@@ -27,5 +30,17 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: PropsWithChildren) {
-  return children;
+  const gaId = process.env.NEXT_PUBLIC_MAEIL_MAIL_GA_ID;
+
+  return (
+    <>
+      {children}
+      <Footer
+        serviceName="매일메일"
+        introduceUrl={MAEIL_MAIL_INTRODUCTION_URL}
+        feedbackUrl={MAEIL_MAIL_GOOGLE_FORM_URL.service}
+      />
+      {gaId && <GoogleAnalytics gaId={gaId} />}
+    </>
+  );
 }
