@@ -1,6 +1,16 @@
 import { WikiCategory } from './wikiCategory';
 
-export interface Member {
+export type Member = AnonymousMember | IdentifiedMember;
+
+interface AnonymousMember {
+  id: number;
+  profileImage: null;
+  name: null;
+  github: null;
+}
+
+interface IdentifiedMember {
+  id: number;
   profileImage: string;
   name: string;
   github: string;
@@ -9,7 +19,7 @@ export interface Member {
 export interface WikiComment {
   id: number;
   answer: string;
-  owner?: Member;
+  owner: Member;
   createdAt: string;
   likeCount: number;
 }
@@ -19,7 +29,7 @@ export interface Wiki {
   question: string;
   questionDetail?: string;
   category: WikiCategory;
-  owner?: Member;
+  owner: Member;
   createdAt: string;
   comments: WikiComment[];
 }
