@@ -31,10 +31,10 @@ function MaeilWikiMain() {
   };
 
   return (
-    <>
+    <div style={{ background: '#FCFCFC' }}>
       <HeroSection />
-      <PageInnerLayout>
-        <WikiListTabBar selectedOption={category} onClickWriteButton={expandQuestionInput} />
+      <div style={{ maxWidth: '114rem', margin: '0 auto', padding: '0 2rem' }}>
+        <WikiListTabBar selectedOption={category} />
         <Suspense fallback={<div>로딩중입니다</div>}>
           <WikiList category={category} page={page} />
         </Suspense>
@@ -45,7 +45,7 @@ function MaeilWikiMain() {
             onClose={closeQuestionInput}
           />
         </AuthProvider>
-      </PageInnerLayout>
-    </>
+      </div>
+    </div>
   );
 }
