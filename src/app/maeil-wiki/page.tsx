@@ -31,19 +31,21 @@ function MaeilWikiMain() {
   };
 
   return (
-    <PageInnerLayout>
+    <>
       <HeroSection />
-      <WikiListTabBar selectedOption={category} onClickWriteButton={expandQuestionInput} />
-      <Suspense fallback={<div>로딩중입니다</div>}>
-        <WikiList category={category} page={page} />
-      </Suspense>
-      <AuthProvider>
-        <WikiInputToggleButton
-          isExpanded={isQuestionInputExpanded}
-          onClick={expandQuestionInput}
-          onClose={closeQuestionInput}
-        />
-      </AuthProvider>
-    </PageInnerLayout>
+      <PageInnerLayout>
+        <WikiListTabBar selectedOption={category} onClickWriteButton={expandQuestionInput} />
+        <Suspense fallback={<div>로딩중입니다</div>}>
+          <WikiList category={category} page={page} />
+        </Suspense>
+        <AuthProvider>
+          <WikiInputToggleButton
+            isExpanded={isQuestionInputExpanded}
+            onClick={expandQuestionInput}
+            onClose={closeQuestionInput}
+          />
+        </AuthProvider>
+      </PageInnerLayout>
+    </>
   );
 }
