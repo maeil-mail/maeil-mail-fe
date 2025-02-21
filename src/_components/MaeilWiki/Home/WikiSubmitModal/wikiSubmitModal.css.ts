@@ -78,9 +78,9 @@ export const questionInput = style({
 
   selectors: {
     '&::placeholder': {
-      color: '#999999', // 플레이스홀더 색상 변경
+      color: '#999999',
       fontWeight: 400,
-      opacity: 0.7, // 투명도 조정
+      opacity: 0.7,
     },
   },
 

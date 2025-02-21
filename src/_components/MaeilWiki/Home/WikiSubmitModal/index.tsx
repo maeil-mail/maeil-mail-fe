@@ -33,7 +33,6 @@ export interface WikiSubmitModalProps {
   onClose: () => void;
 }
 
-// TODO: 디자인 고도화 진행 시 구성이나 구조가 변경될 가능성이 커서 코드 정리를 하지 않았습니다.
 export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProps) {
   const [question, setQuestion] = React.useState('');
   const [questionDetail, setQuestionDetail] = React.useState('');
