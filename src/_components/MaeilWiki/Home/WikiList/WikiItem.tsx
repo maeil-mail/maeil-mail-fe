@@ -1,57 +1,41 @@
-import Image from 'next/image';
 import React from 'react';
-import ChatIcon from '@/_assets/icons/chatIcon.svg';
+import CommentIcon from '@/_assets/images/maeilWiki/commentLight.svg';
 import {
-  chatIcon,
+  commentIcon,
   commentCountInfo,
-  ownerImage,
-  ownerInfo,
+  ownerName,
+  wikiCategory,
   wikiItem,
   wikiQuestion,
-  wikiQuestionOrder,
   wikiQuestionText,
   wikiSubInfo,
+  wikiInfo,
 } from './wikiList.css';
-import { Member, WikiListItem } from '../../_types/wiki';
+import { WikiListItem } from '../../_types/wiki';
+import { WIKI_CATEGORY_KO } from '../../_constants/wikiCategory';
+import { calculateElapsedTime } from '../../_utils/calculateElapsedTime';
 
-export default function WikiItem({ wiki, order }: { wiki: WikiListItem; order: number }) {
-  const { question, owner, commentCount } = wiki;
-
-  const displayedCommentCount = commentCount || '미답변';
+export default function WikiItem({ wiki }: { wiki: WikiListItem }) {
+  const { question, owner, commentCount, category, createdAt } = wiki;
 
   return (
     <li className={wikiItem}>
-      <div className={wikiQuestion}>
-        <div className={wikiQuestionOrder}>
-          <span>{order}.</span>
+      <div className={wikiInfo}>
+        <div className={wikiSubInfo}>
+          <div className={wikiCategory({ category })}>{WIKI_CATEGORY_KO[category]}</div>
+          <div className={ownerName}>
+            {owner.name || '익명'} | {calculateElapsedTime(createdAt)}
+          </div>
         </div>
+        {commentCount > 0 && (
+          <div className={commentCountInfo}>
+            <CommentIcon className={commentIcon} /> {commentCount}
+          </div>
+        )}
+      </div>
+      <div className={wikiQuestion}>
         <p className={wikiQuestionText}>{question}</p>
       </div>
-      <div className={wikiSubInfo}>
-        <OwnerInfo owner={owner} />
-        <div className={commentCountInfo}>
-          <ChatIcon className={chatIcon} /> {displayedCommentCount}
-        </div>
-      </div>
     </li>
-  );
-}
-
-function OwnerInfo({ owner }: { owner: Member }) {
-  if (!owner.name) {
-    return <div>질문 제공자: 익명</div>;
-  }
-
-  return (
-    <div className={ownerInfo}>
-      <p>질문 제공자: {owner?.name}</p>
-      <Image
-        width={17}
-        height={17}
-        className={ownerImage}
-        src={owner.profileImage}
-        alt={`작성자 ${owner.name}님의 프로필 이미지`}
-      />
-    </div>
   );
 }

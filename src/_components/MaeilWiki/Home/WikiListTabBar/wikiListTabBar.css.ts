@@ -17,23 +17,6 @@ export const wikiListTabBar = style({
   },
 });
 
-export const wikiWriteButton = style({
-  background: '#00a86b',
-  fontSize: '1.4rem',
-  fontWeight: 600,
-  padding: '1rem 1.2rem',
-  color: 'white',
-  borderRadius: '0.7rem',
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.3rem',
-});
-
-export const writeIcon = style({
-  width: '1.8rem',
-});
-
 // WikiCategoryTabBar
 export const wikiCategoryTabs = style({
   fontSize: '1.6rem',

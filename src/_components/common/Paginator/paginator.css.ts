@@ -7,33 +7,40 @@ export const paginatorContainer = style({
   width: 'fit-content',
   alignItems: 'center',
   margin: '0 auto',
-  marginTop: '4rem',
+  marginTop: '5rem',
+
+  '@media': {
+    [`(max-width: 800px)`]: {
+      marginTop: '4rem',
+    },
+  },
 });
 
 export const doubleArrowLeft = style({
-  width: '2rem',
   display: 'block',
-  marginRight: '1rem',
+  marginRight: '2rem',
 });
 
 export const doubleArrowRight = style({
-  width: '2rem',
   display: 'block',
-  marginLeft: '1rem',
+  marginLeft: '2rem',
 });
 
 export const pageNumber = style({
-  width: '3.3rem',
-  height: '3.3rem',
+  width: '3.2rem',
+  height: '3.2rem',
   margin: '0 0.5rem',
   textAlign: 'center',
-  lineHeight: '3.3rem',
+  lineHeight: '3.2rem',
   borderRadius: 200,
-  color: '#6b7684',
+  fontSize: '1.6rem',
+  color: '#999999',
+  fontWeight: 400,
   selectors: {
     '&[aria-current="true"]': {
       color: 'white',
       backgroundColor: primary,
+      fontWeight: 500,
     },
   },
 });

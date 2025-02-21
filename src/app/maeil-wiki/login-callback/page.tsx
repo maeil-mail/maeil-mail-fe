@@ -23,8 +23,8 @@ function LoginCallback() {
   }, []);
 
   return (
-    <div style={{ fontSize: '1.6rem', width: 'fit-content', margin: '0 auto', height: '20rem' }}>
-      <div style={{ position: 'relative', height: '1rem', marginTop: '8rem' }}>
+    <div style={{ fontSize: '1.6rem', width: 'fit-content', margin: '0 auto', minHeight: '50vh' }}>
+      <div style={{ position: 'relative', height: '1rem', marginTop: '20rem' }}>
         <LoadingSpinner />
       </div>
       <div style={{ marginTop: '5rem' }}>로그인이 진행 중입니다. 잠시만 기다려주세요</div>

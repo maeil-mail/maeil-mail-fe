@@ -40,6 +40,10 @@ export interface PostWikiBody {
 
 export const postWiki = async (body: PostWikiBody) => {
   try {
+    if (!body.question) {
+      return;
+    }
+
     const data = await mainClient.post<GetWikiListResponse>(API_ROUTES.wiki, body);
 
     return data;

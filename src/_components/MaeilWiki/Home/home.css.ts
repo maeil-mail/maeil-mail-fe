@@ -1,5 +1,18 @@
 import { style } from '@vanilla-extract/css';
 
+// HomePage
+export const homeContainer = style({
+  background: '#FCFCFC',
+  paddingBottom: '8.4rem',
+});
+
+export const homeContent = style({
+  maxWidth: '114rem',
+  margin: '0 auto',
+  padding: '0 2rem',
+  minHeight: '50vh',
+});
+
 // HeroSection
 export const heroSection = style({
   position: 'relative',

@@ -21,16 +21,11 @@ export default function WikiList({ category, page }: WikiListProps) {
   return (
     <>
       <ol className={wikiList}>
-        {wikis.map((wiki, index) => {
-          const pageOffset = (page - 1) * 8;
-          const order = index + 1 + pageOffset;
-
-          return (
-            <Link key={wiki.id} href={`/wiki/${wiki.id}`}>
-              <WikiItem wiki={wiki} order={order} />
-            </Link>
-          );
-        })}
+        {wikis.map((wiki) => (
+          <Link key={wiki.id} href={`/wiki/${wiki.id}`}>
+            <WikiItem wiki={wiki} />
+          </Link>
+        ))}
       </ol>
       <Paginator currentPage={page} lastPage={data.totalPage} />
     </>

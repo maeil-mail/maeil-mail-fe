@@ -9,11 +9,14 @@ export const useLoginMutation = (code: string, returnPath: string = '/') => {
 
   return useMutation({
     mutationFn: async () => {
-      const accessToken = await postGithubAccessToken(code);
-
-      await mainClient.post(API_ROUTES.member, {
-        oauthAccessToken: accessToken,
-      });
+      try {
+        const accessToken = await postGithubAccessToken(code);
+        await mainClient.post(API_ROUTES.member, {
+          oauthAccessToken: accessToken,
+        });
+      } catch (error) {
+        throw error;
+      }
     },
     onSuccess: () => {
       router.push(returnPath);
