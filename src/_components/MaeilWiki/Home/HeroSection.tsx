@@ -27,7 +27,7 @@ export default function HeroSection() {
             media="(max-width: 500px)"
             className={heroBackgroundImage}
           />
-          <img src={MainBannerImage.src} alt="" className={heroBackgroundImage} />
+          <img src={MainBannerImage.src} alt="배너 이미지" className={heroBackgroundImage} />
         </picture>
         <div className={heroTypo}>
           <p className={`${moneygraphyRounded.className} ${heroMainTitle}`}>
