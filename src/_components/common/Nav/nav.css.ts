@@ -2,7 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 export const container = style({
   width: '100%',
-  height: '6.45rem',
+  height: '7.2rem',
   padding: '1.4rem 2rem',
   background: 'rgba(255, 255, 255, 0.6)',
   backdropFilter: 'saturate(180%) blur(3px)',
@@ -10,6 +10,12 @@ export const container = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  '@media': {
+    '(max-width: 500px)': {
+      height: '6rem',
+    },
+  },
 });
 
 export const positionStyle = styleVariants({

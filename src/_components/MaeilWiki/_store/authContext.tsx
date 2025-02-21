@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 export interface AuthInfo {
   isAuthenticated: boolean;
   user: MemberProfile | null;
+  isLoading: boolean;
 }
 
 const AuthContext = createContext<AuthInfo | null>(null);
@@ -20,11 +21,12 @@ export const useAuthContext = () => {
 };
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
-  const { data: memberProfile } = useMemberProfile();
+  const { data: memberProfile, isLoading } = useMemberProfile();
 
   const authInfo = {
     isAuthenticated: Boolean(memberProfile),
     user: memberProfile ?? null,
+    isLoading,
   };
 
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;

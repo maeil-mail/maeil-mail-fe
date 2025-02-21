@@ -1,13 +1,16 @@
 'use client';
 
-import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
 import HeroSection from '@/_components/MaeilWiki/Home/HeroSection';
 import WikiList from '@/_components/MaeilWiki/Home/WikiList';
 import WikiListTabBar from '@/_components/MaeilWiki/Home/WikiListTabBar/WikiListTabBar';
 import { useWikiListParams } from '@/_components/MaeilWiki/Home/_hooks/useWikiListParams';
-import WikiInputToggleButton from '@/_components/MaeilWiki/Home/WikiInputToggleButton';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { AuthProvider } from '@/_components/MaeilWiki/_store/authContext';
+import { homeContainer, homeContent } from '@/_components/MaeilWiki/Home/home.css';
+import WikiWriteButton from '@/_components/MaeilWiki/Home/WikiWriteButton';
+import WikiSubmitModal from '@/_components/MaeilWiki/Home/WikiSubmitModal';
+import useModal from '@/_hooks/useModal';
+import WikiListSkeleton from '@/_components/MaeilWiki/Home/WikiList/WikiListSkeleton';
 
 export default function Page() {
   return (
@@ -19,31 +22,21 @@ export default function Page() {
 
 function MaeilWikiMain() {
   const { category, page } = useWikiListParams();
-
-  const [isQuestionInputExpanded, setIsQuestionInputExpanded] = useState(false);
-
-  const expandQuestionInput = () => {
-    setIsQuestionInputExpanded(true);
-  };
-
-  const closeQuestionInput = () => {
-    setIsQuestionInputExpanded(false);
-  };
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
-    <PageInnerLayout>
+    <div className={homeContainer}>
       <HeroSection />
-      <WikiListTabBar selectedOption={category} onClickWriteButton={expandQuestionInput} />
-      <Suspense fallback={<div>로딩중입니다</div>}>
-        <WikiList category={category} page={page} />
-      </Suspense>
-      <AuthProvider>
-        <WikiInputToggleButton
-          isExpanded={isQuestionInputExpanded}
-          onClick={expandQuestionInput}
-          onClose={closeQuestionInput}
-        />
-      </AuthProvider>
-    </PageInnerLayout>
+      <div className={homeContent}>
+        <WikiListTabBar selectedOption={category} />
+        <Suspense fallback={<WikiListSkeleton />}>
+          <WikiList category={category} page={page} />
+        </Suspense>
+        <AuthProvider>
+          <WikiWriteButton onClick={openModal} />
+        </AuthProvider>
+      </div>
+      <WikiSubmitModal isOpen={isModalOpen} onClose={closeModal} />
+    </div>
   );
 }

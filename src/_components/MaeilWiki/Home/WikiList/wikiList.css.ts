@@ -1,10 +1,11 @@
-import { style } from '@vanilla-extract/css';
+import { keyframes, style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 // WikiList
 export const wikiList = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.8rem',
+  gap: '1rem',
 });
 
 // WikiItem
@@ -13,42 +14,43 @@ export const wikiQuestion = style({
   gap: '0.5rem',
 });
 
-export const wikiQuestionOrder = style({
-  height: '3rem',
-  width: '3rem',
-  minWidth: '3rem',
-  fontWeight: 700,
-  fontSize: '1.7rem',
-  color: '#0091a8',
-  borderRadius: 999,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-});
-
 export const wikiQuestionText = style({
   color: '#2b2b2b',
-  fontSize: '1.7rem',
-  lineHeight: '2.5rem',
+  fontSize: '1.8rem',
   fontWeight: 500,
   wordBreak: 'keep-all',
   paddingTop: '0.3rem',
-});
+  lineHeight: 1.5,
 
-export const wikiItem = style({
-  border: '2px solid #f1f1f1',
-  padding: '1.5rem',
-  borderRadius: '0.8rem',
-  cursor: 'pointer',
-  background: 'rgb(250,250,250)',
-  transition: 'background 0.1s ease',
-  ':hover': {
-    background: '#f1f1f1',
+  '@media': {
+    '(max-width: 800px)': {
+      fontSize: '1.5rem',
+    },
   },
 });
 
-export const wikiSubInfo = style({
-  marginTop: '1.7rem',
+export const wikiItem = style({
+  border: '1px solid #EBEBEB',
+  padding: '3rem 3.2rem',
+  borderRadius: '0.8rem',
+  cursor: 'pointer',
+  background: '#ffffff',
+  transition: 'background 0.1s ease',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.8rem',
+  ':hover': {
+    background: 'rgb(251, 251, 251)',
+  },
+
+  '@media': {
+    [`(max-width: 800px)`]: {
+      padding: '1.6rem 2rem',
+    },
+  },
+});
+
+export const wikiInfo = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -56,23 +58,104 @@ export const wikiSubInfo = style({
   color: 'rgb(158 158 158)',
 });
 
-export const ownerInfo = style({
+export const wikiSubInfo = style({ display: 'flex', gap: '1rem' });
+
+export const wikiCategory = recipe({
+  base: {
+    fontSize: '1.4rem',
+    lineHeight: 1.5,
+    padding: '0.2rem 0.8rem',
+    borderRadius: '0.3rem',
+    fontWeight: 500,
+    '@media': {
+      [`(max-width: 800px)`]: {
+        fontSize: '1.3rem',
+      },
+    },
+  },
+  variants: {
+    category: {
+      backend: {
+        color: '#C6743A',
+        backgroundColor: '#FFF3EB',
+      },
+      frontend: {
+        color: '#0070A8',
+        backgroundColor: '#EBF8FF',
+      },
+      etc: {
+        color: '#7C7C7C',
+        backgroundColor: '#F1F1F1',
+      },
+    },
+  },
+});
+
+export const ownerName = style({
   display: 'flex',
   gap: '0.6rem',
   alignItems: 'center',
-});
-
-export const ownerImage = style({
-  borderRadius: 999,
+  color: '#666666',
+  fontWeight: 300,
+  lineHeight: 1.5,
+  fontSize: '1.4rem',
+  '@media': {
+    [`(max-width: 800px)`]: {
+      fontSize: '1.3rem',
+    },
+  },
 });
 
 export const commentCountInfo = style({
-  height: '2rem',
   display: 'flex',
   gap: '0.3rem',
-  marginTop: '0.3rem',
+  alignItems: 'center',
+
+  color: '#666666',
+  fontWeight: 300,
+  lineHeight: 1.5,
+  fontSize: '1.4rem',
+
+  '@media': {
+    [`(max-width: 800px)`]: {
+      fontSize: '1.3rem',
+    },
+  },
 });
 
-export const chatIcon = style({
-  width: '2rem',
+export const commentIcon = style({
+  width: '2.4rem',
+  height: '2.4rem',
+  '@media': {
+    [`(max-width: 800px)`]: {
+      width: '2rem',
+      height: '2rem',
+    },
+  },
+});
+
+// WikiListSkeleton
+const shimmer = keyframes({
+  '0%, 100%': {
+    opacity: 0.4,
+  },
+  '50%': {
+    opacity: 1,
+  },
+});
+
+export const wikiItemSkeleton = style({
+  border: '1px solid #EBEBEB',
+  height: '12.5rem',
+  width: '100%',
+  borderRadius: '0.8rem',
+
+  backgroundColor: '#f8f9fa',
+  animation: `${shimmer} 1500ms linear infinite`,
+
+  '@media': {
+    [`(max-width: 800px)`]: {
+      height: '9.1rem',
+    },
+  },
 });

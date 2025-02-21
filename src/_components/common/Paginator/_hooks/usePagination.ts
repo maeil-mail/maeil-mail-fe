@@ -3,7 +3,7 @@
 import useDeviceWidth from './useDeviceWidth';
 import calculateVisiblePages from '../_utils/calculateVisiblePages';
 
-const VISIBLE_PAGE_COUNT_FOR_NARROW = 6;
+const VISIBLE_PAGE_COUNT_FOR_NARROW = 5;
 const VISIBLE_PAGE_COUNT = 9;
 
 const NARROW_WIDTH_THRESHOLD = 530;

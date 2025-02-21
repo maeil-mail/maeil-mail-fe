@@ -1,7 +1,7 @@
 'use client';
 
-import DoubleArrowLeft from '@/_assets/icons/doubleArrowLeft.svg';
-import DoubleArrowRight from '@/_assets/icons/doubleArrowRight.svg';
+import ArrowLeft from '@/_assets/icons/paginatorLeftArrow.svg';
+import ArrowRight from '@/_assets/icons/paginatorRightArrow.svg';
 import { doubleArrowLeft, doubleArrowRight, pageNumber, paginatorContainer } from './paginator.css';
 import usePagination from './_hooks/usePagination';
 import QueryLink from '../QueryLink';
@@ -29,7 +29,7 @@ export default function Paginator({ currentPage, lastPage }: PaginatorProps) {
     <div className={paginatorContainer}>
       {isArrowLeftVisible && (
         <QueryLink appendedQuery={{ page: 1 }}>
-          <DoubleArrowLeft className={doubleArrowLeft} />
+          <ArrowLeft className={doubleArrowLeft} />
         </QueryLink>
       )}
       {visiblePages.map((page) => (
@@ -41,7 +41,7 @@ export default function Paginator({ currentPage, lastPage }: PaginatorProps) {
       ))}
       {isArrowRightVisible && (
         <QueryLink appendedQuery={{ page: lastPage }}>
-          <DoubleArrowRight className={doubleArrowRight} />
+          <ArrowRight className={doubleArrowRight} />
         </QueryLink>
       )}
     </div>

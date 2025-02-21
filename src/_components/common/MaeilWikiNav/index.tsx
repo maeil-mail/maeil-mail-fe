@@ -1,10 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import PrimaryLogo from '@/_assets/images/maeilWiki/primaryLogo.svg';
-import Nav from '../Nav/Nav';
-import { logo } from './maeilWikiNav.css';
-import type { PropsWithChildren } from 'react';
+import { useEffect, useState, type PropsWithChildren } from 'react';
+import MaeilWikiNavContent from './MaeilWikiNavContent';
+import { AuthProvider } from '@/_components/MaeilWiki/_store/authContext';
 
 interface MaeilWikiNavProps {
   position?: 'default' | 'sticky';
@@ -14,12 +12,17 @@ export default function MaeilWikiNav({
   position = 'default',
   children,
 }: PropsWithChildren<MaeilWikiNavProps>) {
+  const [returnPath, setReturnPath] = useState('/');
+
+  useEffect(() => {
+    setReturnPath(window.location.pathname);
+  }, []);
+
   return (
-    <Nav position={position}>
-      <Link href="/" style={{ position: 'relative' }}>
-        <PrimaryLogo className={logo} />
-      </Link>
-      {children}
-    </Nav>
+    <AuthProvider>
+      <MaeilWikiNavContent position={position} returnPath={returnPath}>
+        {children}
+      </MaeilWikiNavContent>
+    </AuthProvider>
   );
 }

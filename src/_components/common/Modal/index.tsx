@@ -5,15 +5,18 @@ import { createPortal } from 'react-dom';
 import { useDialogModal } from './hooks/useDialogModal';
 import { modal, modalContent } from './modal.css';
 
-export type ModalPosition = 'center' | 'bottom';
-
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  position?: ModalPosition;
+  contentClassName?: string;
 }
 
-export default function Modal({ isOpen, onClose, children }: PropsWithChildren<ModalProps>) {
+export default function Modal({
+  isOpen,
+  onClose,
+  contentClassName,
+  children,
+}: PropsWithChildren<ModalProps>) {
   const { targetContainer, dialogRef } = useDialogModal(isOpen);
 
   if (!targetContainer) {
@@ -22,7 +25,7 @@ export default function Modal({ isOpen, onClose, children }: PropsWithChildren<M
 
   return createPortal(
     <dialog ref={dialogRef} onClose={onClose} className={modal}>
-      <div className={modalContent}>{children}</div>
+      <div className={`${modalContent} ${contentClassName}`}>{children}</div>
     </dialog>,
     targetContainer,
   );

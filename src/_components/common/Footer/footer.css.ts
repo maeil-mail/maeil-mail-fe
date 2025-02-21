@@ -36,8 +36,10 @@ export const side = style({
   wordBreak: 'keep-all',
 });
 
-export const underline = style({
-  textDecoration: 'underline',
-  textUnderlineOffset: '3px',
-  textDecorationThickness: '0.3px',
+export const externalLink = style({
+  selectors: {
+    '&:hover': {
+      textDecoration: 'underline', // Hover 시 밑줄 추가
+    },
+  },
 });
