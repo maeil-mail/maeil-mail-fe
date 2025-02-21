@@ -11,7 +11,7 @@ import {
   navTab,
   navTabBar,
 } from './maeilWikiNav.css';
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import ExternalLinkIcon from '@/_assets/images/maeilWiki/externalLinkIcon.svg';
 import FRONTEND_BASE_URL from '@/_constants/frontendBaseUrl';
 import { GITHUB_OAUTH_LOGIN_URL } from '@/_components/MaeilWiki/_constants/auth';
@@ -34,24 +34,46 @@ export default function MaeilWikiNavContent({
       <Link href="/" className={homeLink}>
         <PrimaryLogo className={logo} />
       </Link>
-      {isLoading ? (
-        <div className={loadingSkeleton} />
-      ) : (
-        <div className={navTabBar}>
-          <a href={FRONTEND_BASE_URL} target="_blank" rel="noopener noreferrer">
-            <div className={navTab}>
-              <span>매일메일</span>
-              <ExternalLinkIcon className={externalLinkIcon} />
-            </div>
-          </a>
-          {!isAuthenticated && (
-            <a href={`${GITHUB_OAUTH_LOGIN_URL}?returnPath=${returnPath}`}>
-              <span className={navTab}>로그인</span>
-            </a>
-          )}
-          {children}
-        </div>
-      )}
+      <MaeilWikiNavRightSide
+        isAuthenticated={isAuthenticated}
+        isLoading={isLoading}
+        returnPath={returnPath}
+      >
+        {children}
+      </MaeilWikiNavRightSide>
     </Nav>
+  );
+}
+
+function MaeilWikiNavRightSide({
+  isLoading,
+  isAuthenticated,
+  returnPath,
+  children,
+}: {
+  isLoading: boolean;
+  isAuthenticated: boolean;
+  returnPath: string;
+  children: ReactNode;
+}) {
+  if (isLoading) {
+    return <div className={loadingSkeleton} />;
+  }
+
+  return (
+    <div className={navTabBar}>
+      <a href={FRONTEND_BASE_URL} target="_blank" rel="noopener noreferrer">
+        <div className={navTab}>
+          <span>매일메일</span>
+          <ExternalLinkIcon className={externalLinkIcon} />
+        </div>
+      </a>
+      {!isAuthenticated && (
+        <a href={`${GITHUB_OAUTH_LOGIN_URL}?returnPath=${returnPath}`}>
+          <span className={navTab}>로그인</span>
+        </a>
+      )}
+      {children}
+    </div>
   );
 }
