@@ -21,12 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={pretendard.className}>
-      <Head>
+      <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-      </Head>
+      </head>
       <body className={myStyle}>
         <div className={wrapper}>
           <Providers>
