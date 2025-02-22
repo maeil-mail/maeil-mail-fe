@@ -86,7 +86,7 @@ export const questionInput = style({
 
   '@media': {
     '(max-width: 850px)': {
-      fontSize: '1.5rem',
+      fontSize: '1.6rem',
       padding: '0.7rem 1rem',
     },
   },
@@ -129,7 +129,7 @@ export const questionDetailTextarea = style({
 
   '@media': {
     '(max-width: 850px)': {
-      fontSize: '1.4rem',
+      fontSize: '1.6rem',
       padding: '0.7rem 0.3rem 0.7rem 1rem',
       scrollPadding: '0.5rem',
       scrollPaddingTop: '0.5rem',
