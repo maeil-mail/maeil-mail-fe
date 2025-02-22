@@ -39,7 +39,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
   const [category, setCategory] = React.useState<WikiCategory>(WIKI_CATEGORY.backend);
   const [isAnonymous, setIsAnonymous] = React.useState(false);
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: postWiki,
     onSuccess: () => {
       window.alert('질문이 등록되었습니다!');
@@ -157,6 +157,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
         onClick={() => {
           mutate({ isAnonymous, question, category, questionDetail });
         }}
+        isPending={isPending}
       >
         제출
       </Button>

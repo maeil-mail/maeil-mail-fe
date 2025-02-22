@@ -29,11 +29,7 @@ export default function Page() {
               솔직한 구독 해지 사유를 간단하게만이라도 남겨주실 수 있나요?
             </span>
           </p>
-          <a
-            href={MAEIL_MAIL_GOOGLE_FORM_URL.unsubscribe}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <a href={MAEIL_MAIL_GOOGLE_FORM_URL.unsubscribe} rel="noreferrer noopener">
             <Button variant="primary" className={feedbackButton}>
               피드백하기
             </Button>

@@ -44,9 +44,11 @@ export const postWiki = async (body: PostWikiBody) => {
       return;
     }
 
-    const data = await mainClient.post<GetWikiListResponse>(API_ROUTES.wiki, body);
+    const res = await mainClient.request<GetWikiListResponse>('POST', API_ROUTES.wiki, body);
 
-    return data;
+    res.headers.forEach(console.log);
+
+    return res.headers;
   } catch (error) {
     throw error;
   }

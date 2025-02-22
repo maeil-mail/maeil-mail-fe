@@ -3,7 +3,14 @@
 import { useState } from 'react';
 import MDPreview from './MDPreview';
 import './markdown.css';
-import { mdEditorContainer, mdOptionButton, mdOptionTabBar, mdPreview } from './markdown.css';
+import {
+  editorContainer,
+  mdEditorContainer,
+  mdOptionTab,
+  mdOptionTabBar,
+  mdPreview,
+  tabBottomBorder,
+} from './markdown.css';
 import MDEditor from './MDEditor';
 
 export default function MDLiveEditor({
@@ -22,18 +29,27 @@ export default function MDLiveEditor({
   return (
     <div className={mdEditorContainer}>
       <div className={mdOptionTabBar}>
-        <button className={mdOptionButton} onClick={onClickWrite}>
-          Write
+        <button
+          className={mdOptionTab({ isSelected: !isPreview, mode: 'write' })}
+          onClick={onClickWrite}
+        >
+          글쓰기
         </button>
-        <button className={mdOptionButton} onClick={onClickPreview}>
-          Preview
+        <button
+          className={mdOptionTab({ isSelected: isPreview, mode: 'preview' })}
+          onClick={onClickPreview}
+        >
+          미리보기
         </button>
+        <div className={tabBottomBorder}></div>
       </div>
-      {isPreview ? (
-        <MDPreview className={mdPreview} source={text || '입력된 답변이 없습니다.'} />
-      ) : (
-        <MDEditor markdown={text} onChange={onChange} />
-      )}
+      <div className={editorContainer}>
+        {isPreview ? (
+          <MDPreview className={mdPreview} source={text || '입력된 답변이 없습니다.'} />
+        ) : (
+          <MDEditor markdown={text} onChange={onChange} />
+        )}
+      </div>
     </div>
   );
 }

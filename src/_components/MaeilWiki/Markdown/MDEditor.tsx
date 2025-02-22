@@ -38,7 +38,9 @@ export default function MDEditor(props: MDXEditorProps) {
   return (
     <div className={mdxEditorWrapper}>
       <MDXEditor plugins={mdxEditorPlugins} {...props} />
-      {!props.markdown && <div className={mdxEditorPlaceholder}>답변을 입력해주세요</div>}
+      {!props.markdown && (
+        <div className={mdxEditorPlaceholder}>마크다운으로 답변을 입력해주세요</div>
+      )}
     </div>
   );
 }

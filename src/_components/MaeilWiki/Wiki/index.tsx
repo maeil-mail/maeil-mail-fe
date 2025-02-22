@@ -2,9 +2,15 @@
 
 import WikiQuestion from './WikiQuestion';
 import WikiCommentList from './WikiCommentList';
-import WikiCommentInput from './WikiCommentInput';
 import { useWiki } from './_hooks/useWiki';
-import PageInnerLayout from '@/_components/common/PageInnerLayout/PageInnerLayout';
+import { wikiMainContent, wikiPage, wikiPageContent } from './wiki.css';
+import { AuthProvider } from '../_store/authContext';
+import React from 'react';
+import dynamic from 'next/dynamic';
+
+const WikiCommentInputSection = dynamic(() => import('./WikiCommentInputSection'), {
+  ssr: false,
+});
 
 export interface WikiPageProps {
   wikiId: number;
@@ -14,10 +20,16 @@ export default function WikiPage({ wikiId }: WikiPageProps) {
   const { data } = useWiki(wikiId);
 
   return (
-    <PageInnerLayout>
-      <WikiQuestion wiki={data} />
-      <WikiCommentList wikiId={wikiId} comments={data.comments} />
-      <WikiCommentInput wikiId={wikiId} />
-    </PageInnerLayout>
+    <div className={wikiPage}>
+      <AuthProvider>
+        <div className={wikiPageContent}>
+          <div className={wikiMainContent}>
+            <WikiQuestion wiki={data} />
+            <WikiCommentList wikiId={wikiId} comments={data.comments} />
+          </div>
+          <WikiCommentInputSection wikiId={wikiId} />
+        </div>
+      </AuthProvider>
+    </div>
   );
 }

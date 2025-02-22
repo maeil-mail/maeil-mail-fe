@@ -10,6 +10,7 @@ import {
   wikiQuestionText,
   wikiSubInfo,
   wikiInfo,
+  wikiMetaInfo,
 } from './wikiList.css';
 import { WikiListItem } from '../../_types/wiki';
 import { WIKI_CATEGORY_KO } from '../../_constants/wikiCategory';
@@ -23,8 +24,10 @@ export default function WikiItem({ wiki }: { wiki: WikiListItem }) {
       <div className={wikiInfo}>
         <div className={wikiSubInfo}>
           <div className={wikiCategory({ category })}>{WIKI_CATEGORY_KO[category]}</div>
-          <div className={ownerName}>
-            {owner.name || '익명'} | {calculateElapsedTime(createdAt)}
+          <div className={wikiMetaInfo} suppressHydrationWarning>
+            <span className={ownerName}>{owner.name || '익명'} </span>
+            <span>|</span>
+            <span>{calculateElapsedTime(createdAt)}</span>
           </div>
         </div>
         {commentCount > 0 && (

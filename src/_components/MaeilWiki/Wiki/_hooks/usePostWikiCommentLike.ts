@@ -1,10 +1,10 @@
 'use client';
 
 import { HTTPError } from '@/_apis/client/APIClient';
-import mainClient from '@/_apis/client/mainClient';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { postWikiCommentLike } from '../../_apis/wiki';
+import { Wiki } from '../../_types/wiki';
 
 export const usePostWikiCommentLike = (wikiId: number, commentId: number) => {
   const queryClient = useQueryClient();
@@ -13,14 +13,39 @@ export const usePostWikiCommentLike = (wikiId: number, commentId: number) => {
     mutationFn: async () => {
       await postWikiCommentLike(wikiId, commentId);
     },
-    onSuccess: () => {
-      // TODO: 낙관적 업데이트 - 좋아요 여부에 따라 좋아요 개수를 선반영한다(+1 or -1한다)
+    onMutate: async () => {
+      await queryClient.cancelQueries({ queryKey: ['BoardDetail'] });
+
+      const previousWiki = queryClient.getQueryData<Wiki>(['wiki', wikiId]);
+
+      const updatedWiki = {
+        ...previousWiki,
+        comments: previousWiki!.comments.map((comment) => {
+          const isTargetComment = comment.id === commentId;
+          if (!isTargetComment) {
+            return comment;
+          }
+
+          const updatedComment = comment.isLiked
+            ? { ...comment, isLiked: false, likeCount: comment.likeCount - 1 }
+            : { ...comment, isLiked: true, likeCount: comment.likeCount + 1 };
+
+          return updatedComment;
+        }),
+      };
+
+      queryClient.setQueryData(['wiki', wikiId], updatedWiki);
+
+      return { previousWiki };
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ['wiki', wikiId] });
     },
-    onError: (error) => {
+    onError: (error, _, context) => {
       if (error instanceof HTTPError && error.status === 401) {
         return;
       }
+      queryClient.setQueryData(['wiki', wikiId], context?.previousWiki);
 
       alert(
         '요청에 실패했습니다. 재시도에도 동일한 현상이 반복되면, team.maeilmail@gmail.com로 문의주시면 조속히 처리해 드리겠습니다.',

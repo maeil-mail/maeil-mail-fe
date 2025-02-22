@@ -91,9 +91,9 @@ export const wikiCategory = recipe({
   },
 });
 
-export const ownerName = style({
+export const wikiMetaInfo = style({
   display: 'flex',
-  gap: '0.6rem',
+  gap: '0.4rem',
   alignItems: 'center',
   color: '#666666',
   fontWeight: 300,
@@ -102,6 +102,17 @@ export const ownerName = style({
   '@media': {
     [`(max-width: 800px)`]: {
       fontSize: '1.3rem',
+    },
+  },
+});
+
+export const ownerName = style({
+  '@media': {
+    '(max-width: 800px)': {
+      overflow: 'hidden',
+      maxWidth: '9rem',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
     },
   },
 });
@@ -137,7 +148,7 @@ export const commentIcon = style({
 // WikiListSkeleton
 const shimmer = keyframes({
   '0%, 100%': {
-    opacity: 0.4,
+    opacity: 0.3,
   },
   '50%': {
     opacity: 1,
@@ -150,7 +161,7 @@ export const wikiItemSkeleton = style({
   width: '100%',
   borderRadius: '0.8rem',
 
-  backgroundColor: '#f8f9fa',
+  backgroundColor: '#efefef',
   animation: `${shimmer} 1500ms linear infinite`,
 
   '@media': {

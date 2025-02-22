@@ -19,7 +19,7 @@ const moneygraphyRounded = localFont({
 
 export default function HeroSection() {
   return (
-    <a href={MAEIL_WIKI_INTRODUCTION_URL} target="_blank" rel="noopener noreferrer">
+    <a href={MAEIL_WIKI_INTRODUCTION_URL} rel="noopener noreferrer">
       <section className={heroSection}>
         <picture>
           <source
