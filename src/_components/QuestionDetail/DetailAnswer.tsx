@@ -39,7 +39,7 @@ export default function DetailAnswer({ content }: DetailAnswerProps) {
           <ShareIcon className={shareIcon} />
           공유하기
         </div>
-        <a href={MAEIL_MAIL_GOOGLE_FORM_URL.mailContent} target="_blank">
+        <a href={MAEIL_MAIL_GOOGLE_FORM_URL.mailContent}>
           <div className={subButton}>
             <IdeaIcon className={ideaIcon} />
             컨텐츠 피드백

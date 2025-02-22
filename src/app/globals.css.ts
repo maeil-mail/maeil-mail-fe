@@ -102,9 +102,14 @@ globalStyle('.wmde-markdown img', {
 });
 
 globalStyle('.wmde-markdown p', {
-  fontSize: '1.65rem',
+  fontSize: '1.7rem',
   lineHeight: 1.6,
   letterSpacing: '-0.02rem',
+  '@media': {
+    '(max-width: 800px)': {
+      fontSize: '1.6rem',
+    },
+  },
 });
 
 globalStyle(

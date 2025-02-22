@@ -40,18 +40,18 @@ export default function UnexpectedErrorPage({ Nav, error, feedbackUrl }: Unexpec
           <DeveloperEmoji className={developerEmoji} />
           <Txt variant="medium">
             불편을 드려 죄송합니다.{' '}
-            <a href={FE_GITHUB_ISSUE_URL} target="_blank" rel="noopener noreferrer">
+            <a href={FE_GITHUB_ISSUE_URL} rel="noopener noreferrer">
               Github Issue
             </a>
             나{' '}
-            <a href={feedbackUrl} target="_blank" rel="noopener noreferrer">
+            <a href={feedbackUrl} rel="noopener noreferrer">
               구글 폼
             </a>
             으로 지금 발생한 문제를 제보해 주시면, 빠르게 해결한 후 다시 안내 드리겠습니다!
           </Txt>
         </section>
         <section className={buttonSection}>
-          <a className={buttonLink} href={feedbackUrl} target="_blank" rel="noopener noreferrer">
+          <a className={buttonLink} href={feedbackUrl} rel="noopener noreferrer">
             <Button variant="border">피드백하기</Button>
           </a>
           <Link className={buttonLink} href={PAGE_ROUTES.main}>

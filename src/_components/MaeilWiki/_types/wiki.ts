@@ -22,6 +22,7 @@ export interface WikiComment {
   owner: Member;
   createdAt: string;
   likeCount: number;
+  isLiked: boolean;
 }
 
 export interface Wiki {

@@ -21,12 +21,12 @@ export default function WikiCommentList({ wikiId, comments }: WikiCommentListPro
 
 function WikiComments({ wikiId, comments }: { wikiId: number; comments: WikiComment[] }) {
   if (comments.length === 0) {
-    return <div>💡 답변이 아직 없습니다. 답변을 달아 지식을 공유해주세요.</div>;
+    return null;
   }
 
   return (
     <>
-      <h2 className={wikiCommentListTitle}>답변 목록</h2>
+      <h2 className={wikiCommentListTitle}>답변 {comments.length}</h2>
       <div className={wikiCommentList}>
         {comments.map((comment) => (
           <WikiCommentItem key={comment.id} wikiId={wikiId} comment={comment} />

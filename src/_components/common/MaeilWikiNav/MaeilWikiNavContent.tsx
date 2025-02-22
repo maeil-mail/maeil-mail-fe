@@ -62,7 +62,7 @@ function MaeilWikiNavRightSide({
 
   return (
     <div className={navTabBar}>
-      <a href={FRONTEND_BASE_URL} target="_blank" rel="noopener noreferrer">
+      <a href={FRONTEND_BASE_URL} rel="noopener noreferrer">
         <div className={navTab}>
           <span>매일메일</span>
           <ExternalLinkIcon className={externalLinkIcon} />

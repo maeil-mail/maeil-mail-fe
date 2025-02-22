@@ -16,13 +16,14 @@ export default function Button({
   disabled,
   ...props
 }: PropsWithChildren<ButtonProps>) {
-  const classNames = `${buttonStyle[variant]} ${className ?? ''} ${baseButtonStyle} ${
+  const classNames = `${className ?? ''} ${buttonStyle[variant]} ${baseButtonStyle} ${
     disabled || isPending ? disabledButton : ''
   }`;
 
   return (
     <button {...props} className={classNames} disabled={disabled || isPending}>
-      {isPending ? <LoadingSpinner /> : children}
+      {isPending && <LoadingSpinner />}
+      {children}
     </button>
   );
 }

@@ -117,7 +117,7 @@ export const questionDetailTextarea = style({
   scrollPadding: '1rem',
   scrollPaddingTop: '1rem',
   resize: 'none',
-  wordSpacing: '-0.5rem',
+  wordSpacing: '-0.1rem',
 
   selectors: {
     '&::placeholder': {

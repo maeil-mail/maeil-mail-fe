@@ -141,11 +141,7 @@ export default function SubscribeModalContent({ closeModal }: SubscribeModalCont
                       id="privacy-consent"
                       text={
                         <>
-                          <a
-                            href={`${FRONTEND_BASE_URL}/policy`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          <a href={`${FRONTEND_BASE_URL}/policy`} rel="noopener noreferrer">
                             <span className={underline}>개인정보취급방침</span>
                           </a>
                           에 동의합니다.

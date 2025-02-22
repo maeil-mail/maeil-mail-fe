@@ -17,7 +17,11 @@ export default function HomeNav({ onSubscribe }: NavProps) {
   return (
     <MaeilMailNav position="sticky">
       <div className={navContentWrapper}>
-        <a className={teamIntroductionLink} href={MAEIL_MAIL_INTRODUCTION_URL} target="_blank">
+        <a
+          className={teamIntroductionLink}
+          href={MAEIL_MAIL_INTRODUCTION_URL}
+          rel="noopener noreferrer"
+        >
           팀 소개
         </a>
         <button onClick={handleSubscribeButton} className={subscribeButton}>
