@@ -111,7 +111,7 @@ export const questionDetailTextarea = style({
   padding: '1rem 1.3rem',
   borderRadius: '0.5rem',
   border: '1px solid #999999',
-  fontSize: '1.4rem',
+  fontSize: '1.6rem',
   lineHeight: 1.5,
   height: '10rem',
   scrollPadding: '1rem',
