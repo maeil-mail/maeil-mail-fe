@@ -291,11 +291,11 @@ export const wikiCommentInputSection = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '2rem',
-  marginTop: '4rem',
+  marginTop: '2rem',
 
   '@media': {
     '(max-width: 800px)': {
-      marginTop: '2rem',
+      marginTop: '0',
     },
   },
 });

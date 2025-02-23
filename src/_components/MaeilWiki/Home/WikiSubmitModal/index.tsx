@@ -3,10 +3,8 @@
 import Button from '@/_components/common/Button/Button';
 import Modal from '@/_components/common/Modal';
 import * as React from 'react';
-import { postWiki } from '../../_apis/wiki';
 import { WIKI_CATEGORY, WIKI_CATEGORY_KO } from '../../_constants/wikiCategory';
 import { WikiCategory } from '../../_types/wikiCategory';
-import { useMutation } from '@tanstack/react-query';
 import {
   asterisk,
   categoryInputs,
@@ -27,6 +25,7 @@ import {
   categoryLabel,
 } from './wikiSubmitModal.css';
 import CloseIcon from '@/_assets/images/maeilWiki/closeIcon.svg';
+import { usePostWiki } from '../_hooks/usePostWiki';
 
 export interface WikiSubmitModalProps {
   isOpen: boolean;
@@ -39,13 +38,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
   const [category, setCategory] = React.useState<WikiCategory>(WIKI_CATEGORY.backend);
   const [isAnonymous, setIsAnonymous] = React.useState(false);
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: postWiki,
-    onSuccess: () => {
-      window.alert('질문이 등록되었습니다!');
-      window.location.reload();
-    },
-  });
+  const { mutate, isPending } = usePostWiki();
 
   const onChangeQuestion = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(e.target.value);
