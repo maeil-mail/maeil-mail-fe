@@ -38,17 +38,17 @@ export interface PostWikiBody {
   questionDetail?: string;
 }
 
-export const postWiki = async (body: PostWikiBody) => {
+export const postWiki = async (body: PostWikiBody): Promise<string | null> => {
   try {
     if (!body.question) {
-      return;
+      return null;
     }
 
     const res = await mainClient.request<GetWikiListResponse>('POST', API_ROUTES.wiki, body);
 
-    res.headers.forEach(console.log);
+    const createdWikiId = res.headers.get('location');
 
-    return res.headers;
+    return createdWikiId;
   } catch (error) {
     throw error;
   }
