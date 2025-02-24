@@ -7,6 +7,8 @@ import { useWikiList } from '../_hooks/useWikiList';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
 import Paginator from '@/_components/common/Paginator';
 import Link from 'next/link';
+import recordGAEvent from '@/_utils/recordGAEvent';
+import { GA_EVENT } from '../../_constants/GA_EVENT';
 
 interface WikiListProps {
   category: WikiCategoryTabOption;
@@ -18,6 +20,10 @@ export default function WikiList({ category, page }: WikiListProps) {
 
   const wikis = data.data;
 
+  const onClickPaginator = () => {
+    recordGAEvent(GA_EVENT.homeClickPaginator);
+  };
+
   return (
     <>
       <ol className={wikiList}>
@@ -27,7 +33,9 @@ export default function WikiList({ category, page }: WikiListProps) {
           </Link>
         ))}
       </ol>
-      <Paginator currentPage={page} lastPage={data.totalPage} />
+      <div onClick={onClickPaginator}>
+        <Paginator currentPage={page} lastPage={data.totalPage} />
+      </div>
     </>
   );
 }

@@ -17,6 +17,8 @@ import MDLiveEditor from '../Markdown/MDLiveEditor';
 import { usePostWikiComment } from './_hooks/usePostWikiComment';
 import { redirectToGithubLogin } from '../_utils/redirectToGithubLogin';
 import { useAuthContext } from '../_store/authContext';
+import recordGAEvent from '@/_utils/recordGAEvent';
+import { GA_EVENT } from '../_constants/GA_EVENT';
 
 export interface WikiCommentInputSectionProps {
   wikiId: number;
@@ -51,10 +53,14 @@ export default function WikiCommentInputSection({ wikiId }: WikiCommentInputSect
     }
   };
 
+  const onClickEditorContainer = () => {
+    recordGAEvent(GA_EVENT.detailClickWriteComment);
+  };
+
   return (
     <section className={wikiCommentInputSection}>
       <h2 className={wikiAddCommentTitle}>답변 추가</h2>
-      <div className={wikiCommentEditorContainer}>
+      <div className={wikiCommentEditorContainer} onClick={onClickEditorContainer}>
         {!isAuthenticated && <div onClick={onClickEditorOverlay} className={editorAuthOverlay} />}
         <MDLiveEditor text={comment} onChange={onChangeText} />
         <div className={isAnonymousWrapper}>

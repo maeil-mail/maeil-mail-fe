@@ -24,10 +24,10 @@ export default function WikiItem({ wiki }: { wiki: WikiListItem }) {
       <div className={wikiInfo}>
         <div className={wikiSubInfo}>
           <div className={wikiCategory({ category })}>{WIKI_CATEGORY_KO[category]}</div>
-          <div className={wikiMetaInfo} suppressHydrationWarning>
+          <div className={wikiMetaInfo}>
             <span className={ownerName}>{owner.name || '익명'} </span>
             <span>|</span>
-            <span>{calculateElapsedTime(createdAt)}</span>
+            <span suppressHydrationWarning>{calculateElapsedTime(createdAt)}</span>
           </div>
         </div>
         {commentCount > 0 && (

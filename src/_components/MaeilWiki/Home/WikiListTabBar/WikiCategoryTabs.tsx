@@ -8,6 +8,8 @@ import {
 } from '../../_constants/wikiCategory';
 import { WikiCategoryTabOption } from '../../_types/wikiCategory';
 import { wikiCategoryTab, wikiCategoryTabs } from './wikiListTabBar.css';
+import recordGAEvent from '@/_utils/recordGAEvent';
+import { GA_EVENT } from '../../_constants/GA_EVENT';
 
 interface WikiCategoryTabsProps {
   selectedOption: WikiCategoryTabOption;
@@ -16,8 +18,12 @@ interface WikiCategoryTabsProps {
 const categories = Object.values(WIKI_CATEGORY);
 
 export default function WikiCategoryTabs({ selectedOption }: WikiCategoryTabsProps) {
+  const onClickCategoryTabs = () => {
+    recordGAEvent(GA_EVENT.homeClickCategoryTabs);
+  };
+
   return (
-    <div className={wikiCategoryTabs}>
+    <div className={wikiCategoryTabs} onClick={onClickCategoryTabs}>
       <QueryLink appendedQuery={{ category: WIKI_CATEGORY_TAB_OPTION.all, page: 1 }}>
         <div
           className={wikiCategoryTab({
