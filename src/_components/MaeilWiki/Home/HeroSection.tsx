@@ -11,6 +11,8 @@ import {
   heroTypo,
 } from './home.css';
 import { MAEIL_WIKI_INTRODUCTION_URL } from '@/_constants/externalUrl';
+import recordGAEvent from '@/_utils/recordGAEvent';
+import { GA_EVENT } from '../_constants/GA_EVENT';
 
 const moneygraphyRounded = localFont({
   src: '../../../fonts/MoneygraphyRounded.woff2',
@@ -18,8 +20,12 @@ const moneygraphyRounded = localFont({
 });
 
 export default function HeroSection() {
+  const onClickHero = () => {
+    recordGAEvent(GA_EVENT.homeClickBanner);
+  };
+
   return (
-    <a href={MAEIL_WIKI_INTRODUCTION_URL} rel="noopener noreferrer">
+    <a href={MAEIL_WIKI_INTRODUCTION_URL} rel="noopener noreferrer" onClick={onClickHero}>
       <section className={heroSection}>
         <picture>
           <source

@@ -24,6 +24,8 @@ import { useAuthContext } from '../_store/authContext';
 import dynamic from 'next/dynamic';
 import BlankLike from '@/_assets/images/maeilWiki/blankLike.svg';
 import GenericAvatar from '@/_assets/images/maeilWiki/genericAvatar.svg';
+import recordGAEvent from '@/_utils/recordGAEvent';
+import { GA_EVENT } from '../_constants/GA_EVENT';
 
 const LikeIcon = dynamic(() => import('../../../_assets/images/maeilWiki/like.svg'), {
   ssr: false,
@@ -83,7 +85,13 @@ export default function WikiCommentItem({ wikiId, comment }: WikiCommentItemProp
           </div>
         </div>
 
-        <button className={wikiCommentLikeButton} onClick={() => postCommentLike()}>
+        <button
+          className={wikiCommentLikeButton}
+          onClick={() => {
+            recordGAEvent(GA_EVENT.detailClickLike);
+            postCommentLike();
+          }}
+        >
           {isLiked ? <LikeIcon /> : <BlankLikeIcon />} {likeCount}
         </button>
       </div>

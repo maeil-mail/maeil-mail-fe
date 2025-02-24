@@ -91,7 +91,6 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
             </label>
             <div className={categoryInputsWrapper}>
               <label className={categoryLabel} htmlFor={WIKI_CATEGORY.backend}>
-                {WIKI_CATEGORY_KO[WIKI_CATEGORY.backend]}
                 <input
                   className={categoryRadio}
                   id={WIKI_CATEGORY.backend}
@@ -101,9 +100,9 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
                   checked={category === WIKI_CATEGORY.backend}
                   onChange={onChangeCategory}
                 />
+                {WIKI_CATEGORY_KO[WIKI_CATEGORY.backend]}
               </label>
               <label className={categoryLabel} htmlFor={WIKI_CATEGORY.frontend}>
-                {WIKI_CATEGORY_KO[WIKI_CATEGORY.frontend]}
                 <input
                   className={categoryRadio}
                   id={WIKI_CATEGORY.frontend}
@@ -113,10 +112,10 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
                   checked={category === WIKI_CATEGORY.frontend}
                   onChange={onChangeCategory}
                 />
+                {WIKI_CATEGORY_KO[WIKI_CATEGORY.frontend]}
               </label>
 
               <label className={categoryLabel} htmlFor={WIKI_CATEGORY.etc}>
-                {WIKI_CATEGORY_KO[WIKI_CATEGORY.etc]}
                 <input
                   className={categoryRadio}
                   id={WIKI_CATEGORY.etc}
@@ -126,12 +125,12 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
                   checked={category === WIKI_CATEGORY.etc}
                   onChange={onChangeCategory}
                 />
+                {WIKI_CATEGORY_KO[WIKI_CATEGORY.etc]}
               </label>
             </div>
           </div>
 
           <label className={isAnonymousLabel} htmlFor="isAnonymous">
-            익명
             <input
               className={isAnonymousCheckbox}
               id="isAnonymous"
@@ -141,6 +140,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
                 setIsAnonymous((prev) => !prev);
               }}
             />
+            익명
           </label>
         </section>
       </section>
