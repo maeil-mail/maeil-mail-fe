@@ -59,7 +59,6 @@ export default function WikiCommentInputSection({ wikiId }: WikiCommentInputSect
         <MDLiveEditor text={comment} onChange={onChangeText} />
         <div className={isAnonymousWrapper}>
           <label className={isAnonymousLabel} htmlFor="isAnonymous">
-            익명
             <input
               id="isAnonymous"
               type="checkbox"
@@ -67,6 +66,7 @@ export default function WikiCommentInputSection({ wikiId }: WikiCommentInputSect
               className={isAnonymousCheckbox}
               onChange={() => setIsAnonymous((prev) => !prev)}
             />
+            익명
           </label>
 
           <div className={commentSubmitButtonWrapper}>
