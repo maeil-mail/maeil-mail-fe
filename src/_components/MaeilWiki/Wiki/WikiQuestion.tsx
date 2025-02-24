@@ -45,7 +45,9 @@ export default function WikiQuestion({ wiki }: WikiQuestionProps) {
     }
   };
 
-  const { category, question, owner, createdAt, questionDetail } = wiki;
+  const { category, question, owner, createdAt, questionDetail, comments } = wiki;
+
+  const hasComments = comments.length > 0;
 
   return (
     <header className={wikiQuestionHeader}>
@@ -59,7 +61,7 @@ export default function WikiQuestion({ wiki }: WikiQuestionProps) {
           <span className={ownerMark}>작성자</span>
           <div className={wikiCreatedAt}>
             <div>{calculateElapsedTime(createdAt)}</div>
-            {isOwner && (
+            {isOwner && !hasComments && (
               <>
                 <div>•</div>
                 <div role="button" onClick={onClickDeleteWiki} className={deleteButton}>
