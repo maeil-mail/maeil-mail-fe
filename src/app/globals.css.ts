@@ -79,6 +79,8 @@ globalStyle('.wmde-markdown h2', {
 globalStyle('.wmde-markdown code', {
   fontSize: '1.3rem !important',
   padding: '0.2em 0.2em',
+  backgroundColor: '#F5F8FA !important',
+  color: '#eb5757',
 });
 
 globalStyle('.wmde-markdown pre', {
@@ -142,4 +144,5 @@ globalStyle('.wmde-markdown table td', {
 
 globalStyle('.wmde-markdown .code-highlight', {
   background: '#F5F8FA',
+  color: '#222222 !important',
 });
