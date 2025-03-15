@@ -1,4 +1,4 @@
-import { postVerifyEmail } from '@/app/maeil-mail/actions';
+import { postVerifyEmail } from '../../../../apps/maeilwiki/src/app/actions';
 import { useState } from 'react';
 import useServerActionMutation from './useServerActionMutation';
 

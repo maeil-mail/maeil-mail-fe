@@ -3,7 +3,7 @@
 import ArrowLeft from '@/_assets/icons/paginatorLeftArrow.svg';
 import ArrowRight from '@/_assets/icons/paginatorRightArrow.svg';
 import { doubleArrowLeft, doubleArrowRight, pageNumber, paginatorContainer } from './paginator.css';
-import usePagination from './_hooks/usePagination';
+import usePagination from './hooks/usePagination';
 import QueryLink from '../QueryLink';
 
 export interface PaginatorProps {

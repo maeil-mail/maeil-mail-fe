@@ -1,4 +1,4 @@
-import { postSubscribe } from '@/app/maeil-mail/actions';
+import { postSubscribe } from '../../../../apps/maeilwiki/src/app/actions';
 import useServerActionMutation from './useServerActionMutation';
 
 const useSubscriptionMutation = () => {
