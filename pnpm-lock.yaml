@@ -255,6 +255,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.5(@types/react@18.3.18)
+      esbuild:
+        specifier: ^0.25.0
+        version: 0.25.0
       esbuild-plugin-svgr:
         specifier: ^3.1.0
         version: 3.1.0(esbuild@0.25.0)(typescript@5.8.2)
