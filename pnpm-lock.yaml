@@ -255,6 +255,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.5(@types/react@18.3.18)
+      '@vanilla-extract/esbuild-plugin':
+        specifier: ^2.3.15
+        version: 2.3.15(esbuild@0.25.0)
       esbuild:
         specifier: ^0.25.0
         version: 0.25.0
