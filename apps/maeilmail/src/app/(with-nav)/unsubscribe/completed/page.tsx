@@ -9,7 +9,7 @@ import {
   unsubscribeCompletedContent,
   unsubscribeCompletedTitle,
   unsubscribeCompletedTypo,
-} from '@/pages/unsubscribe/unsubscribe.css';
+} from '@/components/unsubscribe/unsubscribe.css';
 
 export default function Page() {
   return (

@@ -11,7 +11,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && node esbuild.config.mjs"
+    "build": "npm run clean && tsc && node esbuild.config.mjs",
+    "prepare": "pnpm run build"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.15.5",

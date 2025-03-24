@@ -1,4 +1,4 @@
-import WikiPage from '@/pages/wikiDetail/Page';
+import WikiPage from '@/components/wikiDetail/Page';
 
 interface PageProps {
   params: Promise<{ id: string }>;

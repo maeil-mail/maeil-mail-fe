@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { getAuthParams } from '@/pages/setting/utils/getAuthParams';
+import { getAuthParams } from '@/components/setting/utils/getAuthParams';
 import { SearchParams } from '@/common/types/http';
-import { getMailFrequency } from '@/pages/setting/apis/getMailFrequency';
-import Setting from '@/pages/setting/Page';
+import { getMailFrequency } from '@/components/setting/apis/getMailFrequency';
+import Setting from '@/components/setting/Page';
 
 interface PageProps {
   searchParams: Promise<SearchParams>;

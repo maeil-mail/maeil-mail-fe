@@ -2,8 +2,8 @@
 
 import { Suspense } from 'react';
 import { PageInnerLayout } from '@maeil/ui';
-import UnsubscribeContent from '@/pages/unsubscribe/UnsubscribeContent';
-import { useAuthParams } from '@/pages/unsubscribe/hooks/useAuthParams';
+import UnsubscribeContent from '@/components/unsubscribe/UnsubscribeContent';
+import { useAuthParams } from '@/components/unsubscribe/hooks/useAuthParams';
 
 export default function Page() {
   return (

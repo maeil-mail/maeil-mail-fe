@@ -1,6 +1,6 @@
 'use client';
 
-import UnexpectedErrorPage from '@/pages/unexpectedError/Page';
+import UnexpectedErrorPage from '@/components/unexpectedError/Page';
 import { MAEIL_WIKI_GOOGLE_FORM_URL } from '@/common/constants/externalUrl';
 
 export default function Page() {

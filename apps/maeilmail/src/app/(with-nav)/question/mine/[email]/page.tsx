@@ -4,11 +4,11 @@ import { Suspense } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { PageInnerLayout } from '@maeil/ui';
 import Paginator from '@/common/components/Paginator';
-import MyQuestionList from '@/pages/myQuestionList/QuestionList';
-import useMyQuestions from '@/pages/myQuestionList/hooks/useMyQuestions';
-import MyQuestionListHeader from '@/pages/myQuestionList/Header';
-import MyQuestionListSkeleton from '@/pages/myQuestionList/Skeleton';
-import QuestionCategoryTabs from '@/pages/myQuestionList/QuestionCategoryTabs';
+import MyQuestionList from '@/components/myQuestionList/QuestionList';
+import useMyQuestions from '@/components/myQuestionList/hooks/useMyQuestions';
+import MyQuestionListHeader from '@/components/myQuestionList/Header';
+import MyQuestionListSkeleton from '@/components/myQuestionList/Skeleton';
+import QuestionCategoryTabs from '@/components/myQuestionList/QuestionCategoryTabs';
 import { QuestionCategoryEN } from '@/common/types/question';
 
 export default function Page() {

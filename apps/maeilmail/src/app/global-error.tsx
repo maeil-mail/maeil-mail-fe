@@ -1,7 +1,7 @@
 'use client';
 
 import { myStyle } from '@maeil/theme';
-import UnexpectedErrorPage from '@/pages/unexpectedError/Page';
+import UnexpectedErrorPage from '@/components/unexpectedError/Page';
 import MaeilMailNav from '@/common/components/MaeilMailNav';
 import { MAEIL_MAIL_GOOGLE_FORM_URL } from '@/common/constants/externalUrl';
 

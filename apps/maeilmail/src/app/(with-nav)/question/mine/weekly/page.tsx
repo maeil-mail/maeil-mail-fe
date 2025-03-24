@@ -1,7 +1,7 @@
 import { PageInnerLayout } from '@maeil/ui';
-import MyQuestionListHeader from '@/pages/myWeeklyQuestionList/Header';
-import MyQuestionList from '@/pages/myWeeklyQuestionList/MyWeeklyQuestionList';
-import { getMyWeeklyQuestions } from '@/pages/myWeeklyQuestionList/apis/getMyWeeklyQuestions';
+import MyQuestionListHeader from '@/components/myWeeklyQuestionList/Header';
+import MyQuestionList from '@/components/myWeeklyQuestionList/MyWeeklyQuestionList';
+import { getMyWeeklyQuestions } from '@/components/myWeeklyQuestionList/apis/getMyWeeklyQuestions';
 import * as React from 'react';
 
 export interface MyWeeklyQuestionsProps {

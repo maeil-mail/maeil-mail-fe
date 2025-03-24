@@ -16,7 +16,7 @@ import ExternalLinkIcon from '@/assets/externalLinkIcon.svg';
 import { FRONTEND_BASE_URL } from '@/common/constants/frontendBaseUrl';
 import { GITHUB_OAUTH_LOGIN_URL } from '@/common/constants/auth';
 import { useAuthContext } from '@/common/store/authContext';
-import recordGAEvent from '@/common/utils/recordGAEvent';
+import { recordGAEvent } from '@/common/utils/recordGAEvent';
 import { GA_EVENT } from '@/common/constants/gaEvent';
 
 interface MaeilWikiNavContentProps {

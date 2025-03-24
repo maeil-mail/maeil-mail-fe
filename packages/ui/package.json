@@ -1,6 +1,7 @@
 {
   "name": "@maeil/ui",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -11,7 +12,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && node esbuild.config.mjs"
+    "build": "npm run clean && tsc && node esbuild.config.mjs",
+    "prepare": "pnpm run build"
   },
   "dependencies": {
     "@maeil/theme": "workspace:*",
@@ -24,7 +26,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "esbuild-plugin-preserve-directives": "^0.0.11",
     "esbuild-plugin-svgr": "^3.1.0",
     "eslint": "^8",
     "eslint-config-airbnb": "^19.0.4",

@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { PageInnerLayout } from '@maeil/ui';
 
-import DetailTitle from '@/pages/questionDetail/DetailTitle';
-import DetailCategory from '@/pages/questionDetail/DetailCategory';
-import DetailAnswer from '@/pages/questionDetail/DetailAnswer';
-import { getQuestionDetail } from '@/pages/questionDetail/apis/getQuestionDetail';
-import { getAllQuestions } from '@/pages/questionDetail/apis/getAllQuestions';
+import DetailTitle from '@/components/questionDetail/DetailTitle';
+import DetailCategory from '@/components/questionDetail/DetailCategory';
+import DetailAnswer from '@/components/questionDetail/DetailAnswer';
+import { getQuestionDetail } from '@/components/questionDetail/apis/getQuestionDetail';
+import { getAllQuestions } from '@/components/questionDetail/apis/getAllQuestions';
 
 // 5시간 (연산자 사용 시 에러가 발생하여 정수 형태로 작성)
 export const revalidate = 18_000;

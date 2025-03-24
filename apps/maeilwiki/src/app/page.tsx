@@ -2,14 +2,14 @@
 
 import { Suspense } from 'react';
 import { AuthProvider } from '@/common/store/authContext';
-import HeroSection from '@/pages/home/HeroSection';
-import WikiList from '@/pages/home/WikiList';
-import WikiListTabBar from '@/pages/home/WikiListTabBar';
-import WikiWriteButton from '@/pages/home/WikiWriteButton';
-import WikiSubmitModal from '@/pages/home/WikiSubmitModal';
-import WikiListSkeleton from '@/pages/home/WikiList/WikiListSkeleton';
-import { useWikiListParams } from '@/pages/home/hooks/useWikiListParams';
-import { homeContainer, homeContent } from '@/pages/home/home.css';
+import HeroSection from '@/components/home/HeroSection';
+import WikiList from '@/components/home/WikiList';
+import WikiListTabBar from '@/components/home/WikiListTabBar';
+import WikiWriteButton from '@/components/home/WikiWriteButton';
+import WikiSubmitModal from '@/components/home/WikiSubmitModal';
+import WikiListSkeleton from '@/components/home/WikiList/WikiListSkeleton';
+import { useWikiListParams } from '@/components/home/hooks/useWikiListParams';
+import { homeContainer, homeContent } from '@/components/home/home.css';
 import useModal from '@/common/hooks/useModal';
 
 export default function Page() {
