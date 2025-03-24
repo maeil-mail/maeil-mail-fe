@@ -75,6 +75,9 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
     devDependencies:
+      '@playwright/test':
+        specifier: ^1.49.1
+        version: 1.50.1
       '@svgr/webpack':
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.8.2)
@@ -7004,7 +7007,6 @@ snapshots:
   '@playwright/test@1.50.1':
     dependencies:
       playwright: 1.50.1
-    optional: true
 
   '@prisma/instrumentation@5.22.0':
     dependencies:
@@ -10441,15 +10443,13 @@ snapshots:
       mlly: 1.7.4
       pathe: 2.0.3
 
-  playwright-core@1.50.1:
-    optional: true
+  playwright-core@1.50.1: {}
 
   playwright@1.50.1:
     dependencies:
       playwright-core: 1.50.1
     optionalDependencies:
       fsevents: 2.3.2
-    optional: true
 
   possible-typed-array-names@1.1.0: {}
 
