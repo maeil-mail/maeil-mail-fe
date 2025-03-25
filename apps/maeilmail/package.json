@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "dev:hosting": "next dev -H 0.0.0.0",
     "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
     "test:e2e": "npx playwright test",
     "test:e2e-ui": "npx playwright test --ui",
-    "show-test-report": "npx playwright show-report"
+    "show-test-report": "npx playwright show-report",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@maeil/ui": "workspace:*",
