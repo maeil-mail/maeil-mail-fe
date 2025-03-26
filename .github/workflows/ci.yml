@@ -38,4 +38,4 @@ jobs:
           ADMIN_AUTH_SECRET_KEY: ${{ secrets.ADMIN_AUTH_SECRET_KEY }}
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-          TURBO_REMOTE_ONLY: true
+          TURBO_CACHE: remote:rw
