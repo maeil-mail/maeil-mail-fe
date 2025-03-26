@@ -4,6 +4,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "passThroughEnv": ["ADMIN_AUTH_SECRET_KEY", "OAUTH_GITHUB_CLIENT_SECRET"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "check-types": {
