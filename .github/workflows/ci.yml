@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - name: Checkout code
@@ -37,3 +34,6 @@ jobs:
           NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL }}
           OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
           ADMIN_AUTH_SECRET_KEY: ${{ secrets.ADMIN_AUTH_SECRET_KEY }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+          TURBO_REMOTE_ONLY: true
