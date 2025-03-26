@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     env:
       NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID }}
       NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI }}
