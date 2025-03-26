@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Check environment variables
+        run: |
+          echo "NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID }}"
+          echo "NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI }}"
+
       - name: Build project
         run: pnpm run build
         env:
