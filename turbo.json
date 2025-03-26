@@ -4,15 +4,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "passThroughEnv": [
-        "NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID",
-        "NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI",
-        "NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL",
-        "NEXT_PUBLIC_MAEIL_MAIL_GA_ID",
-        "NEXT_PUBLIC_MAEIL_WIKI_GA_ID",
-        "OAUTH_GITHUB_CLIENT_SECRET",
-        "ADMIN_AUTH_SECRET_KEY"
-      ],
+      "passThroughEnv": ["OAUTH_GITHUB_CLIENT_SECRET", "ADMIN_AUTH_SECRET_KEY"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "check-types": {
