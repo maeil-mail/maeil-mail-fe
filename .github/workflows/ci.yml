@@ -9,6 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID }}
+      NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI }}
+      NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL }}
+      NEXT_PUBLIC_MAEIL_MAIL_GA_ID: ${{ secrets.NEXT_PUBLIC_MAEIL_MAIL_GA_ID }}
+      NEXT_PUBLIC_MAEIL_WIKI_GA_ID: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_GA_ID }}
+      OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
+      ADMIN_AUTH_SECRET_KEY: ${{ secrets.ADMIN_AUTH_SECRET_KEY }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      TURBO_CACHE: remote:rw
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -33,14 +45,3 @@ jobs:
 
       - name: Build project
         run: pnpm run build
-        env:
-          NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID }}
-          NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI: ${{ secrets.NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI }}
-          NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL }}
-          NEXT_PUBLIC_MAEIL_MAIL_GA_ID: ${{ secrets.NEXT_PUBLIC_MAEIL_MAIL_GA_ID }}
-          NEXT_PUBLIC_MAEIL_WIKI_GA_ID: ${{ secrets.NEXT_PUBLIC_MAEIL_WIKI_GA_ID }}
-          OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
-          ADMIN_AUTH_SECRET_KEY: ${{ secrets.ADMIN_AUTH_SECRET_KEY }}
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-          TURBO_CACHE: remote:rw
