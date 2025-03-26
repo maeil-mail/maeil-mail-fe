@@ -1,14 +1,5 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID",
-    "NEXT_PUBLIC_GITHUB_OAUTH_REDIRECT_URI",
-    "NEXT_PUBLIC_MAEIL_WIKI_ERROR_PAGE_URL",
-    "NEXT_PUBLIC_MAEIL_MAIL_GA_ID",
-    "NEXT_PUBLIC_MAEIL_WIKI_GA_ID",
-    "OAUTH_GITHUB_CLIENT_SECRET",
-    "ADMIN_AUTH_SECRET_KEY"
-  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

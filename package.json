@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.5.0",
   "scripts": {
-    "build": "turbo build"
+    "build": "turbo build --env-mode=loose"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
