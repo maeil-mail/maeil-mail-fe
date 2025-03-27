@@ -1,3 +1,20 @@
 {
-  "extends": "next"
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.base.json"]
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+  },
+  "ignorePatterns": ["node_modules/", "dist/", ".next/", "build/", "*.config.js", "*.config.ts"],
+  "env": {
+    "node": true,
+    "browser": true
+  }
 }

@@ -1,4 +1,6 @@
-node_modules
+**/node_modules
+**/**/dist
+
 .next
 .env
 .DS_Store
@@ -9,3 +11,5 @@ node_modules
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+.turbo

@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@maeil/theme": ["packages/theme/dist"],
+      "@maeil/ui": ["packages/ui/dist"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "noEmit": true,
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.mjs",
+    ".next/types/**/*.ts",
+    "build/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
