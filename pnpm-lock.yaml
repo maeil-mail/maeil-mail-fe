@@ -160,9 +160,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.0
         version: 18.3.5(@types/react@18.3.18)
-      '@typescript-eslint/parser':
-        specifier: ^7.18.0
-        version: 7.18.0(eslint@8.57.1)(typescript@5.8.2)
       eslint:
         specifier: ^8.0.0
         version: 8.57.1
