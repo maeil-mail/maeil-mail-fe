@@ -1,7 +1,6 @@
 {
   "extends": ["../../.eslintrc.json", "next"],
   "parserOptions": {
-    "project": ["tsconfig.json"],
-    "createDefaultProgram": true
+    "project": ["./tsconfig.json"]
   }
 }
