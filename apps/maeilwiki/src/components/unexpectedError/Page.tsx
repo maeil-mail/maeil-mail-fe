@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import Link from 'next/link';
 
 import { Txt, Button } from '@maeil/ui';
