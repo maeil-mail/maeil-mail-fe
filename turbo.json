@@ -15,5 +15,9 @@
       "persistent": true,
       "cache": false
     }
+  },
+  "remoteCache": {
+    "enabled": true,
+    "teamSlug": "parkhanyoungs-projects"
   }
 }
