@@ -29,7 +29,7 @@ export default function NotFoundPage({ Nav }: NotFoundPageProps) {
       <div className={container}>
         <div className={contentWrapper}>
           <h1 className={mainText}>404</h1>
-          <p className={description}>잘못된 경로이거나 삭제된 페이지입니다.</p>
+          <p className={description}>잘못된 경로거나 삭제된 페이지입니다.</p>
           <div className={buttonWrapper}>
             <Button variant="primary" onClick={navigateToHome}>
               홈으로 돌아가기
