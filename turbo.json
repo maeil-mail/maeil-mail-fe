@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["TURBO_TEAM", "TURBO_TOKEN"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -14,5 +15,9 @@
       "persistent": true,
       "cache": false
     }
+  },
+  "remoteCache": {
+    "enabled": true,
+    "teamSlug": "parkhanyoungs-projects"
   }
 }
