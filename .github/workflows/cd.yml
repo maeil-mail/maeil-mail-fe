@@ -29,6 +29,11 @@ jobs:
       - name: Install Turborepo CLI
         run: npm install --global turbo
 
+      - name: Enable and set pnpm version
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.5.0 --activate
+
       - name: Vercel link
         run: vercel link --yes --token=${{ secrets.TURBO_TOKEN }} --project=${{ secrets.VERCEL_PROJECT_NAME }}
 
