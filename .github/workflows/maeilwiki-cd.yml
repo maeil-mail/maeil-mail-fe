@@ -1,4 +1,4 @@
-name: CD
+name: MAEIL-MAIL CD
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
       TURBO_CACHE: remote:rw
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_WIKI }}
 
     steps:
       - name: Checkout
@@ -35,7 +35,7 @@ jobs:
           corepack prepare pnpm@9.5.0 --activate
 
       - name: Vercel link
-        run: vercel link --yes --token=${{ secrets.TURBO_TOKEN }} --project=${{ secrets.VERCEL_PROJECT_NAME }}
+        run: vercel link --yes --token=${{ secrets.TURBO_TOKEN }} --project=${{ secrets.VERCEL_PROJECT_NAME_WIKI }}
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.TURBO_TOKEN }}
