@@ -24,8 +24,8 @@ export default function DescriptionSection() {
           <div className={descriptionSubSection1Left}>
             <MailImage className={mailImage} />
             <div className={mailExampleList}>
-              <p className={mailExample}>Spring MVC의 실행 흐름에 대해 설명해주세요.</p>
-              <p className={mailExample}>브라우저 렌더링 파이프라인에 대해 설명해주세요.</p>
+              <p className={mailExample}>Spring MVC의 실행 흐름에 대해 설명해 주세요.</p>
+              <p className={mailExample}>브라우저 렌더링 파이프라인에 대해 설명해 주세요.</p>
               <p className={mailExample}>• • •</p>
             </div>
           </div>
