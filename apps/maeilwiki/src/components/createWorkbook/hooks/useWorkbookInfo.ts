@@ -13,7 +13,7 @@ export interface WorkbookInfo {
   detail: string;
 }
 
-export type EditWorkbookInfo = <K extends keyof WorkbookInfo>(
+export type UpdateWorkbookInfo = <K extends keyof WorkbookInfo>(
   key: K,
   value: WorkbookInfo[K],
 ) => void;
@@ -25,20 +25,20 @@ type UseWorkbookInfoReturn = [Partial<WorkbookInfo>, FieldUpdaters];
 export const useWorkbookInfo = (): UseWorkbookInfoReturn => {
   const [workbookInfo, setWorkbookInfo] = useState<Partial<WorkbookInfo>>({});
 
-  const editWorkbookInfo: EditWorkbookInfo = (key, value) => {
+  const updateWorkbookInfo: UpdateWorkbookInfo = (key, value) => {
     setWorkbookInfo({ ...workbookInfo, [key]: value });
   };
 
   const fieldUpdaters = {
     title: (value: string) => {
-      editWorkbookInfo('title', value);
+      updateWorkbookInfo('title', value);
     },
 
     difficulty: (value: string) => {
       const parsedValue = Number(value) as Difficulty;
 
       if (AVAILABLE_DIFFICULTIES.includes(parsedValue)) {
-        editWorkbookInfo('difficulty', parsedValue);
+        updateWorkbookInfo('difficulty', parsedValue);
       }
     },
 
@@ -46,12 +46,12 @@ export const useWorkbookInfo = (): UseWorkbookInfoReturn => {
       const typedValue = value as Category;
 
       if (AVAILABLE_CATEGORIES.includes(typedValue)) {
-        editWorkbookInfo('category', typedValue);
+        updateWorkbookInfo('category', typedValue);
       }
     },
 
     detail: (value: string) => {
-      editWorkbookInfo('detail', value);
+      updateWorkbookInfo('detail', value);
     },
   };
 

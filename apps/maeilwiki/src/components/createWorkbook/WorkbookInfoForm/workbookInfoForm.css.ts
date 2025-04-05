@@ -30,6 +30,11 @@ export const workbookTitleInput = style({
   },
 });
 
+export const workbookTitleError = style({
+  color: '#EF4444',
+  marginTop: '1rem',
+});
+
 export const workbookFields = style({
   borderBottom: '1px solid #EBEBEB',
   borderTop: '1px solid #EBEBEB',
@@ -39,6 +44,12 @@ export const workbookFields = style({
 
 export const workbookDifficulty = style({
   marginBottom: '2rem',
+});
+
+export const workbookDifficultyError = style({
+  color: '#EF4444',
+  marginTop: '-0.5rem',
+  marginBottom: '1rem',
 });
 
 export const fieldLabel = style({
@@ -88,6 +99,11 @@ export const categorySelect = recipe({
       false: { color: '#999' },
     },
   },
+});
+
+export const workbookCategoryError = style({
+  color: '#EF4444',
+  marginTop: '1.5rem',
 });
 
 export const defaultOption = style({

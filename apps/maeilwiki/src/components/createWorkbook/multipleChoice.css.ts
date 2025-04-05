@@ -85,6 +85,11 @@ export const questionOptionList = style({
   gap: '1rem',
 });
 
+export const questionErrorMessage = style({
+  color: '#EF4444',
+  marginTop: '1.5rem',
+});
+
 export const questionAnswer = style({
   marginTop: '3rem',
 });
@@ -109,7 +114,7 @@ export const textarea = style({
   borderRadius: '1rem',
   border: 'none',
   scrollPadding: '1rem',
-
+  wordSpacing: '-0.4rem',
   selectors: {
     '&::placeholder': {
       color: '#999999',
@@ -124,15 +129,22 @@ export const questionOption = style({
   alignItems: 'center',
 });
 
-export const optionOrder = style({
-  background: '#CCCCCC',
-  color: '#FCFCFC',
-  width: '2.8rem',
-  height: '2.8rem',
-  textAlign: 'center',
-  lineHeight: '2.8rem',
-  fontSize: '2rem',
-  fontWeight: 500,
+export const optionOrder = recipe({
+  base: {
+    background: '#CCCCCC',
+    color: '#FCFCFC',
+    width: '2.8rem',
+    height: '2.8rem',
+    textAlign: 'center',
+    lineHeight: '2.8rem',
+    fontSize: '2rem',
+    fontWeight: 500,
+  },
+  variants: {
+    isActive: {
+      true: { background: '#00A86B' },
+    },
+  },
 });
 
 export const optionInput = style({
@@ -149,11 +161,18 @@ export const optionInput = style({
   },
 });
 
-export const answerButton = style({
-  border: '1px solid #EBEBEB',
-  padding: '0.8rem 2.1rem',
-  borderRadius: '1.6rem',
-  color: '#999999',
+export const answerButton = recipe({
+  base: {
+    border: '1px solid #EBEBEB',
+    padding: '0.8rem 2.1rem',
+    borderRadius: '1.6rem',
+    color: '#999999',
+  },
+  variants: {
+    isActive: {
+      true: { color: '#00A86B', borderColor: '#00A86B' },
+    },
+  },
 });
 
 // QuestionList

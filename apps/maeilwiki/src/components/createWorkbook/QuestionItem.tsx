@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { MultipleChoice } from './QuestionList';
+import type { MultipleChoice, Option } from './QuestionList';
 import TrashCanIcon from '@/assets/trashCan.svg';
 import {
   answerButton,
@@ -10,6 +10,7 @@ import {
   questionAnswer,
   questionContent,
   questionContentInput,
+  questionErrorMessage,
   questionItemContainer,
   questionItemContent,
   questionItemHeader,
@@ -19,15 +20,26 @@ import {
   textarea,
 } from './multipleChoice.css';
 
+export type UpdateCurrentQuestion = <K extends keyof MultipleChoice>(
+  key: K,
+  value: MultipleChoice[K],
+) => void;
+
+export type UpdateCurrentOption = <K extends keyof Option>(key: K, value: Option[K]) => void;
+
 export interface QuestionItemProps {
   order: number;
   question: MultipleChoice;
+  errorMessage: string | null;
+  updateCurrentQuestion: UpdateCurrentQuestion;
   removeCurrentQuestion: () => void;
 }
 
 export default function QuestionItem({
   order,
   question,
+  errorMessage,
+  updateCurrentQuestion,
   removeCurrentQuestion,
 }: QuestionItemProps) {
   return (
@@ -45,15 +57,29 @@ export default function QuestionItem({
             className={questionContentInput}
             placeholder="문제를 입력해 주세요"
             value={question.title}
-            onChange={() => {}}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              updateCurrentQuestion('title', e.target.value);
+            }}
           />
           <ol className={questionOptionList}>
-            {question.options.map(({ content, isCorrectAnswer }, optionIndex) => {
+            {question.options.map((option, optionIndex) => {
+              const { content, isCorrectAnswer } = option;
+
+              const updateCurrentOption: UpdateCurrentOption = (key, value) => {
+                updateCurrentQuestion(
+                  'options',
+                  question.options.map((option, index) =>
+                    index === optionIndex ? { ...option, [key]: value } : option,
+                  ),
+                );
+              };
+
               return (
                 <li key={`qo-${order}-${optionIndex}`}>
                   <QuestionOption
                     order={optionIndex + 1}
                     value={content}
+                    updateCurrentOption={updateCurrentOption}
                     isActive={isCorrectAnswer}
                   />
                 </li>
@@ -61,11 +87,19 @@ export default function QuestionItem({
             })}
           </ol>
         </div>
+        <div className={questionErrorMessage}>{errorMessage}</div>
         <div className={questionAnswer}>
           <label className={inputLabel}>
             정답 해설 <span className={optionalText}>(선택)</span>
           </label>
-          <textarea placeholder="해설이 필요할 경우 작성해 주세요." className={textarea}></textarea>
+          <textarea
+            placeholder="해설이 필요할 경우 작성해 주세요."
+            className={textarea}
+            value={question.correctAnswerExplanation}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+              updateCurrentQuestion('correctAnswerExplanation', e.target.value)
+            }
+          />
         </div>
       </div>
     </div>
@@ -75,22 +109,35 @@ export default function QuestionItem({
 function QuestionOption({
   order,
   value,
+  updateCurrentOption,
   isActive = false,
 }: {
   order: number;
   value: string;
+  updateCurrentOption: UpdateCurrentOption;
   isActive?: boolean;
 }) {
   return (
     <div className={questionOption}>
-      <div className={optionOrder}>{order}</div>
+      <div className={optionOrder({ isActive })}>{order}</div>
       <input
         className={optionInput}
         placeholder="보기를 입력해 주세요."
         value={value}
-        onChange={() => {}}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          updateCurrentOption('content', e.target.value);
+        }}
       />
-      <button className={answerButton}>정답</button>
+      <button
+        type="button"
+        tabIndex={1}
+        className={answerButton({ isActive })}
+        onClick={() => {
+          updateCurrentOption('isCorrectAnswer', !isActive);
+        }}
+      >
+        정답
+      </button>
     </div>
   );
 }

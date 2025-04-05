@@ -71,7 +71,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
 
         <section className={inputSection}>
           <label className={inputLabel}>
-            보충 설명
+            설명
             <span className={subText}>(선택)</span>
           </label>
           <textarea
