@@ -1,17 +1,6 @@
 import { useState } from 'react';
-
-export const AVAILABLE_DIFFICULTIES = [1, 2, 3, 4, 5] as const;
-export const AVAILABLE_CATEGORIES = ['backend', 'frontend', 'etc'] as const;
-
-export type Difficulty = (typeof AVAILABLE_DIFFICULTIES)[number];
-export type Category = (typeof AVAILABLE_CATEGORIES)[number];
-
-export interface WorkbookInfo {
-  title: string;
-  difficulty: Difficulty;
-  category: Category;
-  detail: string;
-}
+import { AVAILABLE_CATEGORIES, AVAILABLE_DIFFICULTIES } from './useWorkbookInfoValidation';
+import { Category, Difficulty, WorkbookInfo } from '@/common/types/workbook';
 
 export type UpdateWorkbookInfo = <K extends keyof WorkbookInfo>(
   key: K,

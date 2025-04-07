@@ -9,12 +9,13 @@ import {
   workbookTitleError,
 } from './workbookInfoForm.css';
 
-import { FieldUpdaters, WorkbookInfo } from '../hooks/useWorkbookInfo';
+import { FieldUpdaters } from '../hooks/useWorkbookInfo';
 import TitleField from './TitleField';
 import DifficultyField from './DifficultyField';
 import CategoryField from './CategoryField';
 import DetailField from './DetailField';
-import { GetErrorMessage } from '../hooks/useWorkbookValidation';
+import { GetErrorMessage } from '@/common/hooks/useValidation';
+import { WorkbookInfo } from '@/common/types/workbook';
 
 export interface WorkbookInfoFormProps {
   workbookInfo: Partial<WorkbookInfo>;

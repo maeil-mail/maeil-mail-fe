@@ -3,17 +3,7 @@ import QuestionItem, { UpdateCurrentQuestion } from './QuestionItem';
 import { questionList, questionListTitle } from './multipleChoice.css';
 import { UpdateQuestion } from './hooks/useMultipleChoiceQuestions';
 import { GetErrorMessage } from '@/common/hooks/useValidation';
-
-export interface Option {
-  content: string;
-  isCorrectAnswer: boolean;
-}
-
-export interface MultipleChoice {
-  title: string;
-  correctAnswerExplanation?: string;
-  options: Option[];
-}
+import type { MultipleChoice } from '@/common/types/workbook';
 
 export interface QuestionListProps {
   questions: MultipleChoice[];

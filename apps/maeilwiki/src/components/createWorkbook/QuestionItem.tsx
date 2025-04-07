@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { MultipleChoice, Option } from './QuestionList';
+import type { MultipleChoice, Option } from '@/common/types/workbook';
 import TrashCanIcon from '@/assets/trashCan.svg';
 import {
   answerButton,

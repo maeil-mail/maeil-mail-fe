@@ -1,14 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useValidation } from '@/common/hooks/useValidation';
+import { MultipleChoice } from '@/common/types/workbook';
 import { useMemo } from 'react';
 import { z, ZodIssueCode } from 'zod';
 
-const OptionSchema = z.object({
+export const OptionSchema = z.object({
   content: z.string({ required_error: '보기 내용을 입력해 주세요.' }),
   isCorrectAnswer: z.boolean({ required_error: '정답 보기를 선택해 주세요.' }),
 });
 
-const MultipleChoiceSchema = z
+export const MultipleChoiceSchema = z
   .object({
     title: z.string({ required_error: '문제를 입력해 주세요.' }).nonempty('문제를 입력해 주세요.'),
     correctAnswerExplanation: z.string().optional(),
@@ -38,9 +39,6 @@ const MultipleChoiceSchema = z
 const MultipleChoiceArraySchema = z.object({
   questions: z.array(MultipleChoiceSchema),
 });
-
-export type Option = z.infer<typeof OptionSchema>;
-export type MultipleChoice = z.infer<typeof MultipleChoiceSchema>;
 
 export const useMultipleChoiceQuestionsValidation = (questions: Partial<MultipleChoice>[]) => {
   const memoizedQuestions = useMemo(() => ({ questions }), [questions]);

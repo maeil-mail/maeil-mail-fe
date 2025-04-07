@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { categorySelect, defaultOption, fieldLabel } from './workbookInfoForm.css';
-import { Category } from '../hooks/useWorkbookInfo';
+import { Category } from '@/common/types/workbook';
 
 export interface CategoryFieldProps {
   category?: Category;

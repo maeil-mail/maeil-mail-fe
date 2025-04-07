@@ -1,5 +1,5 @@
 import React from 'react';
-import { MultipleChoice } from '../QuestionList';
+import type { MultipleChoice } from '@/common/types/workbook';
 
 export type UpdateQuestion = <K extends keyof MultipleChoice>(
   index: number,

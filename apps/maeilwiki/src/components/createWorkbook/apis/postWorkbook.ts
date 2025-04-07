@@ -1,18 +1,7 @@
 import mainClient from '@/common/apis/client/mainClient';
 import { API_ROUTES } from '@/common/apis/constants/routes';
-
-type Category = 'backend' | 'frontend' | 'etc';
-
-interface Option {
-  content: string;
-  isCorrectAnswer: boolean;
-}
-
-interface Question {
-  title: string;
-  correctAnswerExplanation?: string;
-  options: Option[];
-}
+import { Category } from '@/common/types/workbook';
+import type { MultipleChoice } from '@/common/types/workbook';
 
 interface WorkbookBody {
   workbookTitle: string;
@@ -20,12 +9,13 @@ interface WorkbookBody {
   category: Category;
   workbookDetail?: string;
   timeLimit?: number;
-  questions: Question[];
+  questions: MultipleChoice[];
 }
 
 interface PostWorkbookResponse {
   data: { id: number };
 }
+
 export const postWorkbook = async (body: WorkbookBody) => {
   const res = await mainClient.post<PostWorkbookResponse>(API_ROUTES.workbook, body);
 

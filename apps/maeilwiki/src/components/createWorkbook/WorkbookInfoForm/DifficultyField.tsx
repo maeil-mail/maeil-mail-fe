@@ -1,5 +1,5 @@
 import React from 'react';
-import { Difficulty } from '../hooks/useWorkbookInfo';
+import { Difficulty } from '@/common/types/workbook';
 import { fieldLabel, starIcon, starList, workbookDifficulty } from './workbookInfoForm.css';
 import StarIcon from '@/assets/star.svg';
 
