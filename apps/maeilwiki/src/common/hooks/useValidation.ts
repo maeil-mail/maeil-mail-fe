@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { z, ZodIssue, ZodObject } from 'zod';
 
@@ -7,8 +8,8 @@ export type GetErrorMessage = (...paths: (string | number)[]) => ErrorMessage | 
 
 interface UseValidationReturn {
   errors: z.ZodIssue[];
-  getErrorMessage: GetErrorMessage;
   validate: () => boolean;
+  getErrorMessage: GetErrorMessage;
 }
 
 export const useValidation = <T extends Record<string, any>>(
@@ -16,14 +17,6 @@ export const useValidation = <T extends Record<string, any>>(
   values: Record<string, any>,
 ): UseValidationReturn => {
   const [errors, setErrors] = useState<ZodIssue[]>([]);
-
-  const getErrorMessage = (...paths: (string | number)[]) => {
-    return (
-      errors.find((error) => {
-        return paths.every((path) => error.path.includes(path));
-      })?.message || null
-    );
-  };
 
   const validate = () => {
     const result = schema.safeParse(values);
@@ -51,9 +44,17 @@ export const useValidation = <T extends Record<string, any>>(
     setErrors(error?.errors || []);
   }, [values]);
 
+  const getErrorMessage = (...paths: (string | number)[]) => {
+    return (
+      errors.find((error) => {
+        return paths.every((path) => error.path.includes(path));
+      })?.message || null
+    );
+  };
+
   return {
     errors,
-    getErrorMessage,
     validate,
+    getErrorMessage,
   };
 };
