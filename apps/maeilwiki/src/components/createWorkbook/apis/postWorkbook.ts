@@ -1,4 +1,5 @@
 import mainClient from '@/common/apis/client/mainClient';
+import { API_ROUTES } from '@/common/apis/constants/routes';
 
 type Category = 'backend' | 'frontend' | 'etc';
 
@@ -22,7 +23,13 @@ interface WorkbookBody {
   questions: Question[];
 }
 
+interface PostWorkbookResponse {
+  data: { id: number };
+}
 export const postWorkbook = async (body: WorkbookBody) => {
-  const res = await mainClient.post('/wiki/multiple-choice', body);
-  console.log('res', res);
+  const res = await mainClient.post<PostWorkbookResponse>(API_ROUTES.workbook, body);
+
+  const workbookId = res.data.id;
+
+  return workbookId;
 };

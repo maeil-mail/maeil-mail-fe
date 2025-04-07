@@ -19,7 +19,7 @@ import {
   questionAddButton,
 } from '@/components/createWorkbook/multipleChoice.css';
 import PlusIcon from '@/assets/plus.svg';
-import { postWorkbook } from '@/components/createWorkbook/apis/postWorkbook';
+import { usePostWorkbook } from '@/components/createWorkbook/hooks/usePostWorkbook';
 
 export default function Page() {
   const [workbookInfo, fieldUpdaters] = useWorkbookInfo();
@@ -28,7 +28,9 @@ export default function Page() {
   const { questions, addQuestion, updateQuestion, removeQuestion } = useMultipleChoiceQuestions();
   const questionsValidation = useMultipleChoiceQuestionsValidation(questions);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const { mutate: postWorkbook } = usePostWorkbook();
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isWorkbookInfoValid = workbookInfoValidation.validate();
     const isQuestionsValid = questionsValidation.validate();
@@ -42,7 +44,7 @@ export default function Page() {
         return;
       }
 
-      await postWorkbook({
+      postWorkbook({
         workbookTitle: title,
         difficultyLevel: difficulty,
         category: category,
