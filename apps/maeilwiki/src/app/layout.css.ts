@@ -9,3 +9,7 @@ export const wrapper = style({
 export const main = style({
   flex: 1,
 });
+
+export const content = style({
+  background: '#FCFCFC',
+});

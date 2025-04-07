@@ -11,16 +11,15 @@ import { myStyle } from '@maeil/theme';
 import { Footer } from '@maeil/ui';
 
 import Providers from './providers';
-import MaeilWikiNav from '@/common/components/MaeilWikiNav';
 import {
   MAEIL_WIKI_GOOGLE_FORM_URL,
   MAEIL_WIKI_INTRODUCTION_URL,
 } from '@/common/constants/externalUrl';
-import { main, wrapper } from './layout.css';
+import { content, main, wrapper } from './layout.css';
 
 export const metadata: Metadata = {
-  title: '매일위키 - 기술 면접 질문 커뮤니티',
-  description: '질문 하나로 지식의 공유가 시작돼요!',
+  title: '매일위키 - 기술 면접 커뮤니티',
+  description: '함께 기술 면접의 어려움을 극복해봐요!',
   openGraph: {
     url: 'https://wiki.maeil-mail.kr',
     siteName: 'maeil-wiki',
@@ -64,8 +63,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Providers>
             <main className={main}>
               <div>
-                <MaeilWikiNav />
-                {children}
+                <div className={content}>{children}</div>
                 <Footer
                   serviceName="매일위키"
                   introduceUrl={MAEIL_WIKI_INTRODUCTION_URL}

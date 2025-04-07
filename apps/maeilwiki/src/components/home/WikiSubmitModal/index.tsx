@@ -63,7 +63,7 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
           </label>
           <input
             className={questionInput}
-            placeholder="HTTP에 대해 설명해주세요."
+            placeholder="HTTP에 대해 설명해 주세요."
             value={question}
             onChange={onChangeQuestion}
           />
@@ -71,13 +71,13 @@ export default function WikiSubmitModal({ isOpen, onClose }: WikiSubmitModalProp
 
         <section className={inputSection}>
           <label className={inputLabel}>
-            보충 설명
+            설명
             <span className={subText}>(선택)</span>
           </label>
           <textarea
             className={questionDetailTextarea}
             spellCheck="false"
-            placeholder="설명 시 HTTP 통신의 구체적인 흐름을 포함하여 설명해주세요."
+            placeholder="설명 시 HTTP 통신의 구체적인 흐름을 포함하여 설명해 주세요."
             onChange={onChangeQuestionDetail}
             value={questionDetail}
           />

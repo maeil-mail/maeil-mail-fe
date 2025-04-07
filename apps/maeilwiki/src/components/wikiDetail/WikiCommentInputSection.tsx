@@ -39,7 +39,7 @@ export default function WikiCommentInputSection({ wikiId }: WikiCommentInputSect
 
   const onClickSubmit = () => {
     if (comment.length === 0) {
-      alert('답변을 작성해주세요.');
+      alert('답변을 작성해 주세요.');
       return;
     }
 
