@@ -115,7 +115,11 @@ function CommentOwnerProfile({ owner }: { owner: Member }) {
   return (
     <a href={owner.github} className={wikiCommentOwnerProfileLink} rel="noopener noreferrer">
       <div className={wikiCommentOwnerProfile}>
-        <img className={wikiCommentOwnerProfileImage} src={owner.profileImage} />
+        <img
+          className={wikiCommentOwnerProfileImage}
+          src={owner.profileImage}
+          alt={`${owner.name} 이미지`}
+        />
         <p className={wikiCommentOwnerName}>{owner.name}</p>
       </div>
     </a>

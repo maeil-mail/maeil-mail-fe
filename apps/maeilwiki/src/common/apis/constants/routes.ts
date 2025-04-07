@@ -3,4 +3,5 @@ export const API_ROUTES = {
   member: '/member',
   memberProfile: '/member/profile',
   refresh: '/member/refresh',
+  workbook: '/wiki/multiple-choice',
 } as const;

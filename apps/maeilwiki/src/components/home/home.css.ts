@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css';
 
 // HomePage
 export const homeContainer = style({
-  background: '#FCFCFC',
   paddingBottom: '8.4rem',
 });
 
