@@ -11,7 +11,6 @@ import { myStyle } from '@maeil/theme';
 import { Footer } from '@maeil/ui';
 
 import Providers from './providers';
-import MaeilWikiNav from '@/common/components/MaeilWikiNav';
 import {
   MAEIL_WIKI_GOOGLE_FORM_URL,
   MAEIL_WIKI_INTRODUCTION_URL,
@@ -64,7 +63,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Providers>
             <main className={main}>
               <div>
-                {/* <MaeilWikiNav /> */}
                 <div className={content}>{children}</div>
                 <Footer
                   serviceName="매일위키"
