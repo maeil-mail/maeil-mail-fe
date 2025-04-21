@@ -9,3 +9,14 @@ export interface Question {
   content: string;
   category: QuestionCategoryEN;
 }
+
+export interface QuestionDetail extends Question {
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface MyQuestion {
+  id: number;
+  title: string;
+  category: 'frontend' | 'backend';
+}
