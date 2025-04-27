@@ -4,12 +4,7 @@ import * as React from 'react';
 import MyQuestionItem from './QuestionItem';
 import { emptyCase, questionListContainer } from './questionList.css';
 import Link from 'next/link';
-
-export interface MyQuestion {
-  id: number;
-  category: 'frontend' | 'backend';
-  title: string;
-}
+import { MyQuestion } from '@/common/types/question';
 
 export interface QuestionListProps {
   questions: MyQuestion[];

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { MyQuestion } from './QuestionList';
+import { MyQuestion } from '@/common/types/question';
 import RightArrow from '@/assets/icons/rightArrow.svg';
 import {
   animatedHover,

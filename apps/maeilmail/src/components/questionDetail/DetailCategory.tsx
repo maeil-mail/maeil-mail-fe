@@ -1,7 +1,8 @@
 import { textWrapper, categoryHighlight } from './questionDetail.css';
+import { QuestionCategoryENWithOutAll } from '@/common/types/question';
 
 interface DetailCategoryProps {
-  category: 'frontend' | 'backend';
+  category: QuestionCategoryENWithOutAll;
 }
 
 export default function DetailCategory({ category }: DetailCategoryProps) {
