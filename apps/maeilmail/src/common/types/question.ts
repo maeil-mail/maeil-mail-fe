@@ -2,6 +2,7 @@ import type { QUESTION_CATEGORY } from '../constants/questionCategory';
 
 export type QuestionCategoryKO = keyof typeof QUESTION_CATEGORY;
 export type QuestionCategoryEN = (typeof QUESTION_CATEGORY)[QuestionCategoryKO];
+export type QuestionCategoryENWithOutAll = Exclude<QuestionCategoryEN, 'all'>;
 
 export interface Question {
   id: number;
@@ -18,5 +19,5 @@ export interface QuestionDetail extends Question {
 export interface MyQuestion {
   id: number;
   title: string;
-  category: 'frontend' | 'backend';
+  category: QuestionCategoryENWithOutAll;
 }
