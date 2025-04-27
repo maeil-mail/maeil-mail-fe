@@ -1,12 +1,13 @@
 import mainClient from '@/common/apis/client/mainClient';
 import { pathGenerator } from '@/common/apis/constants/routes';
+import { MailFrequency } from '@/common/types/mail';
 
-interface MailFrequency {
-  frequency: 'daily' | 'weekly';
+interface GetMailFrequencyResponse {
+  frequency: MailFrequency;
 }
 
 export const getMailFrequency = async (email: string) => {
-  const data = await mainClient.get<MailFrequency>(pathGenerator.myMailFrequency(email));
+  const data = await mainClient.get<GetMailFrequencyResponse>(pathGenerator.myMailFrequency(email));
 
   return data;
 };
