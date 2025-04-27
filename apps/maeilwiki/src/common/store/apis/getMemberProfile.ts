@@ -7,8 +7,8 @@ export interface MemberProfile {
   profileImage: string;
 }
 
-export const getMemberProfile = async (): Promise<MemberProfile> => {
-  const data = await mainClient.get(API_ROUTES.memberProfile);
+export const getMemberProfile = async () => {
+  const data = await mainClient.get<MemberProfile>(API_ROUTES.memberProfile);
 
   return data;
 };
