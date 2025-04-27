@@ -2,7 +2,7 @@ import mainClient from '@/common/apis/client/mainClient';
 import { pathGenerator } from '@/common/apis/constants/routes';
 import { MyQuestion, QuestionCategoryEN } from '@/common/types/question';
 
-interface MyQuestionsResponse {
+interface GetMyQuestionsResponse {
   totalPage: number;
   isLastPage: boolean;
   data: MyQuestion[];
@@ -14,7 +14,7 @@ export const getMyQuestions = async (
   page: number = 1,
   category: QuestionCategoryEN,
 ) => {
-  const data = await mainClient.get<MyQuestionsResponse>(
+  const data = await mainClient.get<GetMyQuestionsResponse>(
     pathGenerator.myQuestions(email, page - 1, category),
   );
 
