@@ -8,7 +8,7 @@ export interface Question {
   id: number;
   title: string;
   content: string;
-  category: QuestionCategoryEN;
+  category: QuestionCategoryENWithOutAll;
 }
 
 export interface QuestionDetail extends Question {
