@@ -7,17 +7,17 @@ import {
   WIKI_CATEGORY_TAB_OPTION_KO,
 } from '@/common/constants/wikiCategory';
 import { WikiCategoryTabOption } from '@/common/types/wiki';
-import { wikiCategoryTab, wikiCategoryTabs } from './wikiListTabBar.css';
+import { wikiCategoryTab, wikiCategoryTabs } from './categoryFilterTabBar.css';
 import { recordGAEvent } from '@/common/utils/recordGAEvent';
 import { GA_EVENT } from '@/common/constants/gaEvent';
 
-interface WikiCategoryTabsProps {
+interface CategoryFilterTabsProps {
   selectedOption: WikiCategoryTabOption;
 }
 
 const categories = Object.values(WIKI_CATEGORY);
 
-export default function WikiCategoryTabs({ selectedOption }: WikiCategoryTabsProps) {
+export default function CategoryFilterTabs({ selectedOption }: CategoryFilterTabsProps) {
   const onClickCategoryTabs = () => {
     recordGAEvent(GA_EVENT.homeClickCategoryTabs);
   };

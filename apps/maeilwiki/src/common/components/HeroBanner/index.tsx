@@ -6,27 +6,31 @@ import localFont from 'next/font/local';
 import {
   heroBackgroundImage,
   heroMainTitle,
-  heroSection,
+  heroBanner,
   heroSubTitle,
   heroTypo,
-} from './home.css';
+} from './heroBanner.css';
 import { MAEIL_WIKI_INTRODUCTION_URL } from '@/common/constants/externalUrl';
 import { recordGAEvent } from '@/common/utils/recordGAEvent';
 import { GA_EVENT } from '@/common/constants/gaEvent';
 
 const moneygraphyRounded = localFont({
-  src: '../../fonts/MoneygraphyRounded.woff2',
+  src: '../../../fonts/MoneygraphyRounded.woff2',
   display: 'swap',
 });
 
-export default function HeroSection() {
+interface HeroBannerProps {
+  subtitle?: string;
+}
+
+export default function HeroBanner({ subtitle }: HeroBannerProps) {
   const onClickHero = () => {
     recordGAEvent(GA_EVENT.homeClickBanner);
   };
 
   return (
     <a href={MAEIL_WIKI_INTRODUCTION_URL} rel="noopener noreferrer" onClick={onClickHero}>
-      <section className={heroSection}>
+      <section className={heroBanner}>
         <picture>
           <source
             srcSet={SmallMainBannerImage.src}
@@ -37,9 +41,9 @@ export default function HeroSection() {
         </picture>
         <div className={heroTypo}>
           <p className={`${moneygraphyRounded.className} ${heroMainTitle}`}>
-            우리가 함께 만들어가는 기술 면접 위키
+            우리가 함께 만들어가는 매일위키
           </p>
-          <p className={heroSubTitle}>출 퇴근길 떠올린 질문 하나로 지식 나눔이 시작돼요!</p>
+          <p className={heroSubTitle}>{subtitle}</p>
         </div>
       </section>
     </a>

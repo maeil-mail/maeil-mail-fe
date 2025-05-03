@@ -4,12 +4,12 @@ import { WIKI_CATEGORY_TAB_OPTION } from '@/common/constants/wikiCategory';
 import { WikiCategoryTabOption } from '@/common/types/wiki';
 import { useSearchParams } from 'next/navigation';
 
-interface UseWikiListParamsReturn {
+interface UseWikiParamsReturn {
   category: WikiCategoryTabOption;
   page: number;
 }
 
-export const useWikiListParams = (): UseWikiListParamsReturn => {
+export const useWikiParams = (): UseWikiParamsReturn => {
   const searchParams = useSearchParams();
 
   const rawCategory = searchParams?.get('category');
