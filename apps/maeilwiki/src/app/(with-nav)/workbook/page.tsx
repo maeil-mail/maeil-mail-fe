@@ -10,6 +10,14 @@ import { useWikiParams } from '@/components/home/hooks/useWikiParams';
 import WorkbookListSkeleton from '@/components/workbookList/WorkbookListSkeleton';
 
 export default function Page() {
+  return (
+    <Suspense>
+      <WorkbookListPage />
+    </Suspense>
+  );
+}
+
+function WorkbookListPage() {
   const { category, page } = useWikiParams();
 
   return (
