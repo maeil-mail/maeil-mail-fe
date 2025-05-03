@@ -1,17 +1,17 @@
 'use client';
 
 import type { WikiCategoryTabOption } from '@/common/types/wiki';
-import WikiCategoryTabs from './categoryFilterTabBar';
-import { wikiListTabBar } from './categoryFilterTabBar';
+import CategoryFilterTabs from './CategoryFilterTabs';
+import { wikiListTabBar } from './categoryFilterTabBar.css';
 
-interface WikiListTabBar {
+interface CategoryFilterTabBarProps {
   selectedOption: WikiCategoryTabOption;
 }
 
-export default function WikiListTabBar({ selectedOption }: WikiListTabBar) {
+export default function CategoryFilterTabBar({ selectedOption }: CategoryFilterTabBarProps) {
   return (
     <div className={wikiListTabBar}>
-      <WikiCategoryTabs selectedOption={selectedOption} />
+      <CategoryFilterTabs selectedOption={selectedOption} />
     </div>
   );
 }
