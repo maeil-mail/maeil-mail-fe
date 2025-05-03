@@ -8,7 +8,7 @@ export const calculateElapsedTime = (date: string): string => {
   const startYear = start.getFullYear();
 
   if (currentYear !== startYear) {
-    return start.toLocaleDateString();
+    return start.toLocaleDateString('ko-KR').slice(0, -1);
   }
 
   if (seconds < 60) {

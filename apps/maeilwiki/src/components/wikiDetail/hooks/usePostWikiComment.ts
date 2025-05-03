@@ -1,12 +1,12 @@
 'use client';
 
 import { useMutation } from '@tanstack/react-query';
-import { postWikiComment, postWikiCommentBody } from '../apis/postWikiComment';
+import { postWikiComment, PostWikiCommentBody } from '../apis/postWikiComment';
 import { HTTPError } from '@/common/apis/client/APIClient';
 
 export const usePostWikiComment = (wikiId: number) => {
   return useMutation({
-    mutationFn: async (body: postWikiCommentBody) => {
+    mutationFn: async (body: PostWikiCommentBody) => {
       await postWikiComment(wikiId, body);
     },
     onSuccess: () => {
