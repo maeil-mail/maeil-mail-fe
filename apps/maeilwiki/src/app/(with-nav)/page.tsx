@@ -1,16 +1,17 @@
 'use client';
 
 import { Suspense } from 'react';
-import { AuthProvider } from '@/common/store/authContext';
 import WikiList from '@/components/home/WikiList';
 import WikiWriteButton from '@/components/home/WikiWriteButton';
 import WikiSubmitModal from '@/components/home/WikiSubmitModal';
 import WikiListSkeleton from '@/components/home/WikiList/WikiListSkeleton';
-import { useWikiParams } from '@/components/home/hooks/useWikiParams';
-import { homeContainer, homeContent } from '@/components/home/home.css';
-import useModal from '@/common/hooks/useModal';
-import HeroBanner from '@/common/components/HeroBanner';
 import CategoryFilterTabBar from '@/common/components/CategoryFilterTabBar';
+import HeroBanner from '@/common/components/HeroBanner';
+import { homeContainer, homeContent } from '@/components/home/home.css';
+
+import { AuthProvider } from '@/common/store/authContext';
+import { useWikiParams } from '@/components/home/hooks/useWikiParams';
+import useModal from '@/common/hooks/useModal';
 
 export default function Page() {
   return (

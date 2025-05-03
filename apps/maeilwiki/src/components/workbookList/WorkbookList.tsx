@@ -1,10 +1,10 @@
 import * as React from 'react';
+import Link from 'next/link';
 import WorkbookItem from './WorkbookItem';
+import Paginator from '@/common/components/Paginator';
+import { useWorkbookList } from './hooks/useWorkbookList';
 import { workBookItemWrapper, workbookListContainer } from './workbookList.css';
 import { WikiCategoryTabOption } from '@/common/types/wiki';
-import Link from 'next/link';
-import { useWorkbookList } from './hooks/useWorkbookList';
-import Paginator from '@/common/components/Paginator';
 
 export interface WorkbookListProps {
   category: WikiCategoryTabOption;

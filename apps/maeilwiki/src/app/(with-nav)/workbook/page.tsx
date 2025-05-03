@@ -4,10 +4,10 @@ import * as React from 'react';
 import { Suspense } from 'react';
 import HeroBanner from '@/common/components/HeroBanner';
 import CategoryFilterTabBar from '@/common/components/CategoryFilterTabBar';
-import { workbookListPageContainer } from '@/components/workbookList/workbookList.css';
 import WorkbookList from '@/components/workbookList/WorkbookList';
-import { useWikiParams } from '@/components/home/hooks/useWikiParams';
 import WorkbookListSkeleton from '@/components/workbookList/WorkbookListSkeleton';
+import { workbookListPageContainer } from '@/components/workbookList/workbookList.css';
+import { useWikiParams } from '@/components/home/hooks/useWikiParams';
 
 export default function Page() {
   return (

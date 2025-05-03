@@ -1,7 +1,7 @@
 'use client';
 
-import type { WikiCategoryTabOption } from '@/common/types/wiki';
 import CategoryFilterTabs from './CategoryFilterTabs';
+import type { WikiCategoryTabOption } from '@/common/types/wiki';
 import { wikiListTabBar } from './categoryFilterTabBar.css';
 
 interface CategoryFilterTabBarProps {
