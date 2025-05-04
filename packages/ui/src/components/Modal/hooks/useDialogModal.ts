@@ -1,5 +1,5 @@
 import { usePreventScroll } from './usePreventScroll';
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
 
 interface UseModalDialogReturn {
   dialogRef: RefObject<HTMLDialogElement>;
@@ -16,16 +16,22 @@ export const useDialogModal = (
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [targetContainer, setTargetContainer] = useState<HTMLElement>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTargetContainer(document.getElementById('modal-root') as HTMLElement);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isOpen) {
-      dialogRef.current?.showModal();
+      setTimeout(() => {
+        dialogRef.current?.showModal();
+      });
     } else {
       dialogRef.current?.close();
     }
+
+    return () => {
+      dialogRef.current?.close();
+    };
   }, [isOpen]);
 
   const onClickDialog = (e: React.MouseEvent<HTMLDialogElement>) => {
