@@ -1,11 +1,9 @@
 'use client';
 
-import { Button, Modal } from '@maeil/ui';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { Button } from '@maeil/ui';
+import DifficultyIndicator from '@/common/components/DifficultyIndicator';
 import {
-  closeIcon,
   solvedCountTag,
-  workbookDetailModalContainer,
   workbookDetailText,
   workbookInfo,
   workbookInfoField,
@@ -13,9 +11,6 @@ import {
   workbookInfoValue,
   workbookTitleText,
 } from './workbookDetail.css';
-import CloseIcon from '@/assets/closeIcon.svg';
-import DifficultyIndicator from '../workbookList/DifficultyIndicator';
-import { useEffect } from 'react';
 
 export interface WorkbookDetailContentProps {}
 
@@ -38,8 +33,6 @@ const MOCK = {
 };
 
 export default function WorkbookDetailContent(props: WorkbookDetailContentProps) {
-  const router = useRouter();
-
   return (
     <div>
       <div className={solvedCountTag}>총 {MOCK.solvedCount}명이 풀어봤어요!</div>

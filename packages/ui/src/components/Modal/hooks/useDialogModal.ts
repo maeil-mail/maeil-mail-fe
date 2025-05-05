@@ -1,5 +1,5 @@
 import { usePreventScroll } from './usePreventScroll';
-import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
+import { useLayoutEffect, useRef, useState, type RefObject } from 'react';
 
 interface UseModalDialogReturn {
   dialogRef: RefObject<HTMLDialogElement>;

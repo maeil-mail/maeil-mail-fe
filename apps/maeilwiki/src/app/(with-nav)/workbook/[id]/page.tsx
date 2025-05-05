@@ -1,17 +1,14 @@
 import * as React from 'react';
 import WorkbookDetailContent from '@/components/workbookDetail/WorkbookDetailContent';
+import {
+  workbookDetailPageContainer,
+  workbookDetailPageWrapper,
+} from '@/components/workbookDetail/workbookDetail.css';
 
 export default function Page() {
   return (
-    <div style={{ padding: '0 2rem' }}>
-      <div
-        style={{
-          padding: '4rem 0 8rem 0',
-          margin: '0 auto',
-          width: '100%',
-          maxWidth: '110rem',
-        }}
-      >
+    <div className={workbookDetailPageContainer}>
+      <div className={workbookDetailPageWrapper}>
         <WorkbookDetailContent />
       </div>
     </div>

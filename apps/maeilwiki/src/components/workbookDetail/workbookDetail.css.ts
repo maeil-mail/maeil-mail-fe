@@ -1,5 +1,19 @@
 import { style } from '@vanilla-extract/css';
 
+// workbookDetailPage
+export const workbookDetailPageContainer = style({
+  padding: '0 2rem',
+});
+
+export const workbookDetailPageWrapper = style({
+  padding: '4rem 0 8rem 0',
+  margin: '0 auto',
+  width: '100%',
+  maxWidth: '110rem',
+});
+
+// WorkbookDetailModal
+
 export const workbookDetailModalContainer = style({
   width: '64rem',
   padding: '3.45rem 4rem',
@@ -11,6 +25,17 @@ export const workbookDetailModalContainer = style({
   },
 });
 
+export const closeIcon = style({
+  width: '1.5rem',
+  position: 'absolute',
+  top: 34.5,
+  right: 40,
+  cursor: 'pointer',
+  margin: '0.5rem',
+});
+
+// WorkbookDetailContent
+
 export const solvedCountTag = style({
   width: 'fit-content',
   color: '#00A86B',
@@ -20,15 +45,6 @@ export const solvedCountTag = style({
   lineHeight: 1.5,
   padding: '0.4rem 0.8rem',
   marginBottom: '2rem',
-});
-
-export const closeIcon = style({
-  width: '1.5rem',
-  position: 'absolute',
-  top: 34.5,
-  right: 40,
-  cursor: 'pointer',
-  margin: '0.5rem',
 });
 
 export const workbookTitleText = style({

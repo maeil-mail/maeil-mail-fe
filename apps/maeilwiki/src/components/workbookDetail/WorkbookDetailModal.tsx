@@ -1,21 +1,9 @@
 'use client';
 
-import { Button, Modal } from '@maeil/ui';
-import { useRouter, useSearchParams } from 'next/navigation';
-import {
-  closeIcon,
-  solvedCountTag,
-  workbookDetailModalContainer,
-  workbookDetailText,
-  workbookInfo,
-  workbookInfoField,
-  workbookInfoLine,
-  workbookInfoValue,
-  workbookTitleText,
-} from './workbookDetail.css';
+import { Modal } from '@maeil/ui';
+import { useRouter } from 'next/navigation';
+import { closeIcon, workbookDetailModalContainer } from './workbookDetail.css';
 import CloseIcon from '@/assets/closeIcon.svg';
-import DifficultyIndicator from '../workbookList/DifficultyIndicator';
-import { useEffect } from 'react';
 import WorkbookDetailContent from './WorkbookDetailContent';
 
 export interface WorkbookDetailModalProps {}

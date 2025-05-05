@@ -359,4 +359,4 @@ export const commentSubmitButtonWrapper = style({
   },
 });
 
-export const wikiCommentInputButton = style({});
+export const wikiCommentInputButton = style({ padding: '1rem' });

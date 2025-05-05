@@ -82,7 +82,6 @@ export default function WikiCommentInputSection({ wikiId }: WikiCommentInputSect
               variant="primary"
               onClick={onClickSubmit}
               isPending={isPending}
-              style={{ padding: '1rem' }}
             >
               작성
             </Button>
