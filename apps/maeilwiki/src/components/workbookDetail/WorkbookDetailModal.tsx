@@ -1,33 +1,20 @@
 'use client';
 
 import { Modal } from '@maeil/ui';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { closeIcon, workbookDetailModalContainer } from './workbookDetail.css';
 import CloseIcon from '@/assets/closeIcon.svg';
 import WorkbookDetailContent from './WorkbookDetailContent';
+import { useWorkbookDetail } from './hooks/useWorkbookDetail';
 
 export interface WorkbookDetailModalProps {}
 
-const MOCK = {
-  workbookTitle:
-    '자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구',
-  difficultyLevel: 3,
-  category: 'backend',
-  workbookDetail: '자바스크립트 문제집입니다.',
-  owner: {
-    id: 2,
-    profileImage: 'string',
-    name: '박한영(Ryan)',
-    github: 'string',
-  },
-  createdAt: '2025-05-04',
-  timeLimit: 15,
-  questionCount: 3,
-  solvedCount: 345,
-};
-
-export default function WorkbookDetailModal(props: WorkbookDetailModalProps) {
+export default function WorkbookDetailModal() {
   const router = useRouter();
+
+  const { id } = useParams<{ id: string }>();
+
+  const { data } = useWorkbookDetail(Number(id));
 
   const closeModal = () => {
     router.back();
@@ -36,7 +23,7 @@ export default function WorkbookDetailModal(props: WorkbookDetailModalProps) {
   return (
     <Modal contentClassName={workbookDetailModalContainer} isOpen={true} onClose={closeModal}>
       <CloseIcon role="button" alt="모달 닫기" onClick={closeModal} className={closeIcon} />
-      <WorkbookDetailContent />
+      <WorkbookDetailContent workbook={data} />
     </Modal>
   );
 }

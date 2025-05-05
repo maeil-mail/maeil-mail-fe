@@ -20,59 +20,60 @@ import {
 import ShareIcon from '@/assets/share.svg';
 import { shareCurrentUrl } from '@/common/utils/shareCurrentUrl';
 import { calculateElapsedTime } from '@/common/utils/calculateElapsedTime';
+import { WorkbookDetailItem } from './apis/getWorkbookDetail';
 
-const MOCK = {
-  workbookTitle:
-    '자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구 자바스크립트 문제집 어쩌구',
-  difficultyLevel: 3,
-  category: 'backend',
-  workbookDetail:
-    '자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다. 자바스크립트 문제집입니다.',
-  owner: {
-    id: 2,
-    profileImage: 'string',
-    name: '박한영(Ryan)',
-    github: 'string',
-  },
-  createdAt: '2025-05-04',
-  timeLimit: 15,
-  questionCount: 3,
-  solvedCount: 345,
-};
+export interface WorkbookDetailContentProps {
+  workbook: WorkbookDetailItem;
+}
 
-export interface WorkbookDetailContentProps {}
+export default function WorkbookDetailContent({ workbook }: WorkbookDetailContentProps) {
+  const {
+    workbookTitle,
+    workbookDetail,
+    difficultyLevel,
+    questionCount,
+    timeLimit,
+    owner,
+    createdAt,
+    solvedCount,
+  } = workbook;
 
-export default function WorkbookDetailContent(props: WorkbookDetailContentProps) {
   const onClickSolve = () => {
     alert('곧 출시될 기능입니다. 출시 후 별도 공지 메일을 드릴 예정입니다.');
   };
 
   return (
     <div>
-      <div className={solvedCountTag}>총 {MOCK.solvedCount}회 시도되었어요!</div>
-      <h1 className={workbookTitleText}>{MOCK.workbookTitle}</h1>
-      <p className={workbookDetailText}>{MOCK.workbookDetail}</p>
+      <div className={solvedCountTag}>
+        {solvedCount > 0
+          ? `총 ${solvedCount}회 시도된 문제집이에요!`
+          : '아직 아무도 풀지 못한 문제집이에요!'}
+      </div>
+      <h1 className={workbookTitleText}>{workbookTitle}</h1>
+      <p className={workbookDetailText}>{workbookDetail}</p>
       <section className={workbookInfo}>
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>난이도</div>
-          <DifficultyIndicator difficulty={MOCK.difficultyLevel} />
+          <DifficultyIndicator difficulty={difficultyLevel} />
         </div>
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>문항 수</div>
-          <div className={workbookInfoValue}>{MOCK.questionCount}문항</div>
-        </div>
+          <div className={workbookInfoValue}>{questionCount}문항</div>
+        </div>{' '}
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>제한시간</div>
-          <div className={workbookInfoValue}>{MOCK.timeLimit}분</div>
+          <div className={workbookInfoValue}>{timeLimit > 0 ? `${timeLimit}분` : '무제한'}</div>
         </div>
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>출제자</div>
-          <div className={workbookInfoValue}>{MOCK.owner.name}</div>
+          <a href={owner.github} rel="noopener noreferrer">
+            <div className={workbookInfoValue}>{owner.name}</div>
+          </a>
         </div>
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>출제일</div>
           <div className={workbookInfoValue} suppressHydrationWarning>
-            {calculateElapsedTime(MOCK.createdAt)}
+            {calculateElapsedTime(createdAt)}
           </div>
         </div>
       </section>
