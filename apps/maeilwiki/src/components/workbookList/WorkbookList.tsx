@@ -21,7 +21,13 @@ export default function WorkbookList({ category, page }: WorkbookListProps) {
       <ol className={workbookListContainer}>
         {workbookList.map((workbook) => (
           <li className={workBookItemWrapper} key={workbook.id}>
-            <Link href={`workbook/${workbook.id}`}>
+            <Link
+              scroll={false}
+              href={{
+                pathname: `workbook/${workbook.id}`,
+                query: { category, page },
+              }}
+            >
               <WorkbookItem workbook={workbook} />
             </Link>
           </li>

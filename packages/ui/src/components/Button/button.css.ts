@@ -8,6 +8,7 @@ export const buttonStyle = styleVariants({
   default: { background: 'none', color: text1 },
   border: { background: 'none', border: `0.1rem solid ${borderColor1}`, color: text1 },
   primary: { background: primary, color: 'white' },
+  light: { background: '#E1F8F1', color: '#00A86B' },
 });
 
 export const baseButtonStyle = style({

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import StarIcon from '@/assets/star.svg';
+import { starIcon, starIconList } from './difficultyIndicator.css';
 
 export interface DifficultyIndicatorProps {
   difficulty: number;
@@ -7,8 +8,8 @@ export interface DifficultyIndicatorProps {
 
 export default function DifficultyIndicator({ difficulty }: DifficultyIndicatorProps) {
   const StarIcons = Array.from({ length: difficulty }).map((_, index) => (
-    <StarIcon key={`$star-${index}`} style={{ color: '#E9B24C', width: '1.6rem' }} />
+    <StarIcon key={`$star-${index}`} className={starIcon} />
   ));
 
-  return <div style={{ display: 'flex', gap: '0.3rem' }}>{StarIcons}</div>;
+  return <div className={starIconList}>{StarIcons}</div>;
 }

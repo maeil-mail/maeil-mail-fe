@@ -27,6 +27,6 @@ interface GetWorkbookListResponse {
 
 export const getWorkbookList = async (category: WikiCategoryTabOption, page: number) => {
   return mainClient.get<GetWorkbookListResponse>(
-    `${API_ROUTES.workbook}?category=${category}&page=${page}&size=${12}`,
+    `${API_ROUTES.workbook}?category=${category}&page=${page - 1}&size=${12}`,
   );
 };
