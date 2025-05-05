@@ -13,7 +13,6 @@ export const workbookDetailPageWrapper = style({
 });
 
 // WorkbookDetailModal
-
 export const workbookDetailModalContainer = style({
   width: '64rem',
   padding: '3.45rem 4rem',

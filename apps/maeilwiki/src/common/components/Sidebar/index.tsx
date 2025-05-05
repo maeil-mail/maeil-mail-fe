@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import CloseIcon from '@/assets/closeIcon.svg';
 import { usePreventScroll } from '@/common/hooks/usePreventScroll';
+import CloseIcon from '@/assets/closeIcon.svg';
 import { closeButton, closeButtonWrapper, menuNav, overlay, sidebar } from './sidebar.css';
 
 interface SidebarProps {

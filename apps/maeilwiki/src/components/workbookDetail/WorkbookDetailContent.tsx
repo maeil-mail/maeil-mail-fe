@@ -2,6 +2,10 @@
 
 import { Button } from '@maeil/ui';
 import DifficultyIndicator from '@/common/components/DifficultyIndicator';
+import { WorkbookDetailItem } from './apis/getWorkbookDetail';
+import { shareCurrentUrl } from '@/common/utils/shareCurrentUrl';
+import { calculateElapsedTime } from '@/common/utils/calculateElapsedTime';
+import ShareIcon from '@/assets/share.svg';
 import {
   buttonsContainer,
   shareButton,
@@ -17,10 +21,6 @@ import {
   workbookInfoValue,
   workbookTitleText,
 } from './workbookDetail.css';
-import ShareIcon from '@/assets/share.svg';
-import { shareCurrentUrl } from '@/common/utils/shareCurrentUrl';
-import { calculateElapsedTime } from '@/common/utils/calculateElapsedTime';
-import { WorkbookDetailItem } from './apis/getWorkbookDetail';
 
 export interface WorkbookDetailContentProps {
   workbook: WorkbookDetailItem;

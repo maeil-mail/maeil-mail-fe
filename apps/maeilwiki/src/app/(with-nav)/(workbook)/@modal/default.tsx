@@ -1,5 +1,3 @@
-export interface DefaultProps {}
-
-export default function Default(props: DefaultProps) {
+export default function Default() {
   return null;
 }

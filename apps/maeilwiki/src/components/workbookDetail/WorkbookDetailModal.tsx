@@ -1,11 +1,11 @@
 'use client';
 
-import { Modal } from '@maeil/ui';
 import { useParams, useRouter } from 'next/navigation';
-import { closeIcon, workbookDetailModalContainer } from './workbookDetail.css';
-import CloseIcon from '@/assets/closeIcon.svg';
+import { Modal } from '@maeil/ui';
 import WorkbookDetailContent from './WorkbookDetailContent';
 import { useWorkbookDetail } from './hooks/useWorkbookDetail';
+import CloseIcon from '@/assets/closeIcon.svg';
+import { closeIcon, workbookDetailModalContainer } from './workbookDetail.css';
 
 export interface WorkbookDetailModalProps {}
 
