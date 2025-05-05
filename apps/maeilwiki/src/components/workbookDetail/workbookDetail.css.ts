@@ -48,8 +48,8 @@ export const solvedCountTag = style({
 });
 
 export const workbookTitleText = style({
-  fontSize: ' 2.6rem',
-  fontWeight: 400,
+  fontSize: ' 1.7rem',
+  fontWeight: 500,
   lineHeight: 1.5,
   marginBottom: '0.8rem',
 
@@ -57,6 +57,13 @@ export const workbookTitleText = style({
   overflow: 'hidden',
   WebkitBoxOrient: 'vertical',
   WebkitLineClamp: 3,
+
+  '@media': {
+    '(min-width: 768px)': {
+      fontSize: ' 2.6rem',
+      fontWeight: 400,
+    },
+  },
 });
 
 export const workbookDetailText = style({
@@ -64,7 +71,11 @@ export const workbookDetailText = style({
   fontWeight: 400,
   lineHeight: 1.5,
   color: '#666666',
-  marginBottom: '2.4rem',
+
+  display: '-webkit-box',
+  overflow: 'hidden',
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 5,
 });
 
 export const workbookInfo = style({
@@ -75,7 +86,13 @@ export const workbookInfo = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
-  marginBottom: '4rem',
+  margin: '1.2rem 0 2rem 0',
+
+  '@media': {
+    '(min-width: 768px)': {
+      margin: '2.4rem 0 4rem 0',
+    },
+  },
 });
 
 export const workbookInfoLine = style({
@@ -94,4 +111,34 @@ export const workbookInfoValue = style({
   color: '#666666',
   fontSize: '1.4rem',
   lineHeight: 1.5,
+});
+
+export const buttonsContainer = style({
+  display: 'flex',
+  gap: '1rem',
+});
+
+export const shareButton = style({
+  width: '13.5rem',
+});
+
+export const shareButtonInnerWrapper = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  margin: '0 auto',
+  width: 'fit-content',
+});
+
+export const shareIcon = style({
+  width: '1.8rem',
+  color: '#00A86B',
+});
+
+export const shareText = style({
+  lineHeight: '1.6rem',
+});
+
+export const solveButton = style({
+  flex: 1,
 });

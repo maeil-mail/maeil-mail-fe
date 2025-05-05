@@ -17,5 +17,8 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
 }
