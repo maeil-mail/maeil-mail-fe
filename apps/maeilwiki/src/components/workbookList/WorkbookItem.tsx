@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import DifficultyIndicator from './DifficultyIndicator';
 import { WIKI_CATEGORY_KO } from '@/common/constants/wikiCategory';
+import DifficultyIndicator from '@/common/components/DifficultyIndicator';
 import {
   workbookItemBottom,
   workbookItemCategoryTag,
@@ -11,8 +11,8 @@ import {
   workbookItemTitle,
   workbookItemTop,
 } from './workbookList.css';
-import { WorkbookListItem } from './apis/getWorkbookList';
 import { calculateElapsedTime } from '@/common/utils/calculateElapsedTime';
+import { WorkbookListItem } from './apis/getWorkbookList';
 
 export interface WorkbookItemProps {
   workbook: WorkbookListItem;

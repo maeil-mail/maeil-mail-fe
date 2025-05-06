@@ -16,12 +16,12 @@ import {
   privacyPolicyText,
   inputSectionWrapper,
 } from './subscribeModalContent.css';
-import CloseIcon from '@/assets/icons/close.svg';
 import { Button, LoadingSpinner, CheckboxInput, Input } from '@maeil/ui';
 import VerifyEmailInput from './VerifyEmailInput';
-import { useSubscribe } from '../hooks/useSubscribe';
 import SuccessContent from './SuccessContent';
+import { useSubscribe } from '../hooks/useSubscribe';
 import { FRONTEND_BASE_URL } from '@/common/constants/frontendBaseUrl';
+import CloseIcon from '@/assets/icons/close.svg';
 
 interface SubscribeModalContentProps {
   closeModal: () => void;

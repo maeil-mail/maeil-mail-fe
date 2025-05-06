@@ -5,6 +5,7 @@ import { Button, Modal } from '@maeil/ui';
 import { WIKI_CATEGORY, WIKI_CATEGORY_KO } from '@/common/constants/wikiCategory';
 import { WikiCategory } from '@/common/types/wiki';
 import CloseIcon from '@/assets/closeIcon.svg';
+import { usePostWiki } from '../hooks/usePostWiki';
 import {
   asterisk,
   categoryInputs,
@@ -24,7 +25,6 @@ import {
   isAnonymousCheckbox,
   categoryLabel,
 } from './wikiSubmitModal.css';
-import { usePostWiki } from '../hooks/usePostWiki';
 
 export interface WikiSubmitModalProps {
   isOpen: boolean;

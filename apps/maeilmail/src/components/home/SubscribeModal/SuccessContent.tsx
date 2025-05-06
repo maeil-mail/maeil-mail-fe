@@ -1,8 +1,8 @@
 import { Button } from '@maeil/ui';
-import { successText, container, title, buttonSection, caption } from './successContent.css';
 import { MAEIL_MAIL_GOOGLE_FORM_URL } from '@/common/constants/externalUrl';
 import CloseIcon from '@/assets/icons/close.svg';
 import { closeButton } from './subscribeModalContent.css';
+import { successText, container, title, buttonSection, caption } from './successContent.css';
 
 interface SuccessContentProps {
   closeModal: () => void;

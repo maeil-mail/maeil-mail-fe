@@ -12,11 +12,11 @@ import {
   buttonWrapper,
 } from './notFoundError.css';
 
-export interface NotFoundPageProps {
+export interface NotFoundErrorPageProps {
   Nav?: ReactNode;
 }
 
-export default function NotFoundPage({ Nav }: NotFoundPageProps) {
+export default function NotFoundErrorPage({ Nav }: NotFoundErrorPageProps) {
   const router = useRouter();
 
   const navigateToHome = () => {
