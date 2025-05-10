@@ -8,13 +8,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import type { ReactNode } from 'react';
 
 import { myStyle } from '@maeil/theme';
-import { Footer } from '@maeil/ui';
-
 import Providers from './providers';
-import {
-  MAEIL_WIKI_GOOGLE_FORM_URL,
-  MAEIL_WIKI_INTRODUCTION_URL,
-} from '@/common/constants/externalUrl';
 import { content, main, wrapper } from './layout.css';
 
 export const metadata: Metadata = {
@@ -47,7 +41,11 @@ const pretendard = localFont({
   weight: '45 920',
 });
 
-export default function Layout({ children }: { children: ReactNode }) {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   const gaId = process.env.NEXT_PUBLIC_MAEIL_WIKI_GA_ID;
 
   return (
@@ -64,14 +62,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <main className={main}>
               <div>
                 <div className={content}>{children}</div>
-                <Footer
-                  serviceName="매일위키"
-                  introduceUrl={MAEIL_WIKI_INTRODUCTION_URL}
-                  feedbackUrl={MAEIL_WIKI_GOOGLE_FORM_URL.service}
-                />
                 {gaId && <GoogleAnalytics gaId={gaId} />}
               </div>
-            </main>{' '}
+            </main>
           </Providers>
         </div>
         <div id="modal-root" />

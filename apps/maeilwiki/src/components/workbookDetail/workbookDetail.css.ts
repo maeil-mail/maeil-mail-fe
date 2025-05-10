@@ -106,6 +106,14 @@ export const workbookInfoField = style({
   width: '4.9rem',
 });
 
+export const workbookOwnerGithubLink = style({
+  selectors: {
+    '&:focus': {
+      outline: 'none',
+    },
+  },
+});
+
 export const workbookInfoValue = style({
   color: '#666666',
   fontSize: '1.4rem',

@@ -19,6 +19,7 @@ import {
   workbookInfoField,
   workbookInfoLine,
   workbookInfoValue,
+  workbookOwnerGithubLink,
   workbookTitleText,
 } from './workbookDetail.css';
 
@@ -66,7 +67,12 @@ export default function WorkbookDetailContent({ workbook }: WorkbookDetailConten
         </div>
         <div className={workbookInfoLine}>
           <div className={workbookInfoField}>출제자</div>
-          <a href={owner.github} rel="noopener noreferrer">
+          <a
+            className={workbookOwnerGithubLink}
+            href={owner.github}
+            rel="noopener noreferrer"
+            tabIndex={-1}
+          >
             <div className={workbookInfoValue}>{owner.name}</div>
           </a>
         </div>
@@ -84,7 +90,13 @@ export default function WorkbookDetailContent({ workbook }: WorkbookDetailConten
             <div className={shareText}>공유하기</div>
           </div>
         </Button>
-        <Button variant="primary" className={solveButton} onClick={onClickSolve}>
+        <Button
+          variant="primary"
+          className={solveButton}
+          onClick={onClickSolve}
+          autoFocus
+          tabIndex={0}
+        >
           문제 풀기
         </Button>
       </div>

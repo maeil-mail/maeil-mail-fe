@@ -18,7 +18,7 @@ import {
   questionOptionList,
   questionOrder,
   textarea,
-} from './multipleChoice.css';
+} from './createWorkbook.css';
 
 export type UpdateCurrentQuestion = <K extends keyof MultipleChoice>(
   key: K,

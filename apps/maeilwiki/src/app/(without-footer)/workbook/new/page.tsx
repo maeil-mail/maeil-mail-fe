@@ -17,7 +17,7 @@ import {
   pageContent,
   plusIcon,
   questionAddButton,
-} from '@/components/createWorkbook/multipleChoice.css';
+} from '@/components/createWorkbook/createWorkbook.css';
 import PlusIcon from '@/assets/plus.svg';
 import { usePostWorkbook } from '@/components/createWorkbook/hooks/usePostWorkbook';
 

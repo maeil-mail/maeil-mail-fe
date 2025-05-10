@@ -8,11 +8,17 @@ export const solveWorkbookPageContainer = style({
 
 export const solveWorkbookPageContent = style({
   maxWidth: '114rem',
-  padding: '0 2rem',
-  margin: '4rem auto 20rem auto',
+  padding: '0 2rem 10rem 2rem',
+  margin: '4rem auto 6rem auto',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      margin: '2rem auto 0 auto',
+    },
+  },
 });
 
-export const workbookTitle = style({
+export const workbookTitleText = style({
   fontWeight: 400,
   fontSize: '1.8rem',
   padding: '2.4rem 3rem',
@@ -22,16 +28,117 @@ export const workbookTitle = style({
   marginBottom: '3.2rem',
   lineHeight: 1.5,
   color: '#222222',
+  userSelect: 'none',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      padding: '1.4rem 2rem',
+      fontSize: '1.4rem',
+      marginBottom: '2rem',
+    },
+  },
 });
 
+// WorkbookBottomBar
 export const bottomFixedBar = style({
   background: '#ffffff',
-  height: '8rem',
   boxShadow: '0px 0px 8px 0px rgba(153, 153, 153, 0.25)',
   position: 'fixed',
   bottom: 0,
   zIndex: 999,
   width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  padding: '1.6rem 0',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      padding: '1rem 0',
+    },
+  },
+});
+
+export const bottomFixedBarInnerWrapper = style({
+  maxWidth: '114rem',
+  margin: '0 auto',
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'row-reverse',
+  flex: 1,
+  gap: '11.9rem',
+  padding: '0 2rem',
+});
+
+export const buttonContainer = style({
+  display: 'flex',
+});
+
+export const previousButton = recipe({
+  base: {
+    fontSize: '1.6rem',
+    fontWeight: 500,
+    width: 'fit-content',
+    marginRight: '2.2rem',
+
+    '@media': {
+      [`(max-width: 500px)`]: {
+        fontSize: '1.5rem',
+        padding: '1.3rem',
+      },
+    },
+  },
+  variants: {
+    isFirstQuestion: {
+      true: { visibility: 'hidden' },
+    },
+  },
+});
+
+export const mainButton = style({
+  fontSize: '1.6rem',
+  fontWeight: 600,
+  width: '8.8rem',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      fontSize: '1.5rem',
+      padding: '1.3rem',
+    },
+  },
+});
+
+// ProgressBar
+export const progressBarContainer = style({
+  display: 'flex',
+  flex: 1,
+  alignItems: 'center',
+  gap: '1rem',
+});
+
+export const progressBarDisplayTime = style({
+  color: '#666666',
+  fontWeight: 500,
+  fontSize: '1.6rem',
+  fontFamily: 'monospace',
+});
+
+export const progressRateDisplay = style({
+  width: '100%',
+  background: '#D9D9D9',
+  borderRadius: 52,
+  height: '0.7rem',
+
+  '@media': {
+    '(max-width: 768px)': {
+      visibility: 'hidden',
+    },
+  },
+});
+
+export const progressRateFilled = style({
+  height: '0.7rem',
+  background: 'linear-gradient(to right, #17C881 0%, #0FB97B 49%, #24BD99 100%)',
+  borderRadius: 99,
 });
 
 // WorkbookQuestion
@@ -50,6 +157,17 @@ export const workbookQuestionTitle = style({
   borderTopLeftRadius: 10,
   borderTopRightRadius: 10,
   borderBottom: '1px solid #ebebeb',
+  userSelect: 'none',
+  display: 'flex',
+  gap: '1rem',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      padding: '2rem 2.6rem',
+      fontSize: '1.5rem',
+      fontWeight: 500,
+    },
+  },
 });
 
 export const workbookQuestionOptionList = style({
@@ -60,13 +178,21 @@ export const workbookQuestionOptionList = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '2.8rem',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      gap: '1.8rem',
+      padding: '2rem',
+    },
+  },
 });
 
 export const workbookQuestionOption = style({
   display: 'flex',
-  gap: '1rem',
+  gap: '1.5rem',
   alignItems: 'center',
   cursor: 'pointer',
+  userSelect: 'none',
 });
 
 export const workbookQuestionOptionIndex = recipe({
@@ -80,11 +206,32 @@ export const workbookQuestionOptionIndex = recipe({
     textAlign: 'center',
     lineHeight: '2.8rem',
     borderRadius: 3,
+
+    '@media': {
+      [`(max-width: 500px)`]: {
+        fontSize: '1.6rem',
+        minWidth: '2.2rem',
+        height: '2.2rem',
+        lineHeight: '2.2rem',
+      },
+    },
   },
 
   variants: {
     isSelected: {
       true: { background: '#00A86B' },
+    },
+  },
+});
+
+export const multipleAnswerNoti = style({
+  color: '#999999',
+  fontSize: '1.4rem',
+  wordBreak: 'keep-all',
+
+  '@media': {
+    [`(max-width: 500px)`]: {
+      fontSize: '1.2rem',
     },
   },
 });
@@ -97,11 +244,21 @@ export const workbookQuestionOptionContent = recipe({
     padding: '0.8rem 1.6rem',
     borderRadius: 8,
     flex: 1,
+    border: '1px solid #ffffff',
+    color: '#666666',
+    wordBreak: 'break-all',
+
+    '@media': {
+      [`(max-width: 500px)`]: {
+        fontSize: '1.4rem',
+        padding: '0.7rem 1rem',
+      },
+    },
   },
 
   variants: {
     isSelected: {
-      true: { border: '1px solid #E0E0E0' },
+      true: { borderColor: '#E0E0E0', color: '#222222', fontWeight: 450 },
     },
   },
 });

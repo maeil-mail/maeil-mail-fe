@@ -1,16 +1,11 @@
-'use client';
-
 import * as React from 'react';
-import PageNav from '@/common/components/PageNav';
-import WorkbookQuestion from '@/components/solveWorkbook/WorkbookQuestion';
+import SolveWorkbookPage from '@/components/solveWorkbook/Page';
 import {
-  bottomFixedBar,
-  solveWorkbookPageContainer,
-  solveWorkbookPageContent,
-  workbookTitle,
-} from '@/components/solveWorkbook/solveWorkbook.css';
+  getWorkbookDetail,
+  WorkbookDetailItem,
+} from '@/components/workbookDetail/apis/getWorkbookDetail';
 
-const MOCK = {
+const MOCK: WorkbookDetailItem = {
   workbookTitle: 'React 기초 문법 테스트',
   difficultyLevel: 2,
   category: 'frontend',
@@ -22,7 +17,7 @@ const MOCK = {
     github: 'https://github.com/hanyoung-dev',
   },
   createdAt: '2025-05-06T09:00:00Z',
-  timeLimit: 600,
+  timeLimit: 30 * 1_000 * 60,
   questionCount: 2,
   solvedCount: 1342,
   questions: [
@@ -49,8 +44,8 @@ const MOCK = {
         },
         {
           id: 4,
-          content: '<Fragment><h1>Hello</h1></Fragment>',
-          isCorrectAnswer: false,
+          content: '<><h1>Hello</h1></>',
+          isCorrectAnswer: true,
         },
       ],
     },
@@ -85,17 +80,14 @@ const MOCK = {
   ],
 };
 
-export default function Page() {
-  const [currentStep, setCurrentStep] = React.useState(0);
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-  return (
-    <div className={solveWorkbookPageContainer}>
-      <PageNav title={`진행률 ${currentStep + 1}/${MOCK.questions.length}`} />
-      <div className={solveWorkbookPageContent}>
-        <h1 className={workbookTitle}>{MOCK.workbookTitle}</h1>
-        <WorkbookQuestion index={currentStep} question={MOCK.questions[currentStep]} />
-      </div>
-      <div className={bottomFixedBar}></div>
-    </div>
-  );
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
+
+  const data = await getWorkbookDetail(Number(id));
+
+  return <SolveWorkbookPage workbookId={Number(id)} workbook={data} />;
 }
