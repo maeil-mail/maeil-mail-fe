@@ -18,7 +18,7 @@ export const workbookAnswerStore = {
       ...answer.entries().map((value) => {
         const [questionIndex, answer] = value;
 
-        return [questionIndex, [...answer]];
+        return [questionIndex, new Array(...answer)];
       }),
     ]);
 

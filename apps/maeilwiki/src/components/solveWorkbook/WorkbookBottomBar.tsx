@@ -29,12 +29,10 @@ export default function WorkbookBottomBar({
   setCurrentIndex,
   onSubmit,
 }: WorkbookBottomBarProps) {
-  const handleSubmit = () => {
-    alert('제한 시간이 종료되었습니다.');
+  const { start, progressRate, formattedTime } = useTimer(timeLimit * 60 * 1_000, () => {
+    alert('제한 시간이 종료되었습니다. 채점 결과 화면으로 이동합니다.');
     onSubmit();
-  };
-
-  const { start, progressRate, formattedTime } = useTimer(timeLimit * 60 * 1_000, handleSubmit);
+  });
 
   React.useEffect(() => {
     start();
