@@ -12,7 +12,7 @@ export default function PageNav({ title }: PageNavProps) {
   const route = useRouter();
 
   const onClickBack = () => {
-    if (confirm('진행 중인 내역이 저장되지 않습니다. 정말 뒤로가시겠습니까?')) {
+    if (confirm('진행 중인 내역이 저장되지 않을 수 있습니다. 정말 뒤로가시겠습니까?')) {
       route.back();
     }
   };

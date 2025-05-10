@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { optionalText, textarea } from '../multipleChoice.css';
+import { optionalText, textarea } from '../createWorkbook.css';
 import { fieldLabel } from './workbookInfoForm.css';
 
 export interface DetailFieldProps {

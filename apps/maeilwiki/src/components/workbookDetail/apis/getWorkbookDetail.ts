@@ -2,6 +2,19 @@ import mainClient from '@/common/apis/client/mainClient';
 import { API_ROUTES } from '@/common/apis/constants/routes';
 import { WikiCategory } from '@/common/types/wiki';
 
+interface WorkbookQuestionOption {
+  id: number;
+  content: string;
+  isCorrectAnswer: boolean;
+}
+
+interface WorkbookQuestion {
+  id: number;
+  title: string;
+  correctAnswerExplanation: string;
+  options: WorkbookQuestionOption[];
+}
+
 export interface WorkbookDetailItem {
   workbookTitle: string;
   difficultyLevel: number;
@@ -17,6 +30,7 @@ export interface WorkbookDetailItem {
   timeLimit: number;
   questionCount: number;
   solvedCount: number;
+  questions: WorkbookQuestion[];
 }
 
 export const getWorkbookDetail = async (workbookId: number) => {

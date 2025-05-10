@@ -54,7 +54,7 @@ export const navTab = recipe({
 
     '@media': {
       '(max-width: 500px)': {
-        fontSize: '1.4rem',
+        fontSize: '1.5rem',
       },
     },
 

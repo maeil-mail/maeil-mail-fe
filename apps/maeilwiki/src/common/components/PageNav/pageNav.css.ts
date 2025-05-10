@@ -5,6 +5,12 @@ export const pageNavContainer = style({
   display: 'flex',
   justifyContent: 'space-around',
   padding: '1.8rem 0',
+
+  '@media': {
+    '(max-width: 500px)': {
+      padding: '1.2rem 0',
+    },
+  },
 });
 
 export const pageNavWrapper = style({
@@ -28,4 +34,10 @@ export const pageTitle = style({
   position: 'absolute',
   left: '50%',
   transform: 'translateX(-50%)',
+
+  '@media': {
+    '(max-width: 500px)': {
+      fontSize: '1.5rem',
+    },
+  },
 });

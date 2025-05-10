@@ -1,6 +1,6 @@
 import * as React from 'react';
 import QuestionItem, { UpdateCurrentQuestion } from './QuestionItem';
-import { questionList, questionListTitle } from './multipleChoice.css';
+import { questionList, questionListTitle } from './createWorkbook.css';
 import { UpdateQuestion } from './hooks/useMultipleChoiceQuestions';
 import { GetErrorMessage } from '@/common/hooks/useValidation';
 import type { MultipleChoice } from '@/common/types/workbook';

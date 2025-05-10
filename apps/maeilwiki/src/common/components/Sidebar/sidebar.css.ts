@@ -38,7 +38,7 @@ export const sidebar = recipe({
 
     display: 'flex',
     flexDirection: 'column',
-    gap: '2rem',
+    gap: '2.5rem',
   },
   variants: {
     isOpen: {

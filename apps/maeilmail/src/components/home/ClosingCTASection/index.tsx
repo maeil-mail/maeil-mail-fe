@@ -17,9 +17,9 @@ export default function ClosingCTA({ subscriberCount, onCTA }: ClosingCTAProps) 
     <section className={container}>
       <div className={innerWrapper}>
         <h2 className={closingHeading}>
-          이미 {subscriberCount.toLocaleString()}명의 개발자가
+          지금까지 {subscriberCount.toLocaleString()}명의 개발자가
           <br />
-          매일메일을 구독하고 있습니다.
+          매일메일을 구독했습니다.
         </h2>
         <button className={closingCTAButton} onClick={handleClosingCTA}>
           면접 질문 받아보기
