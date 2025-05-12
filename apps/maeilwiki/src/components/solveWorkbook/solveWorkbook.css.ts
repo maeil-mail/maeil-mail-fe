@@ -40,33 +40,12 @@ export const workbookTitleText = style({
 });
 
 // WorkbookBottomBar
-export const bottomFixedBar = style({
-  background: '#ffffff',
-  boxShadow: '0px 0px 8px 0px rgba(153, 153, 153, 0.25)',
-  position: 'fixed',
-  bottom: 0,
-  zIndex: 999,
+export const workbookBottomBarInnerWrapper = style({
+  display: 'flex',
   width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  padding: '1.6rem 0',
-
-  '@media': {
-    [`(max-width: 500px)`]: {
-      padding: '1rem 0',
-    },
-  },
-});
-
-export const bottomFixedBarInnerWrapper = style({
-  maxWidth: '114rem',
-  margin: '0 auto',
-  alignItems: 'center',
-  display: 'flex',
   flexDirection: 'row-reverse',
-  flex: 1,
-  gap: '11.9rem',
-  padding: '0 2rem',
+  justifyContent: 'space-between',
+  gap: '5rem',
 });
 
 export const buttonContainer = style({
@@ -79,11 +58,12 @@ export const previousButton = recipe({
     fontWeight: 500,
     width: 'fit-content',
     marginRight: '2.2rem',
+    minWidth: '8.8rem',
 
     '@media': {
       [`(max-width: 500px)`]: {
         fontSize: '1.5rem',
-        padding: '1.3rem',
+        padding: '1.2rem',
       },
     },
   },
@@ -97,12 +77,13 @@ export const previousButton = recipe({
 export const mainButton = style({
   fontSize: '1.6rem',
   fontWeight: 600,
-  width: '8.8rem',
+  padding: '1.3rem',
+  minWidth: '8.8rem',
 
   '@media': {
     [`(max-width: 500px)`]: {
       fontSize: '1.5rem',
-      padding: '1.3rem',
+      padding: '1.2rem',
     },
   },
 });
@@ -113,6 +94,7 @@ export const progressBarContainer = style({
   flex: 1,
   alignItems: 'center',
   gap: '1rem',
+  maxWidth: '77.7rem',
 });
 
 export const progressBarDisplayTime = style({
@@ -130,7 +112,7 @@ export const progressRateDisplay = style({
 
   '@media': {
     '(max-width: 768px)': {
-      visibility: 'hidden',
+      display: 'none',
     },
   },
 });
@@ -177,11 +159,11 @@ export const workbookQuestionOptionList = style({
   borderBottomRightRadius: 10,
   display: 'flex',
   flexDirection: 'column',
-  gap: '2.8rem',
+  gap: '1rem',
 
   '@media': {
     [`(max-width: 500px)`]: {
-      gap: '1.8rem',
+      gap: '1rem',
       padding: '2rem',
     },
   },
@@ -189,7 +171,7 @@ export const workbookQuestionOptionList = style({
 
 export const workbookQuestionOption = style({
   display: 'flex',
-  gap: '1.5rem',
+  gap: '1rem',
   alignItems: 'center',
   cursor: 'pointer',
   userSelect: 'none',

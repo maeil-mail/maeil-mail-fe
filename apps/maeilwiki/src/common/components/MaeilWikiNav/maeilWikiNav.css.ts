@@ -108,9 +108,9 @@ export const loadingSkeleton = style({
   animation: `${shimmer} 1500ms linear infinite`,
 
   '@media': {
-    '(max-width: 800px)': {
+    '(max-width: 500px)': {
       height: '2.5rem',
-      width: '20rem',
+      width: '5rem',
     },
   },
 });

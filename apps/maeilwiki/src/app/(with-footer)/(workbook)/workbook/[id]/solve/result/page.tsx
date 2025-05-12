@@ -1,14 +1,21 @@
-'use client';
-
-import { workbookAnswerStore } from '@/components/solveWorkbook/store/workbookAnswer';
 import * as React from 'react';
+import WorkbookResultPage from '@/components/workbookResult/Page';
+import { getWorkbookDetail } from '@/components/workbookDetail/apis/getWorkbookDetail';
 
-export interface PageProps {}
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-export default function Page(props: PageProps) {
-  React.useEffect(() => {
-    console.log(workbookAnswerStore.get(1));
-  }, []);
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
 
-  return <div>결과 화면</div>;
+  const workbook = await getWorkbookDetail(Number(id));
+
+  console.log(workbook);
+
+  return (
+    <React.Suspense>
+      <WorkbookResultPage id={Number(id)} workbook={workbook} />
+    </React.Suspense>
+  );
 }
