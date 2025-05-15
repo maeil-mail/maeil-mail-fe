@@ -3,7 +3,7 @@ import { recipe } from '@vanilla-extract/recipes';
 
 // WorkbookList
 export const workbookListPageContainer = style({
-  maxWidth: '114.6rem',
+  maxWidth: '114rem',
   margin: '0 auto',
   padding: '0 2rem 8.4rem 2rem',
   minHeight: '50vh',
@@ -38,6 +38,12 @@ export const workbookItemContainer = style({
   borderRadius: '1rem',
   cursor: 'pointer',
   background: '#ffffff',
+
+  '@media': {
+    '(max-width: 500px)': {
+      padding: '1.8rem',
+    },
+  },
 
   selectors: {
     '&:hover': {

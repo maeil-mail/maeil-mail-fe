@@ -2,13 +2,13 @@ import mainClient from '@/common/apis/client/mainClient';
 import { API_ROUTES } from '@/common/apis/constants/routes';
 import { WikiCategory } from '@/common/types/wiki';
 
-interface WorkbookQuestionOption {
+export interface WorkbookQuestionOption {
   id: number;
   content: string;
   isCorrectAnswer: boolean;
 }
 
-interface WorkbookQuestion {
+export interface WorkbookQuestion {
   id: number;
   title: string;
   correctAnswerExplanation: string;

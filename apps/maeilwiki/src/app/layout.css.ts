@@ -14,7 +14,7 @@ export const content = style({
 });
 
 export const withFooterContent = style({
-  minHeight: '90vh',
+  minHeight: '80vh',
 });
 
 export const withoutFooterContent = style({

@@ -1,14 +1,14 @@
 import { Button } from '@maeil/ui';
 import ProgressBar from './ProgressBar';
 import {
-  bottomFixedBar,
-  bottomFixedBarInnerWrapper,
   buttonContainer,
   mainButton,
   previousButton,
+  workbookBottomBarInnerWrapper,
 } from './solveWorkbook.css';
 import { useTimer } from './hooks/useTimer';
 import React from 'react';
+import BottomFixedBar from '@/common/components/BottomFixedBar';
 
 interface WorkbookBottomBarProps {
   timeLimit: number;
@@ -53,8 +53,8 @@ export default function WorkbookBottomBar({
   const isUnanswered = userAnswer.size === 0 || (isMultipleAnswer && userAnswer.size < 2);
 
   return (
-    <div className={bottomFixedBar}>
-      <div className={bottomFixedBarInnerWrapper}>
+    <BottomFixedBar>
+      <div className={workbookBottomBarInnerWrapper}>
         <div className={buttonContainer}>
           {
             <Button
@@ -87,6 +87,6 @@ export default function WorkbookBottomBar({
         </div>
         {timeLimit && <ProgressBar progressRate={progressRate} displayTime={formattedTime} />}
       </div>
-    </div>
+    </BottomFixedBar>
   );
 }

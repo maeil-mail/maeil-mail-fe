@@ -7,7 +7,7 @@ import {
 import { getWorkbookDetail } from '@/components/workbookDetail/apis/getWorkbookDetail';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-  const id = (await params).id;
+  const { id } = await params;
 
   const workbook = await getWorkbookDetail(Number(id));
 
