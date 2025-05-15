@@ -1,4 +1,4 @@
-const fullScoreMessages = [
+const perfectScoreMessages = [
   '와우, 만점입니다. 개발 천재로 인정합니다! 🧙🏻‍♀️',
   'Perfect! 이미 고수의 영역입니다. 👑',
   '만점을 받다니, 이건 예술이에요. 🎨',
@@ -30,6 +30,12 @@ const lowScoreMessages = [
   '천천히, 하지만 확실하게 나아가고 있어요. 🐢',
 ];
 
+const SCORE_THRESHOLD = {
+  mid: 30,
+  high: 60,
+  perfect: 100,
+};
+
 export const getWorkbookResultComment = (correctCount: number, questionCount: number): string => {
   if (questionCount === 0) {
     throw new Error('문제가 없습니다.');
@@ -40,15 +46,15 @@ export const getWorkbookResultComment = (correctCount: number, questionCount: nu
   const getRandomMessage = (messages: string[]) =>
     messages[Math.floor(Math.random() * messages.length)];
 
-  if (percentage === 100) {
-    return getRandomMessage(fullScoreMessages);
+  if (percentage === SCORE_THRESHOLD.perfect) {
+    return getRandomMessage(perfectScoreMessages);
   }
 
-  if (percentage >= 60) {
+  if (percentage >= SCORE_THRESHOLD.high) {
     return getRandomMessage(highScoreMessages);
   }
 
-  if (percentage >= 30) {
+  if (percentage >= SCORE_THRESHOLD.mid) {
     return getRandomMessage(midScoreMessages);
   }
 

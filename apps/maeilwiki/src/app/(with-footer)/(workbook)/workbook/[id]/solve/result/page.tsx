@@ -11,8 +11,6 @@ export default async function Page({ params }: PageProps) {
 
   const workbook = await getWorkbookDetail(Number(id));
 
-  console.log(workbook);
-
   return (
     <React.Suspense>
       <WorkbookResultPage id={Number(id)} workbook={workbook} />
