@@ -65,7 +65,7 @@ const USER_REACTIONS = [
   {
     thumbnailImg: BrgndyImage,
     name: '전○헌',
-    background: '토스 최종 합격자',
+    background: '국내 대형 테크 기업 합격자',
     commentNode: (
       <div className={commentContainer}>
         &quot;<span className={logoFont}>매일메일</span> 컨텐츠는{' '}
@@ -77,7 +77,7 @@ const USER_REACTIONS = [
   {
     thumbnailImg: ChoiImage,
     name: '최○웅',
-    background: '토스뱅크 최종 합격자',
+    background: '국내 대형 테크 기업 합격자',
     commentNode: (
       <div className={commentContainer}>
         &quot;<span className={logoFont}>매일메일</span>이 메일로 질문을 하나씩 보내주니{' '}
