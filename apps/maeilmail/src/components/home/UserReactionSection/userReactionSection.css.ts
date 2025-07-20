@@ -5,8 +5,9 @@ export const userReactionSectionContainer = style({
   padding: '14rem 0 14rem 0',
   display: 'flex',
   flexDirection: 'column',
-  gap: '10rem',
+  gap: '6rem',
   alignItems: 'center',
+  marginBottom: '10rem',
 
   '@media': {
     [`screen and (max-width: 768px)`]: {
@@ -20,8 +21,8 @@ export const userReactionSectionContainer = style({
 });
 
 export const userReactionHeading = style({
-  fontSize: '3.5rem',
-  fontWeight: 550,
+  fontSize: '3.3rem',
+  fontWeight: 600,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
   padding: '1.6rem',

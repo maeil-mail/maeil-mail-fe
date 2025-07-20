@@ -22,10 +22,7 @@ const DURATION = 35;
 export default function UserReactionSection() {
   return (
     <section className={userReactionSectionContainer}>
-      <h2 className={userReactionHeading}>
-        많은 개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다{' '}
-        <FingerHeartIcon className={fingerHeartIcon} />
-      </h2>
+      <h2 className={userReactionHeading}>매일메일로 성장한 구독자들의 이야기</h2>
       <div className={tickerWrapper}>
         <Ticker duration={DURATION}>
           {USER_REACTIONS.map((user, index) => (
