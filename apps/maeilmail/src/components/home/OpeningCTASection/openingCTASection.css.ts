@@ -30,3 +30,30 @@ export const heroButton = style({
     },
   },
 });
+
+export const container = style({
+  width: 'fit-content',
+  margin: '0 auto',
+  padding: '17.5rem 2rem',
+  color: '#fff',
+
+  '@media': {
+    [`screen and (max-width: 800px)`]: {
+      padding: '6rem 2rem',
+    },
+  },
+});
+
+export const title = style({
+  fontSize: '3.8rem',
+  letterSpacing: '-0.1rem',
+  fontWeight: 500,
+  textAlign: 'center',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      fontSize: '2.4rem',
+      fontWeight: 600,
+    },
+  },
+});

@@ -1,4 +1,13 @@
-import { heroSection } from './heroSection.css';
+import {
+  heroFigure1,
+  heroFigure2,
+  heroFigure3,
+  heroFigure4,
+  heroFigure5,
+  heroSection,
+  heroSubtitle,
+  heroTitle,
+} from './heroSection.css';
 import MailFigure from '@/assets/images/heroSection/hero-mail.svg';
 import HeroFigure1 from '@/assets/images/heroSection/hero-figure-1.svg';
 import HeroFigure2 from '@/assets/images/heroSection/hero-figure-2.svg';
@@ -16,11 +25,11 @@ const poppinsSemiBold = localFont({
 export default function HeroSection() {
   return (
     <section className={heroSection}>
-      <HeroFigure1 style={{ position: 'absolute', width: '20rem', left: 79, top: 95 }} />
-      <HeroFigure2 style={{ position: 'absolute', width: '22rem', left: 61, bottom: 230 }} />
-      <HeroFigure3 style={{ position: 'absolute', width: '24rem', right: 54, top: 119 }} />
-      <HeroFigure4 style={{ position: 'absolute', width: '28rem', right: 293, bottom: 0 }} />
-      <HeroFigure5 style={{ position: 'absolute', width: '19rem', right: 0, bottom: 100 }} />
+      <HeroFigure1 className={heroFigure1} />
+      <HeroFigure2 className={heroFigure2} />
+      <HeroFigure3 className={heroFigure3} />
+      <HeroFigure4 className={heroFigure4} />
+      <HeroFigure5 className={heroFigure5} />
       <div style={{ width: '100%', maxWidth: '109.1rem', margin: '0 auto', position: 'relative' }}>
         <div
           style={{
@@ -33,28 +42,8 @@ export default function HeroSection() {
             flexDirection: 'column',
           }}
         >
-          <div
-            style={{
-              color: '#F7FBFC',
-              fontSize: '2.8rem',
-              letterSpacing: '-0.2rem',
-              lineHeight: '1.5',
-            }}
-          >
-            개발자를 위한 기술 면접 메일링 서비스
-          </div>
-          <div
-            className={poppinsSemiBold.className}
-            style={{
-              color: '#ffffff',
-              fontSize: '17rem',
-              whiteSpace: 'nowrap',
-              letterSpacing: '-1.2rem',
-              lineHeight: 1.4,
-            }}
-          >
-            Maeil Mail
-          </div>
+          <div className={heroSubtitle}>개발자를 위한 기술 면접 메일링 서비스</div>
+          <div className={`${heroTitle} ${poppinsSemiBold.className}`}>Maeil Mail</div>
         </div>
         <MailFigure />
       </div>

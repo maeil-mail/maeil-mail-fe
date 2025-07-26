@@ -2,6 +2,8 @@ import * as React from 'react';
 import { heroButton } from './openingCTASection.css';
 import { GA_EVENT } from '@/common/constants/gaEvent';
 import { recordGAEvent } from '@/common/utils/recordGAEvent';
+import { container } from './openingCTASection.css';
+import { title } from './openingCTASection.css';
 
 export interface OpeningCTASectionProps {
   onCTA: () => void;
@@ -15,19 +17,8 @@ export default function OpeningCTASection({ onCTA }: OpeningCTASectionProps) {
 
   return (
     <section style={{ background: '#3B3D42', width: '100%' }}>
-      <div
-        style={{ width: 'fit-content', margin: '0 auto', padding: '17.5rem 2rem', color: '#fff' }}
-      >
-        <div
-          style={{
-            fontSize: '3.8rem',
-            letterSpacing: '-0.1rem',
-            fontWeight: 500,
-            textAlign: 'center',
-          }}
-        >
-          기술 면접 질문을 매일, 메일로 보내드릴게요
-        </div>
+      <div className={container}>
+        <div className={title}>기술 면접 질문을 매일, 메일로 보내드릴게요</div>
         <div
           style={{
             fontSize: '2rem',

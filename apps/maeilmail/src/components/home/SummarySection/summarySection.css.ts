@@ -22,3 +22,47 @@ export const summaryTitle = style({
     },
   },
 });
+
+export const summaryItemList = style({
+  display: 'flex',
+  gap: '1.5rem',
+  marginBottom: '1.5rem',
+  '@media': {
+    [`screen and (max-width: 1000px)`]: { flexDirection: 'column' },
+  },
+});
+
+export const summaryItem1 = style({
+  padding: '5.2rem 5rem',
+  width: '50%',
+  height: '30rem',
+  background: '#17C881',
+  borderRadius: '2.4rem',
+  color: '#fff',
+  fontSize: '2.5rem',
+  fontWeight: 550,
+  lineHeight: 1.3,
+  position: 'relative',
+
+  '@media': {
+    [`screen and (max-width: 1000px)`]: { width: '100%' },
+  },
+});
+
+export const summaryItem2 = style({
+  padding: '5.2rem 5rem',
+  width: '50%',
+  height: '30rem',
+  background: '#37AAFA',
+  borderRadius: '2.4rem',
+  color: '#fff',
+  fontSize: '2.5rem',
+  fontWeight: 550,
+  position: 'relative',
+  lineHeight: 1.3,
+
+  '@media': {
+    [`screen and (max-width: 1000px)`]: { width: '100%' },
+  },
+});
+export const summaryItem3 = style({});
