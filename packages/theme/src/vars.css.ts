@@ -20,7 +20,7 @@ export const myStyle = style({
     [vars.background1]: '#131313',
     [vars.background2]: '#ececec',
     [vars.background3]: '#1d1d1d',
-    [vars.primary]: '#00A86B',
+    [vars.primary]: '#17C881',
     [vars.text1]: '#222222',
     [vars.text2]: '#868e96',
     [vars.text3]: '#000',

@@ -2,26 +2,28 @@ import { vars } from '@maeil/theme';
 import { style } from '@vanilla-extract/css';
 
 export const userReactionSectionContainer = style({
-  padding: '14rem 0 14rem 0',
+  padding: '24rem 0 14rem 0',
   display: 'flex',
   flexDirection: 'column',
-  gap: '10rem',
+  gap: '6rem',
   alignItems: 'center',
+  marginBottom: '10rem',
 
   '@media': {
     [`screen and (max-width: 768px)`]: {
-      padding: '7rem 0 14rem 0',
+      padding: '7rem 0 7rem 0',
       gap: '6.5rem',
     },
+
     'screen and (max-width: 400px)': {
-      padding: '0 0 14rem 0',
+      padding: '6rem 0 6rem 0',
     },
   },
 });
 
 export const userReactionHeading = style({
-  fontSize: '3.5rem',
-  fontWeight: 550,
+  fontSize: '3.3rem',
+  fontWeight: 600,
   letterSpacing: '-0.21rem',
   textAlign: 'center',
   padding: '1.6rem',
@@ -29,14 +31,9 @@ export const userReactionHeading = style({
 
   '@media': {
     [`screen and (max-width: 768px)`]: {
-      fontWeight: 600,
+      fontWeight: 700,
       letterSpacing: '-0.1rem',
-      fontSize: '2rem',
-    },
-    'screen and (max-width: 400px)': {
-      fontWeight: 600,
-      letterSpacing: '-0.1rem',
-      fontSize: '1.8rem',
+      fontSize: '2.2rem',
     },
   },
 });
@@ -80,6 +77,21 @@ export const userReactionItemContainer = style({
   borderRadius: '2rem',
   width: '31rem',
   fontSize: '1.5rem',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      width: '28rem',
+      padding: '2.5rem',
+      margin: '0.8rem',
+      fontSize: '1.4rem',
+    },
+    [`screen and (max-width: 480px)`]: {
+      width: '25rem',
+      padding: '2rem',
+      margin: '0.6rem',
+      fontSize: '1.3rem',
+    },
+  },
 });
 
 export const userReactionProfile = style({
@@ -87,6 +99,17 @@ export const userReactionProfile = style({
   gap: '1.5rem',
   alignItems: 'center',
   marginBottom: '1rem',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      gap: '1.2rem',
+      marginBottom: '0.8rem',
+    },
+    [`screen and (max-width: 480px)`]: {
+      gap: '1rem',
+      marginBottom: '0.6rem',
+    },
+  },
 });
 
 export const userReactionName = style({
@@ -94,6 +117,48 @@ export const userReactionName = style({
   letterSpacing: '0.2rem',
   fontWeight: 550,
   marginBottom: '0.3rem',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      fontSize: '1.7rem',
+      letterSpacing: '0.15rem',
+      marginBottom: '0.25rem',
+    },
+    [`screen and (max-width: 480px)`]: {
+      fontSize: '1.5rem',
+      letterSpacing: '0.1rem',
+      marginBottom: '0.2rem',
+    },
+  },
 });
 
-export const userReactionBackground = style({ color: '#666666', fontSize: '1.4rem' });
+export const userReactionBackground = style({
+  color: '#666666',
+  fontSize: '1.4rem',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      fontSize: '1.3rem',
+    },
+    [`screen and (max-width: 480px)`]: {
+      fontSize: '1.2rem',
+    },
+  },
+});
+
+export const userReactionProfileImage = style({
+  width: '60px',
+  height: '60px',
+  borderRadius: '50%',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      width: '50px',
+      height: '50px',
+    },
+    [`screen and (max-width: 480px)`]: {
+      width: '45px',
+      height: '45px',
+    },
+  },
+});

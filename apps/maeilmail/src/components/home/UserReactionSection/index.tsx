@@ -3,15 +3,12 @@ import ChoiImage from '@/assets/images/userReaction/choi.png';
 import AtomImage from '@/assets/images/userReaction/atom.png';
 import BrgndyImage from '@/assets/images/userReaction/brgndy.png';
 import PrinImage from '@/assets/images/userReaction/prin.png';
-import FingerHeartIcon from '@/assets/images/fingerHeart.svg';
 
 import UserReactionItem from './UserReactionItem';
 import {
   bold,
   commentContainer,
-  fingerHeartIcon,
   logoFont,
-  primaryColor,
   tickerWrapper,
   userReactionHeading,
   userReactionSectionContainer,
@@ -21,17 +18,16 @@ const DURATION = 35;
 
 export default function UserReactionSection() {
   return (
-    <section className={userReactionSectionContainer}>
-      <h2 className={userReactionHeading}>
-        많은 개발자들이 <span className={primaryColor}>매일메일</span>을 애용하고 있습니다{' '}
-        <FingerHeartIcon className={fingerHeartIcon} />
-      </h2>
-      <div className={tickerWrapper}>
-        <Ticker duration={DURATION}>
-          {USER_REACTIONS.map((user, index) => (
-            <UserReactionItem key={index} {...user} />
-          ))}
-        </Ticker>
+    <section style={{ background: '#F7FBFC', width: '100%' }}>
+      <div className={userReactionSectionContainer}>
+        <h2 className={userReactionHeading}>매일메일로 성장한 구독자들의 이야기</h2>
+        <div className={tickerWrapper}>
+          <Ticker duration={DURATION}>
+            {USER_REACTIONS.map((user, index) => (
+              <UserReactionItem key={index} {...user} />
+            ))}
+          </Ticker>
+        </div>
       </div>
     </section>
   );

@@ -1,26 +1,45 @@
-import { recordGAEvent } from '@/common/utils/recordGAEvent';
 import {
-  heroButton,
-  heroHeading,
+  heroFigure1,
+  heroFigure2,
+  heroFigure3,
+  heroFigure4,
+  heroFigure5,
   heroSection,
-  heroSectionInnerWrapper,
-  heroTypo,
+  heroSubtitle,
+  heroTitle,
+  heroContainer,
+  heroContent,
 } from './heroSection.css';
-import { GA_EVENT } from '@/common/constants/gaEvent';
+import MailFigure from '@/assets/images/heroSection/hero-mail.svg';
+import HeroFigure1 from '@/assets/images/heroSection/hero-figure-1.svg';
+import HeroFigure2 from '@/assets/images/heroSection/hero-figure-2.svg';
+import HeroFigure3 from '@/assets/images/heroSection/hero-figure-3.svg';
+import HeroFigure4 from '@/assets/images/heroSection/hero-figure-4.svg';
+import HeroFigure5 from '@/assets/images/heroSection/hero-figure-5.svg';
 
-interface HeroSectionProps {
-  onCTA: () => void;
-}
+import localFont from 'next/font/local';
 
-export default function HeroSection({ onCTA }: HeroSectionProps) {
-  const handleHeroButton = () => {
-    recordGAEvent(GA_EVENT.homeClickMainSubscribe);
-    onCTA();
-  };
+const poppinsSemiBold = localFont({
+  src: '../../../fonts/PoppinsSemibold.woff2',
+  display: 'swap',
+});
 
+export default function HeroSection() {
   return (
     <section className={heroSection}>
-      <div className={heroSectionInnerWrapper}>
+      <HeroFigure1 className={heroFigure1} />
+      <HeroFigure2 className={heroFigure2} />
+      <HeroFigure3 className={heroFigure3} />
+      <HeroFigure4 className={heroFigure4} />
+      <HeroFigure5 className={heroFigure5} />
+      <div className={heroContainer}>
+        <div className={heroContent}>
+          <div className={heroSubtitle}>개발자를 위한 기술 면접 메일링 서비스</div>
+          <div className={`${heroTitle} ${poppinsSemiBold.className}`}>Maeil Mail</div>
+        </div>
+        <MailFigure />
+      </div>
+      {/* <div className={heroSectionInnerWrapper}>
         <h1 className={heroHeading}>
           기술 면접 질문을 매일매일
           <br />
@@ -31,10 +50,8 @@ export default function HeroSection({ onCTA }: HeroSectionProps) {
           <br />
           지하철에서 하나씩 읽다보면 면접 걱정이 사라질 거예요.
         </p>
-        <button className={heroButton} onClick={handleHeroButton}>
-          무료 구독하기
-        </button>
-      </div>
+
+      </div> */}
     </section>
   );
 }

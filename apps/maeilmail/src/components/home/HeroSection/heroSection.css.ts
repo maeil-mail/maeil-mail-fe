@@ -1,4 +1,3 @@
-import { vars } from '@maeil/theme';
 import { style } from '@vanilla-extract/css';
 
 export const heroSection = style({
@@ -6,87 +5,106 @@ export const heroSection = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  background: `linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 168, 107, 0.1) 100%
-  )`,
-
-  padding: '20rem 1.6rem',
+  background: '#F7FBFC',
+  position: 'relative',
 
   '@media': {
     [`screen and (max-width: 768px)`]: {
       fontWeight: 700,
       fontSize: '3rem',
-      padding: '15rem 1.6rem',
     },
   },
 });
 
-export const heroSectionInnerWrapper = style({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
+export const heroTitle = style({
+  color: '#ffffff',
+  fontSize: '17rem',
+  whiteSpace: 'nowrap',
+  letterSpacing: '-1.2rem',
+  lineHeight: 1.4,
+
+  '@media': {
+    [`screen and (max-width: 1000px)`]: {
+      fontSize: '10rem',
+      fontWeight: 300,
+      letterSpacing: '-0.8rem',
+    },
+    [`screen and (max-width: 600px)`]: {
+      fontSize: '7rem',
+      fontWeight: 300,
+      letterSpacing: '-0.4rem',
+    },
+    [`screen and (max-width: 400px)`]: {
+      fontSize: '5rem',
+      fontWeight: 300,
+      letterSpacing: '-0.2rem',
+    },
+  },
+});
+
+export const heroSubtitle = style({
+  color: '#F7FBFC',
+  fontSize: '2.8rem',
+  letterSpacing: '-0.2rem',
+  lineHeight: '1.5',
+  fontWeight: 500,
+
+  '@media': {
+    [`screen and (max-width: 650px)`]: {
+      display: 'none',
+    },
+  },
+});
+
+export const heroFigure1 = style({
+  position: 'absolute',
+  width: '20rem',
+  left: 79,
+  top: 95,
+  '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
+});
+export const heroFigure2 = style({
+  position: 'absolute',
+  width: '22rem',
+  left: 61,
+  bottom: 230,
+  '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
+});
+export const heroFigure3 = style({
+  position: 'absolute',
+  width: '24rem',
+  right: 54,
+  top: 119,
+  '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
+});
+export const heroFigure4 = style({
+  position: 'absolute',
+  width: '28rem',
+  right: 293,
+  bottom: 0,
+  '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
+});
+export const heroFigure5 = style({
+  position: 'absolute',
+  width: '19rem',
+  right: 0,
+  bottom: 100,
+  '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
+});
+
+export const heroContainer = style({
+  width: '100%',
+  maxWidth: '109.1rem',
   margin: '0 auto',
+  position: 'relative',
 });
 
-export const heroHeading = style({
-  fontSize: '5.5rem',
-  textAlign: 'center',
-  fontWeight: 550,
-  letterSpacing: '-1.5px',
-  color: '#2b2b2b',
-
-  '@media': {
-    [`screen and (max-width: 768px)`]: {
-      fontWeight: 600,
-      letterSpacing: '-1.8px',
-      fontSize: '3.5rem',
-    },
-    'screen and (max-width: 375px)': {
-      fontSize: '3rem',
-    },
-  },
-});
-
-export const heroTypo = style({
-  fontSize: '2.4rem',
-  color: '#888888',
-  marginTop: '2rem',
-
-  textAlign: 'center',
-  wordBreak: 'keep-all',
-
-  '@media': {
-    [`screen and (max-width: 768px)`]: {
-      width: '70%',
-      fontSize: '2rem',
-      fontWeight: 550,
-    },
-  },
-});
-
-export const heroButton = style({
-  backgroundColor: vars.primary,
-  color: 'white',
-  borderRadius: '4rem',
-  padding: '2rem 4rem',
-  fontSize: '2.6rem',
-  marginTop: '5rem',
-  width: 'fit-content',
-  fontWeight: 600,
-  boxShadow: '0px 5.5px 25px 0.4px rgba(0, 168, 107, 0.3)',
-
-  transition: 'transform 0.4s ease-in-out',
-  ':hover': {
-    transform: 'scale(1.03)',
-  },
-
-  '@media': {
-    [`screen and (max-width: 768px)`]: {
-      fontSize: '2.2rem',
-      fontWeight: 700,
-    },
-  },
+export const heroContent = style({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
 });

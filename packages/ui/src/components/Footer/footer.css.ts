@@ -7,7 +7,7 @@ export const container = style({
   padding: '5rem 1.6rem',
   fontSize: '1.2rem',
   color: vars.text2,
-  backgroundColor: '#f9f9f9',
+  backgroundColor: '#3B3D42',
   fontWeight: 400,
   display: 'flex',
   justifyContent: 'center',
