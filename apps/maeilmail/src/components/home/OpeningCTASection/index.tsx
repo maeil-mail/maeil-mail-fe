@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { heroButton } from './openingCTASection.css';
+import {
+  heroButton,
+  container,
+  title,
+  openingSection,
+  description,
+  mobileTitle,
+} from './openingCTASection.css';
 import { GA_EVENT } from '@/common/constants/gaEvent';
 import { recordGAEvent } from '@/common/utils/recordGAEvent';
-import { container } from './openingCTASection.css';
-import { title } from './openingCTASection.css';
 
 export interface OpeningCTASectionProps {
   onCTA: () => void;
@@ -16,18 +21,15 @@ export default function OpeningCTASection({ onCTA }: OpeningCTASectionProps) {
   };
 
   return (
-    <section style={{ background: '#3B3D42', width: '100%' }}>
+    <section className={openingSection}>
       <div className={container}>
-        <div className={title}>기술 면접 질문을 매일, 메일로 보내드릴게요</div>
-        <div
-          style={{
-            fontSize: '2rem',
-            lineHeight: 1.5,
-            fontWeight: 300,
-            textAlign: 'center',
-            marginTop: '4rem',
-          }}
-        >
+        <div className={mobileTitle}>
+          <span>개발자를 위한</span>
+          <br />
+          <span>기술 면접 질문 메일링 서비스</span>
+        </div>
+        <span className={title}>기술 면접 질문을 매일, 메일로 보내드릴게요</span>
+        <div className={description}>
           바쁜 개발자분들을 대신해 BE/FE 분야에 맞는 <br /> 기술 면접 질문을 직접 큐레이팅하여
           보내드려요
         </div>

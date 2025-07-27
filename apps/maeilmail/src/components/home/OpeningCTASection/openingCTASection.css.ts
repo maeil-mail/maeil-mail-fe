@@ -24,9 +24,28 @@ export const heroButton = style({
   },
 
   '@media': {
-    [`screen and (max-width: 768px)`]: {
+    [`screen and (max-width: 1024px)`]: {
       fontSize: '2.2rem',
+      padding: '1.8rem 3.5rem',
+      margin: '6rem auto 0 auto',
+    },
+    [`screen and (max-width: 768px)`]: {
+      fontSize: '2rem',
+      padding: '1.6rem 3rem',
+      margin: '5rem auto 0 auto',
       fontWeight: 700,
+    },
+    [`screen and (max-width: 480px)`]: {
+      fontSize: '1.8rem',
+      padding: '1.4rem 2.5rem',
+      margin: '4rem auto 0 auto',
+      borderRadius: '3rem',
+    },
+    [`screen and (max-width: 360px)`]: {
+      fontSize: '1.6rem',
+      padding: '1.2rem 2rem',
+      margin: '3rem auto 0 auto',
+      borderRadius: '2.5rem',
     },
   },
 });
@@ -52,8 +71,40 @@ export const title = style({
 
   '@media': {
     [`screen and (max-width: 768px)`]: {
-      fontSize: '2.4rem',
-      fontWeight: 600,
+      display: 'none',
+    },
+  },
+});
+
+export const mobileTitle = style({
+  display: 'none',
+  fontSize: '2.4rem',
+  fontWeight: 600,
+  textAlign: 'center',
+  lineHeight: 1.3,
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      display: 'block',
+    },
+  },
+});
+
+export const openingSection = style({
+  background: '#3B3D42',
+  width: '100%',
+});
+
+export const description = style({
+  fontSize: '2rem',
+  lineHeight: 1.5,
+  fontWeight: 300,
+  textAlign: 'center',
+  marginTop: '4rem',
+
+  '@media': {
+    [`screen and (max-width: 768px)`]: {
+      fontSize: '1.6rem',
     },
   },
 });

@@ -5,6 +5,7 @@ import {
   userReactionItemContainer,
   userReactionName,
   userReactionProfile,
+  userReactionProfileImage,
 } from './userReactionSection.css';
 
 interface UserReactionItemProps {
@@ -13,8 +14,6 @@ interface UserReactionItemProps {
   background: string;
   commentNode: ReactNode;
 }
-
-const PROFILE_IMAGE_WIDTH = 60;
 
 export default function UserReactionItem({
   thumbnailImg,
@@ -25,7 +24,13 @@ export default function UserReactionItem({
   return (
     <div className={userReactionItemContainer}>
       <div className={userReactionProfile}>
-        <Image width={PROFILE_IMAGE_WIDTH} src={thumbnailImg} alt="" />
+        <Image
+          width={60}
+          height={60}
+          src={thumbnailImg}
+          alt=""
+          className={userReactionProfileImage}
+        />
         <div>
           <div className={userReactionName}>{name}</div>
           <div className={userReactionBackground}>{background}</div>

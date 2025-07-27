@@ -1,5 +1,22 @@
 import * as React from 'react';
-import { downArrow, toggleSection } from './faqSection.css';
+import {
+  downArrow,
+  toggleSection,
+  faqContainer,
+  faqTitle,
+  faqList,
+  faqHeader,
+  faqButton,
+  questionNumber,
+  faqContent,
+  downArrowIcon,
+  wikiCard,
+  githubCard,
+  cardTitle,
+  cardDescription,
+  mailCharacter,
+  githubCharacter
+} from './faqSection.css';
 import DownArrow from '@/assets/images/FAQSection/downArrow.svg';
 import MailCharacter from '@/assets/images/FAQSection/mail-character.svg';
 import GithubCharacter from '@/assets/images/FAQSection/github-character.svg';
@@ -36,110 +53,53 @@ export default function FAQSection(props: FAQSectionProps) {
   };
 
   return (
-    <div style={{ padding: '15rem 0', width: '100%', background: '#F5F7F8' }}>
-      <div style={{ fontSize: '3.7rem', fontWeight: 600, textAlign: 'center' }}>자주 묻는 질문</div>
-      <ol
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.6rem',
-          width: '100%',
-          maxWidth: '80rem',
-          margin: '8rem auto 22rem auto',
-        }}
-      >
+    <div className={faqContainer}>
+      <div className={faqTitle}>자주 묻는 질문</div>
+      <ol className={faqList}>
         {ACCORDION_ITEMS.map((item, index) => (
           <li
             key={index}
             className={toggleSection({ isOpen: openIndex === index })}
             onClick={() => toggleAccordion(index)}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
-              <button
-                style={{
-                  textAlign: 'left',
-                }}
-              >
-                <span
-                  style={{
-                    display: 'inline-block',
-                    width: '4rem',
-                    height: '4rem',
-                    borderRadius: '50%',
-                    backgroundColor: '#EDEDED',
-                    color: '#444444',
-                    textAlign: 'center',
-                    lineHeight: '4rem',
-                    marginRight: '1.5rem',
-                    fontSize: '2rem',
-                    fontWeight: 550,
-                  }}
-                >
-                  Q
-                </span>
+            <div className={faqHeader}>
+              <button className={faqButton}>
+                <span className={questionNumber}>Q</span>
                 {item.title}
               </button>
               <DownArrow
-                className={downArrow({ isOpen: openIndex === index })}
-                style={{ width: '1.5rem' }}
+                className={`${downArrow({ isOpen: openIndex === index })} ${downArrowIcon}`}
               />
             </div>
-            <p style={{ fontSize: '1.6rem', fontWeight: 450, lineHeight: 1.5 }}>{item.content}</p>
+            <p className={faqContent}>{item.content}</p>
           </li>
         ))}
       </ol>
       <a href="https://wiki.maeil-mail.kr" rel="noopener noreferrer">
-        <div
-          style={{
-            background: '#00A86B',
-            color: '#fff',
-            maxWidth: '100rem',
-            margin: '0 auto',
-            padding: '7rem 6rem',
-            borderRadius: '1.6rem',
-            cursor: 'pointer',
-            marginBottom: '2.5rem',
-            position: 'relative',
-          }}
-        >
+        <div className={wikiCard}>
           <div>
-            <div style={{ fontSize: '3rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <div className={cardTitle}>
               매일위키에서 스스로 질문을 작성해보세요
             </div>
-            <p style={{ fontSize: '1.6rem', fontWeight: 400, lineHeight: 1.5 }}>
+            <p className={cardDescription}>
               매일위키에서 기술 면접에 관한 질문들을 공유하거나 기술 면접 문제집을 만들어볼 수
               있어요
             </p>
           </div>
-          <MailCharacter
-            style={{ width: '14rem', position: 'absolute', bottom: '0rem', right: '5rem' }}
-          />
+          <MailCharacter className={mailCharacter} />
         </div>
       </a>
       <a href="https://github.com/maeil-mail" rel="noopener noreferrer">
-        <div
-          style={{
-            background: '#464646',
-            color: '#fff',
-            maxWidth: '100rem',
-            margin: '0 auto',
-            padding: '7rem 6rem',
-            borderRadius: '1.6rem',
-            cursor: 'pointer',
-            position: 'relative',
-          }}
-        >
+        <div className={githubCard}>
           <div>
-            <div style={{ fontSize: '3rem', fontWeight: 600, marginBottom: '2rem' }}>
+            <div className={cardTitle}>
               스타를 눌러주시면 서비스 운영에 큰 힘이 돼요
             </div>
-            <p style={{ fontSize: '1.6rem', fontWeight: 400, lineHeight: 1.5 }}>
+            <p className={cardDescription}>
               매일메일을 잘 이용하고 계신다면 GitHub 스타를 눌러주세요!
             </p>
           </div>
-          <GithubCharacter
-            style={{ width: '22rem', position: 'absolute', bottom: '0rem', right: '1rem' }}
-          />
+          <GithubCharacter className={githubCharacter} />
         </div>
       </a>
     </div>

@@ -91,3 +91,20 @@ export const heroFigure5 = style({
   bottom: 100,
   '@media': { [`screen and (max-width: 1300px)`]: { display: 'none' } },
 });
+
+export const heroContainer = style({
+  width: '100%',
+  maxWidth: '109.1rem',
+  margin: '0 auto',
+  position: 'relative',
+});
+
+export const heroContent = style({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+});

@@ -7,6 +7,8 @@ import {
   heroSection,
   heroSubtitle,
   heroTitle,
+  heroContainer,
+  heroContent,
 } from './heroSection.css';
 import MailFigure from '@/assets/images/heroSection/hero-mail.svg';
 import HeroFigure1 from '@/assets/images/heroSection/hero-figure-1.svg';
@@ -30,18 +32,8 @@ export default function HeroSection() {
       <HeroFigure3 className={heroFigure3} />
       <HeroFigure4 className={heroFigure4} />
       <HeroFigure5 className={heroFigure5} />
-      <div style={{ width: '100%', maxWidth: '109.1rem', margin: '0 auto', position: 'relative' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'column',
-          }}
-        >
+      <div className={heroContainer}>
+        <div className={heroContent}>
           <div className={heroSubtitle}>개발자를 위한 기술 면접 메일링 서비스</div>
           <div className={`${heroTitle} ${poppinsSemiBold.className}`}>Maeil Mail</div>
         </div>
