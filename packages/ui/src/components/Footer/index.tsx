@@ -1,5 +1,24 @@
-import { GITHUB_ORGANIZATION_URL, TEAM_EMAIL } from '@/constants/externalUrl';
-import { container, externalLink, innerWrapper, side } from './footer.css';
+import { GITHUB_ORGANIZATION_URL, TEAM_EMAIL } from '../../constants/externalUrl';
+import {
+  container,
+  desktopInnerWrapper,
+  logo,
+  copyright,
+  brandingSection,
+  contactSection,
+  socialsSection,
+  etcSection,
+  sectionTitle,
+  sectionLink,
+  sectionsWrapper,
+  mobileInnerWrapper,
+  mobileLogo,
+  mobileLinkGroups,
+  mobileLinkGroup,
+  mobileLinkItem,
+  mobileCopyright,
+} from './footer.css';
+import Logo from '../../assets/icons/footer-logo.svg';
 
 interface FooterProps {
   serviceName: string;
@@ -10,26 +29,81 @@ interface FooterProps {
 export function Footer({ serviceName, introduceUrl, feedbackUrl }: FooterProps) {
   return (
     <footer className={container}>
-      <div className={innerWrapper}>
-        <section className={side}>
-          <p>Copyright © 2025, {serviceName}. All rights reserved.</p>
-          <div>
-            <a href={`mailto:${TEAM_EMAIL}`}>
-              이메일 <span className={externalLink}>{TEAM_EMAIL}</span>
+      <div className={desktopInnerWrapper}>
+        <section className={brandingSection}>
+          <Logo className={logo} />
+          <p className={copyright}>Copyright © 2025 {serviceName}. All rights reserved.</p>
+        </section>
+
+        <div className={sectionsWrapper}>
+          <section className={contactSection}>
+            <h3 className={sectionTitle}>Contact</h3>
+            <a href={`mailto:${TEAM_EMAIL}`} className={sectionLink}>
+              {TEAM_EMAIL}
+            </a>
+          </section>
+
+          <section className={socialsSection}>
+            <h3 className={sectionTitle}>Socials</h3>
+            <a
+              href="https://velog.io/@maeilmail/posts"
+              className={sectionLink}
+              rel="noopener noreferrer"
+            >
+              Velog
+            </a>
+            <a href={GITHUB_ORGANIZATION_URL} className={sectionLink} rel="noopener noreferrer">
+              Github
+            </a>
+          </section>
+
+          {/* Etc 섹션 */}
+          <section className={etcSection}>
+            <h3 className={sectionTitle}>Etc</h3>
+            <a href={introduceUrl} className={sectionLink} rel="noopener noreferrer">
+              팀 소개
+            </a>
+            <a href={feedbackUrl} className={sectionLink} rel="noopener noreferrer">
+              서비스 피드백
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <div className={mobileInnerWrapper}>
+        <Logo className={mobileLogo} />
+
+        <div className={mobileLinkGroups}>
+          <div className={mobileLinkGroup}>
+            <a href={`mailto:${TEAM_EMAIL}`} className={mobileLinkItem}>
+              Contact
+            </a>
+            <a href={introduceUrl} className={mobileLinkItem} rel="noopener noreferrer">
+              팀소개
             </a>
           </div>
-        </section>
-        <section className={side}>
-          <a className={externalLink} href={introduceUrl} rel="noopener noreferrer">
-            <span>팀 소개</span>
-          </a>
-          <a className={externalLink} href={feedbackUrl} rel="noopener noreferrer">
-            <span>서비스 피드백하기</span>
-          </a>
-          <a className={externalLink} href={GITHUB_ORGANIZATION_URL} rel="noopener noreferrer">
-            <span>Github 스타는 서비스 운영에 큰 도움이 됩니다</span>
-          </a>
-        </section>
+
+          <div className={mobileLinkGroup}>
+            <a
+              href="https://velog.io/@maeilmail/posts"
+              className={mobileLinkItem}
+              rel="noopener noreferrer"
+            >
+              Velog
+            </a>
+            <a href={feedbackUrl} className={mobileLinkItem} rel="noopener noreferrer">
+              피드백
+            </a>
+          </div>
+
+          <div className={mobileLinkGroup}>
+            <a href={GITHUB_ORGANIZATION_URL} className={mobileLinkItem} rel="noopener noreferrer">
+              Github
+            </a>
+          </div>
+        </div>
+
+        <p className={mobileCopyright}>Copyright © 2025 {serviceName}. All rights reserved.</p>
       </div>
     </footer>
   );

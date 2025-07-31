@@ -4,7 +4,6 @@
     "baseUrl": ".",
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"],
       "@maeil/*": ["../../packages/*"]
     },
     "rootDir": "src",

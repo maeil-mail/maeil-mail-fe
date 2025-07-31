@@ -1,4 +1,4 @@
-import UpArrowIcon from '@/assets/images/upArrow.svg';
+import UpArrowIcon from '../../assets/images/upArrow.svg';
 import { icon } from './arrowIcon.css';
 
 interface UpArrowProps {

@@ -1,4 +1,4 @@
-import DownArrowIcon from '@/assets/images/downArrow.svg';
+import DownArrowIcon from '../../assets/images/downArrow.svg';
 import { icon } from './arrowIcon.css';
 
 interface DownArrowProps {

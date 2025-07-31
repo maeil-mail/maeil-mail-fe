@@ -4,8 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@maeil/theme": ["packages/theme/dist"],
-      "@maeil/ui": ["packages/ui/dist"]
+      "@maeil/theme": ["../../packages/theme/src"],
+      "@maeil/ui": ["../../packages/ui/src"]
     },
     "plugins": [
       {

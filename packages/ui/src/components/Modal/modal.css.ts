@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { MEDIA_BREAKPOINT } from '@/constants/mediaBreakpoint';
+import { MEDIA_BREAKPOINT } from '../../constants/mediaBreakpoint';
 
 export const modal = style({
   zIndex: 1000,
