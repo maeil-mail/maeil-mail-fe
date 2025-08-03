@@ -1,3 +1,6 @@
+// 전역 스타일 import
+import './global.css';
+
 export * from './components/Button';
 export * from './components/CheckboxInput';
 export * from './components/Footer';

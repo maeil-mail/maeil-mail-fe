@@ -142,6 +142,20 @@ export const descriptionTitle = style({
 
   '@media': {
     [`(max-width: 1000px)`]: {
+      display: 'none',
+    },
+  },
+});
+
+export const mobileDescriptionTitle = style({
+  display: 'none',
+
+  '@media': {
+    [`(max-width: 1000px)`]: {
+      marginTop: '1.6rem',
+      fontWeight: 600,
+      lineHeight: 1.4,
+      display: 'block',
       fontSize: '2.8rem',
       whiteSpace: 'normal',
       letterSpacing: '0rem',

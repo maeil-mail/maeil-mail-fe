@@ -107,7 +107,7 @@ export const faqList = style({
 export const faqHeader = style({
   display: 'flex',
   justifyContent: 'space-between',
-  marginBottom: '2rem',
+  marginBottom: '1rem',
 
   '@media': {
     '(max-width: 500px)': { fontSize: '1.5rem' },
@@ -145,9 +145,11 @@ export const faqContent = style({
   fontSize: '1.6rem',
   fontWeight: 450,
   lineHeight: 1.5,
+  marginLeft: '5.5rem', // Q 아이콘 너비(4rem) + marginRight(1.5rem) = 5.5rem
   '@media': {
     '(max-width: 768px)': {
       fontSize: '1.4rem',
+      marginLeft: '4.4rem', // Q 아이콘 너비(3.2rem) + marginRight(1.2rem) = 4.4rem
     },
   },
 });

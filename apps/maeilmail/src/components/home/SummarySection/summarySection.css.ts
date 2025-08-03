@@ -165,8 +165,8 @@ export const summaryIcon2 = style({
     },
     [`screen and (max-width: 768px)`]: {
       width: '12rem',
-      right: 10,
-      bottom: 5,
+      right: 20,
+      bottom: 18,
     },
   },
 });
