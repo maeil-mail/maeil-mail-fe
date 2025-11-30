@@ -1,30 +1,34 @@
-'use client';
-
 import { Suspense } from 'react';
-import { useParams, useSearchParams } from 'next/navigation';
 import { PageInnerLayout } from '@maeil/ui';
 import Paginator from '@/common/components/Paginator';
 import MyQuestionList from '@/components/myQuestionList/QuestionList';
-import useMyQuestions from '@/components/myQuestionList/hooks/useMyQuestions';
 import MyQuestionListHeader from '@/components/myQuestionList/Header';
 import MyQuestionListSkeleton from '@/components/myQuestionList/Skeleton';
 import QuestionCategoryTabs from '@/components/myQuestionList/QuestionCategoryTabs';
 import { QuestionCategoryEN } from '@/common/types/question';
+import { getMyQuestions } from '@/components/myQuestionList/apis/getMyQuestions';
 
-export default function Page() {
-  const rawEmail = useParams<{ email: string }>()?.email || '';
-  const rawPage = useSearchParams()?.get('page');
-  const category = (useSearchParams()?.get('category') || 'all') as QuestionCategoryEN;
+interface PageProps {
+  params: Promise<{ email: string }>;
+  searchParams: Promise<{ page?: string; category?: string }>;
+}
 
-  const email = decodeURIComponent(rawEmail);
+export default async function Page({ params, searchParams }: PageProps) {
+  const { email: rawEmail } = await params;
+  const { page: rawPage, category: rawCategory } = await searchParams;
+
+  const email = decodeURIComponent(rawEmail || '');
   const page = Number(rawPage) || 1;
+  const category = (rawCategory || 'all') as QuestionCategoryEN;
+
+  const suspenseKey = `${email}-${page}-${category}`;
 
   return (
     <div>
       <PageInnerLayout>
         <MyQuestionListHeader email={email} />
         <QuestionCategoryTabs selectedCategory={category} />
-        <Suspense fallback={<MyQuestionListSkeleton />}>
+        <Suspense key={suspenseKey} fallback={<MyQuestionListSkeleton />}>
           <MyQuestionsListBody email={email} page={page} category={category} />
         </Suspense>
       </PageInnerLayout>
@@ -32,7 +36,7 @@ export default function Page() {
   );
 }
 
-function MyQuestionsListBody({
+async function MyQuestionsListBody({
   email,
   page,
   category,
@@ -41,9 +45,7 @@ function MyQuestionsListBody({
   page: number;
   category: QuestionCategoryEN;
 }) {
-  const {
-    data: { data, totalPage },
-  } = useMyQuestions(email, page, category);
+  const { totalPage, data } = await getMyQuestions(email, page, category);
 
   return (
     <>
