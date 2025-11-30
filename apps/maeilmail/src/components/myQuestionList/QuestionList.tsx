@@ -14,7 +14,7 @@ export default function QuestionList({ questions }: QuestionListProps) {
   const isEmpty = questions.length === 0;
 
   if (isEmpty) {
-    return <div className={emptyCase}>아직 받은 질문이 없습니다.</div>;
+    return <div className={emptyCase}>받은 질문이 아직 없습니다.</div>;
   }
 
   return (
