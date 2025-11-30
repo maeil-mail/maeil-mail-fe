@@ -20,7 +20,7 @@ export default function QuestionList({ questions }: QuestionListProps) {
   return (
     <div className={questionListContainer}>
       {questions.map((question) => (
-        <Link key={question.id} href={`/question/${question.id}`}>
+        <Link key={question.id} href={`/question/${question.id}`} prefetch={false}>
           <MyQuestionItem question={question} />
         </Link>
       ))}
