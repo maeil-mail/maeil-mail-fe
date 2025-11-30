@@ -4,7 +4,6 @@ const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig = {
   output: 'standalone',
-  transpilePackages: ['@maeil/theme', '@maeil/ui'],
   webpack: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
 
