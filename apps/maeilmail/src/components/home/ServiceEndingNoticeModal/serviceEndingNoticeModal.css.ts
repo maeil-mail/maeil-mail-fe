@@ -103,7 +103,7 @@ export const section = style({
   flexDirection: 'column',
   gap: '1.2rem',
   fontSize: '1.55rem',
-  lineHeight: 1.8,
+  lineHeight: 1.68,
   color: '#374151',
   wordBreak: 'keep-all',
 });

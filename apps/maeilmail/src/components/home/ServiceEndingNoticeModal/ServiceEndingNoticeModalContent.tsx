@@ -29,7 +29,7 @@ export default function ServiceEndingNoticeModalContent({
     <div className={container}>
       <div className={intro}>
         <span className={dateBadge}>서비스 종료 안내</span>
-        <h2 className={title}>매일메일 운영을 마무리합니다.</h2>
+        <h2 className={title}>매일메일 운영을 종료합니다.</h2>
         <p className={description}>
           그동안 매일메일을 이용해주신 구독자님께 진심으로 감사드립니다.
         </p>

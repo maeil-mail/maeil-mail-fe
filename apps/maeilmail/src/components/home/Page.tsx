@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import SubscribeModal from './SubscribeModal';
 import ServiceEndingNoticeModal from './ServiceEndingNoticeModal';
 import HomeNav from './HomeNav';
@@ -20,28 +18,8 @@ interface HomePageProps {
   subscriberCount: number;
 }
 
-const SERVICE_NOTICE_STORAGE_KEY = 'maeil-mail-service-ending-notice-hidden';
-
 export default function HomePage({ subscriberCount }: HomePageProps) {
   const { isModalOpen, openModal, closeModal } = useModal();
-  const [isNoticeOpen, setIsNoticeOpen] = useState(false);
-
-  useEffect(() => {
-    const isDismissed = window.localStorage.getItem(SERVICE_NOTICE_STORAGE_KEY) === 'true';
-
-    if (!isDismissed) {
-      setIsNoticeOpen(true);
-    }
-  }, []);
-
-  const closeNotice = () => {
-    setIsNoticeOpen(false);
-  };
-
-  const dismissNoticePermanently = () => {
-    window.localStorage.setItem(SERVICE_NOTICE_STORAGE_KEY, 'true');
-    setIsNoticeOpen(false);
-  };
 
   return (
     <div>
@@ -55,11 +33,7 @@ export default function HomePage({ subscriberCount }: HomePageProps) {
         <ClosingCTA onCTA={openModal} subscriberCount={subscriberCount} />
         <FAQSection />
       </div>
-      <ServiceEndingNoticeModal
-        isOpen={isNoticeOpen}
-        onClose={closeNotice}
-        onDismissForever={dismissNoticePermanently}
-      />
+      <ServiceEndingNoticeModal />
       <SubscribeModal isOpen={isModalOpen} closeModal={closeModal} />
     </div>
   );
