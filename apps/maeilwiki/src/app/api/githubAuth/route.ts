@@ -9,6 +9,10 @@ const HEADER = {
 
 export async function POST(req: Request) {
   try {
+    if (!GITHUB_OAUTH_CLIENT_ID || !OAUTH_GITHUB_CLIENT_SECRET) {
+      return Response.json(null, { status: 500 });
+    }
+
     const body = await req.json();
 
     const { code } = body;

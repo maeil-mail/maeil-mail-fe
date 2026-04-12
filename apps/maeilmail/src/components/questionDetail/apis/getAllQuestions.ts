@@ -6,6 +6,10 @@ import { API_ROUTES } from '@/common/apis/constants/routes';
 import type { Question } from '@/common/types/question';
 
 export const getAllQuestions = async () => {
+  if (!ADMIN_AUTH_SECRET_KEY) {
+    return { data: [] };
+  }
+
   const res = await fetch(`${BASE_URL}/admin${API_ROUTES.question}?size=10000`, {
     headers: {
       Authorization: `Basic ${ADMIN_AUTH_SECRET_KEY}`,

@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "jsx": "react-jsx",
     "paths": {
-      "@maeil/*": ["../../packages/*"]
+      "@maeil/theme": ["../theme/dist"],
+      "@maeil/theme/*": ["../theme/dist/*"]
     },
     "rootDir": "src",
     "outDir": "./dist",
