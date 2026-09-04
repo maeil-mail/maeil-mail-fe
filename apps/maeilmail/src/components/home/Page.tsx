@@ -33,7 +33,6 @@ export default function HomePage({ subscriberCount }: HomePageProps) {
         <ClosingCTA onCTA={openModal} subscriberCount={subscriberCount} />
         <FAQSection />
       </div>
-      <ServiceEndingNoticeModal />
       <SubscribeModal isOpen={isModalOpen} closeModal={closeModal} />
     </div>
   );
